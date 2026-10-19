@@ -1,36 +1,42 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Parametric knowledge
+<div dir="rtl">
 
-> What the model knows because it was in the training data, stored in its weights and frozen from that moment on.
+# دانش پارامتری (parametric knowledge)
 
-*§04 Failure Modes · also called: Baked-in knowledge, Training knowledge · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/parametric-knowledge)*
+> آنچه مدل می‌داند چون در داده‌های آموزشی بوده، در وزن‌هایش ذخیره شده و از همان لحظه منجمد مانده.
 
-Parametric knowledge is everything a [model](./model.md) knows without being told in the prompt. It was absorbed during [training](./training.md) and lives in the [parameters](./parameters.md): how Python works, what React looked like at the time, common bugs, idioms, the names of popular libraries and their older APIs. It is why an agent can write a working Express server from a one-line request with no documentation loaded.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: Baked-in knowledge، Training knowledge · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/parametric-knowledge)*
 
-The catch is that it is a snapshot. Nothing after the [knowledge cutoff](./knowledge-cutoff.md) is in there, and even things before it are compressed and approximate. When your project uses a framework version the model never saw, or a private internal library, its parametric knowledge does not go blank; it fills the gap with the nearest thing it does know, which is how you get last year's API under this year's package name.
+دانش پارامتری هر چیزی است که یک [مدل](./model.md) می‌داند بی‌آن‌که در پرامپت به او گفته شود. در طول [آموزش](./training.md) جذب شده و در [پارامترها](./parameters.md) زندگی می‌کند: پایتون چطور کار می‌کند، React در آن زمان چه شکلی بود، باگ‌های رایج، اصطلاحات رایج کدنویسی، نام کتابخانه‌های محبوب و APIهای قدیمی‌ترشان. به همین دلیل یک ایجنت می‌تواند از یک درخواست یک‌خطی، بدون هیچ مستندات بارگذاری‌شده‌ای، یک سرور Express کارا بنویسد.
 
-Know which kind of fact you are relying on. For stable, widely used things, parametric knowledge is fast and usually right. For anything recent, niche or specific to your codebase, put the real material in the [context window](./context-window.md) so the model works from [contextual knowledge](./contextual-knowledge.md) instead. A good rule: if you would need to look it up, so does the model.
+گیرش این است که یک عکس لحظه‌ای است. هیچ چیز پس از [تاریخ قطع دانش](./knowledge-cutoff.md) در آن نیست، و حتی چیزهای پیش از آن هم فشرده و تقریبی‌اند. وقتی پروژه‌ی شما از نسخه‌ای از یک فریم‌ورک استفاده می‌کند که مدل هرگز ندیده، یا یک کتابخانه‌ی داخلی خصوصی، دانش پارامتری‌اش خالی نمی‌ماند؛ شکاف را با نزدیک‌ترین چیزی که می‌داند پر می‌کند، و این‌طور است که API پارسال زیر نام بسته‌ی امسال سر درمی‌آورد.
 
-## In the tools
+بدانید به کدام نوع واقعیت تکیه می‌کنید. برای چیزهای پایدار و پرکاربرد، دانش پارامتری سریع و معمولاً درست است. برای هر چیز تازه، تخصصی یا مختص کدهای شما، مطلب واقعی را در [پنجره‌ی زمینه](./context-window.md) بگذارید تا مدل به‌جایش از [دانش زمینه‌ای](./contextual-knowledge.md) کار کند. یک قاعده‌ی خوب: اگر خودتان باید جست‌وجویش می‌کردید، مدل هم باید.
 
-- Most tools: nothing in the harness updates what the model knows; docs lookups and web fetch are how fresh facts get into a request.
-- Claude Code: a CLAUDE.md note like 'we use Tailwind v4 syntax, see docs/tailwind.md' steers the agent off stale parametric habits.
+## در ابزارها
 
-## In conversation
+- بیشتر ابزارها: هیچ چیز در هارنس دانسته‌های مدل را به‌روز نمی‌کند؛ جست‌وجوی مستندات و دریافت از وب راه رسیدن واقعیت‌های تازه به یک درخواست‌اند.
+- Claude Code: یادداشتی در CLAUDE.md مثل «از نحو Tailwind v4 استفاده می‌کنیم، docs/tailwind.md را ببین» ایجنت را از عادت‌های پارامتری کهنه دور می‌کند.
 
-> “How does it know the whole Next.js router API without me pasting anything?”
+## در گفت‌وگو
+
+> «چطور کل API مسیریاب Next.js را بدون این‌که چیزی بچسبانم می‌داند؟»
 >
-> “Parametric knowledge, from training. Just check which version it's remembering before you trust it.”
+> «دانش پارامتری، از آموزش. فقط پیش از اعتماد بررسی کن کدام نسخه را به یاد دارد.»
 
-**Related:** [Hallucination](./hallucination.md) · [Primary source](./primary-source.md) · [Inference](./inference.md)
+**مرتبط:** [توهم](./hallucination.md) · [منبع دست‌اول](./primary-source.md) · [استنتاج](./inference.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/parametric-knowledge) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/parametric-knowledge.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

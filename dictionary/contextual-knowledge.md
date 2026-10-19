@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Contextual knowledge
+<div dir="rtl">
 
-> Facts the model has because they are in the context window right now, as opposed to facts it remembers from training.
+# دانش زمینه‌ای (contextual knowledge)
 
-*§04 Failure Modes · also called: In-context knowledge · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/contextual-knowledge)*
+> واقعیت‌هایی که مدل دارد چون همین حالا در پنجره‌ی زمینه‌اند، در برابر واقعیت‌هایی که از آموزش به یاد دارد.
 
-Contextual knowledge is what the [model](./model.md) knows from the current request: the files the [agent](./agent.md) has read, the docs you pasted, the error output, the instructions in your project file. It is the counterpart to [parametric knowledge](./parametric-knowledge.md). Anything in the [context window](./context-window.md) can override what the model would otherwise assume, which is the whole reason coding agents read files before editing them instead of writing from memory.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: In-context knowledge · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/contextual-knowledge)*
 
-It is also the more reliable of the two, as long as it is actually there and still accurate. Models generally trust the context over their training when the two conflict, so a pasted changelog beats a stale habit. The failures come when people assume something is in context and it is not (the agent never opened that file), or when it was in context but has since changed on disk (you edited it after the read).
+دانش زمینه‌ای چیزی است که [مدل](./model.md) از درخواست جاری می‌داند: فایل‌هایی که [ایجنت](./agent.md) خوانده، مستنداتی که چسبانده‌اید، خروجی خطا، دستورالعمل‌های فایل پروژه‌تان. همتای [دانش پارامتری](./parametric-knowledge.md) است. هر چیزی در [پنجره‌ی زمینه](./context-window.md) می‌تواند بر آنچه مدل در غیر این صورت فرض می‌کرد غلبه کند، و همه‌ی دلیل این‌که ایجنت‌های کدنویسی پیش از ویرایش فایل‌ها را می‌خوانند به‌جای این‌که از حافظه بنویسند، همین است.
 
-Make contextual knowledge deliberate. Point the agent at the specific files that define the truth for this task, refresh them after big changes, and prefer [primary sources](./primary-source.md) over your own summary of them. When an answer seems to ignore your codebase, ask what it read; the honest reply is often 'nothing yet'.
+از میان این دو، قابل اعتمادتر هم هست، به شرطی که واقعاً آن‌جا باشد و هنوز دقیق. وقتی این دو با هم تعارض دارند، مدل‌ها معمولاً به زمینه بیشتر از آموزششان اعتماد می‌کنند، پس یک changelogِ چسبانده‌شده بر یک عادت کهنه غلبه می‌کند. شکست‌ها وقتی پیش می‌آیند که مردم فرض می‌کنند چیزی در زمینه هست و نیست (ایجنت هرگز آن فایل را باز نکرد)، یا در زمینه بوده اما از آن موقع روی دیسک تغییر کرده (پس از خواندن ویرایشش کردید).
 
-## In the tools
+دانش زمینه‌ای را آگاهانه کنید. ایجنت را به فایل‌های مشخصی ارجاع دهید که حقیقتِ این کار را تعریف می‌کنند، پس از تغییرات بزرگ تازه‌شان کنید، و [منابع دست‌اول](./primary-source.md) را به خلاصه‌ی خودتان از آن‌ها ترجیح دهید. وقتی پاسخی به نظر می‌رسد کدهای شما را نادیده می‌گیرد، بپرسید چه چیزی خوانده؛ پاسخ صادقانه اغلب «هنوز هیچ» است.
 
-- Claude Code: `@path/to/file` loads a file into context explicitly; a Read tool call does the same thing on the agent's own initiative.
-- Cursor: files open in the editor and anything attached via `@` are the request's contextual knowledge.
+## در ابزارها
 
-## In conversation
+- Claude Code: `@path/to/file` یک فایل را صریحاً در زمینه بارگذاری می‌کند؛ یک فراخوانی ابزار Read همین کار را به ابتکار خود ایجنت می‌کند.
+- Cursor: فایل‌های باز در ویرایشگر و هر چیزی که با `@` پیوست شده، دانش زمینه‌ای آن درخواست‌اند.
 
-> “Why did it get the config right this time and wrong yesterday?”
+## در گفت‌وگو
+
+> «چرا این بار پیکربندی را درست گرفت و دیروز غلط؟»
 >
-> “Yesterday it worked from memory. Today you pasted the actual config, so it had contextual knowledge instead of a guess.”
+> «دیروز از حافظه کار کرد. امروز پیکربندی واقعی را چسباندی، پس به‌جای حدس، دانش زمینه‌ای داشت.»
 
-**Related:** [Context](./context.md) · [Knowledge cutoff](./knowledge-cutoff.md) · [Context pointer](./context-pointer.md)
+**مرتبط:** [زمینه](./context.md) · [تاریخ قطع دانش](./knowledge-cutoff.md) · [اشاره‌گر زمینه](./context-pointer.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · RAG Fundamentals](https://vibecodeschool.com/learn/aa-07-rag-fundamentals)
-- [Course 05 · RAG Prompting Patterns](https://vibecodeschool.com/learn/pe-21-rag-prompting-patterns)
+- [دوره‌ی ۰۴ · مبانی RAG](https://vibecodeschool.com/learn/aa-07-rag-fundamentals)
+- [دوره‌ی ۰۵ · الگوهای پرامپت‌نویسی RAG](https://vibecodeschool.com/learn/pe-21-rag-prompting-patterns)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/contextual-knowledge) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/contextual-knowledge.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

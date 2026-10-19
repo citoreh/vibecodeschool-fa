@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Memory system
+<div dir="rtl">
 
-> Whatever lets an agent carry information across sessions: notes on disk, a memory directory, a store it reads at startup.
+# سیستم حافظه (memory system)
 
-*§06 Memory & Steering · also called: Memory, Persistent memory, Auto-memory · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/memory-system)*
+> هر چیزی که به یک ایجنت اجازه می‌دهد اطلاعات را میان جلسه‌ها حمل کند: یادداشت‌هایی روی دیسک، یک پوشه‌ی حافظه، انباری که هنگام شروع می‌خواندش.
 
-A memory system is any mechanism that lets an [agent](./agent.md) remember something after the [session](./session.md) ends. Since the [model](./model.md) is [stateless](./stateless.md) and the [context window](./context-window.md) is thrown away, remembering has to be built: the [harness](./harness.md) writes facts to files or a database during a session and loads them back into [context](./context.md) at the start of the next one. That is all memory is, at every scale, from a `MEMORY.md` to a vector store.
+*§۰۶ حافظه و هدایت · نام‌های دیگر: Memory، Persistent memory، Auto-memory · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/memory-system)*
 
-Two failure shapes. One, no memory at all: every session re-learns your conventions, your quirks, and the thing you told it yesterday. Two, memory that grows without curation, so each session starts with a wall of stale notes competing for [attention](./attention-budget.md). A memory that says the tests take five minutes when they now take thirty is worse than no memory, because it is trusted.
+سیستم حافظه هر سازوکاری است که به یک [ایجنت](./agent.md) اجازه می‌دهد پس از پایان [جلسه](./session.md) چیزی را به یاد داشته باشد. چون [مدل](./model.md) [بی‌حالت](./stateless.md) است و [پنجره‌ی زمینه](./context-window.md) دور ریخته می‌شود، به یاد داشتن باید ساخته شود: [هارنس](./harness.md) در طول یک جلسه واقعیت‌ها را در فایل‌ها یا یک پایگاه‌داده می‌نویسد و در شروع جلسه‌ی بعد دوباره در [زمینه](./context.md) بارگذاری‌شان می‌کند. حافظه در هر مقیاسی، از یک `MEMORY.md` تا یک پایگاه‌داده‌ی برداری، همین است و بس.
 
-Keep memory small, factual, and dated. Store decisions and preferences, not transcripts. Put project-wide facts in [AGENTS.md](./agents-md.md) where every session sees them, and keep personal or volatile notes in a memory file the harness loads on demand. Review it occasionally the way you would a runbook. Anything the repo already records, such as code structure or history, does not belong in memory; the agent can read the [primary source](./primary-source.md).
+دو شکل شکست دارد. یک، اصلاً حافظه‌ای نیست: هر جلسه قراردادهای شما، خصلت‌های پروژه‌تان، و چیزی که دیروز به آن گفتید را از نو یاد می‌گیرد. دو، حافظه‌ای که بدون گزینش رشد می‌کند، پس هر جلسه با دیواری از یادداشت‌های کهنه شروع می‌شود که بر سر [توجه](./attention-budget.md) رقابت می‌کنند. حافظه‌ای که می‌گوید تست‌ها پنج دقیقه طول می‌کشند وقتی حالا سی دقیقه طول می‌کشند، از نبود حافظه بدتر است، چون به آن اعتماد می‌شود.
 
-## In the tools
+حافظه را کوچک، واقعی و تاریخ‌دار نگه دارید. تصمیم‌ها و ترجیحات را ذخیره کنید، نه متن گفت‌وگوها را. واقعیت‌های سراسری پروژه را در [AGENTS.md](./agents-md.md) بگذارید که هر جلسه می‌بیندش، و یادداشت‌های شخصی یا ناپایدار را در یک فایل حافظه که هارنس هر وقت لازم شد بارگذاری می‌کند. گاه‌به‌گاه آن را مثل یک دستورالعمل عملیاتی مرور کنید. هر چیزی که مخزن از قبل ثبت کرده، مثل ساختار کد یا تاریخچه، جایش در حافظه نیست؛ ایجنت می‌تواند [منبع دست‌اول](./primary-source.md) را بخواند.
 
-- Claude Code: CLAUDE.md is shared project memory; a per-project auto-memory directory holds notes the agent writes for itself between sessions.
-- Claude Cowork: projects keep files and instructions attached so each task starts with the same grounding.
-- Cursor: rules files carry the durable instructions; saved memories from past chats can be layered on top.
+## در ابزارها
 
-## In conversation
+- Claude Code: CLAUDE.md حافظه‌ی مشترک پروژه است؛ یک پوشه‌ی حافظه‌ی خودکار برای هر پروژه یادداشت‌هایی را نگه می‌دارد که ایجنت میان جلسه‌ها برای خودش می‌نویسد.
+- Claude Cowork: پروژه‌ها فایل‌ها و دستورالعمل‌ها را پیوست نگه می‌دارند تا هر کار با همان پایه شروع شود.
+- Cursor: فایل‌های قواعد دستورالعمل‌های ماندگار را حمل می‌کنند؛ حافظه‌های ذخیره‌شده از گفت‌وگوهای گذشته را می‌شود رویشان افزود.
 
-> “Why does it keep suggesting npm when we're a pnpm repo?”
+## در گفت‌وگو
+
+> «چرا مدام npm پیشنهاد می‌دهد وقتی مخزن ما pnpm است؟»
 >
-> “Because nothing tells it. Add one line to the memory file and it stops.”
+> «چون هیچ چیز به او نمی‌گوید. یک خط به فایل حافظه اضافه کن و تمام می‌شود.»
 >
-> “Won't it forget again next session?”
+> «جلسه‌ی بعد دوباره فراموش نمی‌کند؟»
 >
-> “That's the point of the memory system: it's loaded every time. Just keep it short.”
+> «هدف سیستم حافظه همین است: هر بار بارگذاری می‌شود. فقط کوتاه نگهش دار.»
 
-**Related:** [Context engineering](./context-engineering.md) · [Progressive disclosure](./progressive-disclosure.md) · [Handoff artifact](./handoff-artifact.md)
+**مرتبط:** [مهندسی زمینه](./context-engineering.md) · [افشای تدریجی](./progressive-disclosure.md) · [یادداشت تحویل](./handoff-artifact.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
-- [Course 06 · Projects, Memory, and Context](https://vibecodeschool.com/learn/cw-10-projects-and-memory)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۶ · پروژه‌ها، حافظه و زمینه](https://vibecodeschool.com/learn/cw-10-projects-and-memory)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/memory-system) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/memory-system.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

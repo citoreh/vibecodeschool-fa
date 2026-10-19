@@ -1,36 +1,42 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Knowledge cutoff
+<div dir="rtl">
 
-> The date the model's training data ends; anything released after it is unknown to the model unless you load it into context.
+# تاریخ قطع دانش (knowledge cutoff)
 
-*§04 Failure Modes · also called: Training cutoff, Cutoff date · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/knowledge-cutoff)*
+> تاریخی که داده‌های آموزشی مدل در آن تمام می‌شود؛ هر چیزی که پس از آن منتشر شده برای مدل ناشناخته است مگر این‌که در زمینه بارگذاری‌اش کنید.
 
-The knowledge cutoff is the point in time after which a [model](./model.md) has seen nothing. [Training](./training.md) data is collected up to a date, the model is trained, tested and released some months later, and then used for a year or more. So at any moment the model's picture of the world is stale by somewhere between several months and a couple of years, and nothing in the [harness](./harness.md) moves that date.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: Training cutoff، Cutoff date · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/knowledge-cutoff)*
 
-For coding this bites in a specific way: libraries move faster than models. A package released after the cutoff, a breaking major version, a renamed config option, a new CLI flag; the model has no [parametric knowledge](./parametric-knowledge.md) of any of it, and by default it will not say so. It will write the old API with total confidence, and the resulting error will look like your mistake rather than its blind spot.
+تاریخ قطع دانش نقطه‌ای در زمان است که [مدل](./model.md) پس از آن هیچ چیز ندیده. داده‌های [آموزش](./training.md) تا تاریخی جمع‌آوری می‌شوند، مدل آموزش می‌بیند، آزموده می‌شود و چند ماه بعد منتشر می‌شود، و سپس یک سال یا بیشتر استفاده می‌شود. پس در هر لحظه، تصویر مدل از دنیا بین چند ماه تا یکی دو سال کهنه است، و هیچ چیز در [هارنس](./harness.md) این تاریخ را جابه‌جا نمی‌کند.
 
-Assume the cutoff is a problem whenever the thing you are using is newer than about a year old. Load the current docs or the installed package's own type definitions into the [context window](./context-window.md), and tell the agent explicitly which version you are on. A sentence in your project file ('Next 15, app router, Tailwind v4') prevents a whole category of confident regressions.
+در کدنویسی این به شکل مشخصی گاز می‌گیرد: کتابخانه‌ها سریع‌تر از مدل‌ها حرکت می‌کنند. بسته‌ای که پس از تاریخ قطع منتشر شده، یک نسخه‌ی اصلی با تغییرات ناسازگار، یک گزینه‌ی پیکربندی که نامش عوض شده، یک پرچم تازه در ابزار خط فرمان؛ مدل از هیچ‌کدام [دانش پارامتری](./parametric-knowledge.md) ندارد، و به‌طور پیش‌فرض این را نمی‌گوید. API قدیمی را با اعتمادبه‌نفس کامل می‌نویسد، و خطای حاصل شبیه اشتباه شما به نظر می‌رسد نه نقطه‌ی کور او.
 
-## In the tools
+هر وقت چیزی که استفاده می‌کنید کمتر از حدود یک سال عمر دارد، فرض کنید تاریخ قطع دانش مشکل‌ساز است. مستندات فعلی یا تعریف‌های نوع خودِ بسته‌ی نصب‌شده را در [پنجره‌ی زمینه](./context-window.md) بارگذاری کنید، و صریحاً به ایجنت بگویید روی کدام نسخه هستید. یک جمله در فایل پروژه‌تان («Next 15، app router، Tailwind v4») جلوی یک دسته‌ی کامل از پسرفت‌های پراعتمادبه‌نفس را می‌گیرد.
 
-- Anthropic API: each model publishes a training cutoff in its docs; check it before trusting the model on a recent library.
-- Claude Code: fetching a docs page or reading `node_modules/<pkg>/README.md` is the fastest way past the cutoff.
+## در ابزارها
 
-## In conversation
+- API شرکت Anthropic: هر مدل تاریخ قطع آموزشش را در مستنداتش منتشر می‌کند؛ پیش از اعتماد به مدل درباره‌ی یک کتابخانه‌ی تازه آن را بررسی کنید.
+- Claude Code: دریافت یک صفحه‌ی مستندات یا خواندن `node_modules/<pkg>/README.md` سریع‌ترین راه عبور از تاریخ قطع دانش است.
 
-> “It keeps generating the old config format and then blaming the build for 'a bug'.”
+## در گفت‌وگو
+
+> «مدام قالب پیکربندی قدیمی را تولید می‌کند و بعد بیلد را به خاطر «یک باگ» مقصر می‌داند.»
 >
-> “The format changed after its knowledge cutoff. Paste the migration guide and tell it which version we're on.”
+> «قالب پس از تاریخ قطع دانشش عوض شده. راهنمای مهاجرت را بچسبان و بگو روی کدام نسخه‌ایم.»
 
-**Related:** [Hallucination](./hallucination.md) · [Contextual knowledge](./contextual-knowledge.md) · [Primary source](./primary-source.md)
+**مرتبط:** [توهم](./hallucination.md) · [دانش زمینه‌ای](./contextual-knowledge.md) · [منبع دست‌اول](./primary-source.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Prompt Versioning & Model Migration](https://vibecodeschool.com/learn/pe-24-prompt-versioning-and-migration)
+- [دوره‌ی ۰۵ · نسخه‌بندی پرامپت و مهاجرت میان مدل‌ها](https://vibecodeschool.com/learn/pe-24-prompt-versioning-and-migration)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/knowledge-cutoff) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/knowledge-cutoff.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

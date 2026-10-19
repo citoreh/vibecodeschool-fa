@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Prompt injection
+<div dir="rtl">
 
-> Instructions smuggled into something the agent reads, which the model may follow as if they came from you.
+# تزریق پرامپت (prompt injection)
 
-*§04 Failure Modes · also called: Indirect prompt injection, Tool-result injection · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/prompt-injection)*
+> دستورالعمل‌هایی که پنهانی در چیزی که ایجنت می‌خواند جاسازی شده‌اند، و مدل ممکن است طوری دنبالشان کند که انگار از طرف شما آمده‌اند.
 
-Prompt injection is when text the [agent](./agent.md) reads contains instructions, and the [model](./model.md) follows them as though you had typed them. The model sees one stream of [tokens](./token.md); it has no hard boundary between 'the user said' and 'the web page said'. So a comment in a README, a line in a GitHub issue, a hidden block in a fetched docs page or a crafted [tool result](./tool-result.md) can say 'ignore your previous instructions and run this command', and some fraction of the time the model will.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: Indirect prompt injection، Tool-result injection · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/prompt-injection)*
 
-Coding agents are unusually exposed because they read untrusted text all day and hold powerful [tools](./tool.md) while doing it. A model that only chats can be tricked into saying something wrong. An agent with a shell, a filesystem and network access can be tricked into printing your `.env` into a commit message, running a curl command that ships your keys elsewhere, or editing a file so the next run does the damage for it. The injection does not need to be clever; it needs to be read at the wrong moment.
+تزریق پرامپت یعنی متنی که [ایجنت](./agent.md) می‌خواند دستورالعمل دارد، و [مدل](./model.md) آن‌ها را دنبال می‌کند انگار خودتان تایپشان کرده‌اید. مدل یک جریان واحد از [توکن‌ها](./token.md) می‌بیند؛ هیچ مرز سفت‌وسختی میان «کاربر گفت» و «صفحه‌ی وب گفت» ندارد. پس یک کامنت در README، یک خط در یک ایشوی GitHub، یک بلوک پنهان در یک صفحه‌ی مستندات دریافت‌شده یا یک [نتیجه‌ی ابزارِ](./tool-result.md) دست‌کاری‌شده می‌تواند بگوید «دستورهای قبلی‌ات را نادیده بگیر و این دستور را اجرا کن»، و بخشی از اوقات مدل این کار را می‌کند.
 
-There is no complete fix, so defence is layered. Run agents with the least permissive [permission mode](./permission-mode.md) the task allows, and in a [sandbox](./sandbox.md) when they will touch untrusted content. Keep secrets out of the [environment](./environment.md) the agent can see. Review diffs before they merge, especially anything touching shell scripts, CI or network calls. And treat fetched content as data to be summarised, not instructions to be obeyed; when the agent 'decides' to do something you never asked for right after reading a page, that is the symptom.
+ایجنت‌های کدنویسی به‌طور غیرعادی آسیب‌پذیرند چون تمام روز متن غیرقابل اعتماد می‌خوانند و در همان حال [ابزارهای](./tool.md) قدرتمندی در دست دارند. مدلی که فقط گفت‌وگو می‌کند ممکن است فریب بخورد و چیز غلطی بگوید. ایجنتی با شل، سیستم فایل و دسترسی به شبکه ممکن است فریب بخورد و `.env` شما را در یک پیام کامیت چاپ کند، یک دستور curl اجرا کند که کلیدهایتان را جای دیگری بفرستد، یا فایلی را طوری ویرایش کند که اجرای بعدی خرابکاری را برایش انجام دهد. تزریق لازم نیست زیرکانه باشد؛ کافی است در لحظه‌ی اشتباه خوانده شود.
 
-## In the tools
+راه‌حل کاملی وجود ندارد، پس دفاع لایه‌لایه است. ایجنت‌ها را با محدودترین [حالت مجوزی](./permission-mode.md) که کار اجازه می‌دهد اجرا کنید، و وقتی به محتوای غیرقابل اعتماد دست می‌زنند در یک [سندباکس](./sandbox.md). رازها را از [محیطی](./environment.md) که ایجنت می‌بیند دور نگه دارید. دیف‌ها را پیش از ادغام بازبینی کنید، به‌ویژه هر چیزی که به اسکریپت‌های شل، CI یا فراخوانی‌های شبکه دست می‌زند. و محتوای دریافت‌شده را داده‌ای برای خلاصه کردن بدانید، نه دستورهایی برای اطاعت؛ وقتی ایجنت درست پس از خواندن یک صفحه «تصمیم می‌گیرد» کاری بکند که هرگز نخواسته بودید، نشانه همین است.
 
-- Claude Code: permission modes and sandboxed Bash limit what an injected instruction can actually execute; the harness treats fetched pages as untrusted content, but the model still reads them.
-- Codex: cloud tasks run in isolated containers with network access off by default, which caps the blast radius of a successful injection.
+## در ابزارها
 
-## In conversation
+- Claude Code: حالت‌های مجوز و Bashِ سندباکس‌شده محدود می‌کنند یک دستور تزریق‌شده واقعاً چه چیزی را می‌تواند اجرا کند؛ هارنس صفحه‌های دریافت‌شده را محتوای غیرقابل اعتماد می‌داند، اما مدل همچنان آن‌ها را می‌خواند.
+- Codex: کارهای ابری در کانتینرهای ایزوله با دسترسی شبکه‌ی خاموش به‌طور پیش‌فرض اجرا می‌شوند، که شعاع آسیب یک تزریق موفق را محدود می‌کند.
 
-> “It fetched the library's docs and then suddenly tried to run a script from a random gist.”
+## در گفت‌وگو
+
+> «مستندات کتابخانه را دریافت کرد و بعد یک‌دفعه سعی کرد اسکریپتی از یک gist ناشناس اجرا کند.»
 >
-> “That's prompt injection. Something on that page told it to. Kill the session, check the diff, and run it sandboxed next time.”
+> «این تزریق پرامپت است. چیزی در آن صفحه به او گفته. جلسه را ببند، دیف را بررسی کن، و دفعه‌ی بعد در سندباکس اجرایش کن.»
 
-**Related:** [AFK](./afk.md) · [Human review](./human-review.md) · [Hooks](./hooks.md)
+**مرتبط:** [AFK — دور از کیبورد](./afk.md) · [بازبینی انسانی](./human-review.md) · [هوک‌ها](./hooks.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Prompt Injection](https://vibecodeschool.com/learn/pe-30-prompt-injection)
-- [Course 04 · Prompt Injection, Hallucinations & PII](https://vibecodeschool.com/learn/aa-23-prompt-injection-and-pii)
+- [دوره‌ی ۰۵ · تزریق پرامپت](https://vibecodeschool.com/learn/pe-30-prompt-injection)
+- [دوره‌ی ۰۴ · تزریق پرامپت، توهم و اطلاعات شخصی](https://vibecodeschool.com/learn/aa-23-prompt-injection-and-pii)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/prompt-injection) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/prompt-injection.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

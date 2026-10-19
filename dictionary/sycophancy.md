@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Sycophancy
+<div dir="rtl">
 
-> The model's tilt toward agreeing with you, praising your plan, and telling you it worked, regardless of whether it did.
+# چاپلوسی (sycophancy)
 
-*§04 Failure Modes · also called: Yes-man behaviour, Agreeableness · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/sycophancy)*
+> گرایش مدل به موافقت با شما، تعریف کردن از برنامه‌تان، و گفتن این‌که کار کرد، چه کرده باشد چه نه.
 
-Sycophancy is a [model's](./model.md) tendency to tell you what you want to hear. It comes from [training](./training.md): models are tuned on human feedback, and humans rate agreeable, confident, flattering answers higher than blunt ones, so agreement gets reinforced. In a coding [agent](./agent.md) it shows up as 'Great idea!' before a bad plan, 'All tests pass' when two were skipped, and an instant reversal the moment you push back, even when the first answer was right.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: Yes-man behaviour، Agreeableness · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/sycophancy)*
 
-The danger is that it corrupts your feedback loop. If you ask 'is this approach sound?', the honest answer and the sycophantic answer look identical from the outside. Leading questions get the answer they lead to; asking the same agent to review its own work tends to produce approval. A confidently agreeable [hallucination](./hallucination.md) is the hardest kind to catch.
+چاپلوسی تمایل یک [مدل](./model.md) به گفتن چیزی است که دوست دارید بشنوید. از [آموزش](./training.md) می‌آید: مدل‌ها با بازخورد انسانی تنظیم می‌شوند، و انسان‌ها به پاسخ‌های موافق، پراعتمادبه‌نفس و تعریف‌آمیز نمره‌ی بالاتری از پاسخ‌های رک می‌دهند، پس موافقت تقویت می‌شود. در یک [ایجنت](./agent.md) کدنویسی این به شکل «ایده‌ی عالی!» پیش از یک برنامه‌ی بد، «همه‌ی تست‌ها قبول شدند» وقتی دو تا رد شده‌اند، و عقب‌نشینی فوری به‌محض این‌که مخالفت کنید ظاهر می‌شود، حتی وقتی پاسخ اول درست بوده.
 
-Design questions the model can't flatter its way through. Ask for the strongest case against your plan before the case for it; ask it to list what would break rather than whether it's fine; run [automated checks](./automated-check.md) whose output the model cannot charm. For reviews, use a fresh [subagent](./subagent.md) with no stake in the earlier decision, and give it the job of finding problems, not confirming quality.
+خطرش این است که چرخه‌ی بازخورد شما را فاسد می‌کند. اگر بپرسید «این رویکرد درست است؟»، پاسخ صادقانه و پاسخ چاپلوسانه از بیرون یکسان به نظر می‌رسند. پرسش‌های جهت‌دار همان پاسخی را می‌گیرند که به سمتش هل می‌دهند؛ خواستن از همان ایجنت برای بازبینی کار خودش معمولاً تأیید تولید می‌کند. یک [توهمِ](./hallucination.md) پراعتمادبه‌نفس و موافق، سخت‌ترین نوع برای شکار است.
 
-## In the tools
+پرسش‌هایی طراحی کنید که مدل نتواند با چاپلوسی از آن‌ها عبور کند. پیش از دلایل موافق، قوی‌ترین استدلال علیه برنامه‌تان را بخواهید؛ به‌جای این‌که بپرسید درست است یا نه، بخواهید فهرست کند چه چیزی خراب می‌شود؛ [بررسی‌های خودکاری](./automated-check.md) اجرا کنید که مدل نتواند خروجی‌شان را با زبان‌بازی عوض کند. برای بازبینی، از یک [زیرایجنتِ](./subagent.md) تازه استفاده کنید که در تصمیم قبلی ذی‌نفع نیست، و کارش را پیدا کردن مشکل بگذارید، نه تأیید کیفیت.
 
-- Most tools: a 'be critical, no praise' line in a project file helps a little; a separate reviewer agent with an adversarial brief helps a lot.
-- Claude Code: a fresh subagent given only the diff and told to find defects is the practical review setup; the author session will approve its own work.
+## در ابزارها
 
-## In conversation
+- بیشتر ابزارها: یک خط «انتقادی باش، تعریف نکن» در فایل پروژه کمی کمک می‌کند؛ یک ایجنت بازبین جداگانه با شرح کاری خصمانه خیلی کمک می‌کند.
+- Claude Code: یک زیرایجنت تازه که فقط دیف را بگیرد و به او گفته شود نقص پیدا کند، چیدمان عملی بازبینی است؛ جلسه‌ی نویسنده کار خودش را تأیید خواهد کرد.
 
-> “I asked if my schema was okay and it said it was excellent. Then I asked if it had any concerns and it found five.”
+## در گفت‌وگو
+
+> «پرسیدم ساختار پایگاه‌داده‌ام خوب است و گفت عالی است. بعد پرسیدم نگرانی‌ای دارد و پنج تا پیدا کرد.»
 >
-> “That's sycophancy. Never ask 'is this good?'. Ask 'what breaks?'.”
+> «این چاپلوسی است. هرگز نپرس «این خوب است؟». بپرس «چه چیزی خراب می‌شود؟».»
 
-**Related:** [Human review](./human-review.md) · [Grilling](./grilling.md) · [Non-determinism](./non-determinism.md)
+**مرتبط:** [بازبینی انسانی](./human-review.md) · [بازجویی](./grilling.md) · [نامعین بودن](./non-determinism.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Self-Critique & Revision Loops](https://vibecodeschool.com/learn/pe-15-self-critique-loops)
-- [Course 01 · Code Review with Claude](https://vibecodeschool.com/learn/cc-21-code-review)
+- [دوره‌ی ۰۵ · چرخه‌های خودنقدی و بازنویسی](https://vibecodeschool.com/learn/pe-15-self-critique-loops)
+- [دوره‌ی ۰۱ · بازبینی کد با Claude](https://vibecodeschool.com/learn/cc-21-code-review)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/sycophancy) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/sycophancy.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

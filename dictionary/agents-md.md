@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
+
+<div dir="rtl">
 
 # AGENTS.md
 
-> The instructions file at the repo root that every session reads first: commands, conventions, gotchas. CLAUDE.md in Claude Code.
+> فایل دستورالعملی در ریشه‌ی مخزن که هر جلسه اول آن را می‌خواند: دستورها، قراردادها، دام‌ها. در Claude Code اسمش CLAUDE.md است.
 
-*§06 Memory & Steering · also called: CLAUDE.md, Rules file, .cursorrules, Instructions file, GEMINI.md · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/agents-md)*
+*§۰۶ حافظه و هدایت · نام‌های دیگر: CLAUDE.md، Rules file، .cursorrules، Instructions file، GEMINI.md · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/agents-md)*
 
-AGENTS.md is a plain Markdown file at the root of a repository that a coding [agent](./agent.md) loads whenever a [session](./session.md) begins. It is the standing brief for the codebase: how to run the tests, which package manager to use, the conventions that matter, and the traps that have bitten before. Codex and a growing list of tools read `AGENTS.md`; Claude Code reads `CLAUDE.md`; Cursor keeps rules in a `.cursor/rules` directory. Same idea, different filename.
+AGENTS.md یک فایل مارک‌داون ساده در ریشه‌ی یک مخزن است که یک [ایجنت](./agent.md) کدنویسی هر بار که یک [جلسه](./session.md) شروع می‌شود بارگذاری‌اش می‌کند. شرح کار ثابت کدهاست: تست‌ها را چطور اجرا کنیم، از کدام مدیر بسته استفاده کنیم، قراردادهایی که مهم‌اند، و دام‌هایی که قبلاً گاز گرفته‌اند. Codex و فهرست رو‌به‌رشدی از ابزارها `AGENTS.md` را می‌خوانند؛ Claude Code `CLAUDE.md` را؛ Cursor قواعد را در پوشه‌ی `.cursor/rules` نگه می‌دارد. همان ایده، نام فایل متفاوت.
 
-Because it is loaded every session, it is the cheapest way to fix a repeated mistake and the easiest file to bloat. Every line costs [context](./context.md) on every request, and a file that grows into a full architecture guide starts crowding out the task. The other failure is silence: no file at all, so each session guesses the build command, guesses the style, and re-learns the same lesson you taught it last week.
+چون در هر جلسه بارگذاری می‌شود، ارزان‌ترین راه رفع یک اشتباه تکراری است و آسان‌ترین فایل برای باد کردن. هر خط در هر درخواست [زمینه](./context.md) مصرف می‌کند، و فایلی که به یک راهنمای کامل معماری تبدیل شود، شروع می‌کند جای خود کار را تنگ کند. شکست دیگر سکوت است: اصلاً فایلی نیست، پس هر جلسه دستور بیلد را حدس می‌زند، سبک را حدس می‌زند، و همان درسی را که هفته‌ی پیش یادش دادید از نو یاد می‌گیرد.
 
-Keep it short and operational. Commands first, then conventions, then gotchas, each as a line or two. For anything longer, point to a document instead of pasting it, and let [progressive disclosure](./progressive-disclosure.md) do the rest: the agent reads the deep doc only when the task needs it. Update it when the agent gets something wrong twice. It works alongside the [system prompt](./system-prompt.md), which the [harness](./harness.md) controls, and the [memory system](./memory-system.md), which holds facts the agent writes for itself.
+کوتاه و عملیاتی نگهش دارید. اول دستورها، بعد قراردادها، بعد دام‌ها، هر کدام در یکی دو خط. برای هر چیز طولانی‌تر، به‌جای چسباندن، به یک سند اشاره کنید و بگذارید [افشای تدریجی](./progressive-disclosure.md) بقیه‌اش را انجام دهد: ایجنت سند عمیق را فقط وقتی کار لازمش دارد می‌خواند. هر وقت ایجنت چیزی را دو بار اشتباه کرد، به‌روزش کنید. کنار [پرامپت سیستمی](./system-prompt.md) کار می‌کند که [هارنس](./harness.md) کنترلش می‌کند، و کنار [سیستم حافظه](./memory-system.md) که واقعیت‌هایی را نگه می‌دارد که ایجنت برای خودش می‌نویسد.
 
-## In the tools
+## در ابزارها
 
-- Claude Code: `CLAUDE.md` at the repo root, optional ones in subdirectories, and a personal one under `~/.claude/`; `/init` drafts a first version.
-- Codex: reads `AGENTS.md` from your home directory, the repo root, and nested directories, merged with the nearest file taking precedence.
-- Cursor: `.cursor/rules/*.mdc` files, scoped by glob so a rule only loads for matching paths; the legacy `.cursorrules` still works.
+- Claude Code: `CLAUDE.md` در ریشه‌ی مخزن، فایل‌های اختیاری در زیرپوشه‌ها، و یک فایل شخصی زیر `~/.claude/`؛ `/init` نسخه‌ی اول را پیش‌نویس می‌کند.
+- Codex: `AGENTS.md` را از پوشه‌ی خانگی شما، ریشه‌ی مخزن و پوشه‌های تودرتو می‌خواند و ادغامشان می‌کند، و نزدیک‌ترین فایل اولویت دارد.
+- Cursor: فایل‌های `.cursor/rules/*.mdc` که با الگوی glob محدود می‌شوند تا یک قاعده فقط برای مسیرهای منطبق بارگذاری شود؛ فایل قدیمی `.cursorrules` هنوز کار می‌کند.
 
-## In conversation
+## در گفت‌وگو
 
-> “Every session it runs npm test and the suite is under pnpm. I'm tired of correcting it.”
+> «هر جلسه npm test را اجرا می‌کند در حالی که مجموعه‌ی تست زیر pnpm است. از اصلاح کردنش خسته شده‌ام.»
 >
-> “Put it in AGENTS.md. One line: 'Use pnpm; run tests with pnpm test.'”
+> «در AGENTS.md بگذارش. یک خط: «از pnpm استفاده کن؛ تست‌ها را با pnpm test اجرا کن.»»
 >
-> “That's all?”
+> «همین؟»
 >
-> “That's all. It's loaded with every new session, so you never have to say it twice.”
+> «همین. با هر جلسه‌ی تازه بارگذاری می‌شود، پس هرگز لازم نیست دو بار بگویی.»
 
-**Related:** [Context engineering](./context-engineering.md) · [Skill](./skill.md) · [Slash command](./slash-command.md)
+**مرتبط:** [مهندسی زمینه](./context-engineering.md) · [مهارت](./skill.md) · [دستور اسلش](./slash-command.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
-- [Course 03 · Knowledge: Teaching Antigravity Your Codebase](https://vibecodeschool.com/learn/ag-10-when-to-add-specialist)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۳ · دانش: یاد دادن کدهایتان به Antigravity](https://vibecodeschool.com/learn/ag-10-when-to-add-specialist)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/agents-md) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/agents-md.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

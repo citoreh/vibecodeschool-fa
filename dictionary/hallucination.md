@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Hallucination
+<div dir="rtl">
 
-> Output that is fluent, confident, and wrong: an invented API, a misquoted file, a test result that never happened.
+# توهم (hallucination)
 
-*§04 Failure Modes · also called: Confabulation, Fabrication · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/hallucination)*
+> خروجی‌ای روان، پراعتمادبه‌نفس و غلط: یک API ساختگی، نقل‌قولی نادرست از یک فایل، نتیجه‌ی تستی که هرگز اتفاق نیفتاده.
 
-A hallucination is confident model output with nothing real behind it. Because a [model](./model.md) produces text by [next-token prediction](./next-token-prediction.md), it will produce a plausible answer whether or not it has a basis for one; there is no built-in 'I don't know' unless the training or the prompt made room for it. In coding, that means a function that looks like it belongs to the library but doesn't, a flag that was never in the CLI, or a summary of a file that misstates what the file says.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: Confabulation، Fabrication · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/hallucination)*
 
-It helps to separate two kinds. The first is missing knowledge: the model reaches for a fact it never learned, or learned before the [knowledge cutoff](./knowledge-cutoff.md), and fills the gap. The second is drift from the [context](./context.md) it was given: the file is right there in the window, but the model paraphrases it wrong, usually late in a long session once [attention degradation](./attention-degradation.md) has set in. The first is fixed by loading a [primary source](./primary-source.md); the second by shortening the session.
+توهم خروجی پراعتمادبه‌نفسی از مدل است که هیچ چیز واقعی پشتش نیست. چون یک [مدل](./model.md) متن را با [پیش‌بینی توکن بعدی](./next-token-prediction.md) تولید می‌کند، یک پاسخ باورپذیر تولید خواهد کرد چه پایه‌ای برایش داشته باشد چه نه؛ هیچ «نمی‌دانم»ِ داخلی وجود ندارد مگر این‌که آموزش یا پرامپت جایی برایش باز کرده باشد. در کدنویسی، یعنی تابعی که به نظر می‌رسد مال آن کتابخانه است اما نیست، پرچمی که هرگز در ابزار خط فرمان نبوده، یا خلاصه‌ای از یک فایل که آنچه فایل می‌گوید را نادرست بیان می‌کند.
 
-The working defence is verification the model does not control. Have the agent run the code, not describe it; make a passing test the definition of done; ask for line-numbered citations when it claims a file says something. And treat the confident tone as noise: fluency and correctness are produced by the same mechanism, so one tells you nothing about the other.
+جدا کردن دو نوع کمک می‌کند. اول، دانشِ غایب: مدل سراغ واقعیتی می‌رود که هرگز یاد نگرفته، یا پیش از [تاریخ قطع دانش](./knowledge-cutoff.md) یاد گرفته، و شکاف را پر می‌کند. دوم، فاصله گرفتن از [زمینه‌ای](./context.md) که به آن داده شده: فایل همان‌جا در پنجره است، اما مدل آن را غلط بازگو می‌کند، معمولاً اواخر یک جلسه‌ی طولانی وقتی [افت توجه](./attention-degradation.md) آغاز شده. اولی با بارگذاری یک [منبع دست‌اول](./primary-source.md) حل می‌شود؛ دومی با کوتاه کردن جلسه.
 
-## In the tools
+دفاع کارآمد، راستی‌آزمایی‌ای است که مدل کنترلش نمی‌کند. بگویید ایجنت کد را اجرا کند، نه توصیفش؛ یک تست قبول‌شده را تعریف «تمام‌شده» قرار دهید؛ وقتی ادعا می‌کند فایلی چیزی می‌گوید، ارجاع با شماره‌ی خط بخواهید. و لحن پراعتمادبه‌نفس را نویز بدانید: روانی و درستی با یک سازوکار تولید می‌شوند، پس یکی چیزی درباره‌ی دیگری به شما نمی‌گوید.
 
-- Claude Code: web fetch and doc lookups put a real source into context; asking the agent to run the code catches invented APIs immediately.
-- Cursor: attaching a library's docs with `@Docs` gives the model the real surface to work from instead of its memory of it.
+## در ابزارها
 
-## In conversation
+- Claude Code: دریافت از وب و جست‌وجوی مستندات یک منبع واقعی را به زمینه می‌آورند؛ خواستن از ایجنت برای اجرای کد، APIهای ساختگی را فوراً می‌گیرد.
+- Cursor: پیوست کردن مستندات یک کتابخانه با `@Docs` سطح واقعی را به مدل می‌دهد تا به‌جای حافظه‌اش از آن کار کند.
 
-> “It used `db.upsertMany()` and swears it's in the ORM docs. It isn't.”
+## در گفت‌وگو
+
+> «از `db.upsertMany()` استفاده کرد و قسم می‌خورد در مستندات ORM هست. نیست.»
 >
-> “Hallucinated. Load the actual docs page into context and have it re-check every method it calls.”
+> «توهم است. صفحه‌ی واقعی مستندات را در زمینه بارگذاری کن و بگو همه‌ی متدهایی را که صدا می‌زند دوباره بررسی کند.»
 
-**Related:** [Sycophancy](./sycophancy.md) · [Parametric knowledge](./parametric-knowledge.md) · [Automated check](./automated-check.md)
+**مرتبط:** [چاپلوسی](./sycophancy.md) · [دانش پارامتری](./parametric-knowledge.md) · [بررسی خودکار](./automated-check.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Why Models Hallucinate](https://vibecodeschool.com/learn/pe-13-why-models-hallucinate)
-- [Course 05 · Calibration: Getting 'I Don't Know'](https://vibecodeschool.com/learn/pe-14-calibration-and-uncertainty)
+- [دوره‌ی ۰۵ · چرا مدل‌ها دچار توهم می‌شوند](https://vibecodeschool.com/learn/pe-13-why-models-hallucinate)
+- [دوره‌ی ۰۵ · تنظیم اطمینان: گرفتن «نمی‌دانم»](https://vibecodeschool.com/learn/pe-14-calibration-and-uncertainty)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/hallucination) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/hallucination.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

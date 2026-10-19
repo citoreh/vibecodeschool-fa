@@ -1,36 +1,42 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Attention degradation
+<div dir="rtl">
 
-> The slow drop in output quality as a session grows and every token's attention is spread across more competing material.
+# افت توجه (attention degradation)
 
-*§04 Failure Modes · also called: Context rot, Lost in the middle · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/attention-degradation)*
+> افت تدریجی کیفیت خروجی با بزرگ شدن جلسه، وقتی توجه هر توکن میان مطالب رقیب بیشتری پخش می‌شود.
 
-Attention degradation is what happens to a [model's](./model.md) output as the [context window](./context-window.md) fills. Each [token](./token.md) has a fixed [attention budget](./attention-budget.md); as the [session](./session.md) accumulates file reads, test logs and old plans, that budget gets split across ever more tokens, and the signal on the pairs that matter thins out. The model is not tired or broken. It is doing the same computation over a worse ratio of relevant to irrelevant material.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: Context rot، Lost in the middle · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/attention-degradation)*
 
-You notice it as a slide rather than a break. Answers get more generic, an earlier instruction is quietly dropped, a mistake it fixed at turn ten comes back at turn thirty, and it starts describing files slightly wrong even though they are right there in the window. Because the decline is gradual there is no error to react to, and the instinct to keep going and re-explain adds more [context](./context.md) and speeds the slide.
+افت توجه اتفاقی است که با پر شدن [پنجره‌ی زمینه](./context-window.md) برای خروجی یک [مدل](./model.md) می‌افتد. هر [توکن](./token.md) یک [بودجه‌ی توجهِ](./attention-budget.md) ثابت دارد؛ وقتی [جلسه](./session.md) خواندن فایل‌ها، لاگ‌های تست و برنامه‌های قدیمی را انباشته می‌کند، آن بودجه میان توکن‌های همیشه بیشتری تقسیم می‌شود، و سیگنال روی جفت‌هایی که مهم‌اند رقیق می‌شود. مدل خسته یا خراب نیست. همان محاسبه را روی نسبت بدتری از مطالب مرتبط به نامرتبط انجام می‌دهد.
 
-The remedy is unglamorous: keep sessions short and tasks bounded, [compact](./compaction.md) at natural checkpoints, and start a fresh session with a written [handoff](./handoff.md) when the current one is deep in the murk. Bigger windows delay the onset but do not remove it; the useful working length of a session is well short of its maximum.
+آن را به شکل لغزش حس می‌کنید، نه شکستگی. پاسخ‌ها کلی‌تر می‌شوند، یک دستور قبلی بی‌صدا کنار گذاشته می‌شود، اشتباهی که در نوبت دهم رفع کرده بود در نوبت سی‌ام برمی‌گردد، و شروع می‌کند فایل‌ها را کمی نادرست توصیف کند هرچند همان‌جا در پنجره‌اند. چون افت تدریجی است، خطایی نیست که به آن واکنش نشان دهید، و غریزه‌ی ادامه دادن و دوباره توضیح دادن [زمینه‌ی](./context.md) بیشتری اضافه می‌کند و لغزش را سریع‌تر می‌کند.
 
-## In the tools
+درمانش پرزرق‌وبرق نیست: جلسه‌ها را کوتاه و کارها را محدود نگه دارید، در نقطه‌های طبیعی [فشرده‌سازی](./compaction.md) کنید، و وقتی جلسه‌ی فعلی در عمق تیرگی فرو رفته، با یک [تحویل کارِ](./handoff.md) نوشته‌شده جلسه‌ای تازه شروع کنید. پنجره‌های بزرگ‌تر شروعش را عقب می‌اندازند اما حذفش نمی‌کنند؛ طول کاری مفید یک جلسه خیلی کوتاه‌تر از حداکثر آن است.
 
-- Claude Code: the context indicator and `/context` show how full the window is; `/compact` and `/clear` are the two recovery moves.
-- Antigravity: long-running agents can be handed a fresh task with a summary rather than continued indefinitely in one thread.
+## در ابزارها
 
-## In conversation
+- Claude Code: نشانگر زمینه و `/context` نشان می‌دهند پنجره چقدر پر است؛ `/compact` و `/clear` دو حرکت بازیابی‌اند.
+- Antigravity: به ایجنت‌های طولانی‌مدت می‌شود به‌جای ادامه‌ی بی‌پایان در یک رشته، یک کار تازه همراه با یک خلاصه داد.
 
-> “Same prompt, same repo. Two hours in and it's producing junk it would never have written at the start.”
+## در گفت‌وگو
+
+> «همان پرامپت، همان مخزن. دو ساعت گذشته و چیزهای به‌دردنخوری تولید می‌کند که اول کار هرگز نمی‌نوشت.»
 >
-> “Attention degradation. The window's mostly logs now. Write down where you are, clear, and reload just the plan.”
+> «افت توجه. پنجره حالا بیشترش لاگ است. بنویس کجای کاری، پاک کن، و فقط برنامه را دوباره بارگذاری کن.»
 
-**Related:** [Smart zone](./smart-zone.md) · [Attention relationship](./attention-relationship.md) · [Clearing](./clearing.md)
+**مرتبط:** [منطقه‌ی هوشمند](./smart-zone.md) · [رابطه‌ی توجه](./attention-relationship.md) · [پاک‌سازی جلسه](./clearing.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/attention-degradation) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/attention-degradation.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

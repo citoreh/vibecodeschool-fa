@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Attention budget
+<div dir="rtl">
 
-> The fixed amount of focus each token can spread across the rest of the context; more context means thinner slices.
+# بودجه‌ی توجه (attention budget)
 
-*§04 Failure Modes · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/attention-budget)*
+> مقدار ثابتی از تمرکز که هر توکن می‌تواند میان بقیه‌ی زمینه پخش کند؛ زمینه‌ی بیشتر یعنی سهم‌های نازک‌تر.
 
-The attention budget is the finite amount of influence a [token](./token.md) has to distribute over every other token in the [context window](./context-window.md). The weights across all of its [attention relationships](./attention-relationship.md) add up to a fixed total, so when the [context](./context.md) grows, each token's budget is divided among more candidates. A short, focused request lets the important tokens spend most of their budget on each other; a bloated one spreads the same budget across thousands of bystanders.
+*§۰۴ حالت‌های شکست · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/attention-budget)*
 
-This is why you can have a fact plainly in the window and still get an answer that ignores it. The instruction you gave in message three is still present, but by turn forty it is competing with a mountain of file contents and command output for the [model's](./model.md) attention, and it loses a little on every request. The instruction was not forgotten; it was outvoted.
+بودجه‌ی توجه مقدار محدودی از تأثیر است که یک [توکن](./token.md) باید میان همه‌ی توکن‌های دیگر در [پنجره‌ی زمینه](./context-window.md) تقسیم کند. وزن‌ها در همه‌ی [رابطه‌های توجهِ](./attention-relationship.md) آن جمعاً به مقدار ثابتی می‌رسند، پس وقتی [زمینه](./context.md) بزرگ می‌شود، بودجه‌ی هر توکن میان نامزدهای بیشتری تقسیم می‌شود. یک درخواست کوتاه و متمرکز اجازه می‌دهد توکن‌های مهم بیشتر بودجه‌شان را صرف یکدیگر کنند؛ یک درخواست پرحجم همان بودجه را میان هزاران تماشاگر پخش می‌کند.
 
-Spend the budget on purpose. Load fewer, more relevant files; summarise noisy output before it enters the transcript; restate the one rule that matters in the message where it matters, rather than trusting a rule from an hour ago to still carry weight. When a session has grown past the point where focus holds, [clearing](./clearing.md) or [compaction](./compaction.md) resets the budget.
+به همین دلیل ممکن است واقعیتی آشکارا در پنجره باشد و باز پاسخی بگیرید که نادیده‌اش می‌گیرد. دستوری که در پیام سوم دادید هنوز حاضر است، اما تا نوبت چهلم با کوهی از محتوای فایل‌ها و خروجی دستورها بر سر توجه [مدل](./model.md) رقابت می‌کند، و در هر درخواست کمی می‌بازد. دستور فراموش نشده؛ رأی‌اش کم آمده.
 
-## In the tools
+بودجه را آگاهانه خرج کنید. فایل‌های کمتر و مرتبط‌تر بارگذاری کنید؛ خروجی پرسروصدا را پیش از ورود به متن گفت‌وگو خلاصه کنید؛ آن یک قاعده‌ی مهم را در همان پیامی که مهم است دوباره بگویید، به‌جای اعتماد به این‌که قاعده‌ای از یک ساعت پیش هنوز وزن دارد. وقتی یک جلسه از نقطه‌ای که تمرکز پابرجاست فراتر رفته، [پاک‌سازی جلسه](./clearing.md) یا [فشرده‌سازی](./compaction.md) بودجه را از نو تنظیم می‌کند.
 
-- Claude Code: `/context` shows what is competing for attention right now; `/compact` with a focus instruction keeps the parts you name.
-- Most tools: rules in a project instruction file are re-sent near the front of every request, which is why they hold up better than chat messages.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/context` نشان می‌دهد همین حالا چه چیزی بر سر توجه رقابت می‌کند؛ `/compact` با یک دستور تمرکز، بخش‌هایی را که نام می‌برید نگه می‌دارد.
+- بیشتر ابزارها: قاعده‌های فایل دستورالعمل پروژه در هر درخواست نزدیک ابتدا دوباره فرستاده می‌شوند، و برای همین بهتر از پیام‌های گفت‌وگو دوام می‌آورند.
 
-> “I put 'never edit the migrations folder' in my first message and it just edited a migration.”
+## در گفت‌وگو
+
+> «در اولین پیامم نوشتم «هرگز پوشه‌ی migrations را ویرایش نکن» و همین الان یک مهاجرت را ویرایش کرد.»
 >
-> “Forty turns later that line is a tiny slice of the attention budget. Repeat the rule where it counts, or put it in CLAUDE.md.”
+> «چهل نوبت بعد، آن خط سهم ناچیزی از بودجه‌ی توجه است. قاعده را جایی که اهمیت دارد تکرار کن، یا در CLAUDE.md بگذار.»
 
-**Related:** [Attention degradation](./attention-degradation.md) · [Smart zone](./smart-zone.md) · [AGENTS.md](./agents-md.md)
+**مرتبط:** [افت توجه](./attention-degradation.md) · [منطقه‌ی هوشمند](./smart-zone.md) · [AGENTS.md](./agents-md.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
-- [Course 04 · Context Engineering](https://vibecodeschool.com/learn/aa-06-context-engineering)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۴ · مهندسی زمینه](https://vibecodeschool.com/learn/aa-06-context-engineering)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/attention-budget) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/attention-budget.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Context engineering
+<div dir="rtl">
 
-> Deciding what goes into the context window, when, and in what order, so the agent sees what the task needs and nothing else.
+# مهندسی زمینه (context engineering)
 
-*§06 Memory & Steering · also called: Context management, Context curation · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/context-engineering)*
+> تصمیم‌گیری درباره‌ی این‌که چه چیزی، کی و به چه ترتیبی وارد پنجره‌ی زمینه شود، تا ایجنت آنچه کار لازم دارد را ببیند و نه چیز دیگری.
 
-Context engineering is the discipline of choosing what the [model](./model.md) sees on each request: which instructions, which files, which [tool results](./tool-result.md), which examples, and how much history. Where prompt engineering is about the wording of a request, context engineering is about the selection, ordering, timing, and budget of everything around it. The [context window](./context-window.md) is finite and every [token](./token.md) in it competes for the model's [attention](./attention-budget.md), so what you leave out matters as much as what you put in.
+*§۰۶ حافظه و هدایت · نام‌های دیگر: Context management، Context curation · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/context-engineering)*
 
-Most bad sessions are context problems, not model problems. The agent read the wrong files, or all the files, or a stale summary; the instructions file is a novel; the useful constraint is buried under three hundred lines of test output. The same model with a well-shaped window behaves like a different, sharper tool, which is why two people on the same harness get such different results.
+مهندسی زمینه انضباطِ انتخاب چیزی است که [مدل](./model.md) در هر درخواست می‌بیند: کدام دستورها، کدام فایل‌ها، کدام [نتیجه‌های ابزار](./tool-result.md)، کدام مثال‌ها، و چقدر از تاریخچه. اگر مهندسی پرامپت درباره‌ی واژه‌بندی یک درخواست است، مهندسی زمینه درباره‌ی گزینش، ترتیب، زمان‌بندی و بودجه‌ی هر چیزی است که دور آن قرار می‌گیرد. [پنجره‌ی زمینه](./context-window.md) محدود است و هر [توکن](./token.md) در آن بر سر [توجه](./attention-budget.md) مدل رقابت می‌کند، پس آنچه کنار می‌گذارید به همان اندازه‌ی آنچه می‌گذارید مهم است.
 
-The practical moves are simple. Point instead of paste: a [context pointer](./context-pointer.md) beats a wall of text. Load on demand through tools rather than up front. Keep [AGENTS.md](./agents-md.md) short and let [progressive disclosure](./progressive-disclosure.md) carry the rest. [Clear](./clearing.md) between tasks so one task's debris does not fill the next task's window. Push bulky work, like a large search or a log read, into a [subagent](./subagent.md) whose context is thrown away when it reports back. Treat the window as a budget you spend on purpose.
+بیشتر جلسه‌های بد مشکل زمینه‌اند، نه مشکل مدل. ایجنت فایل‌های اشتباه را خوانده، یا همه‌ی فایل‌ها را، یا یک خلاصه‌ی کهنه را؛ فایل دستورالعمل یک رمان است؛ قید مفید زیر سیصد خط خروجی تست دفن شده. همان مدل با پنجره‌ای خوش‌شکل مثل ابزاری متفاوت و تیزتر رفتار می‌کند، و برای همین دو نفر روی یک هارنس این‌قدر نتیجه‌های متفاوتی می‌گیرند.
 
-## In the tools
+حرکت‌های عملی ساده‌اند. اشاره کنید، نچسبانید: یک [اشاره‌گر زمینه](./context-pointer.md) از دیواری از متن بهتر است. از طریق ابزارها هر وقت لازم شد بارگذاری کنید، نه از ابتدا. [AGENTS.md](./agents-md.md) را کوتاه نگه دارید و بگذارید [افشای تدریجی](./progressive-disclosure.md) بقیه را حمل کند. میان کارها [پاک‌سازی](./clearing.md) کنید تا آوار یک کار پنجره‌ی کار بعدی را پر نکند. کارهای حجیم، مثل یک جست‌وجوی بزرگ یا خواندن یک لاگ، را به یک [زیرایجنت](./subagent.md) بسپارید که زمینه‌اش وقتی گزارش داد دور ریخته می‌شود. پنجره را بودجه‌ای بدانید که آگاهانه خرجش می‌کنید.
 
-- Claude Code: subagents, `/clear`, `/compact` with instructions, and `@file` mentions are the everyday context-engineering controls.
-- Antigravity: the knowledge base and per-task workspaces decide what each agent sees; keep tasks scoped so each window stays small.
-- Codex: `AGENTS.md` scoping by directory keeps instructions local to the code they apply to.
+## در ابزارها
 
-## In conversation
+- Claude Code: زیرایجنت‌ها، `/clear`، `/compact` همراه با دستورالعمل، و اشاره‌های `@file` کنترل‌های روزمره‌ی مهندسی زمینه‌اند.
+- Antigravity: پایگاه دانش و فضاهای کاری هر کار تعیین می‌کنند هر ایجنت چه می‌بیند؛ کارها را محدود نگه دارید تا هر پنجره کوچک بماند.
+- Codex: محدود کردن `AGENTS.md` بر اساس پوشه، دستورالعمل‌ها را کنار همان کدی نگه می‌دارد که به آن مربوط‌اند.
 
-> “I gave it everything: the whole repo, the design doc, the old thread. It's worse than before.”
+## در گفت‌وگو
+
+> «همه چیز را به آن دادم: کل مخزن، سند طراحی، رشته‌ی گفت‌وگوی قدیمی. از قبل بدتر شده.»
 >
-> “That's a context engineering problem. You filled the window with things it has to read past.”
+> «این یک مشکل مهندسی زمینه است. پنجره را با چیزهایی پر کردی که باید از رویشان رد شود.»
 >
-> “So what do I include?”
+> «پس چه چیزی را بگذارم؟»
 >
-> “The two files it will edit, the test that should pass, and a pointer to the doc. Let it fetch anything else.”
+> «دو فایلی که ویرایش خواهد کرد، تستی که باید قبول شود، و یک اشاره‌گر به سند. بگذار هر چیز دیگری را خودش دریافت کند.»
 
-**Related:** [Harness engineering](./harness-engineering.md) · [Smart zone](./smart-zone.md) · [Handoff](./handoff.md)
+**مرتبط:** [مهندسی هارنس](./harness-engineering.md) · [منطقه‌ی هوشمند](./smart-zone.md) · [تحویل کار](./handoff.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · Context Engineering](https://vibecodeschool.com/learn/aa-06-context-engineering)
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۴ · مهندسی زمینه](https://vibecodeschool.com/learn/aa-06-context-engineering)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/context-engineering) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/context-engineering.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

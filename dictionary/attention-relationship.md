@@ -1,35 +1,41 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Attention relationship
+<div dir="rtl">
 
-> The link between any two tokens in the context; the model weighs each pair, and there are far more pairs than tokens.
+# رابطه‌ی توجه (attention relationship)
 
-*§04 Failure Modes · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/attention-relationship)*
+> پیوند میان هر دو توکن در زمینه؛ مدل هر جفت را می‌سنجد، و تعداد جفت‌ها بسیار بیشتر از توکن‌هاست.
 
-An attention relationship is the connection between two [tokens](./token.md) in the [context window](./context-window.md). When a [model](./model.md) processes a request, each token looks at every other token and assigns it a weight: how much does that one matter for understanding this one? The variable name on line 40 and its declaration on line 3 have a strong relationship; the variable and a log line from an unrelated test run have a weak one. This pairwise weighing is the attention mechanism that transformers are built on.
+*§۰۴ حالت‌های شکست · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/attention-relationship)*
 
-The number of relationships grows much faster than the context does. Double the tokens and you roughly quadruple the pairs the model has to sort through, and the pairs that carry real meaning (a bug and its cause, a rule and the code it governs) become a smaller and smaller share of the total. Nothing about the important pairs got weaker; they are simply outnumbered.
+رابطه‌ی توجه پیوند میان دو [توکن](./token.md) در [پنجره‌ی زمینه](./context-window.md) است. وقتی یک [مدل](./model.md) درخواستی را پردازش می‌کند، هر توکن به هر توکن دیگر نگاه می‌کند و به آن وزنی می‌دهد: آن یکی برای فهمیدن این یکی چقدر اهمیت دارد؟ نام متغیر در خط ۴۰ و تعریفش در خط ۳ رابطه‌ی قوی‌ای دارند؛ همان متغیر و یک خط لاگ از یک اجرای تست نامربوط رابطه‌ی ضعیفی دارند. این سنجش جفت‌به‌جفت همان سازوکار توجه (attention) است که ترنسفورمرها بر آن ساخته شده‌اند.
 
-You do not manage attention relationships directly, but you shape them by what you load. A tight [context](./context.md) with only the relevant files keeps the meaningful pairs dense; a sprawling session with dozens of unrelated reads buries them. This is the mechanism underneath [attention budget](./attention-budget.md) and [attention degradation](./attention-degradation.md), and the reason 'just load more' so often makes results worse.
+تعداد رابطه‌ها خیلی سریع‌تر از خود زمینه رشد می‌کند. توکن‌ها را دو برابر کنید و جفت‌هایی که مدل باید میانشان بگردد تقریباً چهار برابر می‌شوند، و جفت‌هایی که معنای واقعی دارند (یک باگ و علتش، یک قاعده و کدی که بر آن حاکم است) سهم کوچک‌تر و کوچک‌تری از کل می‌شوند. هیچ چیز در جفت‌های مهم ضعیف‌تر نشده؛ فقط در اقلیت افتاده‌اند.
 
-## In the tools
+رابطه‌های توجه را مستقیم مدیریت نمی‌کنید، اما با آنچه بارگذاری می‌کنید شکلشان می‌دهید. یک [زمینه‌ی](./context.md) فشرده که فقط فایل‌های مرتبط را دارد جفت‌های معنادار را متراکم نگه می‌دارد؛ یک جلسه‌ی پراکنده با ده‌ها خواندن نامربوط دفنشان می‌کند. این سازوکارِ زیرِ [بودجه‌ی توجه](./attention-budget.md) و [افت توجه](./attention-degradation.md) است، و دلیل این‌که «فقط بیشتر بارگذاری کن» این‌قدر اغلب نتیجه را بدتر می‌کند.
 
-- Most tools: there is no dial for this; the lever you have is what you put in the window and how long you let a session run.
+## در ابزارها
 
-## In conversation
+- بیشتر ابزارها: هیچ پیچ تنظیمی برای این نیست؛ اهرمی که دارید این است که چه چیزی در پنجره می‌گذارید و چقدر اجازه می‌دهید یک جلسه طول بکشد.
 
-> “The bug report is in the context and so is the buggy function. Why can't it connect them?”
+## در گفت‌وگو
+
+> «گزارش باگ در زمینه است و تابع معیوب هم. چرا نمی‌تواند این دو را به هم وصل کند؟»
 >
-> “There's eighty thousand tokens of unrelated test output between them. The attention relationship is still there; it's just one pair among millions now.”
+> «هشتاد هزار توکن خروجی تست نامربوط میانشان است. رابطه‌ی توجه هنوز هست؛ فقط حالا یک جفت میان میلیون‌ها جفت است.»
 
-**Related:** [Smart zone](./smart-zone.md) · [Training](./training.md) · [Next-token prediction](./next-token-prediction.md)
+**مرتبط:** [منطقه‌ی هوشمند](./smart-zone.md) · [آموزش مدل](./training.md) · [پیش‌بینی توکن بعدی](./next-token-prediction.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/attention-relationship) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/attention-relationship.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

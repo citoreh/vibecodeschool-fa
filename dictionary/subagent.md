@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Subagent
+<div dir="rtl">
 
-> A separate agent the main agent spins up for a bounded task, with its own context window; only its final report comes back.
+# زیرایجنت (subagent)
 
-*§06 Memory & Steering · also called: Sub-agent, Agent tool, Child agent · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/subagent)*
+> ایجنتی جداگانه که ایجنت اصلی برای یک کار محدود راه می‌اندازد، با پنجره‌ی زمینه‌ی خودش؛ فقط گزارش نهایی‌اش برمی‌گردد.
 
-A subagent is an [agent](./agent.md) launched by another agent to handle a bounded piece of work. It runs with its own [context window](./context-window.md), often its own [system prompt](./system-prompt.md) and [tool](./tool.md) list, does the job, and returns a short report. The parent never sees the subagent's intermediate steps: the twenty file reads, the failed searches, the log dumps all stay in the child's window and are discarded when it finishes. Only the conclusion crosses back.
+*§۰۶ حافظه و هدایت · نام‌های دیگر: Sub-agent، Agent tool، Child agent · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/subagent)*
 
-This is mostly a [context engineering](./context-engineering.md) tool. A search across a large repo can pull thousands of lines into [context](./context.md); done in a subagent, the parent pays for a paragraph. It also enables parallelism, with several subagents working different parts of a task at once. The costs are real too: each subagent starts from zero, so it needs a self-contained brief, and it cannot see what the parent has already learned unless the parent tells it.
+زیرایجنت [ایجنتی](./agent.md) است که ایجنت دیگری برای انجام یک تکه‌کار محدود راه می‌اندازد. با [پنجره‌ی زمینه‌ی](./context-window.md) خودش اجرا می‌شود، اغلب با [پرامپت سیستمی](./system-prompt.md) و فهرست [ابزارهای](./tool.md) خودش، کار را انجام می‌دهد و یک گزارش کوتاه برمی‌گرداند. والد هرگز گام‌های میانی زیرایجنت را نمی‌بیند: بیست بار خواندن فایل، جست‌وجوهای ناموفق، لاگ‌های ریخته‌شده، همه در پنجره‌ی فرزند می‌مانند و وقتی تمام شد دور ریخته می‌شوند. فقط نتیجه‌گیری برمی‌گردد.
 
-Delegate work whose output is a conclusion, not a conversation: research, broad searches, independent reviews, isolated implementation in a [worktree](./worktree.md). Write the brief as if for a new hire with no history, including what done looks like. Keep tight, sequential edits in the main session where the state lives. Verify what comes back: a subagent can be confidently wrong, and the parent has no transcript to check, only the report.
+این بیشتر یک ابزار [مهندسی زمینه](./context-engineering.md) است. یک جست‌وجو در یک مخزن بزرگ می‌تواند هزاران خط را به [زمینه](./context.md) بکشد؛ اگر در یک زیرایجنت انجام شود، والد بهای یک پاراگراف را می‌پردازد. موازی‌کاری را هم ممکن می‌کند، با چند زیرایجنت که هم‌زمان روی بخش‌های مختلف یک کار کار می‌کنند. هزینه‌هایش هم واقعی‌اند: هر زیرایجنت از صفر شروع می‌کند، پس به شرح کاری خودبسنده نیاز دارد، و نمی‌تواند آنچه والد تا این‌جا یاد گرفته را ببیند مگر این‌که والد به او بگوید.
 
-## In the tools
+کاری را بسپارید که خروجی‌اش یک نتیجه‌گیری است، نه یک گفت‌وگو: پژوهش، جست‌وجوهای گسترده، بازبینی‌های مستقل، پیاده‌سازی ایزوله در یک [ورک‌تری](./worktree.md). شرح کار را طوری بنویسید که انگار برای یک کارمند تازه‌وارد بدون هیچ سابقه‌ای است، از جمله این‌که «تمام‌شده» چه شکلی است. ویرایش‌های فشرده و پشت‌سرهم را در جلسه‌ی اصلی نگه دارید، جایی که وضعیت زندگی می‌کند. آنچه برمی‌گردد را راستی‌آزمایی کنید: یک زیرایجنت می‌تواند با اعتمادبه‌نفس اشتباه کند، و والد هیچ متن گفت‌وگویی برای بررسی ندارد، فقط گزارش.
 
-- Claude Code: the Agent tool launches subagents; custom ones are defined in `.claude/agents/` with their own prompt, tools, and model.
-- Antigravity: the agent manager runs multiple agents across workspaces; each is effectively a subagent you supervise from the inbox.
-- Codex: cloud tasks can be fanned out as parallel runs; each run is isolated like a subagent.
+## در ابزارها
 
-## In conversation
+- Claude Code: ابزار Agent زیرایجنت‌ها را راه می‌اندازد؛ زیرایجنت‌های سفارشی در `.claude/agents/` با پرامپت، ابزارها و مدل خودشان تعریف می‌شوند.
+- Antigravity: مدیر ایجنت چند ایجنت را در فضاهای کاری مختلف اجرا می‌کند؛ هر کدام در عمل زیرایجنتی است که از صندوق ورودی بر آن نظارت می‌کنید.
+- Codex: کارهای ابری را می‌شود به‌صورت اجراهای موازی پخش کرد؛ هر اجرا مثل یک زیرایجنت ایزوله است.
 
-> “The main session is bloating every time it searches the monorepo.”
+## در گفت‌وگو
+
+> «جلسه‌ی اصلی هر بار که در مونوریپو جست‌وجو می‌کند باد می‌کند.»
 >
-> “Push the search into a subagent. It reads everything, you get back the six files that matter.”
+> «جست‌وجو را به یک زیرایجنت بسپار. همه چیز را می‌خواند، تو شش فایلی را که مهم‌اند پس می‌گیری.»
 >
-> “Does it know what we've decided so far?”
+> «می‌داند تا این‌جا چه تصمیم‌هایی گرفته‌ایم؟»
 >
-> “Only what's in the brief. Give it the question and the constraints, nothing else needed.”
+> «فقط آنچه در شرح کار هست. پرسش و قیدها را به او بده، چیز دیگری لازم نیست.»
 
-**Related:** [AFK](./afk.md) · [Handoff artifact](./handoff-artifact.md) · [Sandbox](./sandbox.md)
+**مرتبط:** [AFK — دور از کیبورد](./afk.md) · [یادداشت تحویل](./handoff-artifact.md) · [سندباکس](./sandbox.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Subagents and the Agent Tool](https://vibecodeschool.com/learn/cc-14-subagents)
-- [Course 03 · Parallel Agents Across Workspaces](https://vibecodeschool.com/learn/ag-12-fan-out-fan-in)
+- [دوره‌ی ۰۱ · زیرایجنت‌ها و ابزار Agent](https://vibecodeschool.com/learn/cc-14-subagents)
+- [دوره‌ی ۰۳ · ایجنت‌های موازی در فضاهای کاری مختلف](https://vibecodeschool.com/learn/ag-12-fan-out-fan-in)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/subagent) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/subagent.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

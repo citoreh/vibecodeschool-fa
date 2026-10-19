@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Skill
+<div dir="rtl">
 
-> A named, reusable procedure the agent loads on demand: a folder of instructions and optional scripts, used when a task matches.
+# مهارت (skill)
 
-*§06 Memory & Steering · also called: Agent skill, SKILL.md, Skills · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/skill)*
+> رویه‌ای نام‌دار و قابل استفاده‌ی دوباره که ایجنت هر وقت لازم شد بارگذاری‌اش می‌کند: پوشه‌ای از دستورالعمل‌ها و اسکریپت‌های اختیاری، که وقتی کاری با آن جور باشد به کار می‌رود.
 
-A skill is a packaged procedure an [agent](./agent.md) can pick up when a task calls for it. In practice it is a folder with a `SKILL.md` describing what the skill does and when to use it, followed by the step-by-step instructions, and sometimes scripts or templates alongside. The [harness](./harness.md) shows the agent only the name and description until the skill is invoked, then loads the body into [context](./context.md). That makes skills a working example of [progressive disclosure](./progressive-disclosure.md).
+*§۰۶ حافظه و هدایت · نام‌های دیگر: Agent skill، SKILL.md، Skills · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/skill)*
 
-Skills exist because repeated instructions rot in chat. A deploy procedure you explain in a prompt is gone when the [session](./session.md) ends, and the version you paste next week drifts from the version you pasted last week. Putting it in a skill gives it a home, a name, and a single place to fix. The failure mode is the same as with [AGENTS.md](./agents-md.md): skills that try to do too much, or ten near-duplicate skills whose descriptions blur together so the agent picks the wrong one.
+مهارت رویه‌ای بسته‌بندی‌شده است که یک [ایجنت](./agent.md) وقتی کاری آن را بطلبد برمی‌دارد. در عمل یک پوشه است با یک `SKILL.md` که توضیح می‌دهد مهارت چه می‌کند و کی باید از آن استفاده شود، و پس از آن دستورالعمل گام‌به‌گام، و گاهی اسکریپت‌ها یا قالب‌هایی کنارش. [هارنس](./harness.md) تا وقتی مهارت فراخوانده نشده فقط نام و توضیحش را به ایجنت نشان می‌دهد، و بعد متنش را در [زمینه](./context.md) بارگذاری می‌کند. همین مهارت‌ها را نمونه‌ی کارای [افشای تدریجی](./progressive-disclosure.md) می‌کند.
 
-Write a skill for anything you have explained twice. Keep the description specific enough that the agent can tell when it applies. Put deterministic steps in scripts the skill can run, and keep the prose for judgment calls. Skills differ from a [slash command](./slash-command.md), which you trigger by hand, in that the agent can choose to use a skill itself, and from a [subagent](./subagent.md) in that a skill runs inside the current session's context rather than in a separate one.
+مهارت‌ها وجود دارند چون دستورالعمل‌های تکراری در گفت‌وگو می‌پوسند. رویه‌ی دیپلویی که در یک پرامپت توضیح می‌دهید با پایان [جلسه](./session.md) از بین می‌رود، و نسخه‌ای که هفته‌ی بعد می‌چسبانید با نسخه‌ی هفته‌ی پیش فاصله می‌گیرد. گذاشتنش در یک مهارت به آن یک خانه، یک نام و یک جای واحد برای اصلاح می‌دهد. حالت شکست همان است که با [AGENTS.md](./agents-md.md): مهارت‌هایی که می‌خواهند بیش از حد کار کنند، یا ده مهارت تقریباً تکراری که توضیحاتشان در هم محو می‌شود و ایجنت اشتباه انتخاب می‌کند.
 
-## In the tools
+برای هر چیزی که دو بار توضیحش داده‌اید یک مهارت بنویسید. توضیحش را آن‌قدر مشخص نگه دارید که ایجنت بتواند بفهمد کی کاربرد دارد. گام‌های قطعی را در اسکریپت‌هایی بگذارید که مهارت بتواند اجرایشان کند، و نثر را برای تصمیم‌های قضاوتی نگه دارید. فرق مهارت با یک [دستور اسلش](./slash-command.md)، که دستی فعالش می‌کنید، این است که ایجنت می‌تواند خودش تصمیم به استفاده از مهارت بگیرد؛ و فرقش با یک [زیرایجنت](./subagent.md) این است که مهارت درون زمینه‌ی جلسه‌ی جاری اجرا می‌شود، نه در یک زمینه‌ی جدا.
 
-- Claude Code: skills live in `.claude/skills/<name>/SKILL.md` (project) or `~/.claude/skills/` (personal), invoked by name or chosen by the agent.
-- Claude Cowork: skills teach it your way of doing a job, such as how your team formats a weekly report.
-- Codex: recent versions read the same `SKILL.md` convention from a skills directory; check your version's docs for the path.
+## در ابزارها
 
-## In conversation
+- Claude Code: مهارت‌ها در `.claude/skills/<name>/SKILL.md` (پروژه) یا `~/.claude/skills/` (شخصی) زندگی می‌کنند، و با نام فراخوانده می‌شوند یا ایجنت انتخابشان می‌کند.
+- Claude Cowork: مهارت‌ها روش انجام یک کار را به آن یاد می‌دهند، مثلاً این‌که تیم شما گزارش هفتگی را چطور قالب‌بندی می‌کند.
+- Codex: نسخه‌های اخیر همان قرارداد `SKILL.md` را از یک پوشه‌ی مهارت‌ها می‌خوانند؛ مسیر را در مستندات نسخه‌ی خودتان بررسی کنید.
 
-> “Every release I re-explain the changelog format and it still gets it slightly wrong.”
+## در گفت‌وگو
+
+> «هر انتشار قالب changelog را دوباره توضیح می‌دهم و هنوز کمی اشتباهش می‌کند.»
 >
-> “Make it a skill. Description: 'writing release notes'. Body: the format, the sections, one example.”
+> «یک مهارت از آن بساز. توضیح: «نوشتن یادداشت‌های انتشار». متن: قالب، بخش‌ها، یک مثال.»
 >
-> “Do I have to invoke it?”
+> «باید فراخوانی‌اش کنم؟»
 >
-> “You can with a slash, but it'll also pick it up on its own when you say 'draft the release notes'.”
+> «می‌توانی با یک اسلش، اما وقتی بگویی «یادداشت‌های انتشار را پیش‌نویس کن» خودش هم سراغش می‌رود.»
 
-**Related:** [MCP](./mcp.md) · [Hooks](./hooks.md) · [Context engineering](./context-engineering.md)
+**مرتبط:** [MCP](./mcp.md) · [هوک‌ها](./hooks.md) · [مهندسی زمینه](./context-engineering.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Agent Skills](https://vibecodeschool.com/learn/cc-28-agent-skills)
-- [Course 06 · Skills: Teach It Your Way of Working](https://vibecodeschool.com/learn/cw-11-skills-teach-it-your-way)
+- [دوره‌ی ۰۱ · مهارت‌های ایجنت](https://vibecodeschool.com/learn/cc-28-agent-skills)
+- [دوره‌ی ۰۶ · مهارت‌ها: روش کارتان را یادش بدهید](https://vibecodeschool.com/learn/cw-11-skills-teach-it-your-way)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/skill) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/skill.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

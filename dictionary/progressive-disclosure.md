@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Progressive disclosure
+<div dir="rtl">
 
-> Giving the agent a short index up front and letting it load the detail only when a task calls for it.
+# افشای تدریجی (progressive disclosure)
 
-*§06 Memory & Steering · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/progressive-disclosure)*
+> دادن یک فهرست کوتاه به ایجنت در ابتدا و اجازه دادن به او که جزئیات را فقط وقتی کاری آن را می‌طلبد بارگذاری کند.
 
-Progressive disclosure is the practice of exposing information in layers: a brief summary that is always present, with the full material available on request. In an agent setting, the top layer lives in [AGENTS.md](./agents-md.md) or a [skill](./skill.md)'s description and costs a few lines of [context](./context.md). The lower layers are files, docs, and tools the [agent](./agent.md) reads only when the task turns out to need them. The name comes from interface design, where menus hide advanced options until you ask.
+*§۰۶ حافظه و هدایت · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/progressive-disclosure)*
 
-The alternative is loading everything up front, which fails in two directions. The [context window](./context-window.md) fills with material the task never touches, and the [attention budget](./attention-budget.md) that should go to the task is spread across pages of irrelevant setup. Sessions that start slow and sloppy often have a thousand-line instructions file as the cause, not the [model](./model.md).
+افشای تدریجی یعنی نمایش اطلاعات در لایه‌ها: خلاصه‌ای کوتاه که همیشه حاضر است، و مطلب کامل که با درخواست در دسترس است. در فضای ایجنت، لایه‌ی بالا در [AGENTS.md](./agents-md.md) یا توضیح یک [مهارت](./skill.md) زندگی می‌کند و چند خط [زمینه](./context.md) هزینه دارد. لایه‌های پایین‌تر فایل‌ها، مستندات و ابزارهایی‌اند که [ایجنت](./agent.md) فقط وقتی معلوم شود کار لازمشان دارد می‌خواند. نامش از طراحی رابط کاربری می‌آید، جایی که منوها گزینه‌های پیشرفته را تا وقتی نخواسته‌اید پنهان می‌کنند.
 
-Structure your instructions as a map, not a manual. The always-loaded file says what exists and when to read it: “deployment steps are in docs/deploy.md; read it before touching infra.” That line is a [context pointer](./context-pointer.md). Skills work the same way, with a one-line description in the index and the full procedure loaded on invocation. The agent stays sharp because it only pays for what it uses.
+جایگزینش بارگذاری همه چیز در ابتداست، که از دو سو شکست می‌خورد. [پنجره‌ی زمینه](./context-window.md) با مطالبی پر می‌شود که کار هرگز به آن‌ها دست نمی‌زند، و [بودجه‌ی توجهی](./attention-budget.md) که باید به کار برسد میان صفحه‌ها تنظیمات نامربوط پخش می‌شود. جلسه‌هایی که کند و شلخته شروع می‌شوند اغلب علتشان یک فایل دستورالعمل هزارخطی است، نه [مدل](./model.md).
 
-## In the tools
+دستورالعمل‌هایتان را مثل یک نقشه بچینید، نه یک کتابچه‌ی راهنما. فایلی که همیشه بارگذاری می‌شود می‌گوید چه چیزی وجود دارد و کی باید خواندش: «گام‌های دیپلوی در docs/deploy.md است؛ پیش از دست زدن به زیرساخت بخوانش.» همین خط یک [اشاره‌گر زمینه](./context-pointer.md) است. مهارت‌ها هم همین‌طور کار می‌کنند، با یک توضیح یک‌خطی در فهرست و دستورالعمل کامل که هنگام فراخوانی بارگذاری می‌شود. ایجنت تیز می‌ماند چون فقط بهای چیزی را می‌پردازد که استفاده می‌کند.
 
-- Claude Code: skills expose only their name and description until invoked; the SKILL.md body loads on use.
-- Claude Cowork: skills and connectors appear as short descriptions and expand only when the task calls for them.
-- Most tools: nested instruction files in subdirectories are a form of it; they load when the agent works in that directory.
+## در ابزارها
 
-## In conversation
+- Claude Code: مهارت‌ها تا وقتی فراخوانده نشده‌اند فقط نام و توضیحشان را نشان می‌دهند؛ متن SKILL.md هنگام استفاده بارگذاری می‌شود.
+- Claude Cowork: مهارت‌ها و کانکتورها به‌صورت توضیحات کوتاه ظاهر می‌شوند و فقط وقتی کار لازمشان دارد باز می‌شوند.
+- بیشتر ابزارها: فایل‌های دستورالعمل تودرتو در زیرپوشه‌ها شکلی از همین‌اند؛ وقتی ایجنت در آن پوشه کار می‌کند بارگذاری می‌شوند.
 
-> “Should I put the whole API style guide in CLAUDE.md?”
+## در گفت‌وگو
+
+> «کل راهنمای سبک API را در CLAUDE.md بگذارم؟»
 >
-> “No. One line saying where it is and when to read it. That's progressive disclosure.”
+> «نه. یک خط که بگوید کجاست و کی باید خوانده شود. این افشای تدریجی است.»
 >
-> “What if it doesn't read it?”
+> «اگر نخواندش چه؟»
 >
-> “Then say 'read docs/api-style.md before adding endpoints.' The pointer is cheap; the guide only loads when it's needed.”
+> «پس بگو «پیش از افزودن endpoint، docs/api-style.md را بخوان.» اشاره‌گر ارزان است؛ راهنما فقط وقتی لازم است بارگذاری می‌شود.»
 
-**Related:** [Context engineering](./context-engineering.md) · [Smart zone](./smart-zone.md) · [MCP](./mcp.md)
+**مرتبط:** [مهندسی زمینه](./context-engineering.md) · [منطقه‌ی هوشمند](./smart-zone.md) · [MCP](./mcp.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Agent Skills](https://vibecodeschool.com/learn/cc-28-agent-skills)
-- [Course 04 · Context Engineering](https://vibecodeschool.com/learn/aa-06-context-engineering)
+- [دوره‌ی ۰۱ · مهارت‌های ایجنت](https://vibecodeschool.com/learn/cc-28-agent-skills)
+- [دوره‌ی ۰۴ · مهندسی زمینه](https://vibecodeschool.com/learn/aa-06-context-engineering)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/progressive-disclosure) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/progressive-disclosure.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

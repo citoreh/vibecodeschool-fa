@@ -1,41 +1,47 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Context pointer
+<div dir="rtl">
 
-> A short reference that tells the agent where information lives and when to fetch it, instead of the information itself.
+# اشاره‌گر زمینه (context pointer)
 
-*§06 Memory & Steering · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/context-pointer)*
+> ارجاعی کوتاه که به ایجنت می‌گوید اطلاعات کجا زندگی می‌کند و کی باید دریافتش کند، به‌جای خود اطلاعات.
 
-A context pointer is a one-line reference to information rather than the information: “the auth flow is described in docs/auth.md,” or “run `pnpm test:e2e` to see the browser tests.” It occupies a few [tokens](./token.md) in the [context window](./context-window.md) and tells the [agent](./agent.md) that a resource exists, where it is, and when it is relevant. When a task calls for it, the agent chases the pointer via a [tool call](./tool-call.md); otherwise it leaves it alone.
+*§۰۶ حافظه و هدایت · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/context-pointer)*
 
-Pointers are the mechanism behind [progressive disclosure](./progressive-disclosure.md), and their absence is why instruction files bloat. Without a pointer, the only way to make sure the agent knows something is to paste it, so people paste. With a pointer, the knowledge costs almost nothing until it is used. The failure mode of pointers is vagueness: “see the docs” points nowhere, and the agent will not go looking.
+اشاره‌گر زمینه ارجاعی یک‌خطی به اطلاعات است، نه خود اطلاعات: «جریان احراز هویت در docs/auth.md توضیح داده شده» یا «برای دیدن تست‌های مرورگر `pnpm test:e2e` را اجرا کن». چند [توکن](./token.md) از [پنجره‌ی زمینه](./context-window.md) را اشغال می‌کند و به [ایجنت](./agent.md) می‌گوید منبعی وجود دارد، کجاست، و کی مرتبط است. وقتی کاری آن را بطلبد، ایجنت با یک [فراخوانی ابزار](./tool-call.md) دنبال اشاره‌گر می‌رود؛ در غیر این صورت رهایش می‌کند.
 
-Write pointers with a path, a trigger, and a reason. Path: the exact file, command, or URL. Trigger: the situation that should send the agent there. Reason: one clause on why it matters, so the agent can judge relevance. Keep them in [AGENTS.md](./agents-md.md) for project-wide facts and in [handoff notes](./handoff-artifact.md) for task-specific ones. The [primary source](./primary-source.md) stays where it is; only the pointer travels.
+اشاره‌گرها سازوکار پشت [افشای تدریجی](./progressive-disclosure.md) هستند، و نبودشان دلیل باد کردن فایل‌های دستورالعمل است. بدون اشاره‌گر، تنها راه اطمینان از این‌که ایجنت چیزی را می‌داند چسباندن آن است، پس مردم می‌چسبانند. با اشاره‌گر، دانش تا وقتی استفاده نشده تقریباً هیچ هزینه‌ای ندارد. حالت شکست اشاره‌گرها ابهام است: «مستندات را ببین» به هیچ کجا اشاره نمی‌کند، و ایجنت دنبالش نمی‌گردد.
 
-## In the tools
+اشاره‌گرها را با یک مسیر، یک محرک و یک دلیل بنویسید. مسیر: فایل، دستور یا نشانی دقیق. محرک: موقعیتی که باید ایجنت را آن‌جا بفرستد. دلیل: یک عبارت درباره‌ی این‌که چرا مهم است، تا ایجنت بتواند مرتبط بودنش را بسنجد. آن‌ها را برای واقعیت‌های سراسری پروژه در [AGENTS.md](./agents-md.md) و برای واقعیت‌های مختص یک کار در [یادداشت‌های تحویل](./handoff-artifact.md) نگه دارید. [منبع دست‌اول](./primary-source.md) سر جایش می‌ماند؛ فقط اشاره‌گر جابه‌جا می‌شود.
 
-- Claude Code: `@path/to/file` in a prompt is a pointer the harness resolves immediately; a line in CLAUDE.md is one the agent resolves when relevant.
-- Cursor: `@docs` references and rule descriptions act as pointers the agent expands on demand.
+## در ابزارها
 
-## In conversation
+- Claude Code: `@path/to/file` در یک پرامپت اشاره‌گری است که هارنس فوراً حلش می‌کند؛ یک خط در CLAUDE.md اشاره‌گری است که ایجنت وقتی مرتبط شد حلش می‌کند.
+- Cursor: ارجاع‌های `@docs` و توضیحات قواعد نقش اشاره‌گرهایی را دارند که ایجنت هر وقت لازم شد بازشان می‌کند.
 
-> “How do I get it to follow our migration checklist without pasting all forty steps?”
+## در گفت‌وگو
+
+> «چطور کاری کنم چک‌لیست مهاجرت ما را دنبال کند بدون این‌که هر چهل گام را بچسبانم؟»
 >
-> “A context pointer. One line: 'Before any schema change, read docs/migrations.md and follow it.'”
+> «یک اشاره‌گر زمینه. یک خط: «پیش از هر تغییری در ساختار پایگاه‌داده، docs/migrations.md را بخوان و دنبالش کن.»»
 >
-> “And it'll actually open it?”
+> «و واقعاً بازش می‌کند؟»
 >
-> “When a schema change comes up, yes. Until then it costs you one line.”
+> «وقتی تغییری در ساختار پایگاه‌داده پیش بیاید، بله. تا آن موقع فقط یک خط هزینه دارد.»
 
-**Related:** [Context engineering](./context-engineering.md) · [Secondary source](./secondary-source.md) · [Skill](./skill.md)
+**مرتبط:** [مهندسی زمینه](./context-engineering.md) · [منبع دست‌دوم](./secondary-source.md) · [مهارت](./skill.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
-- [Course 01 · Searching the Codebase](https://vibecodeschool.com/learn/cc-07-searching-the-codebase)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۱ · جست‌وجو در کدها](https://vibecodeschool.com/learn/cc-07-searching-the-codebase)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/context-pointer) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/context-pointer.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

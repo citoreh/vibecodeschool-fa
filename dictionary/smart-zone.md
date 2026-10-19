@@ -1,36 +1,42 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Smart zone
+<div dir="rtl">
 
-> The early stretch of a session where the agent is at its sharpest; past it, the same model gets sloppier and forgetful.
+# منطقه‌ی هوشمند (smart zone)
 
-*§04 Failure Modes · also called: Dumb zone, Smart zone / dumb zone · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/smart-zone)*
+> بازه‌ی ابتدایی یک جلسه که ایجنت در تیزترین حالتش است؛ پس از آن، همان مدل شلخته‌تر و فراموشکار می‌شود.
 
-The smart zone is the part of a [session](./session.md) where the [agent](./agent.md) does its best work: [context](./context.md) is small and relevant, instructions are fresh, and the [model](./model.md) can hold the whole task in view. Everyone who uses coding agents has felt the other side of it, the dumb zone, where a session that has run for hours starts making mistakes it would never have made in its first ten minutes. The model did not change. The context did, and [attention degradation](./attention-degradation.md) did the rest.
+*§۰۴ حالت‌های شکست · نام‌های دیگر: Dumb zone، Smart zone / dumb zone · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/smart-zone)*
 
-Where the line falls depends on the model and on what is in the window, and it is fuzzy rather than sharp, but it usually arrives well before the [context window](./context-window.md) is full. Plenty of free window is no guarantee; quality can be gone long before capacity is. The signs are behavioural: repeated corrections, drifting from the plan, confident claims about files it read a long time ago.
+منطقه‌ی هوشمند بخشی از یک [جلسه](./session.md) است که [ایجنت](./agent.md) بهترین کارش را انجام می‌دهد: [زمینه](./context.md) کوچک و مرتبط است، دستورها تازه‌اند، و [مدل](./model.md) می‌تواند کل کار را در دید نگه دارد. هر کسی که از ایجنت‌های کدنویسی استفاده کرده روی دیگرش را هم حس کرده، منطقه‌ی کُند (dumb zone)، جایی که جلسه‌ای که ساعت‌ها اجرا شده شروع می‌کند اشتباه‌هایی بکند که در ده دقیقه‌ی اولش هرگز نمی‌کرد. مدل عوض نشد. زمینه عوض شد، و [افت توجه](./attention-degradation.md) بقیه‌اش را انجام داد.
 
-Treat the zone as the resource you are spending, not the token count. Start a task in a fresh session so it lands in the sharp part; when a job clearly exceeds one session's good stretch, break it at a natural seam and [hand off](./handoff.md) with a written plan. The tempting shortcut, adding a second job to a session because it 'already has the context', is exactly what pushes the second job into the dumb zone.
+این‌که مرز کجا می‌افتد به مدل و به محتوای پنجره بستگی دارد، و به‌جای تیز بودن مبهم است، اما معمولاً خیلی پیش از پر شدن [پنجره‌ی زمینه](./context-window.md) از راه می‌رسد. پنجره‌ی خالیِ فراوان تضمینی نیست؛ کیفیت ممکن است خیلی پیش از ظرفیت از دست رفته باشد. نشانه‌ها رفتاری‌اند: اصلاح‌های تکراری، فاصله گرفتن از برنامه، ادعاهای پراعتمادبه‌نفس درباره‌ی فایل‌هایی که خیلی وقت پیش خوانده.
 
-## In the tools
+منطقه را منبعی بدانید که خرجش می‌کنید، نه شمار توکن‌ها را. یک کار را در یک جلسه‌ی تازه شروع کنید تا در بخش تیز فرود بیاید؛ وقتی کاری آشکارا از بازه‌ی خوب یک جلسه بزرگ‌تر است، آن را در یک درز طبیعی بشکنید و با یک برنامه‌ی نوشته [تحویل دهید](./handoff.md). میان‌بُرِ وسوسه‌انگیز، یعنی افزودن کار دوم به یک جلسه چون «زمینه‌اش را از قبل دارد»، دقیقاً همان چیزی است که کار دوم را به منطقه‌ی کُند هل می‌دهد.
 
-- Claude Code: `/clear` between tasks is the cheapest way to stay in the smart zone; `/compact` with a focus note keeps a long task inside it.
-- Codex: cloud tasks start each job in a fresh container and session, which keeps every task in its own smart zone by construction.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/clear` میان کارها ارزان‌ترین راه ماندن در منطقه‌ی هوشمند است؛ `/compact` با یک یادداشت تمرکز، یک کار طولانی را درون آن نگه می‌دارد.
+- Codex: کارهای ابری هر کار را در یک کانتینر و جلسه‌ی تازه شروع می‌کنند، که ذاتاً هر کار را در منطقه‌ی هوشمند خودش نگه می‌دارد.
 
-> “Is there a point where I should just stop and start a new session?”
+## در گفت‌وگو
+
+> «نقطه‌ای هست که باید بایستم و یک جلسه‌ی تازه شروع کنم؟»
 >
-> “When it starts needing the same correction twice. That's the dumb zone. You'll get more from a fresh session than from a fifth explanation.”
+> «وقتی شروع کرد همان اصلاح را دو بار لازم داشته باشد. آن‌جا منطقه‌ی کُند است. از یک جلسه‌ی تازه بیشتر از توضیح پنجم نتیجه می‌گیری.»
 
-**Related:** [Attention budget](./attention-budget.md) · [Clearing](./clearing.md) · [Compaction](./compaction.md) · [Turn](./turn.md)
+**مرتبط:** [بودجه‌ی توجه](./attention-budget.md) · [پاک‌سازی جلسه](./clearing.md) · [فشرده‌سازی](./compaction.md) · [نوبت](./turn.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/smart-zone) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/smart-zone.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>
