@@ -77,7 +77,6 @@
 می‌شود. **هر هفته** یک ایجنت زمان‌بندی‌شده به‌روزش می‌کند. نسخه‌ی تعاملی با جست‌وجو و پیوندهای
 متقابل: [vibecodeschool.com/ai-coding-dictionary](https://vibecodeschool.com/ai-coding-dictionary).
 
-> واژه‌نامه در مرحله‌ی بعدی ترجمه می‌شود و فعلاً به انگلیسی است.
 
 مرجع همراه روی سایت: **[برگه‌ی تقلب Claude Code](https://vibecodeschool.com/claude-code-cheat-sheet)** —
 همه‌ی دستورها، دستورهای اسلش، حالت‌های مجوز، فایل‌های پیکربندی، رویدادهای هوک و دستورهای MCP در یک صفحه.

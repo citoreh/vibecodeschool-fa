@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Human-in-the-loop
+<div dir="rtl">
 
-> A working pattern where a person approves, corrects, or answers for the agent while it runs, instead of only judging the result.
+# انسان در حلقه (human-in-the-loop)
 
-*§07 Patterns of Work · also called: HITL, Supervised run · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/human-in-the-loop)*
+> الگوی کاری‌ای که در آن یک انسان در حین اجرای ایجنت تأیید می‌کند، اصلاح می‌کند یا پاسخ می‌دهد، به‌جای این‌که فقط درباره‌ی نتیجه قضاوت کند.
 
-Human-in-the-loop means a person stays part of the run: the [agent](./agent.md) pauses for a [permission request](./permission-request.md), asks a question when the task is ambiguous, or waits for an answer before it commits to a direction. The human is a step in the loop, not just a reader of the output at the end. In most coding harnesses this is the default: the agent proposes an edit or a command, you approve or redirect, it continues.
+*§۰۷ الگوهای کار · نام‌های دیگر: HITL، Supervised run · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/human-in-the-loop)*
 
-The trade-off is throughput for control. Every pause costs your attention, and if you rubber-stamp fifty prompts in a row you get the cost of supervision without the benefit. The opposite failure is just as common: leaving the loop for an hour and coming back to polished work that took a turn you'd have stopped had you been watching.
+انسان در حلقه یعنی یک انسان بخشی از اجرا باقی می‌ماند: [ایجنت](./agent.md) برای یک [درخواست مجوز](./permission-request.md) مکث می‌کند، وقتی کار مبهم است سؤال می‌پرسد، یا پیش از متعهد شدن به یک جهت منتظر پاسخ می‌ماند. انسان یک گام در چرخه است، نه فقط خواننده‌ی خروجی در پایان. در بیشتر هارنس‌های کدنویسی این پیش‌فرض است: ایجنت یک ویرایش یا دستور پیشنهاد می‌کند، شما تأیید یا مسیرش را عوض می‌کنید، ادامه می‌دهد.
 
-Use it deliberately. Stay in the loop when the task touches money, data, other people's systems, or anything you can't roll back; keep the interruptions meaningful by pre-approving the safe, boring [tool calls](./tool-call.md) in your [permission mode](./permission-mode.md). Move toward [AFK](./afk.md) runs only once [automated checks](./automated-check.md) can catch what you would have caught by watching.
+بده‌بستانش بازده در برابر کنترل است. هر مکث توجه شما را می‌گیرد، و اگر پنجاه درخواست را پشت سر هم چشم‌بسته تأیید کنید، هزینه‌ی نظارت را می‌پردازید بی‌آن‌که سودش را ببرید. شکست مخالف هم به همان اندازه رایج است: یک ساعت حلقه را ترک می‌کنید و برمی‌گردید به کاری پرداخته که مسیری را رفته که اگر تماشا می‌کردید جلویش را می‌گرفتید.
 
-## In the tools
+آگاهانه به کارش ببرید. وقتی کار به پول، داده، سیستم‌های دیگران، یا هر چیزی که نمی‌توانید برگردانید دست می‌زند، در حلقه بمانید؛ با از پیش تأیید کردن [فراخوانی‌های ابزارِ](./tool-call.md) امن و کسل‌کننده در [حالت مجوزتان](./permission-mode.md)، وقفه‌ها را معنادار نگه دارید. فقط وقتی سمت اجراهای [AFK](./afk.md) بروید که [بررسی‌های خودکار](./automated-check.md) بتوانند چیزی را بگیرند که با تماشا می‌گرفتید.
 
-- Claude Code: the default permission mode asks before edits and shell commands, and the agent can pause mid-task to ask you a question.
-- Antigravity: review policies decide which agent actions land in your inbox for approval and which run straight through.
-- Claude Cowork: file changes and external actions go through an approval step unless you widen it.
+## در ابزارها
 
-## In conversation
+- Claude Code: حالت مجوز پیش‌فرض پیش از ویرایش‌ها و دستورهای شل می‌پرسد، و ایجنت می‌تواند وسط کار مکث کند و از شما سؤالی بپرسد.
+- Antigravity: سیاست‌های بازبینی تعیین می‌کنند کدام اقدام‌های ایجنت برای تأیید به صندوق ورودی شما برسند و کدام مستقیم اجرا شوند.
+- Claude Cowork: تغییرات فایل‌ها و اقدام‌های بیرونی از یک گام تأیید عبور می‌کنند مگر این‌که گسترده‌ترش کنید.
 
-> “Why does it keep stopping to ask me about every shell command?”
+## در گفت‌وگو
+
+> «چرا مدام برای هر دستور شل می‌ایستد و از من می‌پرسد؟»
 >
-> “That's human-in-the-loop doing its job. Allow the read-only stuff, keep the approvals for anything that writes or deploys.”
+> «این انسان در حلقه است که کارش را می‌کند. کارهای فقط‌خواندنی را مجاز کن، تأییدها را برای هر چیزی که می‌نویسد یا دیپلوی می‌کند نگه دار.»
 
-**Related:** [Steering](./steering.md) · [Human review](./human-review.md) · [Agent mode](./agent-mode.md) · [Sandbox](./sandbox.md)
+**مرتبط:** [هدایت](./steering.md) · [بازبینی انسانی](./human-review.md) · [حالت ایجنت](./agent-mode.md) · [سندباکس](./sandbox.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 06 · The Approval Loop](https://vibecodeschool.com/learn/cw-04-the-approval-loop)
-- [Course 03 · Autonomy and Review Policies](https://vibecodeschool.com/learn/ag-05-approval-gates)
+- [دوره‌ی ۰۶ · چرخه‌ی تأیید](https://vibecodeschool.com/learn/cw-04-the-approval-loop)
+- [دوره‌ی ۰۳ · خودمختاری و سیاست‌های بازبینی](https://vibecodeschool.com/learn/ag-05-approval-gates)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/human-in-the-loop) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/human-in-the-loop.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

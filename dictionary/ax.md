@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# AX
+<div dir="rtl">
 
-> Agent experience: how well a codebase, tool or environment supports an agent that starts each session knowing nothing.
+# AX — تجربه‌ی ایجنت
 
-*§07 Patterns of Work · also called: Agent experience · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/ax)*
+> تجربه‌ی ایجنت (agent experience): یک کد، ابزار یا محیط چقدر خوب از ایجنتی پشتیبانی می‌کند که هر جلسه را بدون دانستن هیچ چیز شروع می‌کند.
 
-AX, agent experience, is [DX](./dx.md) with an [agent](./agent.md) as the user. It asks how easily an agent that starts with an empty [context](./context.md) can orient itself, find the right command, verify its own work and stay within the rules of the codebase. Where DX is about a person's day, AX is about a [session](./session.md): everything the agent needs has to be discoverable from inside the [environment](./environment.md), because there is no osmosis and no colleague to ask.
+*§۰۷ الگوهای کار · نام‌های دیگر: Agent experience · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/ax)*
 
-Poor AX looks like an agent that is capable in general and clumsy in your repo. It runs the wrong package manager, misses the tests that live in an unusual folder, reinvents a helper that already exists, or ships a change that violates a rule everyone on the team knows and nobody wrote down. The fix is rarely a better model; it's usually a better environment.
+AX، تجربه‌ی ایجنت، همان [DX](./dx.md) است با یک [ایجنت](./agent.md) در نقش کاربر. می‌پرسد ایجنتی که با یک [زمینه‌ی](./context.md) خالی شروع می‌کند چقدر راحت می‌تواند جهت پیدا کند، دستور درست را بیابد، کار خودش را راستی‌آزمایی کند و درون قاعده‌های کدها بماند. اگر DX درباره‌ی روز کاری یک انسان است، AX درباره‌ی یک [جلسه](./session.md) است: هر چیزی که ایجنت لازم دارد باید از درون [محیط](./environment.md) قابل کشف باشد، چون نه جذب تدریجی‌ای در کار است و نه همکاری که بشود از او پرسید.
 
-The tools of AX are ordinary: an [AGENTS.md](./agents-md.md) file that states the commands and conventions, [automated checks](./automated-check.md) that fail loudly and fast, tools that reach the systems the task touches, and a repo layout that makes the important things findable. Treat every stumble in an [AFK](./afk.md) run as an AX bug and fix the environment rather than the prompt. Because the agent is the only one there for most of the run, AX is the support it gets.
+AXِ ضعیف شبیه ایجنتی است که به‌طور کلی توانمند است و در مخزن شما دست‌وپاچلفتی. مدیر بسته‌ی اشتباه را اجرا می‌کند، تست‌هایی را که در پوشه‌ای غیرمعمول زندگی می‌کنند جا می‌اندازد، تابع کمکی‌ای را که از قبل وجود دارد از نو اختراع می‌کند، یا تغییری منتشر می‌کند که قاعده‌ای را می‌شکند که همه‌ی تیم می‌دانند و هیچ‌کس ننوشته. راه‌حل به‌ندرت مدل بهتری است؛ معمولاً محیط بهتری است.
 
-## In the tools
+ابزارهای AX معمولی‌اند: یک فایل [AGENTS.md](./agents-md.md) که دستورها و قراردادها را بیان می‌کند، [بررسی‌های خودکاری](./automated-check.md) که با صدای بلند و سریع شکست می‌خورند، ابزارهایی که به سیستم‌هایی که کار به آن‌ها دست می‌زند می‌رسند، و چیدمانی از مخزن که چیزهای مهم را پیداشدنی می‌کند. هر سکندری در یک اجرای [AFK](./afk.md) را یک باگ AX بدانید و به‌جای پرامپت، محیط را درست کنید. چون در بیشترِ اجرا تنها کسی که حاضر است ایجنت است، AX همان پشتیبانی‌ای است که می‌گیرد.
 
-- Claude Code: CLAUDE.md, hooks and skills are the main AX surface; `/init` drafts a first CLAUDE.md from the repo.
-- Antigravity: knowledge items teach the agents your codebase once and reuse it across the fleet.
-- GitHub: a clear README, scripts in package.json and CI that mirrors the local checks all raise AX for cloud agents.
+## در ابزارها
 
-## In conversation
+- Claude Code: CLAUDE.md، هوک‌ها و مهارت‌ها سطح اصلی AX هستند؛ `/init` اولین CLAUDE.md را از روی مخزن پیش‌نویس می‌کند.
+- Antigravity: آیتم‌های دانش کدهای شما را یک بار به ایجنت‌ها یاد می‌دهند و در کل ناوگان دوباره استفاده‌اش می‌کنند.
+- GitHub: یک README روشن، اسکریپت‌ها در package.json و CI که بررسی‌های محلی را بازتاب می‌دهد، همه AX را برای ایجنت‌های ابری بالا می‌برند.
 
-> “It spent twenty minutes trying to figure out how we run migrations.”
+## در گفت‌وگو
+
+> «بیست دقیقه وقت گذاشت تا بفهمد ما مهاجرت‌ها را چطور اجرا می‌کنیم.»
 >
-> “That's an AX problem. One line in AGENTS.md and a `make migrate` target, and it never happens again.”
+> «این یک مشکل AX است. یک خط در AGENTS.md و یک هدف `make migrate`، و دیگر هرگز تکرار نمی‌شود.»
 
-**Related:** [Harness engineering](./harness-engineering.md) · [Hooks](./hooks.md) · [Skill](./skill.md) · [Tool](./tool.md)
+**مرتبط:** [مهندسی هارنس](./harness-engineering.md) · [هوک‌ها](./hooks.md) · [مهارت](./skill.md) · [ابزار](./tool.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
-- [Course 03 · Knowledge: Teaching Antigravity Your Codebase](https://vibecodeschool.com/learn/ag-10-when-to-add-specialist)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۳ · دانش: یاد دادن کدهایتان به Antigravity](https://vibecodeschool.com/learn/ag-10-when-to-add-specialist)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/ax) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/ax.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

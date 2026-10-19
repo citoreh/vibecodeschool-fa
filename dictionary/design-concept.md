@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Design concept
+<div dir="rtl">
 
-> A short written description of what you're building and why, agreed before any code, so the agent and you share the same picture.
+# مفهوم طراحی (design concept)
 
-*§07 Patterns of Work · also called: Design brief, Concept doc · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/design-concept)*
+> توصیف نوشته‌ی کوتاهی از این‌که چه می‌سازید و چرا، که پیش از هر کدی بر سرش توافق شده تا شما و ایجنت تصویر یکسانی داشته باشید.
 
-A design concept is the one-page answer to 'what are we building and why?', written down before implementation starts. It names the user, the problem, the shape of the solution and the things that are deliberately out of scope. It is looser than a [spec](./spec.md), which says exactly what to build, and more concrete than an idea, which lives only in your head.
+*§۰۷ الگوهای کار · نام‌های دیگر: Design brief، Concept doc · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/design-concept)*
 
-Agents make the missing concept expensive. Give an [agent](./agent.md) a feature request with no concept behind it and it will invent one: it decides who the user is, what 'done' means and which trade-offs matter, silently, in the first few minutes, and every later decision compounds on that guess. The output can be polished and still solve the wrong problem.
+مفهوم طراحی پاسخ یک‌صفحه‌ای به پرسش «چه می‌سازیم و چرا؟» است که پیش از شروع پیاده‌سازی نوشته می‌شود. کاربر، مشکل، شکل راه‌حل و چیزهایی را که عمداً بیرون از دامنه‌اند نام می‌برد. از یک [مشخصات](./spec.md)، که دقیقاً می‌گوید چه چیزی ساخته شود، آزادتر است و از یک ایده، که فقط در ذهن شما زندگی می‌کند، ملموس‌تر.
 
-Write the concept with the agent, not for it. A [grilling](./grilling.md) session is the fastest way: let the model interview you until the fuzzy parts are resolved, then ask it to write the concept back to you in a page. That page becomes a [handoff artifact](./handoff-artifact.md) that a fresh [session](./session.md) can pick up, and the source the spec and the [tickets](./ticket.md) are derived from. If you can't write the concept, you're not ready to prompt.
+ایجنت‌ها نبودِ مفهوم را گران می‌کنند. به یک [ایجنت](./agent.md) درخواست یک قابلیت را بدون هیچ مفهومی پشتش بدهید و او یکی را اختراع می‌کند: تصمیم می‌گیرد کاربر کیست، «تمام‌شده» یعنی چه و کدام بده‌بستان‌ها مهم‌اند، بی‌صدا، در چند دقیقه‌ی اول، و هر تصمیم بعدی روی همان حدس انباشته می‌شود. خروجی می‌تواند پرداخته باشد و باز مشکل اشتباهی را حل کند.
 
-## In the tools
+مفهوم را همراه ایجنت بنویسید، نه برای او. یک جلسه‌ی [بازجویی](./grilling.md) سریع‌ترین راه است: بگذارید مدل از شما مصاحبه بگیرد تا بخش‌های مبهم حل شوند، بعد بخواهید مفهوم را در یک صفحه برایتان بنویسد. آن صفحه به یک [یادداشت تحویل](./handoff-artifact.md) تبدیل می‌شود که یک [جلسه‌ی](./session.md) تازه می‌تواند دستش بگیرد، و منبعی که مشخصات و [تیکت‌ها](./ticket.md) از آن بیرون کشیده می‌شوند. اگر نمی‌توانید مفهوم را بنویسید، برای پرامپت دادن آماده نیستید.
 
-- Claude Code: plan mode is a natural place to draft a concept, since the agent can read the repo but can't edit until you approve.
-- Claude Cowork and ChatGPT Work: a concept doc is the kind of artifact these tools produce well from a short conversation.
+## در ابزارها
 
-## In conversation
+- Claude Code: حالت برنامه‌ریزی جای طبیعی برای پیش‌نویس یک مفهوم است، چون ایجنت می‌تواند مخزن را بخواند اما تا تأیید نکنید نمی‌تواند ویرایش کند.
+- Claude Cowork و ChatGPT Work: سند مفهوم از آن نوع آرتیفکت‌هایی است که این ابزارها از یک گفت‌وگوی کوتاه خوب تولید می‌کنند.
 
-> “I have the feature idea. Should I just start prompting?”
+## در گفت‌وگو
+
+> «ایده‌ی قابلیت را دارم. همین‌طور شروع کنم به پرامپت دادن؟»
 >
-> “Write the design concept first, even if it's ten lines. Otherwise the agent decides what the feature is and you find out in the PR.”
+> «اول مفهوم طراحی را بنویس، حتی اگر ده خط باشد. وگرنه ایجنت تصمیم می‌گیرد قابلیت چیست و تو در درخواست ادغام متوجه می‌شوی.»
 
-**Related:** [Prototyping](./prototyping.md) · [Primary source](./primary-source.md) · [Context pointer](./context-pointer.md) · [Plan mode](./plan-mode.md)
+**مرتبط:** [نمونه‌سازی](./prototyping.md) · [منبع دست‌اول](./primary-source.md) · [اشاره‌گر زمینه](./context-pointer.md) · [حالت برنامه‌ریزی](./plan-mode.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Spec → Tests → Code](https://vibecodeschool.com/learn/cc-18-spec-tests-code)
-- [Course 03 · Plans and Task Lists](https://vibecodeschool.com/learn/ag-06-planner-agents)
+- [دوره‌ی ۰۱ · مشخصات ← تست‌ها ← کد](https://vibecodeschool.com/learn/cc-18-spec-tests-code)
+- [دوره‌ی ۰۳ · برنامه‌ها و فهرست کارها](https://vibecodeschool.com/learn/ag-06-planner-agents)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/design-concept) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/design-concept.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

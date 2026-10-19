@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# AFK
+<div dir="rtl">
 
-> Away from keyboard: you start the agent, leave, and come back to finished work you review later instead of supervising live.
+# AFK — دور از کیبورد
 
-*§07 Patterns of Work · also called: Away from keyboard, Unattended run, Fire and forget · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/afk)*
+> دور از کیبورد (away from keyboard): ایجنت را راه می‌اندازید، می‌روید، و برمی‌گردید به کار تمام‌شده‌ای که بعداً بازبینی‌اش می‌کنید، به‌جای نظارت زنده.
 
-AFK is the pattern where you hand the [agent](./agent.md) a task and walk away. No approvals, no mid-run [steering](./steering.md); the agent runs to completion on its own and you read the result later. It needs a permissive [permission mode](./permission-mode.md) so nothing blocks waiting for a click, and usually a [sandbox](./sandbox.md) or a [worktree](./worktree.md) so a bad run can't damage anything that matters.
+*§۰۷ الگوهای کار · نام‌های دیگر: Away from keyboard، Unattended run، Fire and forget · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/afk)*
 
-This is where the leverage of AI coding lives. One person can have several AFK runs going while doing something else, and the runs happen overnight or during meetings. The failure to watch for is quiet: the agent hits an ambiguity, picks an answer, and spends the next hour building tidy, internally consistent work on top of it. Nothing crashes. You only find out when you read the diff.
+AFK الگویی است که در آن کاری را به [ایجنت](./agent.md) می‌سپارید و می‌روید. نه تأییدی، نه [هدایتی](./steering.md) در میانه‌ی اجرا؛ ایجنت خودش تا پایان پیش می‌رود و شما بعداً نتیجه را می‌خوانید. به یک [حالت مجوزِ](./permission-mode.md) آزادانه نیاز دارد تا هیچ چیز منتظر یک کلیک نماند، و معمولاً به یک [سندباکس](./sandbox.md) یا یک [ورک‌تری](./worktree.md) تا یک اجرای بد نتواند به چیز مهمی آسیب بزند.
 
-Make the run safe to leave. Do the thinking before you go: a [grilling](./grilling.md) pass and a written [spec](./spec.md) take the guesses off the table. Put [automated checks](./automated-check.md) in the loop so failing tests stop the run instead of you. And make the finish line a branch or a pull request you can read through, never a merge that already happened. AFK doesn't make [human review](./human-review.md) optional; it batches all of it into one sitting at the end, so what comes out of the run has to be worth reading.
+اهرم کدنویسی با هوش مصنوعی همین‌جاست. یک نفر می‌تواند در حالی که کار دیگری می‌کند چند اجرای AFK داشته باشد، و اجراها شبانه یا در طول جلسه‌ها انجام شوند. شکستی که باید مراقبش بود بی‌صداست: ایجنت به یک ابهام برمی‌خورد، پاسخی انتخاب می‌کند، و یک ساعت بعد را صرف ساختن کاری مرتب و درونی‌سازگار روی آن می‌کند. هیچ چیز از کار نمی‌افتد. فقط وقتی دیف را می‌خوانید متوجه می‌شوید.
 
-## In the tools
+اجرا را برای ترک کردن امن کنید. فکر کردن را پیش از رفتن انجام دهید: یک دور [بازجویی](./grilling.md) و یک [مشخصاتِ](./spec.md) نوشته‌شده حدس‌ها را از میز برمی‌دارند. [بررسی‌های خودکار](./automated-check.md) را در چرخه بگذارید تا تست‌های شکست‌خورده به‌جای شما اجرا را متوقف کنند. و خط پایان را یک شاخه یا یک درخواست ادغام قرار دهید که بتوانید بخوانیدش، هرگز ادغامی که از قبل انجام شده. AFK [بازبینی انسانی](./human-review.md) را اختیاری نمی‌کند؛ همه‌اش را در یک نشست در پایان جمع می‌کند، پس آنچه از اجرا بیرون می‌آید باید ارزش خواندن داشته باشد.
 
-- Claude Code: a permission mode that auto-accepts (or `--dangerously-skip-permissions`) inside the built-in sandbox; cloud sessions are AFK by design.
-- Codex: cloud tasks run in an isolated container and come back as a diff or a pull request.
-- Antigravity: the Agent Manager is built around unattended runs, with an inbox that collects anything needing a human.
+## در ابزارها
 
-## In conversation
+- Claude Code: یک حالت مجوز با پذیرش خودکار (یا `--dangerously-skip-permissions`) درون سندباکس داخلی؛ جلسه‌های ابری ذاتاً AFK هستند.
+- Codex: کارهای ابری در یک کانتینر ایزوله اجرا می‌شوند و به‌صورت یک دیف یا یک درخواست ادغام برمی‌گردند.
+- Antigravity: مدیر ایجنت حول اجراهای بی‌نظارت ساخته شده، با صندوق ورودی‌ای که هر چیزی را که به انسان نیاز دارد جمع می‌کند.
 
-> “The agent asked me two questions in the first ten minutes and then went quiet for an hour.”
+## در گفت‌وگو
+
+> «ایجنت در ده دقیقه‌ی اول دو سؤال پرسید و بعد یک ساعت ساکت شد.»
 >
-> “That's the point of AFK. Answer those questions up front in the spec next time and you can leave the whole run alone.”
+> «هدف AFK همین است. دفعه‌ی بعد آن سؤال‌ها را از قبل در مشخصات جواب بده تا بتوانی کل اجرا را به حال خودش بگذاری.»
 >
-> “And if it goes off the rails?”
+> «و اگر از ریل خارج شد؟»
 >
-> “It's in a sandbox on its own branch. Worst case you delete the branch.”
+> «در یک سندباکس روی شاخه‌ی خودش است. بدترین حالت، شاخه را پاک می‌کنی.»
 
-**Related:** [Headless mode](./headless-mode.md) · [Human-in-the-loop](./human-in-the-loop.md) · [Handoff artifact](./handoff-artifact.md)
+**مرتبط:** [حالت بی‌رابط](./headless-mode.md) · [انسان در حلقه](./human-in-the-loop.md) · [یادداشت تحویل](./handoff-artifact.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · The Inbox: Running Agents Without Watching Them](https://vibecodeschool.com/learn/ag-15-human-in-the-loop)
-- [Course 06 · Cloud Sessions and Your Phone](https://vibecodeschool.com/learn/cw-13-cloud-sessions-and-mobile)
+- [دوره‌ی ۰۳ · صندوق ورودی: اجرای ایجنت‌ها بی‌آن‌که تماشایشان کنید](https://vibecodeschool.com/learn/ag-15-human-in-the-loop)
+- [دوره‌ی ۰۶ · جلسه‌های ابری و گوشی شما](https://vibecodeschool.com/learn/cw-13-cloud-sessions-and-mobile)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/afk) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/afk.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

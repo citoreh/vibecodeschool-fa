@@ -1,36 +1,42 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# DX
+<div dir="rtl">
 
-> Developer experience: how pleasant and fast a tool, codebase or workflow is for the humans using it.
+# DX — تجربه‌ی توسعه‌دهنده
 
-*§07 Patterns of Work · also called: Developer experience · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/dx)*
+> تجربه‌ی توسعه‌دهنده (developer experience): یک ابزار، کدها یا گردش‌کار برای انسان‌هایی که از آن استفاده می‌کنند چقدر خوشایند و سریع است.
 
-DX, developer experience, is the quality of a developer's day: how quickly a tool gets out of the way, how readable the errors are, how fast the feedback loop runs, how much of the setup is remembered for you. It is a design goal for tools, libraries and codebases alike, and for years it was the main lens for judging whether a workflow was any good.
+*§۰۷ الگوهای کار · نام‌های دیگر: Developer experience · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/dx)*
 
-AI coding adds a second lens. A codebase can have great DX and still be hostile to an [agent](./agent.md): conventions that live in people's heads, a test suite that needs a running database nobody documented, a monorepo where the right command depends on which folder you're in. Humans absorb those by osmosis. An agent starts every [session](./session.md) knowing none of it and has to be told, or it guesses.
+DX، تجربه‌ی توسعه‌دهنده، کیفیت روز کاری یک توسعه‌دهنده است: یک ابزار چقدر سریع از سر راه کنار می‌رود، خطاها چقدر خوانا هستند، چرخه‌ی بازخورد چقدر سریع اجرا می‌شود، چه مقدار از راه‌اندازی برایتان به خاطر سپرده شده. یک هدف طراحی برای ابزارها، کتابخانه‌ها و کدها به یک اندازه است، و سال‌ها عدسی اصلی برای قضاوت درباره‌ی خوب بودن یک گردش‌کار بود.
 
-In practice the two pull the same direction more often than not. Fast tests, clear errors, one command to run everything and written conventions are good for people and essential for agents. When you invest in DX now, ask the second question too: could an agent with a clean [context](./context.md) and the tools in this repo do the task? That question has its own name, [AX](./ax.md), and it is where the next round of leverage lives.
+کدنویسی با هوش مصنوعی عدسی دومی اضافه می‌کند. کدهایی ممکن است DX عالی داشته باشند و باز با یک [ایجنت](./agent.md) خصمانه رفتار کنند: قراردادهایی که در ذهن آدم‌ها زندگی می‌کنند، مجموعه‌ی تستی که به پایگاه‌داده‌ی در حال اجرایی نیاز دارد که کسی مستندش نکرده، مونوریپویی که در آن دستور درست به این بستگی دارد که در کدام پوشه باشید. انسان‌ها این‌ها را با جذب تدریجی یاد می‌گیرند. یک ایجنت هر [جلسه](./session.md) را بدون دانستن هیچ‌کدام شروع می‌کند و یا باید به او گفته شود، یا حدس می‌زند.
 
-## In the tools
+در عمل این دو بیشتر وقت‌ها در یک جهت می‌کشند. تست‌های سریع، خطاهای روشن، یک دستور برای اجرای همه چیز و قراردادهای نوشته‌شده برای آدم‌ها خوب و برای ایجنت‌ها ضروری‌اند. وقتی حالا روی DX سرمایه‌گذاری می‌کنید، پرسش دوم را هم بپرسید: آیا ایجنتی با یک [زمینه‌ی](./context.md) تمیز و ابزارهای همین مخزن می‌تواند این کار را انجام دهد؟ این پرسش نام خودش را دارد، [AX](./ax.md)، و دور بعدی اهرم همان‌جاست.
 
-- Most tools: fast type-checking, a single test command and readable errors improve DX and the agent's success rate at the same time.
+## در ابزارها
 
-## In conversation
+- بیشتر ابزارها: بررسی سریع نوع‌ها، یک دستور واحد برای تست و خطاهای خوانا، هم‌زمان DX و نرخ موفقیت ایجنت را بالا می‌برند.
 
-> “Our DX is great, everyone loves the codebase. Why does the agent keep breaking it?”
+## در گفت‌وگو
+
+> «DX ما عالی است، همه عاشق کدها هستند. چرا ایجنت مدام خرابش می‌کند؟»
 >
-> “Because everything it needs to know is in your heads. Write it down and the DX becomes AX.”
+> «چون همه‌ی چیزهایی که باید بداند در ذهن شماست. بنویسیدش و DX به AX تبدیل می‌شود.»
 
-**Related:** [Harness engineering](./harness-engineering.md) · [AGENTS.md](./agents-md.md) · [Automated check](./automated-check.md) · [Environment](./environment.md)
+**مرتبط:** [مهندسی هارنس](./harness-engineering.md) · [AGENTS.md](./agents-md.md) · [بررسی خودکار](./automated-check.md) · [محیط](./environment.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
-- [Course 03 · Measuring Your Agent Leverage](https://vibecodeschool.com/learn/ag-20-slas)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۳ · سنجش بهره‌وری ایجنت‌هایتان](https://vibecodeschool.com/learn/ag-20-slas)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/dx) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/dx.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

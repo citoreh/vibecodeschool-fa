@@ -1,144 +1,152 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# The AI Coding Dictionary
+<div dir="rtl">
 
-**81 agentic-coding terms in plain English** — the vocabulary of vibe coding with
-Claude Code, OpenAI Codex, Cursor and Google Antigravity: context windows, compaction,
-harnesses, hooks, subagents, AGENTS.md and CLAUDE.md, permission modes, prompt injection
-and more. Each entry gives the one-line definition, the mechanism, the symptom you'll
-recognise, what to do about it, how it shows up in each tool, and a usage dialogue.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [واژه‌نامه‌ی اصلی](https://github.com/dineshxr/vibecodeschool/tree/main/dictionary)
+> تحت CC BY-SA 4.0. معادل‌های فارسی از [واژه‌نامه‌ی ترجمه](../TRANSLATION.md) آمده‌اند؛ نام‌های انگلیسی
+> هر اصطلاح در خود مدخل آمده تا جست‌وجو با آن‌ها هم ممکن باشد.
 
-Interactive version with search, cross-links and course links:
+# واژه‌نامه‌ی کدنویسی با هوش مصنوعی
+
+**۸۱ اصطلاح کدنویسی ایجنتی به زبان ساده** — واژگان وایب‌کدینگ با Claude Code، OpenAI Codex،
+Cursor و Google Antigravity: پنجره‌های زمینه، فشرده‌سازی، هارنس‌ها، هوک‌ها، زیرایجنت‌ها، AGENTS.md و
+CLAUDE.md، حالت‌های مجوز، تزریق پرامپت و بیشتر. هر مدخل تعریف یک‌خطی، سازوکار، نشانه‌ای که با آن روبه‌رو
+می‌شوید، کاری که باید بکنید، این‌که در هر ابزار چطور ظاهر می‌شود، و یک گفت‌وگوی نمونه را می‌آورد.
+
+نسخه‌ی تعاملی (انگلیسی) با جست‌وجو، پیوندهای متقابل و پیوند به دوره‌ها:
 **[vibecodeschool.com/ai-coding-dictionary](https://vibecodeschool.com/ai-coding-dictionary)**
 
-Updated weekly — last update **2026-09-12**. A scheduled agent checks the term list
-against [mattpocock/dictionary-of-ai-coding](https://github.com/mattpocock/dictionary-of-ai-coding)
-and the tools' changelogs every Monday; every definition here is written from scratch
-(content licence: CC BY-SA 4.0).
+نسخه‌ی اصلی هر هفته به‌روز می‌شود — این ترجمه بر اساس به‌روزرسانی **2026-09-12** است. یک ایجنت زمان‌بندی‌شده هر
+دوشنبه فهرست اصطلاحات را با [mattpocock/dictionary-of-ai-coding](https://github.com/mattpocock/dictionary-of-ai-coding)
+و changelogهای ابزارها مقایسه می‌کند؛ همه‌ی تعریف‌ها از صفر نوشته شده‌اند (مجوز محتوا: CC BY-SA 4.0).
 
-## §01 The Model
+## §۰۱ مدل
 
-*What a model is, what it isn't, and where the bill comes from.*
+*مدل چیست، چه نیست، و صورت‌حساب از کجا می‌آید.*
 
-- **[AI](./ai.md)** — An umbrella word that keeps changing what it points at. In coding today it means a language model plus the harness that lets it act.
-- **[Model](./model.md)** — The trained network itself: billions of parameters that turn a context into the next token, and nothing more.
-- **[Parameters](./parameters.md)** — The billions of numbers a model is made of, fixed once training ends. Also called weights. What the model knows by heart lives in them.
-- **[Training](./training.md)** — How a model's weights get their values: predicting text at huge scale, then rounds of feedback that shape it into an assistant.
-- **[Inference](./inference.md)** — Using the model rather than training it. Every reply, edit and tool call you see comes from an inference pass; the weights never move.
-- **[Effort](./effort.md)** — How hard the model thinks before replying. Turn it up for tricky problems and pay in tokens and wait; turn it down for routine edits.
-- **[Token](./token.md)** — The unit a model reads and writes in — a word fragment, a little shorter than a word — and the unit every limit and price uses.
-- **[Next-token prediction](./next-token-prediction.md)** — The model's one trick: pick a likely next token, stick it on the end, go again. Prose, code and tool calls all come out this way.
-- **[Non-determinism](./non-determinism.md)** — Run the same prompt twice and you can get two different answers. Sampling, batching and silent provider updates all contribute.
-- **[Model provider](./model-provider.md)** — The service that actually runs the model: a lab like Anthropic or OpenAI, a cloud reselling it, or your own laptop through Ollama.
-- **[Harness](./harness.md)** — The software around the model that gives it hands: a system prompt, tools, permissions, hooks and the loop that feeds results back.
-- **[Model provider request](./model-provider-request.md)** — A single API call: the harness ships the full context to the provider and gets one reply back. Most turns need several of them.
-- **[Input tokens](./input-tokens.md)** — Everything the model reads on a request: instructions, history, tool definitions, results. Cheap per token, but there are a lot of them.
-- **[Output tokens](./output-tokens.md)** — What the model writes: replies, code, tool calls, hidden thinking. Produced one by one, so they set the wait, and they cost the most.
-- **[Prefix cache](./prefix-cache.md)** — The provider remembers the start of your last prompt, so the next request that begins the same way is faster and much cheaper.
-- **[Cache tokens](./cache-tokens.md)** — The share of a request's input served from the prefix cache. Heavily discounted, and the first thing to check when a session feels pricey.
-- **[Usage limit](./usage-limit.md)** — The cap on how much agent work your plan or API key allows in a window. Hitting it pauses you; it isn't the context window.
+- **[هوش مصنوعی](./ai.md)** — واژه‌ای چتری که مدام عوض می‌شود به چه اشاره می‌کند. امروز در کدنویسی یعنی یک مدل زبانی به‌علاوه‌ی هارنسی که به آن اجازه‌ی عمل می‌دهد.
+- **[مدل](./model.md)** — خودِ شبکه‌ی آموزش‌دیده: میلیاردها پارامتر که یک زمینه را به توکن بعدی تبدیل می‌کنند، و نه چیزی بیشتر.
+- **[پارامترها](./parameters.md)** — میلیاردها عددی که مدل از آن‌ها ساخته شده و پس از پایان آموزش ثابت می‌مانند. به آن‌ها وزن (weights) هم می‌گویند. آنچه مدل از بر است در آن‌ها زندگی می‌کند.
+- **[آموزش مدل](./training.md)** — این‌که وزن‌های مدل چطور مقدار می‌گیرند: پیش‌بینی متن در مقیاسی عظیم، و سپس دورهایی از بازخورد که آن را به یک دستیار تبدیل می‌کنند.
+- **[استنتاج](./inference.md)** — استفاده از مدل به‌جای آموزش آن. هر پاسخ، ویرایش و فراخوانی ابزاری که می‌بینید از یک گذر استنتاج می‌آید؛ وزن‌ها هرگز تکان نمی‌خورند.
+- **[میزان تلاش](./effort.md)** — این‌که مدل پیش از پاسخ چقدر فکر کند. برای مسئله‌های پیچیده بالا ببریدش و بهایش را با توکن و انتظار بپردازید؛ برای ویرایش‌های روزمره پایینش بیاورید.
+- **[توکن](./token.md)** — واحدی که مدل با آن می‌خواند و می‌نویسد — تکه‌ای از واژه، کمی کوتاه‌تر از یک واژه — و واحدی که همه‌ی محدودیت‌ها و قیمت‌ها با آن سنجیده می‌شوند.
+- **[پیش‌بینی توکن بعدی](./next-token-prediction.md)** — تنها ترفند مدل: یک توکن بعدیِ محتمل انتخاب کن، به انتها بچسبانش، دوباره برو. نثر، کد و فراخوانی ابزار همه همین‌طور بیرون می‌آیند.
+- **[نامعین بودن](./non-determinism.md)** — یک پرامپت را دو بار اجرا کنید و ممکن است دو پاسخ متفاوت بگیرید. نمونه‌برداری، دسته‌بندی درخواست‌ها و به‌روزرسانی‌های بی‌صدای ارائه‌دهنده همه در این نقش دارند.
+- **[ارائه‌دهنده‌ی مدل](./model-provider.md)** — سرویسی که واقعاً مدل را اجرا می‌کند: آزمایشگاهی مثل Anthropic یا OpenAI، ابری که آن را بازفروشی می‌کند، یا لپ‌تاپ خودتان از طریق Ollama.
+- **[هارنس](./harness.md)** — نرم‌افزاری دور مدل که به آن دست‌وپا می‌دهد: یک پرامپت سیستمی، ابزارها، مجوزها، هوک‌ها و چرخه‌ای که نتیجه‌ها را برمی‌گرداند.
+- **[درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md)** — یک فراخوانی API: هارنس کل زمینه را برای ارائه‌دهنده می‌فرستد و یک پاسخ پس می‌گیرد. بیشتر نوبت‌ها به چند تا از این‌ها نیاز دارند.
+- **[توکن‌های ورودی](./input-tokens.md)** — هر آنچه مدل در یک درخواست می‌خواند: دستورها، تاریخچه، تعریف ابزارها، نتیجه‌ها. هر توکنش ارزان است، اما تعدادشان زیاد است.
+- **[توکن‌های خروجی](./output-tokens.md)** — آنچه مدل می‌نویسد: پاسخ‌ها، کد، فراخوانی ابزار، فکرهای پنهان. یکی‌یکی تولید می‌شوند، پس زمان انتظار را تعیین می‌کنند، و گران‌ترین‌اند.
+- **[کش پیشوند](./prefix-cache.md)** — ارائه‌دهنده ابتدای آخرین پرامپت شما را به یاد می‌سپارد، پس درخواست بعدی که همان‌طور شروع شود سریع‌تر و بسیار ارزان‌تر است.
+- **[توکن‌های کش](./cache-tokens.md)** — بخشی از ورودی یک درخواست که از کش پیشوند تأمین می‌شود. تخفیف سنگینی دارد، و وقتی جلسه گران حس می‌شود اولین چیزی است که باید بررسی کنید.
+- **[سقف مصرف](./usage-limit.md)** — سقفی که طرح اشتراک یا کلید API شما بر حجم کار ایجنت در یک بازه‌ی زمانی می‌گذارد. رسیدن به آن متوقفتان می‌کند؛ این همان پنجره‌ی زمینه نیست.
 
-## §02 Sessions, Context Windows & Turns
+## §۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها
 
-*The unit of work: what the agent sees, how long it lasts, and why it forgets.*
+*واحد کار: ایجنت چه می‌بیند، چقدر دوام می‌آورد، و چرا فراموش می‌کند.*
 
-- **[Stateless](./stateless.md)** — Nothing carries over on its own: each model request starts from zero, and each new session does too.
-- **[Context](./context.md)** — Everything the agent currently has in front of it that bears on the task: loaded files, your messages, tool results so far.
-- **[Context window](./context-window.md)** — The fixed-size buffer of tokens a model can read in one request; if something isn't in it, the model can't see it.
-- **[Stateful](./stateful.md)** — Carries information forward from one step to the next; a session is stateful across turns even though the model underneath is not.
-- **[Agent](./agent.md)** — A model wired to tools and a loop: it reads, acts, checks the result, and goes again until the task is done or you stop it.
-- **[System prompt](./system-prompt.md)** — The standing instructions the harness puts in front of every request: who the agent is, what tools it has, how it should behave.
-- **[Session](./session.md)** — One continuous run with an agent, from an empty context to the moment you clear it, close it, or hand its work off.
-- **[Turn](./turn.md)** — Your message and all the work the agent does before it hands control back to you.
-- **[Steering](./steering.md)** — Nudging a running agent back on course, mid-turn or between turns, before a wrong call becomes the foundation for everything after it.
+- **[بی‌حالت](./stateless.md)** — هیچ چیز خودبه‌خود منتقل نمی‌شود: هر درخواست به مدل از صفر شروع می‌شود، و هر جلسه‌ی تازه هم همین‌طور.
+- **[زمینه](./context.md)** — هر آنچه ایجنت همین حالا جلوی خود دارد و به کار ربط دارد: فایل‌های بارگذاری‌شده، پیام‌های شما، نتیجه‌های ابزار تا این لحظه.
+- **[پنجره‌ی زمینه](./context-window.md)** — حافظه‌ی موقت با اندازه‌ی ثابتی از توکن‌ها که مدل در یک درخواست می‌تواند بخواند؛ اگر چیزی در آن نباشد، مدل نمی‌تواند ببیندش.
+- **[حالت‌مند](./stateful.md)** — اطلاعات را از یک گام به گام بعد منتقل می‌کند؛ یک جلسه در طول نوبت‌ها حالت‌مند است، هرچند مدلِ زیر آن نیست.
+- **[ایجنت](./agent.md)** — مدلی که به ابزارها و یک چرخه وصل شده: می‌خواند، اقدام می‌کند، نتیجه را بررسی می‌کند، و دوباره می‌رود تا کار تمام شود یا شما متوقفش کنید.
+- **[پرامپت سیستمی](./system-prompt.md)** — دستورالعمل‌های ثابتی که هارنس جلوی هر درخواست می‌گذارد: ایجنت کیست، چه ابزارهایی دارد، چطور باید رفتار کند.
+- **[جلسه](./session.md)** — یک اجرای پیوسته با یک ایجنت، از زمینه‌ای خالی تا لحظه‌ای که پاکش می‌کنید، می‌بندیدش، یا کارش را تحویل می‌دهید.
+- **[نوبت](./turn.md)** — پیام شما و همه‌ی کاری که ایجنت پیش از برگرداندن کنترل به شما انجام می‌دهد.
+- **[هدایت](./steering.md)** — برگرداندن ایجنتی که در حال کار است به مسیر، وسط یک نوبت یا میان نوبت‌ها، پیش از آن‌که یک تصمیم غلط پایه‌ی همه‌ی کارهای بعدی شود.
 
-## §03 Tools & Environment
+## §۰۳ ابزارها و محیط
 
-*How an agent touches the world: files, shells, permissions, and sandboxes.*
+*یک ایجنت چطور به دنیا دست می‌زند: فایل‌ها، شل‌ها، مجوزها و سندباکس‌ها.*
 
-- **[Environment](./environment.md)** — Everything outside the harness the agent can inspect or change: your repo, your shell, the services it can reach, the browser it drives.
-- **[Filesystem](./filesystem.md)** — The directory tree the agent reads, edits and runs inside; for a coding agent, the main part of the environment.
-- **[Tool](./tool.md)** — A named capability the harness lets the model invoke, such as reading a file, running a shell command or fetching a page.
-- **[Tool call](./tool-call.md)** — The model's request to run a tool: a structured message naming the tool and its arguments, which the harness then executes.
-- **[Tool result](./tool-result.md)** — What comes back from a tool call and lands in the context: file contents, command output, an error, a list of search hits.
-- **[MCP](./mcp.md)** — Model Context Protocol: an open standard for plugging external tool servers into any agent harness.
-- **[Permission request](./permission-request.md)** — The harness pausing before a risky tool call to ask you yes or no; the simplest human-in-the-loop gate there is.
-- **[Permission mode](./permission-mode.md)** — The setting that decides which tool calls run automatically and which stop for a permission request.
-- **[Agent mode](./agent-mode.md)** — A named preset that bundles a permission mode with behavioural instructions, switchable in the middle of a session.
-- **[Plan mode](./plan-mode.md)** — A read-only agent mode: the agent may search and read, but must propose a plan for your approval before it edits anything.
-- **[Sandbox](./sandbox.md)** — An isolated place for the agent to run, such as a container, VM or restricted shell, so a bad action can't reach the rest of your machine.
-- **[Hooks](./hooks.md)** — Commands you configure the harness to run at fixed moments, such as before or after a tool call, regardless of what the model wants.
-- **[Slash command](./slash-command.md)** — A typed /name shortcut that runs a built-in action or expands a saved prompt, so the prompts you reuse live in the repo.
-- **[Worktree](./worktree.md)** — A second checkout of the same git repo in its own directory, so an agent can work on a branch without touching yours.
-- **[Headless mode](./headless-mode.md)** — Running the agent from a script or CI with a prompt and no interactive UI; the result comes back as text or JSON.
-- **[Checkpoint](./checkpoint.md)** — A saved state of your files, and sometimes the conversation, that you can rewind to after a turn goes wrong.
+- **[محیط](./environment.md)** — هر چیزی بیرون از هارنس که ایجنت می‌تواند بررسی یا تغییرش دهد: مخزن شما، شل شما، سرویس‌هایی که به آن‌ها دسترسی دارد، مرورگری که هدایت می‌کند.
+- **[سیستم فایل](./filesystem.md)** — درخت پوشه‌هایی که ایجنت درونش می‌خواند، ویرایش می‌کند و اجرا می‌کند؛ برای یک ایجنت کدنویسی، بخش اصلی محیط.
+- **[ابزار](./tool.md)** — یک توانایی نام‌دار که هارنس اجازه می‌دهد مدل صدایش بزند، مثل خواندن یک فایل، اجرای یک دستور شل یا دریافت یک صفحه.
+- **[فراخوانی ابزار](./tool-call.md)** — درخواست مدل برای اجرای یک ابزار: پیامی ساختاریافته که نام ابزار و آرگومان‌هایش را می‌گوید، و هارنس سپس اجرایش می‌کند.
+- **[نتیجه‌ی ابزار](./tool-result.md)** — آنچه از یک فراخوانی ابزار برمی‌گردد و در زمینه فرود می‌آید: محتوای فایل، خروجی دستور، یک خطا، فهرستی از یافته‌های جست‌وجو.
+- **[MCP](./mcp.md)** — پروتکل زمینه‌ی مدل (Model Context Protocol): استانداردی باز برای وصل کردن سرورهای ابزار بیرونی به هر هارنس ایجنتی.
+- **[درخواست مجوز](./permission-request.md)** — مکث هارنس پیش از یک فراخوانی ابزار پرخطر تا از شما بله یا نه بپرسد؛ ساده‌ترین دروازه‌ی «انسان در حلقه» که وجود دارد.
+- **[حالت مجوز](./permission-mode.md)** — تنظیمی که تعیین می‌کند کدام فراخوانی‌های ابزار خودکار اجرا شوند و کدام برای یک درخواست مجوز متوقف شوند.
+- **[حالت ایجنت](./agent-mode.md)** — یک پیش‌تنظیم نام‌دار که یک حالت مجوز را با دستورالعمل‌های رفتاری یکجا می‌کند و می‌شود وسط جلسه عوضش کرد.
+- **[حالت برنامه‌ریزی](./plan-mode.md)** — یک حالت فقط‌خواندنی ایجنت: ایجنت می‌تواند جست‌وجو کند و بخواند، اما پیش از ویرایش هر چیزی باید برنامه‌ای برای تأیید شما پیشنهاد کند.
+- **[سندباکس](./sandbox.md)** — جایی ایزوله برای اجرای ایجنت، مثل یک کانتینر، ماشین مجازی یا شل محدودشده، تا یک اقدام بد به بقیه‌ی دستگاه شما نرسد.
+- **[هوک‌ها](./hooks.md)** — دستورهایی که هارنس را طوری پیکربندی می‌کنید که در لحظه‌های ثابتی اجرایشان کند، مثلاً پیش یا پس از یک فراخوانی ابزار، فارغ از این‌که مدل چه می‌خواهد.
+- **[دستور اسلش](./slash-command.md)** — میان‌بُری به شکل /name که یک اقدام داخلی را اجرا می‌کند یا یک پرامپت ذخیره‌شده را باز می‌کند، تا پرامپت‌هایی که دوباره به کار می‌برید در مخزن زندگی کنند.
+- **[ورک‌تری](./worktree.md)** — نسخه‌ی دومی از همان مخزن git در پوشه‌ای جداگانه، تا یک ایجنت بتواند روی یک شاخه کار کند بی‌آن‌که به نسخه‌ی شما دست بزند.
+- **[حالت بی‌رابط](./headless-mode.md)** — اجرای ایجنت از یک اسکریپت یا CI با یک پرامپت و بدون رابط تعاملی؛ نتیجه به‌صورت متن یا JSON برمی‌گردد.
+- **[نقطه‌ی بازگشت](./checkpoint.md)** — وضعیت ذخیره‌شده‌ای از فایل‌هایتان، و گاهی گفت‌وگو، که وقتی یک نوبت خراب شد می‌توانید به آن برگردید.
 
-## §04 Failure Modes
+## §۰۴ حالت‌های شکست
 
-*The ways it goes wrong: confident nonsense, stale knowledge, and long-session drift.*
+*راه‌هایی که خراب می‌شود: یاوه‌ی پراعتمادبه‌نفس، دانش کهنه، و انحراف در جلسه‌های طولانی.*
 
-- **[Sycophancy](./sycophancy.md)** — The model's tilt toward agreeing with you, praising your plan, and telling you it worked, regardless of whether it did.
-- **[Hallucination](./hallucination.md)** — Output that is fluent, confident, and wrong: an invented API, a misquoted file, a test result that never happened.
-- **[Parametric knowledge](./parametric-knowledge.md)** — What the model knows because it was in the training data, stored in its weights and frozen from that moment on.
-- **[Knowledge cutoff](./knowledge-cutoff.md)** — The date the model's training data ends; anything released after it is unknown to the model unless you load it into context.
-- **[Contextual knowledge](./contextual-knowledge.md)** — Facts the model has because they are in the context window right now, as opposed to facts it remembers from training.
-- **[Attention relationship](./attention-relationship.md)** — The link between any two tokens in the context; the model weighs each pair, and there are far more pairs than tokens.
-- **[Attention budget](./attention-budget.md)** — The fixed amount of focus each token can spread across the rest of the context; more context means thinner slices.
-- **[Attention degradation](./attention-degradation.md)** — The slow drop in output quality as a session grows and every token's attention is spread across more competing material.
-- **[Smart zone](./smart-zone.md)** — The early stretch of a session where the agent is at its sharpest; past it, the same model gets sloppier and forgetful.
-- **[Prompt injection](./prompt-injection.md)** — Instructions smuggled into something the agent reads, which the model may follow as if they came from you.
+- **[چاپلوسی](./sycophancy.md)** — گرایش مدل به موافقت با شما، تعریف کردن از برنامه‌تان، و گفتن این‌که کار کرد، چه کرده باشد چه نه.
+- **[توهم](./hallucination.md)** — خروجی‌ای روان، پراعتمادبه‌نفس و غلط: یک API ساختگی، نقل‌قولی نادرست از یک فایل، نتیجه‌ی تستی که هرگز اتفاق نیفتاده.
+- **[دانش پارامتری](./parametric-knowledge.md)** — آنچه مدل می‌داند چون در داده‌های آموزشی بوده، در وزن‌هایش ذخیره شده و از همان لحظه منجمد مانده.
+- **[تاریخ قطع دانش](./knowledge-cutoff.md)** — تاریخی که داده‌های آموزشی مدل در آن تمام می‌شود؛ هر چیزی که پس از آن منتشر شده برای مدل ناشناخته است مگر این‌که در زمینه بارگذاری‌اش کنید.
+- **[دانش زمینه‌ای](./contextual-knowledge.md)** — واقعیت‌هایی که مدل دارد چون همین حالا در پنجره‌ی زمینه‌اند، در برابر واقعیت‌هایی که از آموزش به یاد دارد.
+- **[رابطه‌ی توجه](./attention-relationship.md)** — پیوند میان هر دو توکن در زمینه؛ مدل هر جفت را می‌سنجد، و تعداد جفت‌ها بسیار بیشتر از توکن‌هاست.
+- **[بودجه‌ی توجه](./attention-budget.md)** — مقدار ثابتی از تمرکز که هر توکن می‌تواند میان بقیه‌ی زمینه پخش کند؛ زمینه‌ی بیشتر یعنی سهم‌های نازک‌تر.
+- **[افت توجه](./attention-degradation.md)** — افت تدریجی کیفیت خروجی با بزرگ شدن جلسه، وقتی توجه هر توکن میان مطالب رقیب بیشتری پخش می‌شود.
+- **[منطقه‌ی هوشمند](./smart-zone.md)** — بازه‌ی ابتدایی یک جلسه که ایجنت در تیزترین حالتش است؛ پس از آن، همان مدل شلخته‌تر و فراموشکار می‌شود.
+- **[تزریق پرامپت](./prompt-injection.md)** — دستورالعمل‌هایی که پنهانی در چیزی که ایجنت می‌خواند جاسازی شده‌اند، و مدل ممکن است طوری دنبالشان کند که انگار از طرف شما آمده‌اند.
 
-## §05 Handoffs
+## §۰۵ تحویل کار
 
-*Moving work between sessions without losing the plot.*
+*جابه‌جا کردن کار میان جلسه‌ها بی‌آن‌که رشته‌ی ماجرا گم شود.*
 
-- **[Clearing](./clearing.md)** — Wiping the session so the next request starts from an empty context window, keeping only the standing instructions.
-- **[Handoff](./handoff.md)** — Ending one session and starting another on the same task, carrying the state forward in writing rather than in the window.
-- **[Primary source](./primary-source.md)** — The real thing: the file, the diff, the test output, the docs page. What the agent should read instead of a description of it.
-- **[Secondary source](./secondary-source.md)** — An account of the thing rather than the thing itself: a summary, a paraphrase, a compaction. Useful, but one step removed from the truth.
-- **[Handoff artifact](./handoff-artifact.md)** — The written note that carries a task across a session boundary: what's done, what's left, what was decided, where to look.
-- **[Spec](./spec.md)** — A written description of what to build and how you'll know it's right, agreed before the agent starts writing code.
-- **[Ticket](./ticket.md)** — A bounded unit of work with a clear done state, sized so an agent can finish it in one session.
-- **[Compaction](./compaction.md)** — Replacing the session so far with a shorter summary of it, freeing the context window at the cost of detail.
-- **[Autocompact](./autocompact.md)** — Compaction the harness triggers on its own when the context window nears its limit, without asking you first.
+- **[پاک‌سازی جلسه](./clearing.md)** — پاک کردن جلسه تا درخواست بعدی از یک پنجره‌ی زمینه‌ی خالی شروع شود و فقط دستورالعمل‌های ثابت باقی بمانند.
+- **[تحویل کار](./handoff.md)** — پایان دادن به یک جلسه و شروع جلسه‌ای دیگر روی همان کار، با انتقال وضعیت به‌صورت نوشته، نه درون پنجره.
+- **[منبع دست‌اول](./primary-source.md)** — خودِ چیز واقعی: فایل، دیف، خروجی تست، صفحه‌ی مستندات. چیزی که ایجنت باید به‌جای توصیفش بخواند.
+- **[منبع دست‌دوم](./secondary-source.md)** — روایتی از چیز، نه خود آن: یک خلاصه، یک بازگویی، یک فشرده‌سازی. مفید است، اما یک قدم از حقیقت فاصله دارد.
+- **[یادداشت تحویل](./handoff-artifact.md)** — یادداشت نوشته‌ای که یک کار را از مرز جلسه عبور می‌دهد: چه انجام شده، چه مانده، چه تصمیمی گرفته شده، کجا را باید نگاه کرد.
+- **[مشخصات](./spec.md)** — توصیفی نوشته از این‌که چه باید ساخته شود و از کجا می‌فهمید درست است، که پیش از شروع کدنویسی ایجنت بر سرش توافق شده.
+- **[تیکت](./ticket.md)** — یک واحد کار محدود با وضعیت «تمام‌شده»ی روشن، به اندازه‌ای که یک ایجنت بتواند آن را در یک جلسه تمام کند.
+- **[فشرده‌سازی](./compaction.md)** — جایگزین کردن جلسه‌ی تا این لحظه با خلاصه‌ای کوتاه‌تر از آن، که پنجره‌ی زمینه را به بهای از دست دادن جزئیات آزاد می‌کند.
+- **[فشرده‌سازی خودکار](./autocompact.md)** — فشرده‌سازی‌ای که هارنس خودش، وقتی پنجره‌ی زمینه به حدش نزدیک می‌شود، بدون پرسیدن از شما انجام می‌دهد.
 
-## §06 Memory & Steering
+## §۰۶ حافظه و هدایت
 
-*Getting instructions to stick across sessions, and pointing the agent at the right thing.*
+*ماندگار کردن دستورها در طول جلسه‌ها، و نشان دادن چیز درست به ایجنت.*
 
-- **[Memory system](./memory-system.md)** — Whatever lets an agent carry information across sessions: notes on disk, a memory directory, a store it reads at startup.
-- **[AGENTS.md](./agents-md.md)** — The instructions file at the repo root that every session reads first: commands, conventions, gotchas. CLAUDE.md in Claude Code.
-- **[Progressive disclosure](./progressive-disclosure.md)** — Giving the agent a short index up front and letting it load the detail only when a task calls for it.
-- **[Context pointer](./context-pointer.md)** — A short reference that tells the agent where information lives and when to fetch it, instead of the information itself.
-- **[Context engineering](./context-engineering.md)** — Deciding what goes into the context window, when, and in what order, so the agent sees what the task needs and nothing else.
-- **[Skill](./skill.md)** — A named, reusable procedure the agent loads on demand: a folder of instructions and optional scripts, used when a task matches.
-- **[Subagent](./subagent.md)** — A separate agent the main agent spins up for a bounded task, with its own context window; only its final report comes back.
+- **[سیستم حافظه](./memory-system.md)** — هر چیزی که به یک ایجنت اجازه می‌دهد اطلاعات را میان جلسه‌ها حمل کند: یادداشت‌هایی روی دیسک، یک پوشه‌ی حافظه، انباری که هنگام شروع می‌خواندش.
+- **[AGENTS.md](./agents-md.md)** — فایل دستورالعملی در ریشه‌ی مخزن که هر جلسه اول آن را می‌خواند: دستورها، قراردادها، دام‌ها. در Claude Code اسمش CLAUDE.md است.
+- **[افشای تدریجی](./progressive-disclosure.md)** — دادن یک فهرست کوتاه به ایجنت در ابتدا و اجازه دادن به او که جزئیات را فقط وقتی کاری آن را می‌طلبد بارگذاری کند.
+- **[اشاره‌گر زمینه](./context-pointer.md)** — ارجاعی کوتاه که به ایجنت می‌گوید اطلاعات کجا زندگی می‌کند و کی باید دریافتش کند، به‌جای خود اطلاعات.
+- **[مهندسی زمینه](./context-engineering.md)** — تصمیم‌گیری درباره‌ی این‌که چه چیزی، کی و به چه ترتیبی وارد پنجره‌ی زمینه شود، تا ایجنت آنچه کار لازم دارد را ببیند و نه چیز دیگری.
+- **[مهارت](./skill.md)** — رویه‌ای نام‌دار و قابل استفاده‌ی دوباره که ایجنت هر وقت لازم شد بارگذاری‌اش می‌کند: پوشه‌ای از دستورالعمل‌ها و اسکریپت‌های اختیاری، که وقتی کاری با آن جور باشد به کار می‌رود.
+- **[زیرایجنت](./subagent.md)** — ایجنتی جداگانه که ایجنت اصلی برای یک کار محدود راه می‌اندازد، با پنجره‌ی زمینه‌ی خودش؛ فقط گزارش نهایی‌اش برمی‌گردد.
 
-## §07 Patterns of Work
+## §۰۷ الگوهای کار
 
-*The working habits that separate a good run from a bad one.*
+*عادت‌های کاری‌ای که یک اجرای خوب را از یک اجرای بد جدا می‌کنند.*
 
-- **[Human-in-the-loop](./human-in-the-loop.md)** — A working pattern where a person approves, corrects, or answers for the agent while it runs, instead of only judging the result.
-- **[AFK](./afk.md)** — Away from keyboard: you start the agent, leave, and come back to finished work you review later instead of supervising live.
-- **[Automated check](./automated-check.md)** — A mechanical pass/fail test the harness or CI runs on the agent's work: types, lint, tests, build. Cheap, fast, no judgement.
-- **[Automated review](./automated-review.md)** — A model reads the agent's diff and flags problems before a person does: judgement without a human, fuzzier than a check.
-- **[Human review](./human-review.md)** — A person reading the agent's work before it ships. The only step that judges whether the change is right, not just whether it passes.
-- **[Vibe coding](./vibe-coding.md)** — Building software by describing what you want to an agent and judging the result rather than reading every line of code.
-- **[One-shot](./one-shot.md)** — Getting a usable result from a single prompt with no follow-up turns. A good test of a prompt, a bad habit for production.
-- **[Design concept](./design-concept.md)** — A short written description of what you're building and why, agreed before any code, so the agent and you share the same picture.
-- **[Grilling](./grilling.md)** — Having the agent interview you, question by question, until the requirements are fully resolved before it writes anything.
-- **[Prototyping](./prototyping.md)** — Building a quick, throwaway version to learn something, not to keep. With agents it's cheap enough to do before deciding anything.
-- **[Harness engineering](./harness-engineering.md)** — Improving the setup around the model (tools, checks, instructions, permissions) so the same model does better work.
-- **[DX](./dx.md)** — Developer experience: how pleasant and fast a tool, codebase or workflow is for the humans using it.
-- **[AX](./ax.md)** — Agent experience: how well a codebase, tool or environment supports an agent that starts each session knowing nothing.
+- **[انسان در حلقه](./human-in-the-loop.md)** — الگوی کاری‌ای که در آن یک انسان در حین اجرای ایجنت تأیید می‌کند، اصلاح می‌کند یا پاسخ می‌دهد، به‌جای این‌که فقط درباره‌ی نتیجه قضاوت کند.
+- **[AFK — دور از کیبورد](./afk.md)** — دور از کیبورد (away from keyboard): ایجنت را راه می‌اندازید، می‌روید، و برمی‌گردید به کار تمام‌شده‌ای که بعداً بازبینی‌اش می‌کنید، به‌جای نظارت زنده.
+- **[بررسی خودکار](./automated-check.md)** — آزمونی مکانیکی با نتیجه‌ی قبول یا رد که هارنس یا CI روی کار ایجنت اجرا می‌کند: نوع‌ها، لینت، تست‌ها، بیلد. ارزان، سریع، بدون قضاوت.
+- **[بازبینی خودکار](./automated-review.md)** — یک مدل دیف ایجنت را می‌خواند و پیش از یک انسان مشکلات را علامت می‌زند: قضاوت بدون انسان، مبهم‌تر از یک بررسی خودکار.
+- **[بازبینی انسانی](./human-review.md)** — انسانی که کار ایجنت را پیش از انتشار می‌خواند. تنها گامی که قضاوت می‌کند تغییر درست است یا نه، نه فقط این‌که قبول می‌شود یا نه.
+- **[وایب‌کدینگ](./vibe-coding.md)** — ساختن نرم‌افزار با توصیف آنچه می‌خواهید برای یک ایجنت و قضاوت درباره‌ی نتیجه، به‌جای خواندن تک‌تک خطوط کد.
+- **[یک‌باره](./one-shot.md)** — گرفتن یک نتیجه‌ی قابل استفاده از یک پرامپت تنها بدون هیچ نوبت پیگیری. آزمون خوبی برای یک پرامپت، عادت بدی برای محیط تولید.
+- **[مفهوم طراحی](./design-concept.md)** — توصیف نوشته‌ی کوتاهی از این‌که چه می‌سازید و چرا، که پیش از هر کدی بر سرش توافق شده تا شما و ایجنت تصویر یکسانی داشته باشید.
+- **[بازجویی](./grilling.md)** — این‌که ایجنت سؤال‌به‌سؤال از شما مصاحبه بگیرد تا نیازمندی‌ها پیش از نوشتن هر چیزی کاملاً روشن شوند.
+- **[نمونه‌سازی](./prototyping.md)** — ساختن نسخه‌ای سریع و دورریختنی برای یاد گرفتن چیزی، نه برای نگه داشتن. با ایجنت‌ها آن‌قدر ارزان است که می‌شود پیش از هر تصمیمی انجامش داد.
+- **[مهندسی هارنس](./harness-engineering.md)** — بهبود چیدمان پیرامون مدل (ابزارها، بررسی‌ها، دستورالعمل‌ها، مجوزها) تا همان مدل کار بهتری انجام دهد.
+- **[DX — تجربه‌ی توسعه‌دهنده](./dx.md)** — تجربه‌ی توسعه‌دهنده (developer experience): یک ابزار، کدها یا گردش‌کار برای انسان‌هایی که از آن استفاده می‌کنند چقدر خوشایند و سریع است.
+- **[AX — تجربه‌ی ایجنت](./ax.md)** — تجربه‌ی ایجنت (agent experience): یک کد، ابزار یا محیط چقدر خوب از ایجنتی پشتیبانی می‌کند که هر جلسه را بدون دانستن هیچ چیز شروع می‌کند.
 
-## Changelog
+## تغییرات
 
-- **2026-09-12** — Dictionary launched: 81 entries across 7 sections, with tool-specific notes and course links.
+- **2026-09-12** — راه‌اندازی واژه‌نامه: ۸۱ مدخل در ۷ بخش، با یادداشت‌های مخصوص هر ابزار و پیوند به دوره‌ها.
+- **2026-10-19** — ترجمه‌ی فارسی همه‌ی ۸۱ مدخل.
 
 ---
 
-Missing a word? [Open an issue](https://github.com/dineshxr/vibecodeschool/issues).
-⭐ [Star the repo](https://github.com/dineshxr/vibecodeschool) if this saved you a search.
+اصطلاحی جا افتاده؟ در [مخزن اصلی ایشو باز کنید](https://github.com/dineshxr/vibecodeschool/issues).
+⭐ اگر این واژه‌نامه یک جست‌وجو برایتان صرفه‌جویی کرد، به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool).
+
+</div>

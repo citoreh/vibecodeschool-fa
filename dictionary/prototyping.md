@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Prototyping
+<div dir="rtl">
 
-> Building a quick, throwaway version to learn something, not to keep. With agents it's cheap enough to do before deciding anything.
+# نمونه‌سازی (prototyping)
 
-*§07 Patterns of Work · also called: Throwaway prototype, Spike · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/prototyping)*
+> ساختن نسخه‌ای سریع و دورریختنی برای یاد گرفتن چیزی، نه برای نگه داشتن. با ایجنت‌ها آن‌قدر ارزان است که می‌شود پیش از هر تصمیمی انجامش داد.
 
-Prototyping is building the fast, disposable version of something to find out whether the idea works, what it feels like, or where the hard part is. The deliverable is the answer, not the code. Agents change the economics: a prototype that used to cost a day now costs a prompt and twenty minutes, which means you can afford to prototype before you commit to a [design concept](./design-concept.md), not after.
+*§۰۷ الگوهای کار · نام‌های دیگر: Throwaway prototype، Spike · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/prototyping)*
 
-The danger is the prototype that doesn't get thrown away. A vibe-coded demo works in the happy path, someone likes it, and it quietly becomes the product, with no tests, guessed data shapes and a folder called `temp2`. Because agent output looks finished, the line between 'prototype' and 'v1' blurs faster than it did when a prototype looked rough.
+نمونه‌سازی یعنی ساختن نسخه‌ی سریع و دورریختنیِ چیزی تا بفهمید ایده کار می‌کند یا نه، چه حسی دارد، یا بخش سختش کجاست. خروجی پاسخ است، نه کد. ایجنت‌ها حساب‌وکتاب را عوض می‌کنند: نمونه‌ای که قبلاً یک روز هزینه داشت حالا یک پرامپت و بیست دقیقه هزینه دارد، یعنی می‌توانید پیش از متعهد شدن به یک [مفهوم طراحی](./design-concept.md) نمونه بسازید، نه پس از آن.
 
-Decide before you start which one you're building. For a prototype, drop the ceremony: no [spec](./spec.md), full [vibe coding](./vibe-coding.md) mode, minimal [human review](./human-review.md), a fresh [worktree](./worktree.md) or directory you can delete. Write down what you learned when it's done. Then, if it earns a real version, start that version clean, with the prototype as a reference in the [context](./context.md) rather than as the codebase you extend.
+خطرش نمونه‌ای است که دور ریخته نمی‌شود. یک دموی وایب‌کدشده در مسیر خوش‌بینانه کار می‌کند، کسی از آن خوشش می‌آید، و بی‌صدا به محصول تبدیل می‌شود، بدون تست، با شکل‌های داده‌ی حدسی و پوشه‌ای به نام `temp2`. چون خروجی ایجنت تمام‌شده به نظر می‌رسد، مرز میان «نمونه» و «نسخه‌ی ۱» سریع‌تر از زمانی که نمونه‌ها زمخت به نظر می‌رسیدند محو می‌شود.
 
-## In the tools
+پیش از شروع تصمیم بگیرید کدام را می‌سازید. برای نمونه، تشریفات را کنار بگذارید: بدون [مشخصات](./spec.md)، حالت کامل [وایب‌کدینگ](./vibe-coding.md)، حداقل [بازبینی انسانی](./human-review.md)، یک [ورک‌تری](./worktree.md) یا پوشه‌ی تازه که بتوانید پاکش کنید. وقتی تمام شد، آنچه یاد گرفتید را بنویسید. بعد، اگر ارزش یک نسخه‌ی واقعی را داشت، آن نسخه را تمیز شروع کنید، با نمونه به‌عنوان مرجعی در [زمینه](./context.md) نه به‌عنوان کدی که گسترشش می‌دهید.
 
-- Claude Code and Codex: a throwaway directory plus an auto-accept permission mode gives the fastest prototyping loop, since nothing needs approval.
-- ChatGPT Work and Claude Cowork: good for prototyping documents, decks and dashboards before anyone builds software.
+## در ابزارها
 
-## In conversation
+- Claude Code و Codex: یک پوشه‌ی دورریختنی به‌علاوه‌ی یک حالت مجوز با پذیرش خودکار سریع‌ترین چرخه‌ی نمونه‌سازی را می‌دهد، چون هیچ چیز تأیید لازم ندارد.
+- ChatGPT Work و Claude Cowork: برای نمونه‌سازی سندها، ارائه‌ها و داشبوردها پیش از آن‌که کسی نرم‌افزاری بسازد خوب‌اند.
 
-> “Should we design the onboarding flow first or just build it?”
+## در گفت‌وگو
+
+> «اول جریان ورود کاربران تازه را طراحی کنیم یا همین‌طور بسازیمش؟»
 >
-> “Prototype three versions this afternoon, click through them, then write the spec for the one that felt right.”
+> «امروز بعدازظهر سه نسخه نمونه بساز، رویشان کلیک کن، بعد برای همانی که حس درستی داشت مشخصات بنویس.»
 
-**Related:** [One-shot](./one-shot.md) · [AFK](./afk.md) · [Checkpoint](./checkpoint.md) · [Sandbox](./sandbox.md)
+**مرتبط:** [یک‌باره](./one-shot.md) · [AFK — دور از کیبورد](./afk.md) · [نقطه‌ی بازگشت](./checkpoint.md) · [سندباکس](./sandbox.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 02 · Generating Screens from a Sketch](https://vibecodeschool.com/learn/cm-07-screens-from-sketch)
-- [Course 01 · Iterative Refinement](https://vibecodeschool.com/learn/cc-19-iterative-refinement)
+- [دوره‌ی ۰۲ · ساختن صفحه از روی یک طرح دستی](https://vibecodeschool.com/learn/cm-07-screens-from-sketch)
+- [دوره‌ی ۰۱ · بهبود تکرارشونده](https://vibecodeschool.com/learn/cc-19-iterative-refinement)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/prototyping) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/prototyping.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

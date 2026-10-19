@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Automated review
+<div dir="rtl">
 
-> A model reads the agent's diff and flags problems before a person does: judgement without a human, fuzzier than a check.
+# بازبینی خودکار (automated review)
 
-*§07 Patterns of Work · also called: AI code review, Agent review · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/automated-review)*
+> یک مدل دیف ایجنت را می‌خواند و پیش از یک انسان مشکلات را علامت می‌زند: قضاوت بدون انسان، مبهم‌تر از یک بررسی خودکار.
 
-Automated review is a model reviewing the work of a model. A separate [session](./session.md), often a [subagent](./subagent.md) or a bot on the pull request, reads the diff with fresh [context](./context.md) and reports what looks wrong: a missed edge case, a security smell, a change that doesn't match the [spec](./spec.md). It sits between an [automated check](./automated-check.md), which is exact but narrow, and [human review](./human-review.md), which is expensive but has taste.
+*§۰۷ الگوهای کار · نام‌های دیگر: AI code review، Agent review · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/automated-review)*
 
-The reason to use a fresh reviewer rather than asking the same session to check itself is [sycophancy](./sycophancy.md) plus contamination. The session that wrote the code carries every assumption that produced the bug, so it tends to confirm its own work. A reviewer that only sees the diff and the requirements has none of that baggage and catches things the author can't.
+بازبینی خودکار یعنی مدلی کار مدلی دیگر را بازبینی می‌کند. یک [جلسه‌ی](./session.md) جداگانه، اغلب یک [زیرایجنت](./subagent.md) یا یک ربات روی درخواست ادغام، دیف را با [زمینه‌ای](./context.md) تازه می‌خواند و گزارش می‌دهد چه چیزی غلط به نظر می‌رسد: یک حالت مرزی جاافتاده، یک بوی امنیتی، تغییری که با [مشخصات](./spec.md) نمی‌خواند. جایی میان یک [بررسی خودکار](./automated-check.md)، که دقیق اما محدود است، و [بازبینی انسانی](./human-review.md)، که گران است اما سلیقه دارد، قرار می‌گیرد.
 
-Treat its output as a triage list, not a verdict. Point the reviewer at specific concerns (correctness, security, the acceptance criteria in the ticket) instead of asking for a general opinion, and have it verify each finding by reading the surrounding code before reporting. Anything flagged with evidence goes back to the author session as a fix; anything vague gets ignored. It reduces what a human has to read; it doesn't replace the human.
+دلیل استفاده از یک بازبین تازه به‌جای خواستن از همان جلسه برای بررسی خودش، [چاپلوسی](./sycophancy.md) به‌علاوه‌ی آلودگی است. جلسه‌ای که کد را نوشته همه‌ی فرض‌هایی را حمل می‌کند که باگ را تولید کرده‌اند، پس تمایل دارد کار خودش را تأیید کند. بازبینی که فقط دیف و نیازمندی‌ها را می‌بیند هیچ‌کدام از آن بار را ندارد و چیزهایی را می‌گیرد که نویسنده نمی‌تواند.
 
-## In the tools
+خروجی‌اش را یک فهرست اولویت‌بندی بدانید، نه یک حکم. به‌جای خواستن یک نظر کلی، بازبین را به نگرانی‌های مشخصی ارجاع دهید (درستی، امنیت، معیارهای پذیرش در تیکت)، و بخواهید هر یافته را پیش از گزارش با خواندن کد اطراف راستی‌آزمایی کند. هر چیزی که با شاهد علامت خورده به‌صورت یک اصلاح به جلسه‌ی نویسنده برمی‌گردد؛ هر چیز مبهمی نادیده گرفته می‌شود. آنچه را انسان باید بخواند کم می‌کند؛ جای انسان را نمی‌گیرد.
 
-- Claude Code: a `/code-review` pass reviews the current diff; a reviewer subagent with a narrow brief does the same on demand.
-- GitHub: Copilot review and similar bots comment on pull requests automatically; Vercel Agent does the same for Vercel projects.
+## در ابزارها
 
-## In conversation
+- Claude Code: یک دور `/code-review` دیف فعلی را بازبینی می‌کند؛ یک زیرایجنت بازبین با شرح کاری محدود همین کار را هر وقت بخواهید انجام می‌دهد.
+- GitHub: بازبینی Copilot و ربات‌های مشابه خودکار روی درخواست‌های ادغام کامنت می‌گذارند؛ Vercel Agent همین کار را برای پروژه‌های Vercel می‌کند.
 
-> “The review bot left fourteen comments on a forty-line PR.”
+## در گفت‌وگو
+
+> «ربات بازبینی روی یک درخواست ادغام چهل‌خطی چهارده کامنت گذاشت.»
 >
-> “Half are style. Tell the automated review to only flag correctness and security, and to cite the line that proves it.”
+> «نصفشان سلیقه‌ای‌اند. به بازبینی خودکار بگو فقط درستی و امنیت را علامت بزند، و خطی را که ثابتش می‌کند ذکر کند.»
 
-**Related:** [Grilling](./grilling.md) · [AFK](./afk.md) · [Harness engineering](./harness-engineering.md)
+**مرتبط:** [بازجویی](./grilling.md) · [AFK — دور از کیبورد](./afk.md) · [مهندسی هارنس](./harness-engineering.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Code Review with Claude](https://vibecodeschool.com/learn/cc-21-code-review)
-- [Course 03 · Second Opinions](https://vibecodeschool.com/learn/ag-13-voting-and-consensus)
+- [دوره‌ی ۰۱ · بازبینی کد با Claude](https://vibecodeschool.com/learn/cc-21-code-review)
+- [دوره‌ی ۰۳ · نظر دوم](https://vibecodeschool.com/learn/ag-13-voting-and-consensus)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/automated-review) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/automated-review.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>
