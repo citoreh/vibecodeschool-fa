@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
+
+<div dir="rtl">
 
 # MCP
 
-> Model Context Protocol: an open standard for plugging external tool servers into any agent harness.
+> پروتکل زمینه‌ی مدل (Model Context Protocol): استانداردی باز برای وصل کردن سرورهای ابزار بیرونی به هر هارنس ایجنتی.
 
-*§03 Tools & Environment · also called: Model Context Protocol, MCP server, Connector · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/mcp)*
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Model Context Protocol، MCP server، Connector · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/mcp)*
 
-MCP, the Model Context Protocol, is an open standard for connecting a [harness](./harness.md) to outside capabilities. An MCP server is a small program that advertises [tools](./tool.md) (and sometimes resources and prompt templates) over a simple JSON interface; the harness lists those tools next to its built-in ones, and the [model](./model.md) calls them the same way. One server for GitHub, one for Postgres, one for your browser, and any MCP-aware client can use all three without custom glue.
+MCP، یا پروتکل زمینه‌ی مدل، استانداردی باز برای وصل کردن یک [هارنس](./harness.md) به توانایی‌های بیرونی است. یک سرور MCP برنامه‌ی کوچکی است که [ابزارهایی](./tool.md) را (و گاهی منابع و قالب‌های پرامپت را) از طریق یک رابط JSON ساده اعلام می‌کند؛ هارنس آن ابزارها را کنار ابزارهای داخلی خودش فهرست می‌کند، و [مدل](./model.md) به همان شکل صدایشان می‌زند. یک سرور برای GitHub، یکی برای Postgres، یکی برای مرورگر شما، و هر کلاینت آشنا با MCP می‌تواند از هر سه بدون چسب سفارشی استفاده کند.
 
-The pitch is portability: write the integration once, use it from Claude Code, Cursor, Codex, Claude Cowork and the rest. The catch is [context](./context.md). Every connected server adds its tool definitions to every request, and popular servers ship dozens of tools. Five servers can quietly eat a large slice of your [context window](./context-window.md) before you type a word, and a crowded tool list makes the agent worse at choosing. A slow or flaky server also stalls the whole loop while the [tool call](./tool-call.md) waits.
+وعده‌اش قابلیت حمل است: یکپارچه‌سازی را یک بار بنویسید، از Claude Code، Cursor، Codex، Claude Cowork و بقیه استفاده‌اش کنید. گیرش [زمینه](./context.md) است. هر سرور وصل‌شده تعریف ابزارهایش را به هر درخواست اضافه می‌کند، و سرورهای محبوب ده‌ها ابزار عرضه می‌کنند. پنج سرور می‌توانند بی‌سروصدا پیش از آن‌که یک کلمه تایپ کنید تکه‌ی بزرگی از [پنجره‌ی زمینه](./context-window.md) را بخورند، و فهرست شلوغ ابزارها ایجنت را در انتخاب بدتر می‌کند. یک سرور کند یا ناپایدار هم کل چرخه را متوقف می‌کند در حالی که [فراخوانی ابزار](./tool-call.md) منتظر است.
 
-Connect servers per project, not globally, and only the ones the current work needs. Prefer servers with a few well-described tools over kitchen-sink ones. For anything that touches production data, check what permissions the server holds; from the model's point of view an MCP tool is just another action it is allowed to take, and [prompt injection](./prompt-injection.md) through a server's results is a real path.
+سرورها را برای هر پروژه وصل کنید، نه سراسری، و فقط آن‌هایی که کار فعلی لازم دارد. سرورهایی با چند ابزار خوب‌توضیح‌داده‌شده را به سرورهای همه‌چیزدار ترجیح دهید. برای هر چیزی که به داده‌های محیط تولید دست می‌زند، بررسی کنید سرور چه مجوزهایی دارد؛ از نگاه مدل یک ابزار MCP فقط یک اقدام دیگر است که اجازه‌ی انجامش را دارد، و [تزریق پرامپت](./prompt-injection.md) از طریق نتیجه‌های یک سرور مسیری واقعی است.
 
-## In the tools
+## در ابزارها
 
-- Claude Code: `claude mcp add` registers a server for a project or for you globally; its tools appear with an `mcp__` prefix.
-- Claude Cowork and claude.ai: connectors are MCP servers behind a friendlier name; Gmail, Calendar and Drive are examples.
-- Cursor and Codex: servers are declared in a config file in the workspace and toggled in settings.
+- Claude Code: `claude mcp add` یک سرور را برای یک پروژه یا به‌طور سراسری برای شما ثبت می‌کند؛ ابزارهایش با پیشوند `mcp__` ظاهر می‌شوند.
+- Claude Cowork و claude.ai: کانکتورها همان سرورهای MCP با نامی خودمانی‌ترند؛ Gmail، Calendar و Drive نمونه‌هایشان هستند.
+- Cursor و Codex: سرورها در یک فایل پیکربندی درون فضای کاری اعلام می‌شوند و در تنظیمات روشن و خاموش می‌شوند.
 
-## In conversation
+## در گفت‌وگو
 
-> “I want it to file Linear tickets from the failing tests.”
+> «می‌خواهم از روی تست‌های شکست‌خورده تیکت Linear ثبت کند.»
 >
-> “Add the Linear MCP server to the project config. It shows up as a tool, and the agent can create issues directly instead of you pasting.”
+> «سرور MCP مربوط به Linear را به پیکربندی پروژه اضافه کن. به‌صورت یک ابزار ظاهر می‌شود، و ایجنت می‌تواند مستقیم ایشو بسازد به‌جای این‌که تو بچسبانی.»
 >
-> “Just that one server, right? Last time a toolbar's worth of servers made it sluggish.”
+> «فقط همان یک سرور، درست؟ دفعه‌ی قبل یک نوار ابزار پر از سرور کندش کرد.»
 
-**Related:** [Environment](./environment.md) · [Permission request](./permission-request.md) · [Skill](./skill.md) · [Tool result](./tool-result.md)
+**مرتبط:** [محیط](./environment.md) · [درخواست مجوز](./permission-request.md) · [مهارت](./skill.md) · [نتیجه‌ی ابزار](./tool-result.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · MCP Servers](https://vibecodeschool.com/learn/cc-17-mcp-servers)
-- [Course 04 · MCP — Model Context Protocol](https://vibecodeschool.com/learn/aa-12-mcp-model-context-protocol)
+- [دوره‌ی ۰۱ · سرورهای MCP](https://vibecodeschool.com/learn/cc-17-mcp-servers)
+- [دوره‌ی ۰۴ · MCP — پروتکل زمینه‌ی مدل](https://vibecodeschool.com/learn/aa-12-mcp-model-context-protocol)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/mcp) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/mcp.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

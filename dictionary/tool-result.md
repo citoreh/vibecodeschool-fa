@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Tool result
+<div dir="rtl">
 
-> What comes back from a tool call and lands in the context: file contents, command output, an error, a list of search hits.
+# نتیجه‌ی ابزار (tool result)
 
-*§03 Tools & Environment · also called: Tool output · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/tool-result)*
+> آنچه از یک فراخوانی ابزار برمی‌گردد و در زمینه فرود می‌آید: محتوای فایل، خروجی دستور، یک خطا، فهرستی از یافته‌های جست‌وجو.
 
-A tool result is the payload the [harness](./harness.md) returns after executing a [tool call](./tool-call.md): the text of a file, the stdout and exit code of a command, the matches from a search, or an error message. It is appended to the [context window](./context-window.md) as if someone had pasted it into the chat, and the [model](./model.md) reads it on the next request. Everything the [agent](./agent.md) knows about the current state of the [environment](./environment.md) arrived this way.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Tool output · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/tool-result)*
 
-Because results are the agent's only eyes, their quality is the agent's quality. A truncated log hides the failing test. A command that swallows errors and exits zero tells the agent everything is fine. A search tool that returns two hundred matches buries the one that matters. And results are ordinary text to the model, which means text inside them can carry instructions: a README that says 'ignore your previous rules' is a [prompt injection](./prompt-injection.md) risk the moment it becomes a tool result.
+نتیجه‌ی ابزار محموله‌ای است که [هارنس](./harness.md) پس از اجرای یک [فراخوانی ابزار](./tool-call.md) برمی‌گرداند: متن یک فایل، stdout و کد خروج یک دستور، تطابق‌های یک جست‌وجو، یا یک پیام خطا. به [پنجره‌ی زمینه](./context-window.md) افزوده می‌شود، انگار کسی آن را در گفت‌وگو چسبانده باشد، و [مدل](./model.md) در درخواست بعدی می‌خواندش. هر چیزی که [ایجنت](./agent.md) درباره‌ی وضعیت فعلی [محیط](./environment.md) می‌داند، از همین راه رسیده.
 
-Shape the results you feed the loop. Prefer commands with short, honest output, and make failures loud: a non-zero exit code and a one-line reason beat a wall of green. When output is unavoidably long, have the agent pipe it through `tail`, `grep` or a summary step instead of reading the whole thing. Big results are the fastest way out of the [smart zone](./smart-zone.md).
+چون نتیجه‌ها تنها چشم‌های ایجنت‌اند، کیفیتشان کیفیت ایجنت است. یک لاگ بریده‌شده تست شکست‌خورده را پنهان می‌کند. دستوری که خطاها را می‌بلعد و با صفر خارج می‌شود به ایجنت می‌گوید همه چیز روبه‌راه است. ابزار جست‌وجویی که دویست تطابق برمی‌گرداند، همان یکی که مهم است را زیر خود دفن می‌کند. و نتیجه‌ها برای مدل متنی معمولی‌اند، یعنی متنِ درونشان می‌تواند دستورالعمل حمل کند: README‌ای که می‌گوید «قاعده‌های قبلی‌ات را نادیده بگیر» از همان لحظه که به نتیجه‌ی ابزار تبدیل می‌شود، خطر [تزریق پرامپت](./prompt-injection.md) است.
 
-## In the tools
+نتیجه‌هایی را که به چرخه می‌دهید شکل بدهید. دستورهایی با خروجی کوتاه و صادق را ترجیح دهید، و شکست‌ها را پرسروصدا کنید: یک کد خروج غیرصفر و یک دلیل یک‌خطی از دیواری سبز بهتر است. وقتی خروجی ناگزیر طولانی است، بگویید ایجنت آن را از `tail`، `grep` یا یک گام خلاصه‌سازی عبور دهد به‌جای خواندن همه‌اش. نتیجه‌های بزرگ سریع‌ترین راه بیرون رفتن از [منطقه‌ی هوشمند](./smart-zone.md) هستند.
 
-- Claude Code: long results are collapsed in the transcript view, but the model still receives the text up to a per-tool limit; ask it to filter output when a command is chatty.
-- Codex: command output streams into the thread and is stored with the run, so you can inspect exactly what the model saw.
-- Most tools: results from MCP servers count the same as built-in tool output, so a verbose server bloats context just as fast.
+## در ابزارها
 
-## In conversation
+- Claude Code: نتیجه‌های طولانی در نمای متن گفت‌وگو جمع می‌شوند، اما مدل همچنان متن را تا سقفی برای هر ابزار دریافت می‌کند؛ وقتی یک دستور پرحرف است بخواهید خروجی را فیلتر کند.
+- Codex: خروجی دستورها در رشته‌ی گفت‌وگو جاری می‌شود و همراه اجرا ذخیره می‌شود، تا بتوانید دقیقاً ببینید مدل چه دیده.
+- بیشتر ابزارها: نتیجه‌های سرورهای MCP مثل خروجی ابزارهای داخلی حساب می‌شوند، پس یک سرور پرحرف به همان سرعت زمینه را پر می‌کند.
 
-> “It insists the build passed, but the deploy is broken.”
+## در گفت‌وگو
+
+> «اصرار دارد بیلد موفق بوده، ولی دیپلوی خراب است.»
 >
-> “Check the tool result for the build step. The script prints 'done' and exits zero even when the bundler fails, so from the agent's side it did pass.”
+> «نتیجه‌ی ابزار برای گام بیلد را نگاه کن. اسکریپت «done» چاپ می‌کند و با صفر خارج می‌شود حتی وقتی bundler شکست می‌خورد، پس از نگاه ایجنت واقعاً موفق بوده.»
 >
-> “Okay, that's a script bug first and an agent bug second.”
+> «باشد، اول باگ اسکریپت است و بعد باگ ایجنت.»
 
-**Related:** [Attention budget](./attention-budget.md) · [Context](./context.md) · [Hooks](./hooks.md)
+**مرتبط:** [بودجه‌ی توجه](./attention-budget.md) · [زمینه](./context.md) · [هوک‌ها](./hooks.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Running Tests with Claude](https://vibecodeschool.com/learn/cc-08-running-tests)
-- [Course 04 · Prompt Injection, Hallucinations & PII](https://vibecodeschool.com/learn/aa-23-prompt-injection-and-pii)
+- [دوره‌ی ۰۱ · اجرای تست‌ها با Claude](https://vibecodeschool.com/learn/cc-08-running-tests)
+- [دوره‌ی ۰۴ · تزریق پرامپت، توهم و اطلاعات شخصی](https://vibecodeschool.com/learn/aa-23-prompt-injection-and-pii)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/tool-result) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/tool-result.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Permission mode
+<div dir="rtl">
 
-> The setting that decides which tool calls run automatically and which stop for a permission request.
+# حالت مجوز (permission mode)
 
-*§03 Tools & Environment · also called: Auto-approve, Bypass permissions, YOLO mode, Full-auto · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/permission-mode)*
+> تنظیمی که تعیین می‌کند کدام فراخوانی‌های ابزار خودکار اجرا شوند و کدام برای یک درخواست مجوز متوقف شوند.
 
-Permission mode is the rule the [harness](./harness.md) applies to every [tool call](./tool-call.md) before running it: execute silently, or stop and raise a [permission request](./permission-request.md). It ranges from cautious (ask about every edit and every command) through allowlists (routine commands run, unusual ones ask) to fully automatic (nothing asks). The [model](./model.md) doesn't change; what changes is how much can happen between your glances at the screen.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Auto-approve، Bypass permissions، YOLO mode، Full-auto · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/permission-mode)*
 
-The mode shapes the work more than people expect. In a strict mode the [agent](./agent.md) moves in short hops and you stay in the loop by default. In a permissive mode it can complete a whole feature while you get coffee, and it can also delete a directory, push to the wrong branch, or run a script that phones home. 'YOLO mode' is the community name for the fully automatic end for a reason. The danger isn't the mode itself, it is running it outside a [sandbox](./sandbox.md) on a machine that holds things you care about.
+حالت مجوز قاعده‌ای است که [هارنس](./harness.md) پیش از اجرای هر [فراخوانی ابزار](./tool-call.md) اعمال می‌کند: بی‌صدا اجرا کن، یا بایست و یک [درخواست مجوز](./permission-request.md) مطرح کن. از محتاطانه (برای هر ویرایش و هر دستور بپرس)، تا فهرست‌های مجاز (دستورهای روزمره اجرا می‌شوند، دستورهای غیرعادی می‌پرسند)، تا کاملاً خودکار (هیچ چیز نمی‌پرسد) را در بر می‌گیرد. [مدل](./model.md) عوض نمی‌شود؛ آنچه عوض می‌شود این است که میان دو نگاه شما به صفحه چقدر کار می‌تواند اتفاق بیفتد.
 
-Match the mode to the blast radius. Interactive work on a real checkout: allowlist the safe commands and keep asking for the rest. Unattended or parallel runs: go permissive, but inside a container, a [worktree](./worktree.md) or a cloud session with no production credentials, and end in a PR rather than a merge. And read the diff afterwards regardless; permissions gate actions, they don't check quality.
+حالت مجوز کار را بیش از آنچه مردم انتظار دارند شکل می‌دهد. در یک حالت سخت‌گیرانه، [ایجنت](./agent.md) در جهش‌های کوتاه حرکت می‌کند و شما به‌طور پیش‌فرض در حلقه می‌مانید. در یک حالت آزادانه، می‌تواند در مدتی که قهوه می‌گیرید یک قابلیت کامل را تمام کند، و همین‌طور می‌تواند یک پوشه را پاک کند، به شاخه‌ی اشتباه push کند، یا اسکریپتی اجرا کند که اطلاعات را جایی بفرستد. این‌که جامعه‌ی کاربران به سرِ کاملاً خودکار طیف می‌گوید «حالت YOLO» بی‌دلیل نیست. خطر خود حالت نیست، اجرای آن بیرون از یک [سندباکس](./sandbox.md) روی دستگاهی است که چیزهای مهمی برایتان دارد.
 
-## In the tools
+حالت را با شعاع آسیب هماهنگ کنید. کار تعاملی روی یک نسخه‌ی واقعی از مخزن: دستورهای امن را در فهرست مجاز بگذارید و برای بقیه همچنان بپرسید. اجراهای بی‌نظارت یا موازی: آزادانه کار کنید، اما درون یک کانتینر، یک [ورک‌تری](./worktree.md) یا یک جلسه‌ی ابری بدون اعتبارنامه‌های محیط تولید، و کار را با یک درخواست ادغام تمام کنید، نه یک ادغام. و در هر صورت بعدش دیف را بخوانید؛ مجوزها اقدام‌ها را کنترل می‌کنند، کیفیت را بررسی نمی‌کنند.
 
-- Claude Code: Shift+Tab cycles the interactive modes (default, accept edits, plan); `--dangerously-skip-permissions` is the fully automatic one.
-- Codex: an approval policy plus a sandbox level (read-only, workspace-write, full access) do the same job; the older suggest / auto-edit / full-auto names still circulate.
-- Antigravity: autonomy and review policies set how much an agent can do before a human checks in.
+## در ابزارها
 
-## In conversation
+- Claude Code: Shift+Tab میان حالت‌های تعاملی (پیش‌فرض، پذیرش ویرایش‌ها، برنامه‌ریزی) می‌چرخد؛ `--dangerously-skip-permissions` همان حالت کاملاً خودکار است.
+- Codex: یک سیاست تأیید به‌علاوه‌ی یک سطح سندباکس (فقط‌خواندنی، نوشتن در فضای کاری، دسترسی کامل) همین کار را می‌کنند؛ نام‌های قدیمی‌تر suggest / auto-edit / full-auto هنوز رایج‌اند.
+- Antigravity: سیاست‌های خودمختاری و بازبینی تعیین می‌کنند یک ایجنت پیش از هماهنگی با انسان چقدر می‌تواند کار کند.
 
-> “Can I just turn permissions off? The prompts are killing my flow.”
+## در گفت‌وگو
+
+> «می‌شود مجوزها را کلاً خاموش کنم؟ این درخواست‌ها تمرکزم را از بین می‌برند.»
 >
-> “In a sandboxed worktree, sure. On your main checkout with prod keys in .env, no. Allowlist the build and test commands instead.”
+> «در یک ورک‌تری سندباکس‌شده، حتماً. روی نسخه‌ی اصلی مخزنت با کلیدهای محیط تولید در .env، نه. به‌جایش دستورهای بیلد و تست را در فهرست مجاز بگذار.»
 >
-> “Fair. Allowlist for the daily stuff, bypass only in the container.”
+> «منصفانه است. فهرست مجاز برای کارهای روزمره، دور زدن مجوزها فقط درون کانتینر.»
 
-**Related:** [Agent mode](./agent-mode.md) · [AFK](./afk.md) · [Headless mode](./headless-mode.md) · [Hooks](./hooks.md)
+**مرتبط:** [حالت ایجنت](./agent-mode.md) · [AFK — دور از کیبورد](./afk.md) · [حالت بی‌رابط](./headless-mode.md) · [هوک‌ها](./hooks.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · Autonomy and Review Policies](https://vibecodeschool.com/learn/ag-05-approval-gates)
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۳ · خودمختاری و سیاست‌های بازبینی](https://vibecodeschool.com/learn/ag-05-approval-gates)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/permission-mode) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/permission-mode.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

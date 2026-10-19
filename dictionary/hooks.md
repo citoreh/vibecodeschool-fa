@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Hooks
+<div dir="rtl">
 
-> Commands you configure the harness to run at fixed moments, such as before or after a tool call, regardless of what the model wants.
+# هوک‌ها (hooks)
 
-*§03 Tools & Environment · also called: Lifecycle hooks, Pre-tool hook, Post-tool hook · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/hooks)*
+> دستورهایی که هارنس را طوری پیکربندی می‌کنید که در لحظه‌های ثابتی اجرایشان کند، مثلاً پیش یا پس از یک فراخوانی ابزار، فارغ از این‌که مدل چه می‌خواهد.
 
-Hooks are commands you configure the [harness](./harness.md) to run at fixed points in the loop: before a [tool call](./tool-call.md), after one, when the [session](./session.md) starts or ends, when the [agent](./agent.md) is about to stop, or when it needs your attention. They are plain shell commands or scripts, and they run whether or not the [model](./model.md) would have chosen to. A hook can also block: a pre-tool hook that exits with an error prevents the call from happening at all.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Lifecycle hooks، Pre-tool hook، Post-tool hook · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/hooks)*
 
-The reason hooks exist is that instructions are advisory. You can write 'always run the formatter after editing' in [AGENTS.md](./agents-md.md) and the agent will do it most of the time; on a long turn deep in the [dumb zone](./smart-zone.md), it will forget. A post-edit hook that runs Prettier never forgets. The same goes for guardrails: a hook that rejects any command containing `rm -rf` or a push to `main` is a rule the agent literally cannot talk its way past.
+هوک‌ها دستورهایی‌اند که [هارنس](./harness.md) را پیکربندی می‌کنید تا در نقطه‌های ثابتی از چرخه اجرایشان کند: پیش از یک [فراخوانی ابزار](./tool-call.md)، پس از آن، وقتی [جلسه](./session.md) شروع یا تمام می‌شود، وقتی [ایجنت](./agent.md) می‌خواهد بایستد، یا وقتی به توجه شما نیاز دارد. دستورها یا اسکریپت‌های ساده‌ی شل‌اند، و اجرا می‌شوند چه [مدل](./model.md) انتخابشان می‌کرد چه نه. یک هوک می‌تواند جلوی کار را هم بگیرد: هوکی پیش از ابزار که با خطا خارج شود، اصلاً نمی‌گذارد فراخوانی اتفاق بیفتد.
 
-Use hooks for the things that must happen every time and are cheap to check mechanically: formatting, linting, running the affected tests, blocking dangerous commands, logging every call for audit. Keep them fast; a slow hook taxes every tool call. And keep the nuanced judgment in instructions and [skills](./skill.md) where the model can weigh it, because a hook has no judgment at all, which is exactly its value.
+دلیل وجود هوک‌ها این است که دستورالعمل‌ها توصیه‌ای‌اند. می‌توانید در [AGENTS.md](./agents-md.md) بنویسید «همیشه پس از ویرایش قالب‌بند را اجرا کن» و ایجنت بیشتر وقت‌ها این کار را می‌کند؛ در یک نوبت طولانی در عمق [منطقه‌ی کُند (dumb zone)](./smart-zone.md)، فراموش می‌کند. هوکی پس از ویرایش که Prettier را اجرا می‌کند هرگز فراموش نمی‌کند. محافظ‌ها هم همین‌طورند: هوکی که هر دستوری حاوی `rm -rf` یا push به `main` را رد کند، قاعده‌ای است که ایجنت به معنای واقعی کلمه نمی‌تواند با زبان‌بازی از آن عبور کند.
 
-## In the tools
+هوک‌ها را برای چیزهایی به کار ببرید که باید هر بار اتفاق بیفتند و بررسی مکانیکی‌شان ارزان است: قالب‌بندی، لینت، اجرای تست‌های متأثر، مسدود کردن دستورهای خطرناک، ثبت هر فراخوانی برای ممیزی. سریع نگهشان دارید؛ یک هوک کند از هر فراخوانی ابزار مالیات می‌گیرد. و قضاوت‌های ظریف را در دستورالعمل‌ها و [مهارت‌ها](./skill.md) نگه دارید، جایی که مدل بتواند آن‌ها را بسنجد، چون هوک اصلاً قضاوتی ندارد، و ارزشش دقیقاً همین است.
 
-- Claude Code: hooks are configured in settings under events such as PreToolUse, PostToolUse, Stop and Notification, with matchers for specific tools.
-- Most tools: where a harness has no hook system, a git pre-commit hook or a CI check gives you the after-the-fact half of the same protection.
+## در ابزارها
 
-## In conversation
+- Claude Code: هوک‌ها در تنظیمات زیر رویدادهایی مثل PreToolUse، PostToolUse، Stop و Notification پیکربندی می‌شوند، با تطبیق‌دهنده‌هایی برای ابزارهای مشخص.
+- بیشتر ابزارها: جایی که هارنس سیستم هوک ندارد، یک هوک pre-commit در git یا یک بررسی CI نیمه‌ی پسینِ همان محافظت را فراهم می‌کند.
 
-> “It committed unformatted code again, even though CLAUDE.md says to format first.”
+## در گفت‌وگو
+
+> «باز کد قالب‌بندی‌نشده کامیت کرد، با این‌که CLAUDE.md می‌گوید اول قالب‌بندی کن.»
 >
-> “Stop asking. Add a post-edit hook that runs the formatter on the changed file, and the question goes away.”
+> «دیگر نپرس. یک هوک پس از ویرایش اضافه کن که قالب‌بند را روی فایل تغییرکرده اجرا کند، و این سؤال از بین می‌رود.»
 >
-> “And a pre-commit hook that fails if the tests don't pass?”
+> «و یک هوک pre-commit که اگر تست‌ها قبول نشوند شکست بخورد؟»
 
-**Related:** [Automated check](./automated-check.md) · [Permission request](./permission-request.md) · [Harness engineering](./harness-engineering.md)
+**مرتبط:** [بررسی خودکار](./automated-check.md) · [درخواست مجوز](./permission-request.md) · [مهندسی هارنس](./harness-engineering.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Hooks: Pre and Post Tool](https://vibecodeschool.com/learn/cc-16-hooks)
+- [دوره‌ی ۰۱ · هوک‌ها: پیش و پس از ابزار](https://vibecodeschool.com/learn/cc-16-hooks)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/hooks) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/hooks.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

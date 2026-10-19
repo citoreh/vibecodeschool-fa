@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Filesystem
+<div dir="rtl">
 
-> The directory tree the agent reads, edits and runs inside; for a coding agent, the main part of the environment.
+# سیستم فایل (filesystem)
 
-*§03 Tools & Environment · also called: File system, Working directory · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/filesystem)*
+> درخت پوشه‌هایی که ایجنت درونش می‌خواند، ویرایش می‌کند و اجرا می‌کند؛ برای یک ایجنت کدنویسی، بخش اصلی محیط.
 
-The filesystem is the directory tree the agent can see: the repo you launched it in, its files, and usually its parent folders if you let it wander. For a coding [agent](./agent.md), this is most of its [environment](./environment.md). Reading a file, editing a file, listing a directory and searching for a string are all [tool calls](./tool-call.md) against the filesystem, and the [results](./tool-result.md) are the agent's only view of your code.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: File system، Working directory · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/filesystem)*
 
-Two things follow. First, the agent only knows what it has read. A 4,000-file monorepo is not 'in' the [context window](./context-window.md); the handful of files the agent chose to open are. When it edits a function without opening the callers, the callers were simply never in its world. Second, anything on disk is fair game as input: a stray `.env`, a giant `node_modules` folder, an old TODO file. Search tools will find them and the agent may act on them.
+سیستم فایل درخت پوشه‌هایی است که ایجنت می‌تواند ببیند: مخزنی که آن را در آن اجرا کرده‌اید، فایل‌هایش، و معمولاً پوشه‌های والدش اگر اجازه‌ی گشت‌وگذار بدهید. برای یک [ایجنت](./agent.md) کدنویسی، این بیشترِ [محیطش](./environment.md) است. خواندن یک فایل، ویرایش یک فایل، فهرست کردن یک پوشه و جست‌وجوی یک رشته، همه [فراخوانی‌های ابزار](./tool-call.md) روی سیستم فایل‌اند، و [نتیجه‌ها](./tool-result.md) تنها دید ایجنت از کد شمایند.
 
-Keep the tree tidy where it matters. A clear folder layout and a short [AGENTS.md](./agents-md.md) pointing at the right entry points do more than any clever prompt. Ignore files (`.gitignore`, plus tool-specific ignore lists) keep build output and secrets out of searches. When you launch the agent, launch it from the directory you actually want it to treat as the world, not from your home folder.
+دو چیز از این نتیجه می‌شود. اول، ایجنت فقط چیزی را می‌داند که خوانده. یک مونوریپوی ۴۰۰۰ فایلی «درون» [پنجره‌ی زمینه](./context-window.md) نیست؛ همان چند فایلی که ایجنت انتخاب کرده باز کند هستند. وقتی تابعی را بدون باز کردن جاهایی که صدایش می‌زنند ویرایش می‌کند، آن جاها اصلاً در دنیای او نبوده‌اند. دوم، هر چیزی روی دیسک ورودی مجاز است: یک `.env` جامانده، یک پوشه‌ی عظیم `node_modules`، یک فایل TODO قدیمی. ابزارهای جست‌وجو پیدایشان می‌کنند و ایجنت ممکن است بر اساسشان عمل کند.
 
-## In the tools
+درخت را جایی که مهم است مرتب نگه دارید. یک چیدمان روشن پوشه‌ها و یک [AGENTS.mdِ](./agents-md.md) کوتاه که به نقطه‌های ورود درست اشاره می‌کند، از هر پرامپت زیرکانه‌ای بیشتر کار می‌کند. فایل‌های نادیده‌گیری (`.gitignore` به‌علاوه‌ی فهرست‌های نادیده‌گیری مخصوص هر ابزار) خروجی بیلد و رازها را از جست‌وجوها دور نگه می‌دارند. وقتی ایجنت را اجرا می‌کنید، از همان پوشه‌ای اجرایش کنید که واقعاً می‌خواهید دنیای او باشد، نه از پوشه‌ی خانگی‌تان.
 
-- Claude Code: file tools are scoped to the launch directory by default, and it asks before touching paths outside it.
-- Cursor: `.cursorignore` hides paths from indexing and search; most other harnesses lean on `.gitignore` for the same job.
-- Claude Cowork: the filesystem is only the folders you explicitly share with it.
+## در ابزارها
 
-## In conversation
+- Claude Code: ابزارهای فایل به‌طور پیش‌فرض به پوشه‌ی اجرا محدودند، و پیش از دست زدن به مسیرهای بیرون از آن اجازه می‌گیرد.
+- Cursor: `.cursorignore` مسیرها را از نمایه‌سازی و جست‌وجو پنهان می‌کند؛ بیشتر هارنس‌های دیگر برای همین کار به `.gitignore` تکیه می‌کنند.
+- Claude Cowork: سیستم فایل فقط پوشه‌هایی است که صریحاً با آن به اشتراک می‌گذارید.
 
-> “Why did it rewrite the API client in packages/legacy? Nobody uses that.”
+## در گفت‌وگو
+
+> «چرا کلاینت API را در packages/legacy بازنویسی کرد؟ هیچ‌کس از آن استفاده نمی‌کند.»
 >
-> “Search matched there first, so that's the file it read. It has no idea which package is live unless something in the filesystem says so.”
+> «جست‌وجو اول آن‌جا تطابق پیدا کرد، پس همان فایلی است که خوانده. تا وقتی چیزی در سیستم فایل نگوید کدام بسته زنده است، هیچ ایده‌ای ندارد.»
 >
-> “Adding a one-line README to legacy and an ignore rule for it now.”
+> «همین حالا یک README یک‌خطی به legacy و یک قاعده‌ی نادیده‌گیری برایش اضافه می‌کنم.»
 
-**Related:** [Worktree](./worktree.md) · [Sandbox](./sandbox.md) · [Context](./context.md) · [Checkpoint](./checkpoint.md)
+**مرتبط:** [ورک‌تری](./worktree.md) · [سندباکس](./sandbox.md) · [زمینه](./context.md) · [نقطه‌ی بازگشت](./checkpoint.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Reading and Editing Files](https://vibecodeschool.com/learn/cc-06-reading-and-editing)
-- [Course 01 · Searching the Codebase](https://vibecodeschool.com/learn/cc-07-searching-the-codebase)
+- [دوره‌ی ۰۱ · خواندن و ویرایش فایل‌ها](https://vibecodeschool.com/learn/cc-06-reading-and-editing)
+- [دوره‌ی ۰۱ · جست‌وجو در کدها](https://vibecodeschool.com/learn/cc-07-searching-the-codebase)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/filesystem) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/filesystem.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

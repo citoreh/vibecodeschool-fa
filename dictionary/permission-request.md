@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Permission request
+<div dir="rtl">
 
-> The harness pausing before a risky tool call to ask you yes or no; the simplest human-in-the-loop gate there is.
+# درخواست مجوز (permission request)
 
-*§03 Tools & Environment · also called: Approval prompt, Permission prompt · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/permission-request)*
+> مکث هارنس پیش از یک فراخوانی ابزار پرخطر تا از شما بله یا نه بپرسد؛ ساده‌ترین دروازه‌ی «انسان در حلقه» که وجود دارد.
 
-A permission request is the [harness](./harness.md) stopping before a [tool call](./tool-call.md) and asking you to approve it. The [model](./model.md) has already decided what it wants to do (edit this file, run this command, hit this URL); the request shows you the exact action and waits. Approve and the call runs; deny and the model gets a [tool result](./tool-result.md) saying it was refused, and usually tries another route. Which calls trigger a request is set by the [permission mode](./permission-mode.md).
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Approval prompt، Permission prompt · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/permission-request)*
 
-This is the cheapest [human-in-the-loop](./human-in-the-loop.md) mechanism there is, and also the easiest to wear out. Early in a project you read every prompt carefully. Forty prompts later you are hitting Enter without looking, which is exactly when the agent runs the migration against the wrong database. Approval fatigue turns a safety feature into a ritual. The opposite failure is also common: a session left running [AFK](./afk.md) sits on a permission request for an hour because nobody was there to answer.
+درخواست مجوز یعنی [هارنس](./harness.md) پیش از یک [فراخوانی ابزار](./tool-call.md) می‌ایستد و از شما می‌خواهد تأییدش کنید. [مدل](./model.md) پیش‌تر تصمیم گرفته چه می‌خواهد بکند (این فایل را ویرایش کند، این دستور را اجرا کند، به این نشانی درخواست بفرستد)؛ درخواست مجوز اقدام دقیق را نشانتان می‌دهد و منتظر می‌ماند. تأیید کنید و فراخوانی اجرا می‌شود؛ رد کنید و مدل یک [نتیجه‌ی ابزار](./tool-result.md) می‌گیرد که می‌گوید رد شده، و معمولاً مسیر دیگری را امتحان می‌کند. این‌که کدام فراخوانی‌ها درخواست مجوز راه می‌اندازند را [حالت مجوز](./permission-mode.md) تعیین می‌کند.
 
-Use requests for the calls that are genuinely hard to undo, and pre-approve the rest. Most harnesses let you allowlist specific commands (`npm test`, `git status`, formatters) and specific paths so that routine work flows and only the dangerous calls stop you. For unattended runs, decide up front: either run in a [sandbox](./sandbox.md) with broad permissions, or restrict the agent to actions that don't need asking.
+این ارزان‌ترین سازوکار [انسان در حلقه](./human-in-the-loop.md) است، و فرسوده‌شدنی‌ترینش هم. در ابتدای یک پروژه هر درخواست را با دقت می‌خوانید. چهل درخواست بعد بی‌آن‌که نگاه کنید Enter می‌زنید، و درست همان موقع است که ایجنت مهاجرت را روی پایگاه‌داده‌ی اشتباه اجرا می‌کند. خستگی تأیید یک قابلیت ایمنی را به یک آیین تشریفاتی تبدیل می‌کند. شکست مخالف هم رایج است: جلسه‌ای که به‌صورت [AFK](./afk.md) در حال اجرا رها شده، یک ساعت روی یک درخواست مجوز می‌ماند چون کسی نبوده جواب بدهد.
 
-## In the tools
+درخواست‌ها را برای فراخوانی‌هایی به کار ببرید که واقعاً برگرداندنشان سخت است، و بقیه را از پیش تأیید کنید. بیشتر هارنس‌ها اجازه می‌دهند دستورهای مشخص (`npm test`، `git status`، قالب‌بندها) و مسیرهای مشخص را در فهرست مجاز بگذارید تا کار روزمره روان پیش برود و فقط فراخوانی‌های خطرناک متوقفتان کنند. برای اجراهای بی‌نظارت، از پیش تصمیم بگیرید: یا در یک [سندباکس](./sandbox.md) با مجوزهای گسترده اجرا کنید، یا ایجنت را به اقدام‌هایی محدود کنید که نیازی به پرسیدن ندارند.
 
-- Claude Code: requests appear inline with yes, yes-and-don't-ask-again, or no; `/permissions` manages the allow and deny lists.
-- Codex: commands outside the sandbox raise an approval in the thread; the approval policy sets how often that happens.
-- Claude Cowork: file writes and connector actions surface as approvals in the task view.
+## در ابزارها
 
-## In conversation
+- Claude Code: درخواست‌ها درون‌خطی با گزینه‌های بله، بله و دیگر نپرس، یا نه ظاهر می‌شوند؛ `/permissions` فهرست‌های مجاز و ممنوع را مدیریت می‌کند.
+- Codex: دستورهای بیرون از سندباکس یک درخواست تأیید در رشته‌ی گفت‌وگو ایجاد می‌کنند؛ سیاست تأیید تعیین می‌کند این چقدر پیش بیاید.
+- Claude Cowork: نوشتن فایل‌ها و اقدام‌های کانکتورها به‌صورت تأییدهایی در نمای کار ظاهر می‌شوند.
 
-> “It stopped again. It wants to run rm -rf dist.”
+## در گفت‌وگو
+
+> «باز ایستاد. می‌خواهد rm -rf dist را اجرا کند.»
 >
-> “That's the permission request doing its job. Approve it once, then allowlist that exact command if it's part of the build.”
+> «درخواست مجوز دارد کارش را می‌کند. یک بار تأییدش کن، بعد اگر بخشی از بیلد است همان دستور دقیق را در فهرست مجاز بگذار.»
 >
-> “And keep the prompt for anything touching .env?”
+> «و درخواست را برای هر چیزی که به .env دست می‌زند نگه دارم؟»
 
-**Related:** [Agent mode](./agent-mode.md) · [Hooks](./hooks.md) · [Checkpoint](./checkpoint.md)
+**مرتبط:** [حالت ایجنت](./agent-mode.md) · [هوک‌ها](./hooks.md) · [نقطه‌ی بازگشت](./checkpoint.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
-- [Course 06 · The Approval Loop](https://vibecodeschool.com/learn/cw-04-the-approval-loop)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۶ · چرخه‌ی تأیید](https://vibecodeschool.com/learn/cw-04-the-approval-loop)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/permission-request) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/permission-request.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

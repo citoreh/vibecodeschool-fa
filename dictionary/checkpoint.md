@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Checkpoint
+<div dir="rtl">
 
-> A saved state of your files, and sometimes the conversation, that you can rewind to after a turn goes wrong.
+# نقطه‌ی بازگشت (checkpoint)
 
-*§03 Tools & Environment · also called: Rewind, Snapshot, Restore point · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/checkpoint)*
+> وضعیت ذخیره‌شده‌ای از فایل‌هایتان، و گاهی گفت‌وگو، که وقتی یک نوبت خراب شد می‌توانید به آن برگردید.
 
-A checkpoint is a saved snapshot of the working tree, and in some harnesses the conversation too, that you can return to. Before the [agent](./agent.md) starts a [turn](./turn.md) the [harness](./harness.md) records what the files looked like; if the turn goes badly, you rewind and the edits vanish. It is the undo button for agentic work, where a single turn can touch dozens of files and Ctrl+Z in the editor is no longer enough.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Rewind، Snapshot، Restore point · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/checkpoint)*
 
-The need shows up the first time an agent 'fixes' something by rewriting half a module. Reviewing the diff, you realise the earlier state was better, but the earlier state is gone, spread across twenty edits. Git would have saved you, if you had committed. Most people hadn't, because they were in the middle of something. Harness checkpoints fill exactly that gap between commits. One subtlety: rewinding the files without rewinding the conversation leaves the agent believing its edits still exist, and its next [tool call](./tool-call.md) will act on a world that isn't there. Rewind both, or tell it what you did.
+نقطه‌ی بازگشت تصویر ذخیره‌شده‌ای از درخت کاری است، و در برخی هارنس‌ها گفت‌وگو هم، که می‌توانید به آن برگردید. پیش از آن‌که [ایجنت](./agent.md) یک [نوبت](./turn.md) را شروع کند، [هارنس](./harness.md) ثبت می‌کند فایل‌ها چه شکلی بودند؛ اگر نوبت بد پیش برود، به عقب برمی‌گردید و ویرایش‌ها ناپدید می‌شوند. این دکمه‌ی بازگشت کار ایجنتی است، جایی که یک نوبت می‌تواند به ده‌ها فایل دست بزند و Ctrl+Z در ویرایشگر دیگر کافی نیست.
 
-Make checkpoints boring. Commit before every substantial agent run so there is a known-good state to diff against, even if the message is just 'wip before refactor'. Use the harness's rewind for the small stuff between commits, and `git stash` or a [worktree](./worktree.md) when you want to try two approaches side by side. A [sandbox](./sandbox.md) plus a clean commit is the checkpoint that never fails.
+نیاز به آن اولین باری که یک ایجنت چیزی را با بازنویسی نصف یک ماژول «درست می‌کند» خودش را نشان می‌دهد. با بازبینی دیف متوجه می‌شوید وضعیت قبلی بهتر بود، اما وضعیت قبلی از بین رفته و در بیست ویرایش پخش شده. git نجاتتان می‌داد، اگر کامیت کرده بودید. بیشتر آدم‌ها نکرده بودند، چون وسط کاری بودند. نقطه‌های بازگشت هارنس دقیقاً همین شکاف میان کامیت‌ها را پر می‌کنند. یک ظرافت: برگرداندن فایل‌ها بدون برگرداندن گفت‌وگو، ایجنت را در این باور نگه می‌دارد که ویرایش‌هایش هنوز وجود دارند، و [فراخوانی ابزارِ](./tool-call.md) بعدی‌اش روی دنیایی عمل می‌کند که وجود ندارد. هر دو را برگردانید، یا به او بگویید چه کرده‌اید.
 
-## In the tools
+نقطه‌های بازگشت را کسل‌کننده کنید. پیش از هر اجرای قابل‌توجه ایجنت کامیت کنید تا یک وضعیت سالمِ شناخته‌شده برای مقایسه داشته باشید، حتی اگر پیامش فقط «wip before refactor» باشد. از بازگشت هارنس برای چیزهای کوچک میان کامیت‌ها استفاده کنید، و وقتی می‌خواهید دو رویکرد را کنار هم امتحان کنید از `git stash` یا یک [ورک‌تری](./worktree.md). یک [سندباکس](./sandbox.md) به‌علاوه‌ی یک کامیت تمیز، نقطه‌ی بازگشتی است که هرگز شکست نمی‌خورد.
 
-- Claude Code: press Esc twice (or use `/rewind`) to pick an earlier point; you can restore the code, the conversation, or both.
-- Cursor: each agent message carries a restore control that returns the files to that point.
-- Most tools: where no built-in rewind exists, a commit before the run and `git restore .` afterwards does the same job.
+## در ابزارها
 
-## In conversation
+- Claude Code: دو بار Esc را فشار دهید (یا از `/rewind` استفاده کنید) تا نقطه‌ای قبلی را انتخاب کنید؛ می‌توانید کد، گفت‌وگو، یا هر دو را برگردانید.
+- Cursor: هر پیام ایجنت یک کنترل بازگردانی دارد که فایل‌ها را به همان نقطه برمی‌گرداند.
+- بیشتر ابزارها: جایی که بازگشت داخلی وجود ندارد، یک کامیت پیش از اجرا و `git restore .` پس از آن همین کار را می‌کند.
 
-> “That last turn made things worse. Can I get back to where we were five minutes ago?”
+## در گفت‌وگو
+
+> «آن نوبت آخر اوضاع را بدتر کرد. می‌توانم به جایی که پنج دقیقه پیش بودیم برگردم؟»
 >
-> “Rewind to the checkpoint before it started, then re-prompt with the constraint it missed.”
+> «به نقطه‌ی بازگشت پیش از شروعش برگرد، بعد با قیدی که از قلم انداخته بود دوباره پرامپت بده.»
 >
-> “And rewind the conversation too, or it'll think the broken version is still on disk.”
+> «و گفت‌وگو را هم برگردان، وگرنه فکر می‌کند نسخه‌ی خراب هنوز روی دیسک است.»
 
-**Related:** [Permission request](./permission-request.md) · [Steering](./steering.md) · [AFK](./afk.md)
+**مرتبط:** [درخواست مجوز](./permission-request.md) · [هدایت](./steering.md) · [AFK — دور از کیبورد](./afk.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Git Operations and Commits](https://vibecodeschool.com/learn/cc-09-git-and-commits)
-- [Course 03 · Stopping, Steering, and Retrying](https://vibecodeschool.com/learn/ag-14-cancellation-retries)
+- [دوره‌ی ۰۱ · عملیات Git و کامیت‌ها](https://vibecodeschool.com/learn/cc-09-git-and-commits)
+- [دوره‌ی ۰۳ · متوقف کردن، هدایت و تلاش دوباره](https://vibecodeschool.com/learn/ag-14-cancellation-retries)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/checkpoint) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/checkpoint.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Plan mode
+<div dir="rtl">
 
-> A read-only agent mode: the agent may search and read, but must propose a plan for your approval before it edits anything.
+# حالت برنامه‌ریزی (plan mode)
 
-*§03 Tools & Environment · also called: Planning mode, Read-only mode, Ask mode · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/plan-mode)*
+> یک حالت فقط‌خواندنی ایجنت: ایجنت می‌تواند جست‌وجو کند و بخواند، اما پیش از ویرایش هر چیزی باید برنامه‌ای برای تأیید شما پیشنهاد کند.
 
-Plan mode is an [agent mode](./agent-mode.md) in which the [agent](./agent.md) can read files, search the codebase and run harmless commands, but cannot edit or execute anything that changes state. Its job is to come back with a plan: which files it will touch, in what order, what it is unsure about, and how it will verify the result. You read the plan, correct it, and only then switch to an editing mode. The [permission mode](./permission-mode.md) underneath is 'ask for everything that mutates', with a system-prompt nudge to investigate first.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Planning mode، Read-only mode، Ask mode · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/plan-mode)*
 
-A wrong plan is cheap. A wrong implementation is not: by the time you notice, the agent has changed fifteen files, the tests are green for the wrong reasons, and unpicking it costs more than starting over. Plan mode moves the correction to the point where it is a sentence instead of a revert. It also surfaces the assumptions the agent would otherwise silently make about your codebase, which is where most [AFK](./afk.md) runs go wrong.
+حالت برنامه‌ریزی یک [حالت ایجنت](./agent-mode.md) است که در آن [ایجنت](./agent.md) می‌تواند فایل‌ها را بخواند، در کدها جست‌وجو کند و دستورهای بی‌خطر اجرا کند، اما نمی‌تواند چیزی را ویرایش یا اجرا کند که وضعیتی را تغییر دهد. کارش این است که با یک برنامه برگردد: به کدام فایل‌ها دست خواهد زد، به چه ترتیبی، درباره‌ی چه چیزی مطمئن نیست، و نتیجه را چطور بررسی خواهد کرد. شما برنامه را می‌خوانید، اصلاحش می‌کنید، و تنها پس از آن به یک حالت ویرایش می‌روید. [حالت مجوزِ](./permission-mode.md) زیربنایی «برای هر چیزی که تغییر ایجاد می‌کند بپرس» است، همراه با تلنگری در پرامپت سیستمی که اول بررسی کند.
 
-Use it for anything bigger than a one-file change, and pair it with a written [spec](./spec.md) so the plan has something to be checked against. A plan that survives a round of [grilling](./grilling.md) becomes a good [handoff artifact](./handoff-artifact.md): save it to a file, start a fresh session, and let that session execute with the sharp end of its [context window](./context-window.md) free for the work. Skip plan mode for trivial edits; the overhead isn't worth it there.
+برنامه‌ی غلط ارزان است. پیاده‌سازی غلط نه: تا متوجه شوید، ایجنت پانزده فایل را تغییر داده، تست‌ها به دلایل اشتباه سبزند، و باز کردن گره‌ها از شروع دوباره گران‌تر است. حالت برنامه‌ریزی اصلاح را به نقطه‌ای منتقل می‌کند که در آن یک جمله است، نه یک بازگرداندن. همچنین فرض‌هایی را که ایجنت در غیر این صورت بی‌صدا درباره‌ی کدهای شما می‌کرد آشکار می‌کند، و بیشتر اجراهای [AFK](./afk.md) همان‌جا خراب می‌شوند.
 
-## In the tools
+برای هر چیزی بزرگ‌تر از یک تغییر تک‌فایلی از آن استفاده کنید، و کنارش یک [مشخصاتِ](./spec.md) نوشته داشته باشید تا برنامه با چیزی سنجیده شود. برنامه‌ای که از یک دور [بازجویی](./grilling.md) جان سالم به در ببرد به یک [یادداشت تحویلِ](./handoff-artifact.md) خوب تبدیل می‌شود: در یک فایل ذخیره‌اش کنید، یک جلسه‌ی تازه شروع کنید، و بگذارید آن جلسه با بخش تیز [پنجره‌ی زمینه‌اش](./context-window.md) که برای کار آزاد مانده اجرایش کند. برای ویرایش‌های پیش‌پاافتاده از حالت برنامه‌ریزی بگذرید؛ آن‌جا سربارش ارزشش را ندارد.
 
-- Claude Code: Shift+Tab into plan mode, or the agent can enter it itself when a task looks large; leaving the mode asks you to approve the plan.
-- Cursor: the Plan option in the agent panel drafts a step list you can edit before running.
-- Codex: there is no single plan toggle; ask for a plan explicitly, or use a read-only sandbox for the same effect.
+## در ابزارها
 
-## In conversation
+- Claude Code: با Shift+Tab وارد حالت برنامه‌ریزی شوید، یا ایجنت وقتی کاری بزرگ به نظر می‌رسد خودش واردش می‌شود؛ خروج از این حالت از شما می‌خواهد برنامه را تأیید کنید.
+- Cursor: گزینه‌ی Plan در پنل ایجنت فهرستی از گام‌ها پیش‌نویس می‌کند که پیش از اجرا می‌توانید ویرایشش کنید.
+- Codex: کلید واحدی برای برنامه‌ریزی نیست؛ صریحاً برنامه بخواهید، یا برای همین اثر از یک سندباکس فقط‌خواندنی استفاده کنید.
 
-> “Before you let it loose on the auth refactor, what did the plan say?”
+## در گفت‌وگو
+
+> «پیش از این‌که برای بازآرایی احراز هویت رهایش کنی، برنامه چه می‌گفت؟»
 >
-> “Plan mode found that sessions are also written by the cron job, which I'd forgotten. It wants to change both. Good catch, approved.”
+> «حالت برنامه‌ریزی پیدا کرد که جلسه‌ها را کار زمان‌بندی‌شده‌ی cron هم می‌نویسد، که یادم رفته بود. می‌خواهد هر دو را تغییر دهد. شکار خوبی بود، تأیید شد.»
 >
-> “That's the sort of thing you'd only have found after the tests broke.”
+> «از آن چیزهایی است که فقط بعد از شکستن تست‌ها پیدا می‌کردی.»
 
-**Related:** [Steering](./steering.md) · [Checkpoint](./checkpoint.md) · [Design concept](./design-concept.md)
+**مرتبط:** [هدایت](./steering.md) · [نقطه‌ی بازگشت](./checkpoint.md) · [مفهوم طراحی](./design-concept.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Plan Mode](https://vibecodeschool.com/learn/cc-15-plan-mode)
-- [Course 01 · Spec → Tests → Code](https://vibecodeschool.com/learn/cc-18-spec-tests-code)
+- [دوره‌ی ۰۱ · حالت برنامه‌ریزی](https://vibecodeschool.com/learn/cc-15-plan-mode)
+- [دوره‌ی ۰۱ · مشخصات ← تست‌ها ← کد](https://vibecodeschool.com/learn/cc-18-spec-tests-code)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/plan-mode) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/plan-mode.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

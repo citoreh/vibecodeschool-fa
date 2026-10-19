@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Worktree
+<div dir="rtl">
 
-> A second checkout of the same git repo in its own directory, so an agent can work on a branch without touching yours.
+# ورک‌تری (worktree)
 
-*§03 Tools & Environment · also called: Git worktree, Parallel checkout · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/worktree)*
+> نسخه‌ی دومی از همان مخزن git در پوشه‌ای جداگانه، تا یک ایجنت بتواند روی یک شاخه کار کند بی‌آن‌که به نسخه‌ی شما دست بزند.
 
-A worktree is an extra checkout of a git repository in a separate directory, sharing the same `.git` history but sitting on its own branch. `git worktree add ../feature-x feature-x` gives you a second working copy where a change can be made, built and tested without disturbing the files in your main checkout. For an [agent](./agent.md), a worktree is a private [filesystem](./filesystem.md) to work in while you keep using yours.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Git worktree، Parallel checkout · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/worktree)*
 
-The problem it solves shows up the first time you run two things at once. You start an agent on a refactor, then open the same repo to fix a bug; the agent's half-finished edits are in your editor, your fix lands in its [context](./context.md) mid-task, and both of you end up confused about which files are whose. Branch switching doesn't help, because a switch rewrites the very files the agent is editing. Separate directories do.
+ورک‌تری نسخه‌ی اضافه‌ای از یک مخزن git در پوشه‌ای جداست، که همان تاریخچه‌ی `.git` را به اشتراک می‌گذارد اما روی شاخه‌ی خودش نشسته. `git worktree add ../feature-x feature-x` نسخه‌ی کاری دومی به شما می‌دهد که در آن می‌شود تغییری داد، بیلد گرفت و تست کرد، بی‌آن‌که فایل‌های نسخه‌ی اصلی شما به هم بریزد. برای یک [ایجنت](./agent.md)، ورک‌تری یک [سیستم فایلِ](./filesystem.md) خصوصی است تا در آن کار کند در حالی که شما همچنان از مال خودتان استفاده می‌کنید.
 
-Give each parallel task its own worktree, especially for [AFK](./afk.md) runs, and treat a worktree like a [sandbox](./sandbox.md) with the code already inside. Remember they cost disk space and a fresh dependency install each, so prune finished ones (`git worktree remove`) and commit or discard the work before you do. Some harnesses create and clean up worktrees for you per task; that is the same mechanism with the housekeeping automated.
+مشکلی که حل می‌کند اولین باری که دو کار را هم‌زمان اجرا می‌کنید خودش را نشان می‌دهد. یک ایجنت را برای یک بازآرایی راه می‌اندازید، بعد همان مخزن را برای رفع یک باگ باز می‌کنید؛ ویرایش‌های نیمه‌کاره‌ی ایجنت در ویرایشگر شماست، اصلاح شما وسط کار وارد [زمینه‌ی](./context.md) آن می‌شود، و هر دوی شما سردرگم می‌شوید که کدام فایل مال کیست. عوض کردن شاخه کمکی نمی‌کند، چون عوض کردن شاخه همان فایل‌هایی را بازنویسی می‌کند که ایجنت دارد ویرایششان می‌کند. پوشه‌های جدا کمک می‌کنند.
 
-## In the tools
+به هر کار موازی ورک‌تری خودش را بدهید، به‌ویژه برای اجراهای [AFK](./afk.md)، و با ورک‌تری مثل یک [سندباکس](./sandbox.md) رفتار کنید که کد از قبل درونش است. یادتان باشد هر کدام فضای دیسک و یک نصب تازه‌ی وابستگی‌ها هزینه دارد، پس تمام‌شده‌ها را هرس کنید (`git worktree remove`) و پیش از آن کار را کامیت یا رها کنید. برخی هارنس‌ها برای هر کار ورک‌تری می‌سازند و پاکش می‌کنند؛ همان سازوکار است با خانه‌داری خودکار.
 
-- Claude Code: subagents can be given an isolated worktree that is cleaned up if nothing changed, and the CLI can drop you into one for a task.
-- Antigravity: parallel agents run in separate workspaces by design; the manager view shows each one's branch.
-- Most tools: a plain `git worktree add` works with any harness, since a worktree is just a directory.
+## در ابزارها
 
-## In conversation
+- Claude Code: می‌شود به زیرایجنت‌ها یک ورک‌تری ایزوله داد که اگر چیزی تغییر نکرد پاک می‌شود، و ابزار خط فرمان می‌تواند برای یک کار شما را درون یکی ببرد.
+- Antigravity: ایجنت‌های موازی ذاتاً در فضاهای کاری جدا اجرا می‌شوند؛ نمای مدیر شاخه‌ی هر کدام را نشان می‌دهد.
+- بیشتر ابزارها: یک `git worktree add` ساده با هر هارنسی کار می‌کند، چون ورک‌تری فقط یک پوشه است.
 
-> “Can I keep coding while it does the i18n sweep? That touches every screen.”
+## در گفت‌وگو
+
+> «می‌توانم در حالی که دارد همه‌ی متن‌ها را برای ترجمه آماده می‌کند کدنویسی کنم؟ به همه‌ی صفحه‌ها دست می‌زند.»
 >
-> “Run it in a worktree. It gets its own copy on its own branch, you stay on main, and you merge when it's done.”
+> «در یک ورک‌تری اجرایش کن. نسخه‌ی خودش را روی شاخه‌ی خودش می‌گیرد، تو روی main می‌مانی، و وقتی تمام شد ادغام می‌کنی.»
 >
-> “So no more 'why is my file changing while I type' moments.”
+> «پس دیگر خبری از لحظه‌های «چرا فایلم وقتی تایپ می‌کنم عوض می‌شود» نیست.»
 
-**Related:** [Checkpoint](./checkpoint.md) · [Subagent](./subagent.md) · [Headless mode](./headless-mode.md)
+**مرتبط:** [نقطه‌ی بازگشت](./checkpoint.md) · [زیرایجنت](./subagent.md) · [حالت بی‌رابط](./headless-mode.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · Parallel Agents Across Workspaces](https://vibecodeschool.com/learn/ag-12-fan-out-fan-in)
-- [Course 01 · Git Operations and Commits](https://vibecodeschool.com/learn/cc-09-git-and-commits)
+- [دوره‌ی ۰۳ · ایجنت‌های موازی در فضاهای کاری مختلف](https://vibecodeschool.com/learn/ag-12-fan-out-fan-in)
+- [دوره‌ی ۰۱ · عملیات Git و کامیت‌ها](https://vibecodeschool.com/learn/cc-09-git-and-commits)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/worktree) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/worktree.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

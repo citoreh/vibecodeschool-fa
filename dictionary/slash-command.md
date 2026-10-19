@@ -1,39 +1,45 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Slash command
+<div dir="rtl">
 
-> A typed /name shortcut that runs a built-in action or expands a saved prompt, so the prompts you reuse live in the repo.
+# دستور اسلش (slash command)
 
-*§03 Tools & Environment · also called: Custom command, Prompt shortcut, /command · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/slash-command)*
+> میان‌بُری به شکل /name که یک اقدام داخلی را اجرا می‌کند یا یک پرامپت ذخیره‌شده را باز می‌کند، تا پرامپت‌هایی که دوباره به کار می‌برید در مخزن زندگی کنند.
 
-A slash command is a shortcut you type into the [agent](./agent.md)'s input, `/name`, that either triggers a built-in action or expands into a stored prompt. Built-ins handle the [harness](./harness.md) itself: `/clear` to start a fresh [session](./session.md), `/compact` to trigger [compaction](./compaction.md), `/init` to draft an [AGENTS.md](./agents-md.md), `/help`. Custom commands are prompt files you keep in the project; typing `/review` might paste a two-paragraph review checklist with the current diff attached, and the [model](./model.md) takes it from there.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Custom command، Prompt shortcut، /command · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/slash-command)*
 
-Custom commands solve the 'I keep typing the same thing' problem, and they solve it better than putting the text in a rules file. Anything in the rules file is loaded into every turn whether relevant or not, spending [context](./context.md) on instructions the current task doesn't need. A slash command loads its text only when you call it. That makes it the right home for long, occasional prompts: the release checklist, the migration playbook, the 'write a field note about this' template.
+دستور اسلش میان‌بُری است که در ورودی [ایجنت](./agent.md) تایپ می‌کنید، `/name`، و یا یک اقدام داخلی را فعال می‌کند یا به یک پرامپت ذخیره‌شده باز می‌شود. دستورهای داخلی به خود [هارنس](./harness.md) می‌پردازند: `/clear` برای شروع یک [جلسه‌ی](./session.md) تازه، `/compact` برای راه انداختن [فشرده‌سازی](./compaction.md)، `/init` برای پیش‌نویس یک [AGENTS.md](./agents-md.md)، `/help`. دستورهای سفارشی فایل‌های پرامپتی‌اند که در پروژه نگه می‌دارید؛ تایپ کردن `/review` ممکن است یک چک‌لیست بازبینی دوپاراگرافی را همراه با دیف فعلی بچسباند، و [مدل](./model.md) از آن‌جا ادامه می‌دهد.
 
-Keep commands in the repo so the whole team gets them, give them arguments where it helps (`/fix-issue 123`), and let them reference files rather than inline everything. When a command needs supporting scripts or several steps, it has outgrown the format and should become a [skill](./skill.md). A good test: if a new teammate would benefit from the shortcut on day one, commit it.
+دستورهای سفارشی مشکل «مدام همان چیز را تایپ می‌کنم» را حل می‌کنند، و بهتر از گذاشتن متن در یک فایل قواعد حلش می‌کنند. هر چیزی در فایل قواعد در هر نوبت بارگذاری می‌شود، چه مرتبط باشد چه نه، و [زمینه](./context.md) را صرف دستورالعمل‌هایی می‌کند که کار فعلی لازمشان ندارد. یک دستور اسلش متنش را فقط وقتی صدایش بزنید بارگذاری می‌کند. همین آن را خانه‌ی درستی برای پرامپت‌های طولانی و گاه‌به‌گاه می‌کند: چک‌لیست انتشار، دستورالعمل مهاجرت، قالب «درباره‌ی این یک یادداشت میدانی بنویس».
 
-## In the tools
+دستورها را در مخزن نگه دارید تا کل تیم داشته باشدشان، جایی که کمک می‌کند به آن‌ها آرگومان بدهید (`/fix-issue 123`)، و بگذارید به‌جای آوردن همه چیز درون خودشان به فایل‌ها ارجاع دهند. وقتی یک دستور به اسکریپت‌های کمکی یا چند گام نیاز پیدا می‌کند، از این قالب بزرگ‌تر شده و باید به یک [مهارت](./skill.md) تبدیل شود. یک آزمون خوب: اگر یک هم‌تیمی تازه از روز اول از این میان‌بُر سود می‌برد، کامیتش کنید.
 
-- Claude Code: custom commands are markdown files in `.claude/commands/` (project) or `~/.claude/commands/` (personal); `$ARGUMENTS` passes whatever you typed after the name.
-- Most tools: saved prompts exist under other names (rules, notepads, prompt files); the idea is the same, load a reusable prompt on demand.
+## در ابزارها
 
-## In conversation
+- Claude Code: دستورهای سفارشی فایل‌های مارک‌داون در `.claude/commands/` (پروژه) یا `~/.claude/commands/` (شخصی) هستند؛ `$ARGUMENTS` هر چیزی را که پس از نام تایپ کرده‌اید منتقل می‌کند.
+- بیشتر ابزارها: پرامپت‌های ذخیره‌شده با نام‌های دیگری وجود دارند (rules، notepads، prompt files)؛ ایده همان است: بارگذاری یک پرامپت قابل استفاده‌ی دوباره هر وقت لازم شد.
 
-> “How are you getting such consistent PR descriptions out of it?”
+## در گفت‌وگو
+
+> «چطور این‌قدر توضیحات یکدستی برای درخواست‌های ادغام از آن می‌گیری؟»
 >
-> “A slash command. /pr expands to our template plus the diff summary, so every description follows the same shape.”
+> «با یک دستور اسلش. /pr به قالب ما به‌علاوه‌ی خلاصه‌ی دیف باز می‌شود، پس هر توضیحی همان شکل را دارد.»
 >
-> “Send me the file, I'll drop it into our commands folder.”
+> «فایلش را بفرست، می‌گذارمش در پوشه‌ی دستورهایمان.»
 
-**Related:** [Progressive disclosure](./progressive-disclosure.md) · [Hooks](./hooks.md) · [Context pointer](./context-pointer.md)
+**مرتبط:** [افشای تدریجی](./progressive-disclosure.md) · [هوک‌ها](./hooks.md) · [اشاره‌گر زمینه](./context-pointer.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Slash Commands](https://vibecodeschool.com/learn/cc-12-slash-commands)
-- [Course 01 · Writing Your Own Slash Command](https://vibecodeschool.com/learn/cc-13-custom-slash-commands)
+- [دوره‌ی ۰۱ · دستورهای اسلش](https://vibecodeschool.com/learn/cc-12-slash-commands)
+- [دوره‌ی ۰۱ · نوشتن دستور اسلش اختصاصی](https://vibecodeschool.com/learn/cc-13-custom-slash-commands)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/slash-command) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/slash-command.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

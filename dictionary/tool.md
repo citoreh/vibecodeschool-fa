@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Tool
+<div dir="rtl">
 
-> A named capability the harness lets the model invoke, such as reading a file, running a shell command or fetching a page.
+# ابزار (tool)
 
-*§03 Tools & Environment · also called: Function, Built-in tool · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/tool)*
+> یک توانایی نام‌دار که هارنس اجازه می‌دهد مدل صدایش بزند، مثل خواندن یک فایل، اجرای یک دستور شل یا دریافت یک صفحه.
 
-A tool is a named capability the [harness](./harness.md) offers the [model](./model.md): read this file, run this command, search for this pattern, fetch this URL. Each one comes with a description and a parameter schema, and the whole list travels with every [model provider request](./model-provider-request.md). When the model wants to use one, it writes a [tool call](./tool-call.md) as text; the harness runs the underlying code and hands back a [tool result](./tool-result.md). Nothing runs inside the model. Execution is the harness's job.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Function، Built-in tool · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/tool)*
 
-The tool list is the agent's reach. A shell tool alone covers most of what a developer does at a keyboard, which is why so much agent work flows through it, and why it deserves the tightest permissions. Take a tool away and the agent doesn't complain, it improvises: with no browser tool it will guess what a page looks like, with no test runner it will 'reason about' whether tests pass. Missing tools produce fabrication, not errors.
+ابزار یک توانایی نام‌دار است که [هارنس](./harness.md) به [مدل](./model.md) پیشنهاد می‌کند: این فایل را بخوان، این دستور را اجرا کن، این الگو را جست‌وجو کن، این نشانی را دریافت کن. هر کدام یک توضیح و یک طرح‌واره‌ی پارامتر دارد، و کل فهرست با هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) فرستاده می‌شود. وقتی مدل می‌خواهد از یکی استفاده کند، یک [فراخوانی ابزار](./tool-call.md) به‌صورت متن می‌نویسد؛ هارنس کد زیربنایی را اجرا می‌کند و یک [نتیجه‌ی ابزار](./tool-result.md) پس می‌دهد. هیچ چیز درون مدل اجرا نمی‌شود. اجرا کار هارنس است.
 
-Tools have a standing cost too. Every definition takes up [context](./context.md) on every request, and a long list of overlapping tools makes the model pick the wrong one more often. Add tools deliberately: one per capability the task genuinely needs, with a description that says when to use it. [MCP](./mcp.md) is how you plug in tools the harness doesn't ship with.
+فهرست ابزارها دامنه‌ی دسترسی ایجنت است. یک ابزار شل به‌تنهایی بیشترِ کاری را که یک توسعه‌دهنده پشت کیبورد انجام می‌دهد پوشش می‌دهد؛ برای همین این‌قدر از کار ایجنت از آن می‌گذرد، و برای همین سخت‌گیرانه‌ترین مجوزها را می‌طلبد. ابزاری را بردارید و ایجنت شکایت نمی‌کند، بداهه‌سازی می‌کند: بدون ابزار مرورگر حدس می‌زند یک صفحه چه شکلی است، بدون اجراکننده‌ی تست «استدلال می‌کند» که تست‌ها قبول می‌شوند یا نه. ابزار جاافتاده ساختگی‌گویی تولید می‌کند، نه خطا.
 
-## In the tools
+ابزارها هزینه‌ی ثابت هم دارند. هر تعریف در هر درخواست جایی از [زمینه](./context.md) را می‌گیرد، و فهرست طولانی ابزارهای هم‌پوشان باعث می‌شود مدل بیشتر اشتباه انتخاب کند. ابزارها را آگاهانه اضافه کنید: یکی برای هر توانایی که کار واقعاً لازم دارد، با توضیحی که می‌گوید کی از آن استفاده شود. [MCP](./mcp.md) راهی است که ابزارهایی را که هارنس همراه خود ندارد وصل می‌کنید.
 
-- Claude Code: ships with Read, Edit, Write, Bash, Glob, Grep, WebFetch and an Agent tool for subagents; MCP servers add more.
-- Codex: a similar core set around a sandboxed shell; tools show up as commands the app asks you to approve.
-- Cursor: tools live behind the editor's agent panel, including terminal, file edits and web search.
+## در ابزارها
 
-## In conversation
+- Claude Code: با Read، Edit، Write، Bash، Glob، Grep، WebFetch و یک ابزار Agent برای زیرایجنت‌ها عرضه می‌شود؛ سرورهای MCP بیشتر اضافه می‌کنند.
+- Codex: مجموعه‌ی اصلی مشابهی حول یک شل سندباکس‌شده؛ ابزارها به‌صورت دستورهایی ظاهر می‌شوند که اپ از شما تأییدشان را می‌خواهد.
+- Cursor: ابزارها پشت پنل ایجنت ویرایشگر قرار دارند، از جمله ترمینال، ویرایش فایل و جست‌وجوی وب.
 
-> “It keeps saying the Figma export looks right, but it can't open Figma.”
+## در گفت‌وگو
+
+> «مدام می‌گوید خروجی Figma درست به نظر می‌رسد، ولی نمی‌تواند Figma را باز کند.»
 >
-> “Right, there's no tool for it. Without one, the model fills the gap with a plausible description instead of a look.”
+> «درست است، ابزاری برایش نیست. بدون آن، مدل شکاف را با یک توصیف باورپذیر پر می‌کند، به‌جای نگاه کردن.»
 >
-> “So either we give it a screenshot tool or we stop asking it about visuals.”
+> «پس یا یک ابزار اسکرین‌شات به آن می‌دهیم یا دیگر درباره‌ی ظاهر از آن نمی‌پرسیم.»
 
-**Related:** [Environment](./environment.md) · [Permission request](./permission-request.md) · [Skill](./skill.md)
+**مرتبط:** [محیط](./environment.md) · [درخواست مجوز](./permission-request.md) · [مهارت](./skill.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · The Agentic Loop](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
-- [Course 04 · Function Calling & Structured Outputs](https://vibecodeschool.com/learn/aa-03-function-calling-structured-outputs)
+- [دوره‌ی ۰۱ · چرخه‌ی ایجنتی](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
+- [دوره‌ی ۰۴ · فراخوانی تابع و خروجی‌های ساختاریافته](https://vibecodeschool.com/learn/aa-03-function-calling-structured-outputs)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/tool) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/tool.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

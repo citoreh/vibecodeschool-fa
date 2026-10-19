@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Agent mode
+<div dir="rtl">
 
-> A named preset that bundles a permission mode with behavioural instructions, switchable in the middle of a session.
+# حالت ایجنت (agent mode)
 
-*§03 Tools & Environment · also called: Mode · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/agent-mode)*
+> یک پیش‌تنظیم نام‌دار که یک حالت مجوز را با دستورالعمل‌های رفتاری یکجا می‌کند و می‌شود وسط جلسه عوضش کرد.
 
-An agent mode is a preset the [harness](./harness.md) offers that changes two things at once: the [permission mode](./permission-mode.md) (what can run without asking) and a slice of the [system prompt](./system-prompt.md) (how the [agent](./agent.md) is told to behave). 'Plan' modes forbid edits and instruct the model to investigate and propose. 'Accept edits' modes let file changes flow but still gate commands. 'Ask' or 'chat' modes turn the agent into a consultant that touches nothing. You can flip between them inside one [session](./session.md) without losing context.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Mode · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/agent-mode)*
 
-Modes are worth understanding because the same [model](./model.md) behaves noticeably differently under each, and people blame the model. An agent that 'refuses to make changes' is often just sitting in a read-only mode. An agent that 'went rogue and edited twelve files' was in an auto-accept mode you toggled earlier and forgot about. The mode indicator in the UI is the first thing to check when behaviour seems off.
+حالت ایجنت پیش‌تنظیمی است که [هارنس](./harness.md) ارائه می‌کند و دو چیز را با هم تغییر می‌دهد: [حالت مجوز](./permission-mode.md) (چه چیزی بدون پرسیدن اجرا شود) و تکه‌ای از [پرامپت سیستمی](./system-prompt.md) (به [ایجنت](./agent.md) گفته شود چطور رفتار کند). حالت‌های «برنامه‌ریزی» ویرایش را ممنوع می‌کنند و به مدل می‌گویند بررسی و پیشنهاد کند. حالت‌های «پذیرش ویرایش‌ها» اجازه می‌دهند تغییرات فایل روان پیش برود اما دستورها همچنان کنترل می‌شوند. حالت‌های «پرسش» یا «گفت‌وگو» ایجنت را به مشاوری تبدیل می‌کنند که به هیچ چیز دست نمی‌زند. می‌توانید درون یک [جلسه](./session.md) بدون از دست دادن زمینه میانشان جابه‌جا شوید.
 
-A good rhythm uses modes deliberately: start a task in [plan mode](./plan-mode.md) to align on the approach, switch to an editing mode to execute, and drop back to a read-only mode to review. Treat the mode switch as part of the [steering](./steering.md) vocabulary, alongside interrupting and re-prompting.
+فهمیدن حالت‌ها ارزشش را دارد چون همان [مدل](./model.md) در هر کدام به‌طور محسوسی رفتار متفاوتی دارد، و مردم مدل را مقصر می‌دانند. ایجنتی که «از تغییر دادن سر باز می‌زند» اغلب فقط در یک حالت فقط‌خواندنی نشسته. ایجنتی که «سرکش شد و دوازده فایل را ویرایش کرد» در یک حالت پذیرش خودکار بوده که قبلاً روشنش کرده بودید و فراموش کرده بودید. نشانگر حالت در رابط کاربری اولین چیزی است که وقتی رفتار عجیب به نظر می‌رسد باید بررسی کنید.
 
-## In the tools
+یک ریتم خوب حالت‌ها را آگاهانه به کار می‌برد: یک کار را در [حالت برنامه‌ریزی](./plan-mode.md) شروع کنید تا روی رویکرد هم‌نظر شوید، برای اجرا به یک حالت ویرایش بروید، و برای بازبینی به یک حالت فقط‌خواندنی برگردید. عوض کردن حالت را بخشی از واژگان [هدایت](./steering.md) بدانید، کنار قطع کردن و دوباره پرامپت دادن.
 
-- Claude Code: Shift+Tab cycles default, accept edits and plan; the current mode is shown next to the input.
-- Cursor: Agent, Ask and Plan are selectable in the chat panel and set what the assistant may touch.
-- Codex: the mode is expressed as an approval policy plus sandbox settings rather than a single named toggle.
+## در ابزارها
 
-## In conversation
+- Claude Code: Shift+Tab میان حالت پیش‌فرض، پذیرش ویرایش‌ها و برنامه‌ریزی می‌چرخد؛ حالت فعلی کنار جعبه‌ی ورودی نشان داده می‌شود.
+- Cursor: Agent، Ask و Plan در پنل گفت‌وگو قابل انتخاب‌اند و تعیین می‌کنند دستیار به چه چیزهایی می‌تواند دست بزند.
+- Codex: حالت به‌جای یک کلید نام‌دار واحد، با یک سیاست تأیید به‌علاوه‌ی تنظیمات سندباکس بیان می‌شود.
 
-> “It wrote a beautiful plan and then just stopped.”
+## در گفت‌وگو
+
+> «یک برنامه‌ی زیبا نوشت و بعد همین‌طور ایستاد.»
 >
-> “You're in plan mode. That's the deal: it plans, you approve, then you switch modes and it builds.”
+> «در حالت برنامه‌ریزی هستی. قرار همین است: برنامه می‌دهد، تو تأیید می‌کنی، بعد حالت را عوض می‌کنی و می‌سازد.»
 >
-> “Ah. Shift+Tab, then.”
+> «آهان. پس Shift+Tab.»
 
-**Related:** [Permission request](./permission-request.md) · [Headless mode](./headless-mode.md) · [Hooks](./hooks.md)
+**مرتبط:** [درخواست مجوز](./permission-request.md) · [حالت بی‌رابط](./headless-mode.md) · [هوک‌ها](./hooks.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Plan Mode](https://vibecodeschool.com/learn/cc-15-plan-mode)
-- [Course 03 · Autonomy and Review Policies](https://vibecodeschool.com/learn/ag-05-approval-gates)
+- [دوره‌ی ۰۱ · حالت برنامه‌ریزی](https://vibecodeschool.com/learn/cc-15-plan-mode)
+- [دوره‌ی ۰۳ · خودمختاری و سیاست‌های بازبینی](https://vibecodeschool.com/learn/ag-05-approval-gates)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/agent-mode) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/agent-mode.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

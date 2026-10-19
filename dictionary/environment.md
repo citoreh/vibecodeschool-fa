@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Environment
+<div dir="rtl">
 
-> Everything outside the harness the agent can inspect or change: your repo, your shell, the services it can reach, the browser it drives.
+# محیط (environment)
 
-*§03 Tools & Environment · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/environment)*
+> هر چیزی بیرون از هارنس که ایجنت می‌تواند بررسی یا تغییرش دهد: مخزن شما، شل شما، سرویس‌هایی که به آن‌ها دسترسی دارد، مرورگری که هدایت می‌کند.
 
-The environment is the world an [agent](./agent.md) works in: the repository on disk, the shell it runs commands in, the databases and APIs it can reach, the browser it can drive. The [model](./model.md) never touches any of it directly. It learns about the environment through [tool results](./tool-result.md) and changes it through [tool calls](./tool-call.md), so the environment is exactly as large as the set of [tools](./tool.md) the [harness](./harness.md) exposes.
+*§۰۳ ابزارها و محیط · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/environment)*
 
-This is why an agent can be brilliant in one repo and lost in another. A broken environment reads as a stupid model. If tests can't run because a dependency is missing, if the shell has no network, if the staging URL needs a login the agent doesn't have, the agent will still try to finish the task, and it will guess about the parts it can't see. The output is confident, coherent, and wrong about the world.
+محیط دنیایی است که یک [ایجنت](./agent.md) در آن کار می‌کند: مخزن روی دیسک، شلی که دستورها را در آن اجرا می‌کند، پایگاه‌داده‌ها و APIهایی که به آن‌ها می‌رسد، مرورگری که می‌تواند هدایتش کند. [مدل](./model.md) هرگز مستقیم به هیچ‌کدام دست نمی‌زند. از طریق [نتیجه‌های ابزار](./tool-result.md) درباره‌ی محیط یاد می‌گیرد و از طریق [فراخوانی‌های ابزار](./tool-call.md) تغییرش می‌دهد؛ پس محیط دقیقاً به بزرگی مجموعه‌ی [ابزارهایی](./tool.md) است که [هارنس](./harness.md) در اختیار می‌گذارد.
 
-Treat the environment as part of the prompt. Before a long run, check that the commands the agent will need actually work from a fresh shell: install, test, lint, build. Give it the same access you would give a new teammate on day one, and put the things it can't see into files it can read. Most of what people call [AX](./ax.md) is just making the environment legible.
+برای همین یک ایجنت می‌تواند در یک مخزن درخشان باشد و در دیگری سردرگم. محیط خراب شبیه مدل خنگ به نظر می‌رسد. اگر تست‌ها اجرا نمی‌شوند چون یک وابستگی کم است، اگر شل به شبکه دسترسی ندارد، اگر نشانی staging به ورودی نیاز دارد که ایجنت ندارد، ایجنت باز هم سعی می‌کند کار را تمام کند، و درباره‌ی بخش‌هایی که نمی‌بیند حدس می‌زند. خروجی پراعتمادبه‌نفس و منسجم است، و درباره‌ی دنیا غلط.
 
-## In the tools
+محیط را بخشی از پرامپت بدانید. پیش از یک اجرای طولانی، بررسی کنید دستورهایی که ایجنت لازم خواهد داشت واقعاً از یک شل تازه کار می‌کنند: نصب، تست، لینت، بیلد. همان دسترسی‌ای را بدهید که روز اول به یک هم‌تیمی تازه می‌دهید، و چیزهایی را که نمی‌تواند ببیند در فایل‌هایی بگذارید که بتواند بخواند. بیشتر آنچه مردم [AX](./ax.md) می‌نامند فقط خوانا کردن محیط است.
 
-- Claude Code: the environment is your current directory plus whatever your shell can reach; cloud sessions get a fresh container with the repo cloned in.
-- Antigravity: each agent gets its own workspace, and the browser tool extends the environment to whatever the agent can open.
-- Claude Cowork: the environment is the folders you grant plus connectors such as Gmail and Calendar, rather than a repo.
+## در ابزارها
 
-## In conversation
+- Claude Code: محیط پوشه‌ی جاری شماست به‌علاوه‌ی هر چیزی که شلتان به آن می‌رسد؛ جلسه‌های ابری یک کانتینر تازه با مخزنِ کلون‌شده می‌گیرند.
+- Antigravity: هر ایجنت فضای کاری خودش را دارد، و ابزار مرورگر محیط را به هر چیزی که ایجنت بتواند باز کند گسترش می‌دهد.
+- Claude Cowork: محیط پوشه‌هایی است که اجازه می‌دهید به‌علاوه‌ی کانکتورهایی مثل Gmail و Calendar، نه یک مخزن.
 
-> “It says the migration passed, but staging is still on the old schema.”
+## در گفت‌وگو
+
+> «می‌گوید مهاجرت موفق بود، ولی staging هنوز روی ساختار قدیمی است.»
 >
-> “It never touched staging. Nothing in its environment can reach that database, so it ran the migration locally and reported that.”
+> «اصلاً به staging دست نزده. هیچ چیز در محیطش به آن پایگاه‌داده نمی‌رسد، پس مهاجرت را محلی اجرا کرده و همان را گزارش داده.»
 >
-> “So I either give it a tool for staging, or tell it to stop at a PR.”
+> «پس یا یک ابزار برای staging به آن می‌دهم، یا می‌گویم در مرحله‌ی درخواست ادغام بایستد.»
 
-**Related:** [Filesystem](./filesystem.md) · [Sandbox](./sandbox.md) · [MCP](./mcp.md) · [Worktree](./worktree.md)
+**مرتبط:** [سیستم فایل](./filesystem.md) · [سندباکس](./sandbox.md) · [MCP](./mcp.md) · [ورک‌تری](./worktree.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Install the CLI](https://vibecodeschool.com/learn/cc-02-install-the-cli)
-- [Course 03 · Security and Sandboxing](https://vibecodeschool.com/learn/ag-19-security)
+- [دوره‌ی ۰۱ · نصب ابزار خط فرمان](https://vibecodeschool.com/learn/cc-02-install-the-cli)
+- [دوره‌ی ۰۳ · امنیت و سندباکس](https://vibecodeschool.com/learn/ag-19-security)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/environment) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/environment.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

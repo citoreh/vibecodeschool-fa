@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Sandbox
+<div dir="rtl">
 
-> An isolated place for the agent to run, such as a container, VM or restricted shell, so a bad action can't reach the rest of your machine.
+# سندباکس (sandbox)
 
-*§03 Tools & Environment · also called: Sandboxing, Isolated environment · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/sandbox)*
+> جایی ایزوله برای اجرای ایجنت، مثل یک کانتینر، ماشین مجازی یا شل محدودشده، تا یک اقدام بد به بقیه‌ی دستگاه شما نرسد.
 
-A sandbox is a walled-off [environment](./environment.md) for the [agent](./agent.md): a container, a virtual machine, a cloud session, or a shell whose filesystem and network access are restricted. Whatever the agent does in there stays in there. It can delete files, install packages and run scripts, and the worst case is a fresh sandbox rather than a lost afternoon. The [harness](./harness.md) still executes [tool calls](./tool-call.md) normally; the walls are around the process, not inside the [model](./model.md).
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Sandboxing، Isolated environment · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/sandbox)*
 
-Sandboxing is what makes permissive [permission modes](./permission-mode.md) reasonable. Without it, 'bypass permissions' means trusting a non-deterministic text generator with your home directory, your SSH keys and every credential in your shell. With it, the same setting is just a way to stop babysitting. The common mistake is a leaky sandbox: a container that mounts your real repo read-write and inherits your environment variables has walls with a door propped open.
+سندباکس یک [محیط](./environment.md) دیوارکشی‌شده برای [ایجنت](./agent.md) است: یک کانتینر، یک ماشین مجازی، یک جلسه‌ی ابری، یا شلی که دسترسی‌اش به سیستم فایل و شبکه محدود شده. هر کاری ایجنت آن‌جا بکند همان‌جا می‌ماند. می‌تواند فایل پاک کند، بسته نصب کند و اسکریپت اجرا کند، و بدترین حالت یک سندباکس تازه است، نه یک بعدازظهر هدررفته. [هارنس](./harness.md) همچنان [فراخوانی‌های ابزار](./tool-call.md) را طبق معمول اجرا می‌کند؛ دیوارها دور فرایندند، نه درون [مدل](./model.md).
 
-Decide what the sandbox must not reach, then verify it can't. Production credentials, package publishing tokens and cloud accounts stay outside. Give the agent a copy or a [worktree](./worktree.md) of the code, a scratch database, and network access only to what the task needs. For parallel [AFK](./afk.md) runs, one sandbox per agent keeps them from stepping on each other. Cloud-hosted agent sessions are sandboxes someone else maintains, which is most of their appeal.
+سندباکس است که [حالت‌های مجوزِ](./permission-mode.md) آزادانه را معقول می‌کند. بدون آن، «دور زدن مجوزها» یعنی سپردن پوشه‌ی خانگی، کلیدهای SSH و همه‌ی اعتبارنامه‌های شل‌تان به یک تولیدکننده‌ی متن نامعین. با آن، همان تنظیم فقط راهی است برای دست کشیدن از پرستاری. اشتباه رایج سندباکسِ نشت‌دار است: کانتینری که مخزن واقعی شما را با دسترسی خواندن‌ونوشتن سوار می‌کند و متغیرهای محیطی‌تان را به ارث می‌برد، دیوارهایی دارد با دری که باز نگه داشته شده.
 
-## In the tools
+تصمیم بگیرید سندباکس به چه چیزی نباید برسد، بعد مطمئن شوید نمی‌رسد. اعتبارنامه‌های محیط تولید، توکن‌های انتشار بسته و حساب‌های ابری بیرون می‌مانند. به ایجنت یک کپی یا یک [ورک‌تری](./worktree.md) از کد، یک پایگاه‌داده‌ی چرک‌نویس، و دسترسی شبکه فقط به آنچه کار لازم دارد بدهید. برای اجراهای موازی [AFK](./afk.md)، یک سندباکس برای هر ایجنت نمی‌گذارد پا روی پای هم بگذارند. جلسه‌های ایجنت میزبانی‌شده در ابر سندباکس‌هایی‌اند که کس دیگری نگهشان می‌دارد، و بیشترِ جذابیتشان همین است.
 
-- Claude Code: cloud sessions run in a fresh container per session; locally, an optional sandbox restricts filesystem and network access for Bash.
-- Codex: runs commands inside an OS-level sandbox by default, with network off unless you allow it.
-- Antigravity: each agent works in its own workspace, and security policies control what it may reach.
+## در ابزارها
 
-## In conversation
+- Claude Code: جلسه‌های ابری برای هر جلسه در یک کانتینر تازه اجرا می‌شوند؛ به‌صورت محلی، یک سندباکس اختیاری دسترسی Bash به سیستم فایل و شبکه را محدود می‌کند.
+- Codex: به‌طور پیش‌فرض دستورها را درون یک سندباکس در سطح سیستم‌عامل اجرا می‌کند، با شبکه‌ی خاموش مگر این‌که اجازه دهید.
+- Antigravity: هر ایجنت در فضای کاری خودش کار می‌کند، و سیاست‌های امنیتی تعیین می‌کنند به چه چیزهایی می‌تواند برسد.
 
-> “I want three agents chewing through the migration backlog overnight.”
+## در گفت‌وگو
+
+> «می‌خواهم سه ایجنت تمام شب صف کارهای مهاجرت را بجوند.»
 >
-> “Then put each one in its own sandbox with a throwaway database. Permissions wide open inside, no prod access, PRs at the end.”
+> «پس هر کدام را در سندباکس خودش با یک پایگاه‌داده‌ی دورریختنی بگذار. مجوزها درون آن کاملاً باز، بدون دسترسی به محیط تولید، و در پایان درخواست‌های ادغام.»
 >
-> “And the sandbox dies when the run ends?”
+> «و سندباکس با تمام شدن اجرا از بین می‌رود؟»
 
-**Related:** [Headless mode](./headless-mode.md) · [Checkpoint](./checkpoint.md) · [Hooks](./hooks.md) · [AX](./ax.md)
+**مرتبط:** [حالت بی‌رابط](./headless-mode.md) · [نقطه‌ی بازگشت](./checkpoint.md) · [هوک‌ها](./hooks.md) · [AX — تجربه‌ی ایجنت](./ax.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · Security and Sandboxing](https://vibecodeschool.com/learn/ag-19-security)
-- [Course 06 · Cloud Sessions and Your Phone](https://vibecodeschool.com/learn/cw-13-cloud-sessions-and-mobile)
+- [دوره‌ی ۰۳ · امنیت و سندباکس](https://vibecodeschool.com/learn/ag-19-security)
+- [دوره‌ی ۰۶ · جلسه‌های ابری و گوشی شما](https://vibecodeschool.com/learn/cw-13-cloud-sessions-and-mobile)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/sandbox) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/sandbox.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

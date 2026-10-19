@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Headless mode
+<div dir="rtl">
 
-> Running the agent from a script or CI with a prompt and no interactive UI; the result comes back as text or JSON.
+# حالت بی‌رابط (headless mode)
 
-*§03 Tools & Environment · also called: Non-interactive mode, Print mode, Scripted run, -p · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/headless-mode)*
+> اجرای ایجنت از یک اسکریپت یا CI با یک پرامپت و بدون رابط تعاملی؛ نتیجه به‌صورت متن یا JSON برمی‌گردد.
 
-Headless mode runs the [agent](./agent.md) without its interactive interface: you pass a prompt on the command line or from a script, the agent does the work, and the result comes back as plain text or JSON on stdout. Nobody types, nobody clicks. Claude Code does this with `claude -p 'your prompt'`, Codex with `codex exec`, and most harnesses have an equivalent. It is the same loop, same [model](./model.md), same [tools](./tool.md), just driven by a program instead of a person.
+*§۰۳ ابزارها و محیط · نام‌های دیگر: Non-interactive mode، Print mode، Scripted run، -p · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/headless-mode)*
 
-Headless is how the agent becomes a building block. A CI job that reviews every pull request, a nightly run that updates docs to match the code, a script that fans a hundred repos through the same migration, a scheduled routine that refreshes a dataset: each is an agent invoked headlessly with a fixed prompt. The trade is that nothing can be asked mid-run. A [permission request](./permission-request.md) with no one to answer it either blocks forever or has to be pre-decided, so the [permission mode](./permission-mode.md) must be set in advance.
+حالت بی‌رابط [ایجنت](./agent.md) را بدون رابط تعاملی‌اش اجرا می‌کند: یک پرامپت را در خط فرمان یا از یک اسکریپت می‌دهید، ایجنت کار را انجام می‌دهد، و نتیجه به‌صورت متن ساده یا JSON روی stdout برمی‌گردد. کسی تایپ نمی‌کند، کسی کلیک نمی‌کند. Claude Code این کار را با `claude -p 'your prompt'` می‌کند، Codex با `codex exec`، و بیشتر هارنس‌ها معادلی دارند. همان چرخه، همان [مدل](./model.md)، همان [ابزارها](./tool.md)، فقط به‌جای یک انسان، یک برنامه هدایتش می‌کند.
 
-Treat a headless run like any unattended automation. Run it in a [sandbox](./sandbox.md) or a clean checkout, cap its budget and time, make its output machine-checkable (JSON with a schema beats prose), and end in something reviewable such as a PR or a report rather than a direct change. Log the [tool calls](./tool-call.md) so a bad run can be diagnosed. Everything that applies to [AFK](./afk.md) work applies twice here, because you may not even be awake.
+حالت بی‌رابط راهی است که ایجنت به یک قطعه‌ی سازنده تبدیل می‌شود. یک کار CI که هر درخواست ادغام را بازبینی می‌کند، یک اجرای شبانه که مستندات را با کد هماهنگ می‌کند، اسکریپتی که صد مخزن را از یک مهاجرت عبور می‌دهد، یک روال زمان‌بندی‌شده که یک مجموعه‌داده را تازه می‌کند: هر کدام ایجنتی است که با یک پرامپت ثابت و بی‌رابط فراخوانده شده. بهایش این است که وسط اجرا نمی‌شود چیزی پرسید. یک [درخواست مجوز](./permission-request.md) که کسی جوابش را ندهد یا برای همیشه گیر می‌کند یا باید از پیش تصمیمش گرفته شده باشد، پس [حالت مجوز](./permission-mode.md) باید از قبل تنظیم شود.
 
-## In the tools
+با یک اجرای بی‌رابط مثل هر خودکارسازی بی‌نظارت دیگری رفتار کنید. آن را در یک [سندباکس](./sandbox.md) یا یک نسخه‌ی تمیز از مخزن اجرا کنید، بودجه و زمانش را محدود کنید، خروجی‌اش را قابل بررسی با ماشین کنید (JSON با طرح‌واره از نثر بهتر است)، و آن را با چیزی قابل بازبینی مثل یک درخواست ادغام یا یک گزارش تمام کنید، نه یک تغییر مستقیم. [فراخوانی‌های ابزار](./tool-call.md) را ثبت کنید تا یک اجرای بد قابل تشخیص باشد. هر چیزی که درباره‌ی کار [AFK](./afk.md) صدق می‌کند این‌جا دو برابر صدق می‌کند، چون ممکن است حتی بیدار هم نباشید.
 
-- Claude Code: `claude -p 'prompt'` prints the result; `--output-format json` makes it parseable and `--allowedTools` fixes permissions up front.
-- Codex: `codex exec` runs non-interactively with the sandbox and approval policy given as flags.
-- Claude Cowork and ChatGPT Work: scheduled tasks are the no-code cousin, a saved prompt run on a timer with the result delivered to you.
+## در ابزارها
 
-## In conversation
+- Claude Code: `claude -p 'prompt'` نتیجه را چاپ می‌کند؛ `--output-format json` آن را قابل تجزیه می‌کند و `--allowedTools` مجوزها را از پیش ثابت می‌کند.
+- Codex: `codex exec` به‌صورت غیرتعاملی اجرا می‌شود و سندباکس و سیاست تأیید به‌صورت پرچم داده می‌شوند.
+- Claude Cowork و ChatGPT Work: کارهای زمان‌بندی‌شده پسرعموی بدون کدِ همین‌اند، یک پرامپت ذخیره‌شده که با زمان‌سنج اجرا می‌شود و نتیجه به دستتان می‌رسد.
 
-> “Can we get a first-pass review on every PR before a human looks?”
+## در گفت‌وگو
+
+> «می‌شود پیش از این‌که انسانی نگاه کند، یک بازبینی اولیه روی هر درخواست ادغام داشته باشیم؟»
 >
-> “Yes, run it headless in CI: pipe the diff to the agent with the review prompt, post the JSON findings as a comment.”
+> «بله، در CI بی‌رابط اجرایش کن: دیف را با پرامپت بازبینی به ایجنت بده، یافته‌های JSON را به‌صورت کامنت منتشر کن.»
 >
-> “Read-only tools only, and it never approves anything itself.”
+> «فقط ابزارهای فقط‌خواندنی، و هرگز خودش چیزی را تأیید نکند.»
 
-**Related:** [Automated review](./automated-review.md) · [Hooks](./hooks.md) · [Worktree](./worktree.md) · [Usage limit](./usage-limit.md)
+**مرتبط:** [بازبینی خودکار](./automated-review.md) · [هوک‌ها](./hooks.md) · [ورک‌تری](./worktree.md) · [سقف مصرف](./usage-limit.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · Auto-PR Pipeline](https://vibecodeschool.com/learn/ag-21-auto-pr-pipeline)
-- [Course 06 · Scheduled Tasks](https://vibecodeschool.com/learn/cw-14-scheduled-tasks)
+- [دوره‌ی ۰۳ · خط تولید خودکار درخواست ادغام](https://vibecodeschool.com/learn/ag-21-auto-pr-pipeline)
+- [دوره‌ی ۰۶ · کارهای زمان‌بندی‌شده](https://vibecodeschool.com/learn/cw-14-scheduled-tasks)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/headless-mode) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/headless-mode.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>
