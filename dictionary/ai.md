@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# AI
+<div dir="rtl">
 
-> An umbrella word that keeps changing what it points at. In coding today it means a language model plus the harness that lets it act.
+# هوش مصنوعی (AI)
 
-*§01 The Model · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/ai)*
+> واژه‌ای چتری که مدام عوض می‌شود به چه اشاره می‌کند. امروز در کدنویسی یعنی یک مدل زبانی به‌علاوه‌ی هارنسی که به آن اجازه‌ی عمل می‌دهد.
 
-AI is an umbrella word, not a specific technology. Right now, when someone in a coding context says 'the AI', they almost always mean a large language [model](./model.md) wrapped in a [harness](./harness.md) that lets it read files, run commands and edit code. Ten years ago the same word pointed at recommendation systems and image classifiers; ten years from now it will point at something else. The label follows the frontier.
+*§۰۱ مدل · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/ai)*
 
-The vagueness costs you when you're debugging. 'The AI got it wrong' doesn't tell you whether the model produced a bad [next-token prediction](./next-token-prediction.md), the harness fed it a bloated [context window](./context-window.md), a [tool call](./tool-call.md) failed silently, or your prompt was ambiguous. Each of those has a different fix, and the word AI hides which one you're looking at.
+هوش مصنوعی یک واژه‌ی چتری است، نه یک فناوری مشخص. این روزها وقتی کسی در فضای کدنویسی می‌گوید «هوش مصنوعی»، تقریباً همیشه منظورش یک [مدل](./model.md) زبانی بزرگ است که درون یک [هارنس](./harness.md) پیچیده شده؛ هارنسی که به آن اجازه می‌دهد فایل بخواند، دستور اجرا کند و کد را ویرایش کند. ده سال پیش همین واژه به سیستم‌های پیشنهاددهنده و دسته‌بندهای تصویر اشاره می‌کرد؛ ده سال بعد به چیز دیگری اشاره خواهد کرد. برچسب همیشه دنبال لبه‌ی پیشرفت می‌رود.
 
-The habit worth building is to swap the umbrella word for the specific part. Say model when you mean the trained network, [agent](./agent.md) when you mean the model plus its loop, harness when you mean the product around it (Claude Code, Codex, Cursor). The rest of this dictionary exists so you have those words ready.
+این ابهام وقت اشکال‌زدایی برایتان گران تمام می‌شود. جمله‌ی «هوش مصنوعی اشتباه کرد» نمی‌گوید که آیا مدل [پیش‌بینی توکن بعدی](./next-token-prediction.md) بدی انجام داده، هارنس [پنجره‌ی زمینه‌ی](./context-window.md) پرازحشوی به آن داده، یک [فراخوانی ابزار](./tool-call.md) بی‌صدا شکست خورده، یا پرامپت شما مبهم بوده. هر کدام راه‌حل متفاوتی دارد، و واژه‌ی هوش مصنوعی پنهان می‌کند با کدام سروکار دارید.
 
-## In the tools
+عادتی که ارزش ساختن دارد این است که واژه‌ی چتری را با جزء مشخص عوض کنید. وقتی منظورتان شبکه‌ی آموزش‌دیده است بگویید مدل، وقتی منظورتان مدل به‌همراه چرخه‌اش است بگویید [ایجنت](./agent.md)، و وقتی منظورتان محصول دور آن است (Claude Code، Codex، Cursor) بگویید هارنس. بقیه‌ی این واژه‌نامه برای این است که این واژه‌ها را دم دست داشته باشید.
 
-- Claude Code: the model is Claude; the harness is the CLI around it. Most 'AI' complaints turn out to be about one or the other.
-- Cursor: 'AI' covers autocomplete, chat and the agent, which are three different harness features over similar models.
+## در ابزارها
 
-## In conversation
+- Claude Code: مدل Claude است؛ هارنس همان ابزار خط فرمان دور آن است. بیشتر گلایه‌ها از «هوش مصنوعی» در واقع درباره‌ی یکی از این دو است.
+- Cursor: «هوش مصنوعی» تکمیل خودکار، گفت‌وگو و ایجنت را با هم در بر می‌گیرد، که سه قابلیت متفاوت هارنس روی مدل‌هایی مشابه‌اند.
 
-> “My AI keeps rewriting the whole file instead of the one function.”
+## در گفت‌وگو
+
+> «هوش مصنوعی‌ام به‌جای همان یک تابع، کل فایل را بازنویسی می‌کند.»
 >
-> “Which part? The model, or Claude Code's edit tool? If the tool is doing full-file writes, that's a harness setting, not a model problem.”
+> «کدام بخشش؟ مدل یا ابزار ویرایش Claude Code؟ اگر ابزار کل فایل را می‌نویسد، این یک تنظیم هارنس است، نه مشکل مدل.»
 
-**Related:** [Model provider](./model-provider.md) · [Vibe coding](./vibe-coding.md) · [Parametric knowledge](./parametric-knowledge.md)
+**مرتبط:** [ارائه‌دهنده‌ی مدل](./model-provider.md) · [وایب‌کدینگ](./vibe-coding.md) · [دانش پارامتری](./parametric-knowledge.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
-- [Course 01 · What Is Claude Code](https://vibecodeschool.com/learn/cc-01-what-is-claude-code)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۱ · Claude Code چیست](https://vibecodeschool.com/learn/cc-01-what-is-claude-code)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/ai) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/ai.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

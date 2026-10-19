@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Parameters
+<div dir="rtl">
 
-> The billions of numbers a model is made of, fixed once training ends. Also called weights. What the model knows by heart lives in them.
+# پارامترها (parameters)
 
-*§01 The Model · also called: Weights · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/parameters)*
+> میلیاردها عددی که مدل از آن‌ها ساخته شده و پس از پایان آموزش ثابت می‌مانند. به آن‌ها وزن (weights) هم می‌گویند. آنچه مدل از بر است در آن‌ها زندگی می‌کند.
 
-Parameters are the numbers a [model](./model.md) is made of. During [training](./training.md) they are adjusted, trillions of times, until the network gets good at [next-token prediction](./next-token-prediction.md); after that they're frozen. When you hear '8B' or '70B', that's the parameter count in billions. Frontier models from Anthropic, OpenAI and Google don't publish theirs, but they're far larger.
+*§۰۱ مدل · نام‌های دیگر: Weights · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/parameters)*
 
-Everything the model 'knows' without being told is stored across these numbers, which is what [parametric knowledge](./parametric-knowledge.md) means. There is no lookup table of facts inside; there is a giant tangle of weights that happens to produce the right continuation most of the time. That's why a model can be fluent about a library and still wrong about its current API: the weights encode a blurred average of what it read up to its [knowledge cutoff](./knowledge-cutoff.md).
+پارامترها اعدادی‌اند که [مدل](./model.md) از آن‌ها ساخته شده. در طول [آموزش](./training.md) این اعداد تریلیون‌ها بار تنظیم می‌شوند تا شبکه در [پیش‌بینی توکن بعدی](./next-token-prediction.md) خوب شود؛ پس از آن منجمد می‌شوند. وقتی می‌شنوید «8B» یا «70B»، منظور تعداد پارامترها به میلیارد است. مدل‌های پیشرفته‌ی Anthropic، OpenAI و گوگل تعداد پارامترهایشان را منتشر نمی‌کنند، اما بسیار بزرگ‌ترند.
 
-Parameter count matters in two practical ways. It sets how much memory the model needs, which is why a 7B model runs on a laptop and a 400B one doesn't. And it roughly tracks capability, though training quality and [effort](./effort.md) settings matter just as much. A session never rewrites the parameters; every correction you make lives in [context](./context.md), and the weights stay exactly as shipped.
+هر چیزی که مدل بی‌آن‌که به او گفته شود «می‌داند»، در سراسر همین اعداد ذخیره شده؛ معنای [دانش پارامتری](./parametric-knowledge.md) همین است. درونش جدول جست‌وجوی واقعیت‌ها وجود ندارد؛ کلافی عظیم از وزن‌ها هست که بیشتر وقت‌ها ادامه‌ی درست را تولید می‌کند. به همین دلیل مدل می‌تواند درباره‌ی یک کتابخانه روان حرف بزند و باز درباره‌ی API فعلی‌اش اشتباه کند: وزن‌ها میانگینی محو از آنچه تا [تاریخ قطع دانش](./knowledge-cutoff.md) خوانده را در خود دارند.
 
-## In the tools
+تعداد پارامترها از دو جهت عملی مهم است. تعیین می‌کند مدل چقدر حافظه لازم دارد؛ برای همین یک مدل 7B روی لپ‌تاپ اجرا می‌شود و یک مدل 400B نه. و تقریباً با توانایی هم‌راستاست، هرچند کیفیت آموزش و تنظیم [میزان تلاش](./effort.md) به همان اندازه مهم‌اند. یک جلسه هرگز پارامترها را بازنویسی نمی‌کند؛ هر اصلاحی که می‌کنید در [زمینه](./context.md) زندگی می‌کند و وزن‌ها دقیقاً همان‌طور که عرضه شده‌اند می‌مانند.
 
-- Ollama: model tags like `llama3:8b` name the parameter count; bigger tags need more RAM or VRAM.
-- Most tools: hosted models hide their parameter counts; you pick by tier (fast and cheap vs slow and strong), not by size.
+## در ابزارها
 
-## In conversation
+- Ollama: برچسب‌هایی مثل `llama3:8b` تعداد پارامترها را نشان می‌دهند؛ برچسب‌های بزرگ‌تر RAM یا VRAM بیشتری می‌خواهند.
+- بیشتر ابزارها: مدل‌های میزبانی‌شده تعداد پارامترشان را پنهان می‌کنند؛ شما بر اساس رده (سریع و ارزان در برابر کند و قوی) انتخاب می‌کنید، نه اندازه.
 
-> “If I keep correcting it, will it learn my codebase?”
+## در گفت‌وگو
+
+> «اگر مدام اصلاحش کنم، کدهای ما را یاد می‌گیرد؟»
 >
-> “Not in the weights. Parameters are fixed after training. Put the rules in CLAUDE.md so they're loaded every session instead.”
+> «در وزن‌ها نه. پارامترها بعد از آموزش ثابت‌اند. قاعده‌ها را در CLAUDE.md بگذار تا هر جلسه بارگذاری شوند.»
 
-**Related:** [Inference](./inference.md) · [Memory system](./memory-system.md) · [AGENTS.md](./agents-md.md)
+**مرتبط:** [استنتاج](./inference.md) · [سیستم حافظه](./memory-system.md) · [AGENTS.md](./agents-md.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
-- [Course 04 · Running Models Locally with Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۴ · اجرای محلی مدل‌ها با Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/parameters) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/parameters.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

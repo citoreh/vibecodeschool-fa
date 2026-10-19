@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Non-determinism
+<div dir="rtl">
 
-> Run the same prompt twice and you can get two different answers. Sampling, batching and silent provider updates all contribute.
+# نامعین بودن (non-determinism)
 
-*§01 The Model · also called: Nondeterminism · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/non-determinism)*
+> یک پرامپت را دو بار اجرا کنید و ممکن است دو پاسخ متفاوت بگیرید. نمونه‌برداری، دسته‌بندی درخواست‌ها و به‌روزرسانی‌های بی‌صدای ارائه‌دهنده همه در این نقش دارند.
 
-Non-determinism means the same prompt does not reliably give the same answer. The main cause is sampling: [next-token prediction](./next-token-prediction.md) produces a probability distribution, and the [model](./model.md) picks from it, so two runs can diverge at the first uncertain token and never reconverge. Even at temperature zero, floating-point arithmetic on batched GPU requests introduces small differences, and some architectures route tokens through different internal experts depending on what else is in the batch.
+*§۰۱ مدل · نام‌های دیگر: Nondeterminism · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/non-determinism)*
 
-There's a second, sneakier source: the thing you're calling changes under you. Providers update models, [harnesses](./harness.md) revise their [system prompt](./system-prompt.md), and a [tool](./tool.md) gets a new description. 'It worked yesterday' is a weak claim in agentic coding, and the instinct to find the one prompt that always works is chasing something that doesn't exist.
+نامعین بودن یعنی یک پرامپت به‌طور قابل اعتماد پاسخ یکسانی نمی‌دهد. علت اصلی نمونه‌برداری است: [پیش‌بینی توکن بعدی](./next-token-prediction.md) یک توزیع احتمال تولید می‌کند و [مدل](./model.md) از آن انتخاب می‌کند، پس دو اجرا می‌توانند در اولین توکن نامطمئن از هم جدا شوند و دیگر هرگز به هم نرسند. حتی در دمای صفر، محاسبات ممیز شناور روی درخواست‌های دسته‌بندی‌شده‌ی GPU تفاوت‌های کوچکی ایجاد می‌کند، و برخی معماری‌ها بسته به این‌که چه چیز دیگری در همان دسته باشد، توکن‌ها را از «متخصص»های داخلی متفاوتی عبور می‌دهند.
 
-Design for variance instead of fighting it. Put an [automated check](./automated-check.md) behind every agent change so a bad roll fails loudly. Rerun rather than re-argue when a result looks like a fluke. Pin exact model versions in API code. And write your instructions so the intended path is overwhelmingly the most likely one: clear constraints narrow the distribution far more than pleading does.
+منبع دوم و موذیانه‌تری هم هست: چیزی که صدایش می‌زنید زیر پایتان عوض می‌شود. ارائه‌دهندگان مدل‌ها را به‌روز می‌کنند، [هارنس‌ها](./harness.md) [پرامپت سیستمی‌شان](./system-prompt.md) را بازنویسی می‌کنند، و یک [ابزار](./tool.md) توصیف تازه‌ای می‌گیرد. «دیروز کار می‌کرد» در کدنویسی ایجنتی ادعای ضعیفی است، و غریزه‌ی پیدا کردن آن یک پرامپتی که همیشه جواب می‌دهد، دنبال چیزی است که وجود ندارد.
 
-## In the tools
+به‌جای جنگیدن با تغییرپذیری، برایش طراحی کنید. پشت هر تغییر ایجنت یک [بررسی خودکار](./automated-check.md) بگذارید تا یک تاس بد با صدای بلند شکست بخورد. وقتی نتیجه‌ای تصادفی به نظر می‌رسد، به‌جای بحث دوباره اجرا کنید. در کد API نسخه‌ی دقیق مدل را ثابت کنید. و دستورهایتان را طوری بنویسید که مسیر مورد نظر با اختلاف زیاد محتمل‌ترین مسیر باشد: قیدهای روشن توزیع را خیلی بیشتر از التماس کردن باریک می‌کنند.
 
-- Anthropic API: `temperature` shapes sampling but doesn't remove variance; dated model IDs at least pin which model you get.
-- Claude Code: rerunning a turn after `/rewind` can land on a different plan; treat each run as a fresh sample.
+## در ابزارها
 
-## In conversation
+- API شرکت Anthropic: `temperature` نمونه‌برداری را شکل می‌دهد اما تغییرپذیری را از بین نمی‌برد؛ شناسه‌های تاریخ‌دار مدل دست‌کم ثابت می‌کنند کدام مدل را می‌گیرید.
+- Claude Code: اجرای دوباره‌ی یک نوبت پس از `/rewind` ممکن است به برنامه‌ی دیگری برسد؛ هر اجرا را یک نمونه‌ی تازه بدانید.
 
-> “I ran the exact same prompt twice and got two different migrations.”
+## در گفت‌وگو
+
+> «دقیقاً همان پرامپت را دو بار اجرا کردم و دو اسکریپت مهاجرت متفاوت گرفتم.»
 >
-> “Non-determinism. Neither is 'the' answer. Add a test that pins the behaviour you want and rerun until it passes.”
+> «نامعین بودن. هیچ‌کدام «پاسخ قطعی» نیست. تستی اضافه کن که رفتار دلخواهت را تثبیت کند و آن‌قدر اجرا کن تا قبول شود.»
 
-**Related:** [Hallucination](./hallucination.md) · [Automated review](./automated-review.md) · [Effort](./effort.md)
+**مرتبط:** [توهم](./hallucination.md) · [بازبینی خودکار](./automated-review.md) · [میزان تلاش](./effort.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Testing Prompts Like Code](https://vibecodeschool.com/learn/pe-18-testing-prompts-like-code)
-- [Course 05 · Self-Consistency](https://vibecodeschool.com/learn/pe-09-self-consistency)
+- [دوره‌ی ۰۵ · آزمودن پرامپت‌ها مثل کد](https://vibecodeschool.com/learn/pe-18-testing-prompts-like-code)
+- [دوره‌ی ۰۵ · خودسازگاری](https://vibecodeschool.com/learn/pe-09-self-consistency)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/non-determinism) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/non-determinism.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

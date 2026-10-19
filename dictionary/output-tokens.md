@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Output tokens
+<div dir="rtl">
 
-> What the model writes: replies, code, tool calls, hidden thinking. Produced one by one, so they set the wait, and they cost the most.
+# توکن‌های خروجی (output tokens)
 
-*§01 The Model · also called: Completion tokens · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/output-tokens)*
+> آنچه مدل می‌نویسد: پاسخ‌ها، کد، فراخوانی ابزار، فکرهای پنهان. یکی‌یکی تولید می‌شوند، پس زمان انتظار را تعیین می‌کنند، و گران‌ترین‌اند.
 
-Output tokens are what the [model](./model.md) writes back on each [model provider request](./model-provider-request.md): the visible reply, the code it produces, the structured [tool call](./tool-call.md) it emits, and any hidden reasoning when [effort](./effort.md) is turned up. They're generated one at a time by [next-token prediction](./next-token-prediction.md), which makes them slow to produce, and providers price them several times higher than [input tokens](./input-tokens.md) to match.
+*§۰۱ مدل · نام‌های دیگر: Completion tokens · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/output-tokens)*
 
-Most sessions spend far more on input than output, so output tokens are rarely the cost problem. They are the latency problem. A model rewriting a 600-line file from scratch is emitting thousands of tokens you then wait for, when a targeted diff would have been fifty. Extended thinking has the same shape: minutes of reasoning tokens on a task that didn't need any.
+توکن‌های خروجی چیزهایی‌اند که [مدل](./model.md) در هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) پس می‌نویسد: پاسخ دیدنی، کدی که تولید می‌کند، [فراخوانی ابزار](./tool-call.md) ساختاریافته‌ای که بیرون می‌دهد، و هر استدلال پنهانی وقتی [میزان تلاش](./effort.md) بالا رفته باشد. این توکن‌ها یکی‌یکی با [پیش‌بینی توکن بعدی](./next-token-prediction.md) تولید می‌شوند، که تولیدشان را کند می‌کند، و ارائه‌دهندگان متناسب با همین، قیمتشان را چند برابر [توکن‌های ورودی](./input-tokens.md) می‌گذارند.
 
-Ask for edits, not rewrites, and let the harness apply diffs. Keep reasoning effort proportional to the difficulty. When you want a long artefact (a spec, a migration plan), that's a fine use of output tokens; when you want a one-line change, a long answer is a smell, not a bonus.
+بیشتر جلسه‌ها خیلی بیشتر از خروجی، صرف ورودی می‌کنند؛ پس توکن‌های خروجی به‌ندرت مشکل هزینه‌اند. آن‌ها مشکل تأخیرند. مدلی که یک فایل ۶۰۰ خطی را از صفر بازنویسی می‌کند هزاران توکن بیرون می‌دهد که باید منتظرشان بمانید، در حالی که یک دیف هدفمند پنجاه توکن می‌شد. تفکر گسترده هم همین شکل را دارد: دقیقه‌ها توکن استدلال برای کاری که هیچ استدلالی لازم نداشت.
 
-## In the tools
+ویرایش بخواهید، نه بازنویسی، و بگذارید هارنس دیف‌ها را اعمال کند. میزان تلاش استدلالی را متناسب با دشواری نگه دارید. وقتی یک خروجی طولانی می‌خواهید (یک سند مشخصات، یک برنامه‌ی مهاجرت)، این استفاده‌ی درستی از توکن خروجی است؛ وقتی یک تغییر یک‌خطی می‌خواهید، پاسخ طولانی نشانه‌ی بدی است، نه امتیاز اضافه.
 
-- Claude Code: file edits are applied as diffs, so output stays small; thinking tokens show up under output in `/cost`.
-- Anthropic API: `max_tokens` caps output per request; thinking, if enabled, counts against it.
+## در ابزارها
 
-## In conversation
+- Claude Code: ویرایش فایل‌ها به‌صورت دیف اعمال می‌شود، پس خروجی کوچک می‌ماند؛ توکن‌های تفکر در `/cost` زیر خروجی نشان داده می‌شوند.
+- API شرکت Anthropic: `max_tokens` سقف خروجی هر درخواست را تعیین می‌کند؛ تفکر، اگر فعال باشد، از همین سقف کم می‌کند.
 
-> “It regenerated the entire component to change one className.”
+## در گفت‌وگو
+
+> «برای عوض کردن یک className کل کامپوننت را از نو تولید کرد.»
 >
-> “That's a few thousand output tokens for a five-token change. Tell it to edit in place.”
+> «یعنی چند هزار توکن خروجی برای یک تغییر پنج‌توکنی. بگو همان‌جا ویرایش کند.»
 
-**Related:** [Inference](./inference.md) · [Token](./token.md) · [Usage limit](./usage-limit.md)
+**مرتبط:** [استنتاج](./inference.md) · [توکن](./token.md) · [سقف مصرف](./usage-limit.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · Latency, Cost & Reliability Budgets](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
-- [Course 05 · Reasoning Models vs CoT Prompts](https://vibecodeschool.com/learn/pe-12-reasoning-models-vs-cot)
+- [دوره‌ی ۰۴ · بودجه‌های تأخیر، هزینه و قابلیت اطمینان](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
+- [دوره‌ی ۰۵ · مدل‌های استدلالی در برابر پرامپت‌های زنجیره‌ی تفکر](https://vibecodeschool.com/learn/pe-12-reasoning-models-vs-cot)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/output-tokens) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/output-tokens.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

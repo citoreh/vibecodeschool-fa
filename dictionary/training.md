@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Training
+<div dir="rtl">
 
-> How a model's weights get their values: predicting text at huge scale, then rounds of feedback that shape it into an assistant.
+# آموزش مدل (training)
 
-*§01 The Model · also called: Pre-training, Post-training · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/training)*
+> این‌که وزن‌های مدل چطور مقدار می‌گیرند: پیش‌بینی متن در مقیاسی عظیم، و سپس دورهایی از بازخورد که آن را به یک دستیار تبدیل می‌کنند.
 
-Training is how a model's [parameters](./parameters.md) get their values. In the first phase, pre-training, the network reads an enormous corpus of text and code and is nudged, token by token, toward better [next-token prediction](./next-token-prediction.md). Later phases (often called post-training) use curated examples and human or model feedback to make it follow instructions, use tools and decline harmful requests. All of this happens before you ever type a prompt.
+*§۰۱ مدل · نام‌های دیگر: Pre-training، Post-training · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/training)*
 
-The part people miss: training is over by the time you use the model. Nothing you say in Claude Code or Cursor updates the weights. The model isn't learning your codebase across sessions; it is re-reading whatever the [harness](./harness.md) puts in front of it each time. What feels like learning is a [memory system](./memory-system.md) or a project file being loaded into [context](./context.md).
+آموزش روشی است که [پارامترهای](./parameters.md) مدل مقدارشان را می‌گیرند. در مرحله‌ی اول، پیش‌آموزش (pre-training)، شبکه حجم عظیمی از متن و کد را می‌خواند و توکن به توکن به سمت [پیش‌بینی](./next-token-prediction.md) بهترِ توکن بعدی هل داده می‌شود. مرحله‌های بعدی (که معمولاً پس‌آموزش یا post-training نامیده می‌شوند) از مثال‌های گزینش‌شده و بازخورد انسان یا مدل استفاده می‌کنند تا مدل دستورها را دنبال کند، از ابزارها استفاده کند و درخواست‌های آسیب‌زا را رد کند. همه‌ی این‌ها پیش از آن‌که شما حتی یک پرامپت تایپ کنید اتفاق می‌افتد.
 
-Two consequences follow. First, the model's built-in knowledge stops at its [knowledge cutoff](./knowledge-cutoff.md), so anything newer has to be supplied. Second, post-training shapes personality as well as skill: an eagerness to agree ([sycophancy](./sycophancy.md)) and a tendency to produce confident text either way ([hallucination](./hallucination.md)) are side effects of how the model was rewarded. Fine-tuning on your own data is possible with some providers, but for coding work it's almost never the right first move.
+بخشی که از چشم مردم می‌افتد: وقتی از مدل استفاده می‌کنید، آموزش تمام شده است. هیچ چیزی که در Claude Code یا Cursor می‌گویید وزن‌ها را به‌روز نمی‌کند. مدل در طول جلسه‌ها کدهای شما را یاد نمی‌گیرد؛ هر بار هر چه [هارنس](./harness.md) جلویش بگذارد را دوباره می‌خواند. آنچه حس یادگیری می‌دهد، یک [سیستم حافظه](./memory-system.md) یا فایل پروژه‌ای است که در [زمینه](./context.md) بارگذاری می‌شود.
 
-## In the tools
+دو پیامد دارد. اول، دانش داخلی مدل در [تاریخ قطع دانش](./knowledge-cutoff.md) متوقف می‌شود، پس هر چیز تازه‌تر را باید خودتان فراهم کنید. دوم، پس‌آموزش علاوه بر مهارت، شخصیت را هم شکل می‌دهد: اشتیاق به موافقت ([چاپلوسی](./sycophancy.md)) و تمایل به تولید متن پراعتمادبه‌نفس در هر حال ([توهم](./hallucination.md)) عوارض جانبی شیوه‌ی پاداش گرفتن مدل‌اند. تنظیم دقیق روی داده‌های خودتان نزد برخی ارائه‌دهندگان ممکن است، اما برای کار کدنویسی تقریباً هیچ‌وقت قدم اول درست نیست.
 
-- Anthropic API: models are used as-is with no per-user training; customisation happens through prompts, files and tools.
-- OpenAI API: offers fine-tuning for some models, but coding agents like Codex run on the standard assistant models.
+## در ابزارها
 
-## In conversation
+- API شرکت Anthropic: مدل‌ها همان‌طور که هستند استفاده می‌شوند و برای هر کاربر آموزش جداگانه‌ای ندارند؛ سفارشی‌سازی از طریق پرامپت‌ها، فایل‌ها و ابزارها انجام می‌شود.
+- API شرکت OpenAI: برای برخی مدل‌ها تنظیم دقیق ارائه می‌کند، اما ایجنت‌های کدنویسی مثل Codex روی مدل‌های استاندارد دستیار اجرا می‌شوند.
 
-> “Can I train Claude on our internal framework?”
+## در گفت‌وگو
+
+> «می‌توانم Claude را روی فریم‌ورک داخلی‌مان آموزش بدهم؟»
 >
-> “You could fine-tune, but loading the docs into context each session gets you most of the way with none of the setup.”
+> «می‌شود تنظیم دقیق کرد، اما بارگذاری مستندات در زمینه در هر جلسه بیشترِ راه را بدون هیچ دردسر راه‌اندازی می‌رود.»
 
-**Related:** [Parametric knowledge](./parametric-knowledge.md) · [Contextual knowledge](./contextual-knowledge.md) · [Effort](./effort.md)
+**مرتبط:** [دانش پارامتری](./parametric-knowledge.md) · [دانش زمینه‌ای](./contextual-knowledge.md) · [میزان تلاش](./effort.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
-- [Course 04 · Finetuning: When It Pays Off](https://vibecodeschool.com/learn/aa-15-finetuning-fundamentals)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۴ · تنظیم دقیق: کی به‌صرفه است](https://vibecodeschool.com/learn/aa-15-finetuning-fundamentals)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/training) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/training.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

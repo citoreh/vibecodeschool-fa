@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Model provider request
+<div dir="rtl">
 
-> A single API call: the harness ships the full context to the provider and gets one reply back. Most turns need several of them.
+# درخواست به ارائه‌دهنده‌ی مدل (model provider request)
 
-*§01 The Model · also called: API call, Model call, Request · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/model-provider-request)*
+> یک فراخوانی API: هارنس کل زمینه را برای ارائه‌دهنده می‌فرستد و یک پاسخ پس می‌گیرد. بیشتر نوبت‌ها به چند تا از این‌ها نیاز دارند.
 
-A model provider request is a single round trip to the [model provider](./model-provider.md): the [harness](./harness.md) ships the entire [context window](./context-window.md) (system prompt, conversation, tool definitions, every tool result so far) and gets back one response, which is either a message for you or a [tool call](./tool-call.md). Because the model is [stateless](./stateless.md), nothing is kept on the provider side between requests; the full context is re-sent every time.
+*§۰۱ مدل · نام‌های دیگر: API call، Model call، Request · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/model-provider-request)*
 
-A single [turn](./turn.md) usually contains many of these. You ask for a fix; the harness makes one request; the model asks to read a file; the harness reads it and makes a second request with the file contents appended; the model asks to run tests; a third request. A turn with fifteen tool calls is sixteen requests, and each one re-reads everything that came before. That's why cost per turn climbs as a session grows, and why the [prefix cache](./prefix-cache.md) matters so much.
+درخواست به ارائه‌دهنده‌ی مدل یک رفت‌وبرگشت واحد به [ارائه‌دهنده‌ی مدل](./model-provider.md) است: [هارنس](./harness.md) کل [پنجره‌ی زمینه](./context-window.md) را می‌فرستد (پرامپت سیستمی، گفت‌وگو، تعریف ابزارها، همه‌ی نتیجه‌های ابزار تا این لحظه) و یک پاسخ پس می‌گیرد، که یا پیامی برای شماست یا یک [فراخوانی ابزار](./tool-call.md). چون مدل [بی‌حالت](./stateless.md) است، میان درخواست‌ها چیزی سمت ارائه‌دهنده نگه داشته نمی‌شود؛ کل زمینه هر بار دوباره فرستاده می‌شود.
 
-You'll rarely see requests directly, but you feel them: each is a pause while the model reads and thinks, and each is a line on the bill. Fewer, more useful tool calls beat many small ones. A well-targeted search that returns the right file in one go is cheaper than five reads that hunt for it.
+یک [نوبت](./turn.md) معمولاً چندتا از این‌ها را در خود دارد. شما رفع یک مشکل را می‌خواهید؛ هارنس یک درخواست می‌فرستد؛ مدل می‌خواهد فایلی را بخواند؛ هارنس آن را می‌خواند و درخواست دومی با محتوای فایلِ افزوده‌شده می‌فرستد؛ مدل می‌خواهد تست‌ها را اجرا کند؛ درخواست سوم. نوبتی با پانزده فراخوانی ابزار شانزده درخواست است، و هر کدام همه‌ی آنچه پیش‌تر آمده را دوباره می‌خواند. برای همین هزینه‌ی هر نوبت با بزرگ شدن جلسه بالا می‌رود، و برای همین [کش پیشوند](./prefix-cache.md) این‌قدر اهمیت دارد.
 
-## In the tools
+به‌ندرت درخواست‌ها را مستقیم می‌بینید، اما حسشان می‌کنید: هر کدام مکثی است که مدل در آن می‌خواند و فکر می‌کند، و هر کدام یک ردیف در صورت‌حساب است. فراخوانی‌های ابزار کمتر و مفیدتر از تعداد زیادی فراخوانی کوچک بهترند. یک جست‌وجوی هدفمند که فایل درست را یک‌جا برمی‌گرداند، از پنج بار خواندن برای شکار آن ارزان‌تر است.
 
-- Claude Code: `/cost` totals the requests made this session; the spinner with a changing verb is one request in flight.
-- Anthropic API: one `messages` call is one request; tool use means you loop, sending results back in a new call.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/cost` درخواست‌های این جلسه را جمع می‌زند؛ چرخنده‌ای که فعلش عوض می‌شود یعنی یک درخواست در جریان است.
+- API شرکت Anthropic: هر فراخوانی `messages` یک درخواست است؛ استفاده از ابزار یعنی در یک حلقه نتیجه‌ها را با فراخوانی تازه برمی‌گردانید.
 
-> “It only did three edits but the cost jumped by a dollar.”
+## در گفت‌وگو
+
+> «فقط سه ویرایش انجام داد ولی هزینه یک دلار بالا رفت.»
 >
-> “Count the requests, not the edits. Every tool call is another full round trip with the whole session attached.”
+> «درخواست‌ها را بشمار، نه ویرایش‌ها را. هر فراخوانی ابزار یک رفت‌وبرگشت کامل دیگر است که کل جلسه همراهش می‌رود.»
 
-**Related:** [Inference](./inference.md) · [Input tokens](./input-tokens.md) · [Cache tokens](./cache-tokens.md)
+**مرتبط:** [استنتاج](./inference.md) · [توکن‌های ورودی](./input-tokens.md) · [توکن‌های کش](./cache-tokens.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · The Agentic Loop](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
-- [Course 04 · Function Calling & Structured Outputs](https://vibecodeschool.com/learn/aa-03-function-calling-structured-outputs)
+- [دوره‌ی ۰۱ · چرخه‌ی ایجنتی](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
+- [دوره‌ی ۰۴ · فراخوانی تابع و خروجی‌های ساختاریافته](https://vibecodeschool.com/learn/aa-03-function-calling-structured-outputs)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/model-provider-request) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/model-provider-request.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

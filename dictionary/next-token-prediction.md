@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Next-token prediction
+<div dir="rtl">
 
-> The model's one trick: pick a likely next token, stick it on the end, go again. Prose, code and tool calls all come out this way.
+# پیش‌بینی توکن بعدی (next-token prediction)
 
-*§01 The Model · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/next-token-prediction)*
+> تنها ترفند مدل: یک توکن بعدیِ محتمل انتخاب کن، به انتها بچسبانش، دوباره برو. نثر، کد و فراخوانی ابزار همه همین‌طور بیرون می‌آیند.
 
-Next-token prediction is the single operation a [model](./model.md) performs. Given the whole [context window](./context-window.md) so far, it produces a probability for every possible next [token](./token.md), one is chosen, it's appended to the sequence, and the whole thing runs again. A paragraph of prose, a hundred-line function and a structured [tool call](./tool-call.md) are all produced the same way, one piece at a time, with no separate 'planning' step outside the text.
+*§۰۱ مدل · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/next-token-prediction)*
 
-This explains a lot of otherwise puzzling behaviour. The model can't go back and edit what it already emitted, so an early wrong assumption propagates through the rest of the answer. It can't 'run' code in its head; it predicts what running code would print, which is a very different thing. And because each token is sampled from a distribution, the same prompt can go a different way next time ([non-determinism](./non-determinism.md)).
+پیش‌بینی توکن بعدی تنها عملیاتی است که یک [مدل](./model.md) انجام می‌دهد. با گرفتن کل [پنجره‌ی زمینه](./context-window.md) تا این لحظه، برای هر [توکن](./token.md) ممکنِ بعدی یک احتمال تولید می‌کند؛ یکی انتخاب می‌شود، به دنباله اضافه می‌شود، و همه چیز دوباره اجرا می‌شود. یک پاراگراف نثر، یک تابع صدخطی و یک [فراخوانی ابزار](./tool-call.md) ساختاریافته همه به یک شکل تولید می‌شوند، تکه به تکه، بدون هیچ مرحله‌ی «برنامه‌ریزی» جداگانه بیرون از متن.
 
-Two habits follow. Get the important constraints in front of the model before it starts writing, because what comes first shapes everything after. And when it goes wrong early in a long output, stop and re-prompt rather than hoping it self-corrects mid-stream; asking it to reason first ([effort](./effort.md)) gives it text to condition on before the final answer.
+این خیلی از رفتارهای عجیب را توضیح می‌دهد. مدل نمی‌تواند برگردد و آنچه را قبلاً بیرون داده ویرایش کند، پس یک فرض غلط در ابتدا در بقیه‌ی پاسخ پخش می‌شود. نمی‌تواند کد را در ذهنش «اجرا» کند؛ پیش‌بینی می‌کند اجرای کد چه چیزی چاپ می‌کند، که چیز کاملاً متفاوتی است. و چون هر توکن از یک توزیع نمونه‌برداری می‌شود، همان پرامپت دفعه‌ی بعد ممکن است مسیر دیگری برود ([نامعین بودن](./non-determinism.md)).
 
-## In the tools
+دو عادت از این نتیجه می‌شود. قیدهای مهم را پیش از آن‌که مدل شروع به نوشتن کند جلویش بگذارید، چون آنچه اول می‌آید همه‌ی بعدی‌ها را شکل می‌دهد. و وقتی در ابتدای یک خروجی طولانی خراب می‌کند، متوقفش کنید و دوباره پرامپت بدهید، به‌جای این‌که امیدوار باشید وسط راه خودش را اصلاح کند؛ این‌که بخواهید اول استدلال کند ([میزان تلاش](./effort.md)) پیش از پاسخ نهایی متنی به او می‌دهد که بر آن تکیه کند.
 
-- Most tools: streaming output is next-token prediction made visible; each word appears as it's sampled.
-- Anthropic API: tool use is the model emitting a structured block token by token; the harness parses it once it's complete.
+## در ابزارها
 
-## In conversation
+- بیشتر ابزارها: خروجی جاری همان پیش‌بینی توکن بعدی است که دیدنی شده؛ هر واژه همان لحظه که نمونه‌برداری می‌شود ظاهر می‌شود.
+- API شرکت Anthropic: استفاده از ابزار یعنی مدل یک بلوک ساختاریافته را توکن به توکن بیرون می‌دهد؛ هارنس وقتی کامل شد تجزیه‌اش می‌کند.
 
-> “It wrote the wrong import on line one and then the whole file assumed it.”
+## در گفت‌وگو
+
+> «در خط اول import اشتباه نوشت و بعد کل فایل بر همان فرض نوشته شد.»
 >
-> “That's next-token prediction: each line builds on the last. Fix the import in the prompt and let it regenerate.”
+> «این همان پیش‌بینی توکن بعدی است: هر خط روی خط قبلی ساخته می‌شود. import را در پرامپت درست کن و بگذار دوباره تولیدش کند.»
 
-**Related:** [Inference](./inference.md) · [Parameters](./parameters.md) · [Hallucination](./hallucination.md)
+**مرتبط:** [استنتاج](./inference.md) · [پارامترها](./parameters.md) · [توهم](./hallucination.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
-- [Course 05 · Chain-of-Thought Prompting](https://vibecodeschool.com/learn/pe-07-chain-of-thought)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۵ · پرامپت زنجیره‌ی تفکر](https://vibecodeschool.com/learn/pe-07-chain-of-thought)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/next-token-prediction) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/next-token-prediction.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Token
+<div dir="rtl">
 
-> The unit a model reads and writes in — a word fragment, a little shorter than a word — and the unit every limit and price uses.
+# توکن (token)
 
-*§01 The Model · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/token)*
+> واحدی که مدل با آن می‌خواند و می‌نویسد — تکه‌ای از واژه، کمی کوتاه‌تر از یک واژه — و واحدی که همه‌ی محدودیت‌ها و قیمت‌ها با آن سنجیده می‌شوند.
 
-A token is the chunk of text a [model](./model.md) actually processes. Text is split by a tokenizer into pieces that are usually a word, part of a word, or a punctuation mark, and the model reads and writes these pieces rather than characters. In English prose a token averages around four characters, so a thousand words is roughly 1,300 tokens. Code tokenizes worse: indentation, brackets and symbols each cost their own tokens.
+*§۰۱ مدل · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/token)*
 
-Every limit and every price is in tokens. The [context window](./context-window.md) is a token count. [Input tokens](./input-tokens.md) and [output tokens](./output-tokens.md) are billed separately. Your [usage limit](./usage-limit.md) drains in tokens. That's why a pasted log file or a giant JSON blob can quietly wreck a session: it looks like one message to you, but to the model it's tens of thousands of tokens competing for space.
+توکن تکه‌متنی است که [مدل](./model.md) واقعاً پردازش می‌کند. یک توکن‌ساز (tokenizer) متن را به تکه‌هایی می‌شکند که معمولاً یک واژه، بخشی از یک واژه یا یک نشانه‌ی نگارشی‌اند، و مدل به‌جای حروف، همین تکه‌ها را می‌خواند و می‌نویسد. در نثر انگلیسی هر توکن به‌طور میانگین حدود چهار حرف است، پس هزار واژه تقریباً ۱۳۰۰ توکن می‌شود. کد بدتر توکن‌سازی می‌شود: تورفتگی‌ها، پرانتزها و نمادها هر کدام توکن خودشان را می‌خورند. (یادداشت مترجم: متن فارسی هم معمولاً به‌ازای هر واژه توکن بیشتری از انگلیسی مصرف می‌کند.)
 
-You don't need to count precisely, but you do need a sense of scale. A typical source file is a few thousand tokens; a test run's output can be more; a whole repo is usually far beyond the window. Load what the task touches, use search instead of reading everything, and trim noisy tool output before it lands in [context](./context.md).
+همه‌ی محدودیت‌ها و قیمت‌ها به توکن‌اند. [پنجره‌ی زمینه](./context-window.md) یک شمار توکن است. [توکن‌های ورودی](./input-tokens.md) و [توکن‌های خروجی](./output-tokens.md) جداگانه حساب می‌شوند. [سقف مصرف](./usage-limit.md) شما با توکن خالی می‌شود. برای همین یک فایل لاگ چسبانده‌شده یا یک توده‌ی عظیم JSON می‌تواند بی‌سروصدا جلسه را خراب کند: برای شما یک پیام است، اما برای مدل ده‌ها هزار توکن است که بر سر جا رقابت می‌کنند.
 
-## In the tools
+لازم نیست دقیق بشمارید، اما باید حسی از مقیاس داشته باشید. یک فایل کد معمولی چند هزار توکن است؛ خروجی یک اجرای تست می‌تواند بیشتر باشد؛ کل یک مخزن معمولاً بسیار فراتر از پنجره است. فقط آنچه کار به آن دست می‌زند را بارگذاری کنید، به‌جای خواندن همه چیز جست‌وجو کنید، و خروجی پرسروصدای ابزارها را پیش از آن‌که وارد [زمینه](./context.md) شود کوتاه کنید.
 
-- Claude Code: `/context` and `/cost` show how many tokens the session has used and where they went.
-- Codex: `/status` reports token usage for the current session.
-- Anthropic API: the count-tokens endpoint tells you a prompt's size before you send it.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/context` و `/cost` نشان می‌دهند جلسه چند توکن مصرف کرده و کجا رفته‌اند.
+- Codex: `/status` مصرف توکن جلسه‌ی فعلی را گزارش می‌دهد.
+- API شرکت Anthropic: نقطه‌ی پایانی count-tokens اندازه‌ی یک پرامپت را پیش از ارسال به شما می‌گوید.
 
-> “I pasted the full stack trace and the whole package-lock. Was that bad?”
+## در گفت‌وگو
+
+> «کل stack trace و کل package-lock را چسباندم. کار بدی بود؟»
 >
-> “The lock file alone is probably fifty thousand tokens. That's a chunk of the window gone on something it didn't need.”
+> «فایل lock به‌تنهایی احتمالاً پنجاه هزار توکن است. تکه‌ای از پنجره صرف چیزی شد که لازمش نداشت.»
 
-**Related:** [Next-token prediction](./next-token-prediction.md) · [Prefix cache](./prefix-cache.md) · [Compaction](./compaction.md)
+**مرتبط:** [پیش‌بینی توکن بعدی](./next-token-prediction.md) · [کش پیشوند](./prefix-cache.md) · [فشرده‌سازی](./compaction.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/token) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/token.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

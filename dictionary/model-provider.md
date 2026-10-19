@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Model provider
+<div dir="rtl">
 
-> The service that actually runs the model: a lab like Anthropic or OpenAI, a cloud reselling it, or your own laptop through Ollama.
+# ارائه‌دهنده‌ی مدل (model provider)
 
-*§01 The Model · also called: Provider, Inference provider · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/model-provider)*
+> سرویسی که واقعاً مدل را اجرا می‌کند: آزمایشگاهی مثل Anthropic یا OpenAI، ابری که آن را بازفروشی می‌کند، یا لپ‌تاپ خودتان از طریق Ollama.
 
-A model provider is the service that runs [inference](./inference.md) for you. Usually that's the lab that trained the [model](./model.md) (Anthropic, OpenAI, Google), sometimes a cloud that resells it (Amazon Bedrock, Google Vertex, Microsoft Azure), and sometimes your own hardware running an open-weight model through Ollama or llama.cpp. The [harness](./harness.md) sends each [model provider request](./model-provider-request.md) to the provider and gets tokens back.
+*§۰۱ مدل · نام‌های دیگر: Provider، Inference provider · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/model-provider)*
 
-The distinction matters because the provider, not the harness, sets the limits you bump into: price per [token](./token.md), rate limits, the [context window](./context-window.md) size, which features exist (prompt caching, extended thinking, batch discounts) and how long the [prefix cache](./prefix-cache.md) lives. When the same tool behaves differently on two accounts, check whether they're pointed at different providers or tiers.
+ارائه‌دهنده‌ی مدل سرویسی است که [استنتاج](./inference.md) را برایتان اجرا می‌کند. معمولاً همان آزمایشگاهی است که [مدل](./model.md) را آموزش داده (Anthropic، OpenAI، گوگل)، گاهی ابری که آن را بازفروشی می‌کند (Amazon Bedrock، Google Vertex، Microsoft Azure)، و گاهی سخت‌افزار خودتان که یک مدل وزن‌باز را از طریق Ollama یا llama.cpp اجرا می‌کند. [هارنس](./harness.md) هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) را برای ارائه‌دهنده می‌فرستد و توکن پس می‌گیرد.
 
-Most coding harnesses let you swap the provider. Claude Code can route to Bedrock or Vertex for teams that already pay a cloud. Codex and Cursor can be pointed at other endpoints or your own keys. Local providers give you privacy and no per-token bill, at the cost of weaker models. Pick on capability first; a cheap provider that can't finish the task isn't cheap.
+این تمایز مهم است چون ارائه‌دهنده، نه هارنس، محدودیت‌هایی را تعیین می‌کند که به آن‌ها برمی‌خورید: قیمت هر [توکن](./token.md)، محدودیت نرخ، اندازه‌ی [پنجره‌ی زمینه](./context-window.md)، این‌که چه قابلیت‌هایی وجود دارد (کش پرامپت، تفکر گسترده، تخفیف پردازش دسته‌ای) و این‌که [کش پیشوند](./prefix-cache.md) چقدر زنده می‌ماند. وقتی یک ابزار روی دو حساب رفتار متفاوتی دارد، بررسی کنید آیا به ارائه‌دهنده‌ها یا رده‌های متفاوتی وصل‌اند.
 
-## In the tools
+بیشتر هارنس‌های کدنویسی اجازه‌ی عوض کردن ارائه‌دهنده را می‌دهند. Claude Code می‌تواند برای تیم‌هایی که از قبل پول یک ابر را می‌دهند، درخواست‌ها را به Bedrock یا Vertex بفرستد. Codex و Cursor را می‌توان به نقطه‌های پایانی دیگر یا کلیدهای خودتان وصل کرد. ارائه‌دهنده‌های محلی حریم خصوصی و نبودِ صورت‌حساب به‌ازای توکن را می‌دهند، به بهای مدل‌های ضعیف‌تر. اول بر اساس توانایی انتخاب کنید؛ ارائه‌دهنده‌ی ارزانی که نتواند کار را تمام کند، ارزان نیست.
 
-- Claude Code: environment variables switch the provider to Amazon Bedrock or Google Vertex AI without changing the workflow.
-- Codex: `model_provider` in the config file points the CLI at a different OpenAI-compatible endpoint.
-- Cursor: the model list mixes several providers; you can add your own API keys in settings.
+## در ابزارها
 
-## In conversation
+- Claude Code: متغیرهای محیطی ارائه‌دهنده را بدون تغییر گردش‌کار به Amazon Bedrock یا Google Vertex AI عوض می‌کنند.
+- Codex: `model_provider` در فایل پیکربندی، ابزار خط فرمان را به یک نقطه‌ی پایانی دیگرِ سازگار با OpenAI وصل می‌کند.
+- Cursor: فهرست مدل‌ها چند ارائه‌دهنده را با هم دارد؛ در تنظیمات می‌توانید کلیدهای API خودتان را اضافه کنید.
 
-> “Our security team won't allow direct calls to Anthropic.”
+## در گفت‌وگو
+
+> «تیم امنیت ما اجازه‌ی فراخوانی مستقیم Anthropic را نمی‌دهد.»
 >
-> “Route Claude Code through Bedrock then. Same model, different provider, and it stays inside your AWS account.”
+> «پس Claude Code را از طریق Bedrock بفرست. همان مدل، ارائه‌دهنده‌ی دیگر، و درون حساب AWS خودتان می‌ماند.»
 
-**Related:** [Usage limit](./usage-limit.md) · [Input tokens](./input-tokens.md) · [Output tokens](./output-tokens.md)
+**مرتبط:** [سقف مصرف](./usage-limit.md) · [توکن‌های ورودی](./input-tokens.md) · [توکن‌های خروجی](./output-tokens.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · The Modern AI Stack](https://vibecodeschool.com/learn/aa-04-the-modern-ai-stack)
-- [Course 04 · Running Models Locally with Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)
+- [دوره‌ی ۰۴ · پشته‌ی مدرن هوش مصنوعی](https://vibecodeschool.com/learn/aa-04-the-modern-ai-stack)
+- [دوره‌ی ۰۴ · اجرای محلی مدل‌ها با Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/model-provider) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/model-provider.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

@@ -1,39 +1,45 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Harness
+<div dir="rtl">
 
-> The software around the model that gives it hands: a system prompt, tools, permissions, hooks and the loop that feeds results back.
+# هارنس (harness)
 
-*§01 The Model · also called: Agent harness, Scaffold · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/harness)*
+> نرم‌افزاری دور مدل که به آن دست‌وپا می‌دهد: یک پرامپت سیستمی، ابزارها، مجوزها، هوک‌ها و چرخه‌ای که نتیجه‌ها را برمی‌گرداند.
 
-A harness is the software that wraps a [model](./model.md) and gives it hands. It writes the [system prompt](./system-prompt.md), defines the [tools](./tool.md), executes each tool call and feeds the [tool result](./tool-result.md) back in, asks before risky actions, decides when a long [session](./session.md) gets compacted, and loads project instructions such as [AGENTS.md](./agents-md.md). Claude Code, Codex, Cursor's agent and Antigravity's manager are all harnesses; the model is one component inside each.
+*§۰۱ مدل · نام‌های دیگر: Agent harness، Scaffold · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/harness)*
 
-Most of what you experience as the agent's personality is harness behaviour. One product asks before every shell command and another just runs it; one rewrites whole files and another edits by diff; one remembers your preferences and another forgets them at restart. Same underlying model, different wrapper. When a run goes sideways, look at the wrapper before you blame the weights.
+هارنس نرم‌افزاری است که یک [مدل](./model.md) را دربر می‌گیرد و به آن دست‌وپا می‌دهد. [پرامپت سیستمی](./system-prompt.md) را می‌نویسد، [ابزارها](./tool.md) را تعریف می‌کند، هر فراخوانی ابزار را اجرا می‌کند و [نتیجه‌ی ابزار](./tool-result.md) را برمی‌گرداند، پیش از کارهای پرخطر اجازه می‌گیرد، تصمیم می‌گیرد کی یک [جلسه‌ی](./session.md) طولانی فشرده شود، و دستورالعمل‌های پروژه مثل [AGENTS.md](./agents-md.md) را بارگذاری می‌کند. Claude Code، Codex، ایجنت Cursor و مدیر ایجنت Antigravity همه هارنس‌اند؛ مدل فقط یکی از اجزای درون هر کدام است.
 
-It's also where your leverage lives. You can't change the model, but you can change nearly everything the harness does: add tools through [MCP](./mcp.md), set hooks that run your linter after every edit, tighten or loosen the [permission mode](./permission-mode.md), write skills, shape the memory files. Treating the harness as configurable infrastructure rather than a black box is the difference between using an agent and running one.
+بیشتر آنچه به‌عنوان شخصیت ایجنت تجربه می‌کنید، رفتار هارنس است. یک محصول پیش از هر دستور شل اجازه می‌گیرد و دیگری همین‌طور اجرایش می‌کند؛ یکی کل فایل را بازنویسی می‌کند و دیگری با دیف ویرایش می‌کند؛ یکی ترجیحات شما را به یاد می‌آورد و دیگری با راه‌اندازی دوباره فراموششان می‌کند. همان مدل زیربنایی، پوسته‌ی متفاوت. وقتی یک اجرا از مسیر خارج می‌شود، پیش از مقصر دانستن وزن‌ها به پوسته نگاه کنید.
 
-**Avoid:** 'The AI' as a catch-all when what you mean is the harness. Naming the wrapper tells you where to look, and it's where most fixes live.
+اهرم شما هم همین‌جاست. مدل را نمی‌توانید عوض کنید، اما تقریباً هر کاری که هارنس می‌کند را می‌توانید: با [MCP](./mcp.md) ابزار اضافه کنید، هوک‌هایی بگذارید که پس از هر ویرایش لینتر شما را اجرا کنند، [حالت مجوز](./permission-mode.md) را سخت‌تر یا شل‌تر کنید، مهارت بنویسید، فایل‌های حافظه را شکل بدهید. دیدن هارنس به‌عنوان زیرساختی قابل پیکربندی به‌جای یک جعبه‌ی سیاه، فرق میان استفاده از یک ایجنت و اداره کردن آن است.
 
-## In the tools
+**پرهیز کنید:** از «هوش مصنوعی» به‌عنوان اسم همه‌کاره وقتی منظورتان هارنس است. نام بردن از پوسته به شما می‌گوید کجا را نگاه کنید، و بیشتر راه‌حل‌ها همان‌جا هستند.
 
-- Claude Code: the harness is the CLI, its settings files, hooks and MCP config; the model is whatever `/model` currently says.
-- Antigravity: the agent manager is a harness that runs several agents, each with its own workspace and review policy.
+## در ابزارها
 
-## In conversation
+- Claude Code: هارنس همان ابزار خط فرمان، فایل‌های تنظیماتش، هوک‌ها و پیکربندی MCP است؛ مدل هر چیزی است که `/model` در آن لحظه می‌گوید.
+- Antigravity: مدیر ایجنت هارنسی است که چند ایجنت را اجرا می‌کند، هر کدام با فضای کاری و سیاست بازبینی خودش.
 
-> “Claude in the browser explains the bug perfectly but Claude Code keeps missing it.”
+## در گفت‌وگو
+
+> «Claude در مرورگر باگ را عالی توضیح می‌دهد ولی Claude Code مدام از آن جا می‌ماند.»
 >
-> “Different harness. The CLI is working from your actual files and tests; give it the same context you pasted into chat and it'll get there.”
+> «هارنس متفاوت است. ابزار خط فرمان از روی فایل‌ها و تست‌های واقعی تو کار می‌کند؛ همان زمینه‌ای را که در چت چسباندی به آن هم بده و به جواب می‌رسد.»
 
-**Related:** [Agent](./agent.md) · [Harness engineering](./harness-engineering.md) · [Environment](./environment.md)
+**مرتبط:** [ایجنت](./agent.md) · [مهندسی هارنس](./harness-engineering.md) · [محیط](./environment.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · The Agentic Loop](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
-- [Course 01 · Hooks: Pre and Post Tool](https://vibecodeschool.com/learn/cc-16-hooks)
+- [دوره‌ی ۰۱ · چرخه‌ی ایجنتی](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
+- [دوره‌ی ۰۱ · هوک‌ها: پیش و پس از ابزار](https://vibecodeschool.com/learn/cc-16-hooks)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/harness) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/harness.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

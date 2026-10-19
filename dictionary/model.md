@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Model
+<div dir="rtl">
 
-> The trained network itself: billions of parameters that turn a context into the next token, and nothing more.
+# مدل (model)
 
-*§01 The Model · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/model)*
+> خودِ شبکه‌ی آموزش‌دیده: میلیاردها پارامتر که یک زمینه را به توکن بعدی تبدیل می‌کنند، و نه چیزی بیشتر.
 
-A model is the trained neural network: a very large set of [parameters](./parameters.md) that, given a sequence of [tokens](./token.md), produces a probability for what the next token should be. That's the entire job. It doesn't read your repo, doesn't remember yesterday, doesn't run tests. Every one of those abilities is added by the [harness](./harness.md) around it.
+*§۰۱ مدل · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/model)*
 
-This is why the same model behaves so differently in different products. Claude Sonnet in a chat window answers questions; the same model inside Claude Code edits files and runs your test suite. The model didn't change; what changed is the [system prompt](./system-prompt.md), the [tools](./tool.md) on offer and the loop that feeds results back in. When behaviour shifts between two products, suspect the wrapper before the weights.
+مدل همان شبکه‌ی عصبی آموزش‌دیده است: مجموعه‌ی بسیار بزرگی از [پارامترها](./parameters.md) که با گرفتن دنباله‌ای از [توکن‌ها](./token.md)، احتمال توکن بعدی را تولید می‌کند. کل کارش همین است. مخزن شما را نمی‌خواند، دیروز را به یاد نمی‌آورد، تست اجرا نمی‌کند. همه‌ی این توانایی‌ها را [هارنس](./harness.md) دور آن اضافه می‌کند.
 
-The model is also [stateless](./stateless.md): it holds nothing between calls. Each request starts from a blank slate and sees only what the harness sends. When you pick a model in a dropdown (Sonnet vs Opus, GPT-5 vs a mini variant) you're trading capability against speed and price, but you are never changing what it can perceive. That's the harness's job.
+به همین دلیل یک مدل واحد در محصولات مختلف رفتار بسیار متفاوتی دارد. Claude Sonnet در یک پنجره‌ی گفت‌وگو به پرسش‌ها جواب می‌دهد؛ همان مدل درون Claude Code فایل ویرایش می‌کند و مجموعه‌ی تست‌هایتان را اجرا می‌کند. مدل عوض نشده؛ آنچه عوض شده [پرامپت سیستمی](./system-prompt.md)، [ابزارهای](./tool.md) در دسترس و چرخه‌ای است که نتیجه‌ها را به آن برمی‌گرداند. وقتی رفتار میان دو محصول فرق می‌کند، پیش از وزن‌ها به پوسته شک کنید.
 
-## In the tools
+مدل [بی‌حالت](./stateless.md) هم هست: میان فراخوانی‌ها چیزی نگه نمی‌دارد. هر درخواست از صفحه‌ی سفید شروع می‌شود و فقط آنچه هارنس می‌فرستد را می‌بیند. وقتی از یک فهرست کشویی مدل انتخاب می‌کنید (Sonnet یا Opus، GPT-5 یا یک نسخه‌ی mini)، توانایی را با سرعت و قیمت معاوضه می‌کنید، اما هرگز آنچه مدل می‌تواند ببیند را تغییر نمی‌دهید. آن کار هارنس است.
 
-- Claude Code: `/model` switches between Claude models mid-session; everything else about the session stays the same.
-- Codex: the model is set in config or the model picker; the CLI is the harness that gives it a sandbox and tools.
-- Ollama: runs open-weight models locally; the same model file behaves differently depending on which harness calls it.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/model` در میانه‌ی جلسه میان مدل‌های Claude جابه‌جا می‌شود؛ بقیه‌ی جلسه همان می‌ماند.
+- Codex: مدل در پیکربندی یا انتخابگر مدل تنظیم می‌شود؛ ابزار خط فرمان هارنسی است که به آن سندباکس و ابزار می‌دهد.
+- Ollama: مدل‌های وزن‌باز را محلی اجرا می‌کند؛ یک فایل مدل بسته به این‌که کدام هارنس صدایش بزند رفتار متفاوتی دارد.
 
-> “Should I switch models? It keeps missing the config file.”
+## در گفت‌وگو
+
+> «مدل را عوض کنم؟ مدام فایل پیکربندی را نمی‌بیند.»
 >
-> “It can't see the config file. Same model, different context, and it'd be fine. Point it at the path first.”
+> «نمی‌تواند فایل پیکربندی را ببیند. همین مدل با زمینه‌ای دیگر مشکلی نخواهد داشت. اول مسیر فایل را نشانش بده.»
 
-**Related:** [Model provider](./model-provider.md) · [Inference](./inference.md) · [Next-token prediction](./next-token-prediction.md)
+**مرتبط:** [ارائه‌دهنده‌ی مدل](./model-provider.md) · [استنتاج](./inference.md) · [پیش‌بینی توکن بعدی](./next-token-prediction.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
-- [Course 02 · Codex vs Claude Code](https://vibecodeschool.com/learn/cm-03-codex-vs-claude-code)
+- [دوره‌ی ۰۴ · مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)
+- [دوره‌ی ۰۲ · Codex در برابر Claude Code](https://vibecodeschool.com/learn/cm-03-codex-vs-claude-code)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/model) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/model.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

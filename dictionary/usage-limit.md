@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Usage limit
+<div dir="rtl">
 
-> The cap on how much agent work your plan or API key allows in a window. Hitting it pauses you; it isn't the context window.
+# سقف مصرف (usage limit)
 
-*§01 The Model · also called: Rate limit, Usage cap, 5-hour window, Weekly limit · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/usage-limit)*
+> سقفی که طرح اشتراک یا کلید API شما بر حجم کار ایجنت در یک بازه‌ی زمانی می‌گذارد. رسیدن به آن متوقفتان می‌کند؛ این همان پنجره‌ی زمینه نیست.
 
-A usage limit is the ceiling your plan or API key puts on how much model work you can do in a period. Subscription plans (Claude Pro and Max, ChatGPT Plus and Pro) meter usage in rolling windows, commonly a few hours plus a weekly cap, and pause you when it's spent. API keys meter differently: requests and [tokens](./token.md) per minute, plus whatever spend tier your account sits in. Both are set by the [model provider](./model-provider.md), not the harness.
+*§۰۱ مدل · نام‌های دیگر: Rate limit، Usage cap، 5-hour window، Weekly limit · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/usage-limit)*
 
-The confusing part is that the limit drains in tokens, and tokens are mostly [input tokens](./input-tokens.md). A session with a bloated [context window](./context-window.md) burns the allowance many times faster than a lean one, because every [model provider request](./model-provider-request.md) re-sends the whole history. People who 'barely did anything' and still hit the wall usually had one giant session open all day. And a usage limit is not a context limit: one says stop for now, the other says this conversation can't hold more.
+سقف مصرف حدی است که طرح اشتراک یا کلید API شما بر مقدار کاری که در یک دوره می‌توانید از مدل بکشید می‌گذارد. طرح‌های اشتراکی (Claude Pro و Max، ChatGPT Plus و Pro) مصرف را در بازه‌های غلتان می‌سنجند، معمولاً چند ساعته به‌علاوه‌ی یک سقف هفتگی، و وقتی تمام شد متوقفتان می‌کنند. کلیدهای API جور دیگری می‌سنجند: درخواست‌ها و [توکن‌ها](./token.md) در دقیقه، به‌علاوه‌ی هر رده‌ی هزینه‌ای که حسابتان در آن است. هر دو را [ارائه‌دهنده‌ی مدل](./model-provider.md) تعیین می‌کند، نه هارنس.
 
-To stretch it: keep sessions short and focused, [compact](./compaction.md) before the window balloons, use a cheaper model for grunt work and the strong one for planning, and keep the [prefix cache](./prefix-cache.md) warm so repeated input is billed as cheap [cache tokens](./cache-tokens.md). If you're regularly capped, an API key with pay-as-you-go pricing removes the window but makes every token visible on a bill, which is its own kind of discipline.
+بخش گیج‌کننده این است که سقف با توکن خالی می‌شود، و توکن‌ها بیشترشان [توکن‌های ورودی‌اند](./input-tokens.md). جلسه‌ای با [پنجره‌ی زمینه‌ی](./context-window.md) پرحجم سهمیه را چندین برابر سریع‌تر از یک جلسه‌ی لاغر می‌سوزاند، چون هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) کل تاریخچه را دوباره می‌فرستد. کسانی که «تقریباً هیچ کاری نکردند» و باز به دیوار خوردند معمولاً یک جلسه‌ی غول‌آسا را کل روز باز نگه داشته بودند. و سقف مصرف، سقف زمینه نیست: یکی می‌گوید فعلاً بس است، دیگری می‌گوید این گفت‌وگو جای بیشتری ندارد.
 
-## In the tools
+برای کش دادنش: جلسه‌ها را کوتاه و متمرکز نگه دارید، پیش از آن‌که پنجره باد کند [فشرده‌سازی](./compaction.md) کنید، برای کارهای یدی از مدل ارزان‌تر و برای برنامه‌ریزی از مدل قوی استفاده کنید، و [کش پیشوند](./prefix-cache.md) را گرم نگه دارید تا ورودی تکراری به‌عنوان [توکن‌های کش](./cache-tokens.md) ارزان حساب شود. اگر مرتب به سقف می‌خورید، یک کلید API با پرداخت به‌اندازه‌ی مصرف، محدودیت بازه را برمی‌دارد اما هر توکن را روی صورت‌حساب نمایان می‌کند، که خودش نوعی انضباط است.
 
-- Claude Code: subscription limits reset on a rolling window; `/status` shows the plan, and `/cost` shows what the session consumed.
-- Codex: ChatGPT-plan usage has its own windows; `/status` reports where you stand.
-- Anthropic API: rate limits are per minute and scale with your usage tier; spend limits are set in the console.
+## در ابزارها
 
-## In conversation
+- Claude Code: سقف‌های اشتراک در یک بازه‌ی غلتان بازنشانی می‌شوند؛ `/status` طرح را نشان می‌دهد و `/cost` آنچه جلسه مصرف کرده.
+- Codex: مصرف طرح ChatGPT بازه‌های خودش را دارد؛ `/status` گزارش می‌دهد کجای کارید.
+- API شرکت Anthropic: محدودیت‌های نرخ به‌ازای دقیقه‌اند و با رده‌ی مصرف شما بزرگ می‌شوند؛ سقف هزینه در کنسول تنظیم می‌شود.
 
-> “It says I've hit my limit until 4pm and I only ran three tasks.”
+## در گفت‌وگو
+
+> «می‌گوید تا ساعت ۴ بعدازظهر به سقف رسیده‌ام و فقط سه کار اجرا کردم.»
 >
-> “Three tasks in one 200k-token session. Each request re-read all of it. Split the work into fresh sessions next time.”
+> «سه کار در یک جلسه‌ی ۲۰۰ هزار توکنی. هر درخواست کل آن را دوباره خواند. دفعه‌ی بعد کار را در جلسه‌های تازه تقسیم کن.»
 
-**Related:** [Effort](./effort.md) · [Output tokens](./output-tokens.md) · [Headless mode](./headless-mode.md)
+**مرتبط:** [میزان تلاش](./effort.md) · [توکن‌های خروجی](./output-tokens.md) · [حالت بی‌رابط](./headless-mode.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · Models, Rate Limits, and Spend](https://vibecodeschool.com/learn/ag-16-cost-budgeting)
-- [Course 04 · Latency, Cost & Reliability Budgets](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
+- [دوره‌ی ۰۳ · مدل‌ها، محدودیت نرخ و هزینه](https://vibecodeschool.com/learn/ag-16-cost-budgeting)
+- [دوره‌ی ۰۴ · بودجه‌های تأخیر، هزینه و قابلیت اطمینان](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/usage-limit) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/usage-limit.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

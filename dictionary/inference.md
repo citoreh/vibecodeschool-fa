@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Inference
+<div dir="rtl">
 
-> Using the model rather than training it. Every reply, edit and tool call you see comes from an inference pass; the weights never move.
+# استنتاج (inference)
 
-*§01 The Model · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/inference)*
+> استفاده از مدل به‌جای آموزش آن. هر پاسخ، ویرایش و فراخوانی ابزاری که می‌بینید از یک گذر استنتاج می‌آید؛ وزن‌ها هرگز تکان نمی‌خورند.
 
-Inference is the act of running a trained [model](./model.md): feed it a [context window](./context-window.md) full of tokens, get back new tokens. Nothing in the weights changes; the model is being used, not trained. Each [model provider request](./model-provider-request.md) triggers one inference pass, and inside that pass the model emits its answer [token](./token.md) by token, which is why responses stream in rather than appear at once.
+*§۰۱ مدل · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/inference)*
 
-Inference is where cost and latency come from. The provider runs the model on GPUs, charges per token processed, and needs time proportional to how much it has to read ([input tokens](./input-tokens.md)) and how much it has to write ([output tokens](./output-tokens.md)). A long session with a bloated context makes every single inference pass slower and more expensive, because the model re-reads the whole window each time.
+استنتاج یعنی اجرای یک [مدل](./model.md) آموزش‌دیده: یک [پنجره‌ی زمینه](./context-window.md) پر از توکن به آن بدهید و توکن‌های تازه پس بگیرید. هیچ چیز در وزن‌ها تغییر نمی‌کند؛ مدل دارد استفاده می‌شود، نه آموزش. هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) یک گذر استنتاج راه می‌اندازد، و درون آن گذر مدل پاسخش را [توکن](./token.md) به توکن بیرون می‌دهد؛ برای همین پاسخ‌ها جاری می‌شوند و یک‌جا ظاهر نمی‌شوند.
 
-You can run inference locally with tools like Ollama or llama.cpp, trading capability for privacy and zero per-token cost. For agentic coding that's usually a step down: the models that fit on a laptop are noticeably weaker at multi-step work. The practical levers are elsewhere: keep context lean, use a cheaper model for routine steps, and let the [prefix cache](./prefix-cache.md) absorb what repeats.
+هزینه و تأخیر از استنتاج می‌آیند. ارائه‌دهنده مدل را روی GPU اجرا می‌کند، برای هر توکن پردازش‌شده پول می‌گیرد، و زمانی لازم دارد که با مقدار خواندنی ([توکن‌های ورودی](./input-tokens.md)) و مقدار نوشتنی ([توکن‌های خروجی](./output-tokens.md)) متناسب است. یک جلسه‌ی طولانی با زمینه‌ای پرحجم، تک‌تک گذرهای استنتاج را کندتر و گران‌تر می‌کند، چون مدل هر بار کل پنجره را دوباره می‌خواند.
 
-## In the tools
+می‌توانید استنتاج را محلی و با ابزارهایی مثل Ollama یا llama.cpp اجرا کنید و توانایی را با حریم خصوصی و هزینه‌ی صفر به‌ازای هر توکن عوض کنید. برای کدنویسی ایجنتی این معمولاً یک قدم عقب است: مدل‌هایی که روی لپ‌تاپ جا می‌شوند در کارهای چندمرحله‌ای محسوساً ضعیف‌ترند. اهرم‌های عملی جای دیگری‌اند: زمینه را لاغر نگه دارید، برای گام‌های روزمره از مدل ارزان‌تر استفاده کنید، و بگذارید [کش پیشوند](./prefix-cache.md) بخش‌های تکراری را جذب کند.
 
-- Ollama: `ollama run <model>` does inference on your own machine; speed depends on your GPU and the model size.
-- Claude Code: each turn may trigger several inference passes, one per tool call round trip; `/cost` shows what they added up to.
+## در ابزارها
 
-## In conversation
+- Ollama: `ollama run <model>` استنتاج را روی دستگاه خودتان انجام می‌دهد؛ سرعت به GPU و اندازه‌ی مدل بستگی دارد.
+- Claude Code: هر نوبت ممکن است چند گذر استنتاج راه بیندازد، یکی برای هر رفت‌وبرگشت فراخوانی ابزار؛ `/cost` نشان می‌دهد جمعشان چقدر شده.
 
-> “Why is every response getting slower as the day goes on?”
+## در گفت‌وگو
+
+> «چرا هرچه روز جلوتر می‌رود پاسخ‌ها کندتر می‌شوند؟»
 >
-> “Inference re-reads the whole session each turn. Your context is huge now. Compact it or start fresh.”
+> «استنتاج در هر نوبت کل جلسه را دوباره می‌خواند. زمینه‌ات الان خیلی بزرگ شده. فشرده‌اش کن یا از نو شروع کن.»
 
-**Related:** [Model provider](./model-provider.md) · [Compaction](./compaction.md) · [Non-determinism](./non-determinism.md)
+**مرتبط:** [ارائه‌دهنده‌ی مدل](./model-provider.md) · [فشرده‌سازی](./compaction.md) · [نامعین بودن](./non-determinism.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · Latency, Cost & Reliability Budgets](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
-- [Course 04 · Running Models Locally with Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)
+- [دوره‌ی ۰۴ · بودجه‌های تأخیر، هزینه و قابلیت اطمینان](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
+- [دوره‌ی ۰۴ · اجرای محلی مدل‌ها با Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/inference) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/inference.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

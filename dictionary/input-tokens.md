@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Input tokens
+<div dir="rtl">
 
-> Everything the model reads on a request: instructions, history, tool definitions, results. Cheap per token, but there are a lot of them.
+# توکن‌های ورودی (input tokens)
 
-*§01 The Model · also called: Prompt tokens · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/input-tokens)*
+> هر آنچه مدل در یک درخواست می‌خواند: دستورها، تاریخچه، تعریف ابزارها، نتیجه‌ها. هر توکنش ارزان است، اما تعدادشان زیاد است.
 
-Input tokens are everything the [harness](./harness.md) sends up in a [model provider request](./model-provider-request.md): the [system prompt](./system-prompt.md), every message so far, the definitions of every available [tool](./tool.md), and every tool result that's been fed back. They're the 'reading' side of the bill and are priced lower per token than [output tokens](./output-tokens.md), but there are a lot more of them, and their count grows on every turn because the whole history is re-sent.
+*§۰۱ مدل · نام‌های دیگر: Prompt tokens · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/input-tokens)*
 
-That growth is the trap. Early in a session a request might be a few thousand input tokens. After an hour of reading files and running tests it can be well over a hundred thousand, and every additional request pays for all of it again. A session that feels slow and expensive late in the day is almost always an input-token problem, not an output one.
+توکن‌های ورودی همه‌ی چیزهایی‌اند که [هارنس](./harness.md) در یک [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) می‌فرستد: [پرامپت سیستمی](./system-prompt.md)، همه‌ی پیام‌ها تا این لحظه، تعریف همه‌ی [ابزارهای](./tool.md) در دسترس، و همه‌ی نتیجه‌های ابزار که برگردانده شده‌اند. این‌ها سمت «خواندن» صورت‌حساب‌اند و هر توکنشان از [توکن‌های خروجی](./output-tokens.md) ارزان‌تر قیمت‌گذاری می‌شود، اما تعدادشان خیلی بیشتر است و در هر نوبت بیشتر می‌شود، چون کل تاریخچه دوباره فرستاده می‌شود.
 
-Two things help. The [prefix cache](./prefix-cache.md) lets the provider skip re-processing the unchanged prefix, so repeated input is billed as cheaper [cache tokens](./cache-tokens.md). And you control what enters the window: read the files that matter rather than the directory, pipe noisy command output through `head` or a grep, and [compact](./compaction.md) or start fresh once the useful part of the history is behind you.
+همین رشد تله است. در ابتدای یک جلسه، یک درخواست ممکن است چند هزار توکن ورودی باشد. پس از یک ساعت خواندن فایل و اجرای تست می‌تواند خیلی بیشتر از صد هزار باشد، و هر درخواست اضافه دوباره بهای همه‌اش را می‌پردازد. جلسه‌ای که اواخر روز کند و گران حس می‌شود تقریباً همیشه مشکل توکن ورودی دارد، نه خروجی.
 
-## In the tools
+دو چیز کمک می‌کند. [کش پیشوند](./prefix-cache.md) به ارائه‌دهنده اجازه می‌دهد پیشوند تغییرنکرده را دوباره پردازش نکند، پس ورودی تکراری به‌عنوان [توکن‌های کشِ](./cache-tokens.md) ارزان‌تر حساب می‌شود. و آنچه وارد پنجره می‌شود دست شماست: به‌جای کل پوشه فایل‌های مهم را بخوانید، خروجی پرسروصدای دستورها را از `head` یا grep عبور دهید، و وقتی بخش مفید تاریخچه پشت سر گذاشته شد، [فشرده‌سازی](./compaction.md) کنید یا از نو شروع کنید.
 
-- Claude Code: `/context` breaks the window down by what's occupying it; most of it is input on every request.
-- OpenAI API: usage reports `prompt_tokens`, the same idea under a different name.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/context` پنجره را بر اساس این‌که چه چیزی اشغالش کرده تفکیک می‌کند؛ بیشترش در هر درخواست ورودی است.
+- API شرکت OpenAI: گزارش مصرف `prompt_tokens` را نشان می‌دهد، همان مفهوم با نامی دیگر.
 
-> “Ninety percent of my spend is input. Is that normal?”
+## در گفت‌وگو
+
+> «نود درصد هزینه‌ام ورودی است. طبیعی است؟»
 >
-> “Yes, in a long agent session. The fix is a shorter context, not fewer replies.”
+> «بله، در یک جلسه‌ی طولانی ایجنت. راه‌حلش زمینه‌ی کوتاه‌تر است، نه پاسخ‌های کمتر.»
 
-**Related:** [Token](./token.md) · [Context window](./context-window.md) · [Usage limit](./usage-limit.md)
+**مرتبط:** [توکن](./token.md) · [پنجره‌ی زمینه](./context-window.md) · [سقف مصرف](./usage-limit.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · Latency, Cost & Reliability Budgets](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۴ · بودجه‌های تأخیر، هزینه و قابلیت اطمینان](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/input-tokens) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/input-tokens.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

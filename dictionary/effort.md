@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Effort
+<div dir="rtl">
 
-> How hard the model thinks before replying. Turn it up for tricky problems and pay in tokens and wait; turn it down for routine edits.
+# میزان تلاش (effort)
 
-*§01 The Model · also called: Reasoning effort, Extended thinking, Thinking budget, Ultrathink · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/effort)*
+> این‌که مدل پیش از پاسخ چقدر فکر کند. برای مسئله‌های پیچیده بالا ببریدش و بهایش را با توکن و انتظار بپردازید؛ برای ویرایش‌های روزمره پایینش بیاورید.
 
-Effort sets how much private thinking a [model](./model.md) is allowed before it commits to an answer. At higher settings the model writes out a longer chain of intermediate thinking, checks itself, and explores alternatives before producing the visible reply. Those thinking tokens are [output tokens](./output-tokens.md), so higher effort costs more money and more wall-clock time per [model provider request](./model-provider-request.md).
+*§۰۱ مدل · نام‌های دیگر: Reasoning effort، Extended thinking، Thinking budget، Ultrathink · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/effort)*
 
-The trade-off is real in both directions. Low effort on a tricky refactor produces confident, fast, wrong code. High effort on 'rename this variable' burns a minute and a pile of tokens for a change that needed none. Much of what people report as 'the model is dumb today' or 'the model is slow today' is an effort setting that doesn't match the task.
+میزان تلاش تعیین می‌کند یک [مدل](./model.md) پیش از متعهد شدن به پاسخ، چقدر اجازه‌ی فکر کردن خصوصی دارد. در تنظیم‌های بالاتر، مدل زنجیره‌ی طولانی‌تری از فکرهای میانی می‌نویسد، خودش را بررسی می‌کند و پیش از تولید پاسخ نهایی، گزینه‌های دیگر را هم می‌سنجد. این توکن‌های فکر از جنس [توکن‌های خروجی‌اند](./output-tokens.md)، پس تلاش بیشتر در هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) پول بیشتر و زمان بیشتری می‌برد.
 
-Match effort to the job. Planning (in [plan mode](./plan-mode.md) or on paper), debugging a subtle failure, and anything touching concurrency or security deserve high effort. Mechanical edits, formatting and boilerplate don't. Many harnesses let you flip it per request rather than per session, so the habit is: raise it when you're about to ask something hard, then drop it back down.
+این بده‌بستان از هر دو طرف واقعی است. تلاش کم روی یک بازآرایی پیچیده، کدی پراعتمادبه‌نفس، سریع و غلط تولید می‌کند. تلاش زیاد برای «این متغیر را تغییر نام بده» یک دقیقه وقت و انبوهی توکن را برای تغییری می‌سوزاند که به هیچ‌کدام نیاز نداشت. بخش زیادی از آنچه مردم با جمله‌ی «مدل امروز خنگ شده» یا «مدل امروز کند است» گزارش می‌کنند، تنظیم تلاشی است که با کار جور نیست.
 
-## In the tools
+میزان تلاش را با کار هماهنگ کنید. برنامه‌ریزی (در [حالت برنامه‌ریزی](./plan-mode.md) یا روی کاغذ)، اشکال‌زدایی یک خطای ظریف، و هر چیزی که به هم‌زمانی یا امنیت مربوط است تلاش بالا می‌طلبد. ویرایش‌های مکانیکی، قالب‌بندی و کدهای تکراری نه. بسیاری از هارنس‌ها اجازه می‌دهند آن را به‌ازای هر درخواست تغییر دهید، نه هر جلسه؛ پس عادت این است: پیش از پرسیدن چیزی سخت بالا ببریدش، بعد دوباره پایینش بیاورید.
 
-- Claude Code: extended thinking is triggered per request; phrases like 'think hard' raise the thinking budget, and newer models expose an effort level directly.
-- Codex: `model_reasoning_effort` in the config sets low, medium or high; you can also change it from the model picker.
-- Cursor: reasoning-capable models appear as separate 'thinking' variants or a thinking toggle in the model list.
+## در ابزارها
 
-## In conversation
+- Claude Code: تفکر گسترده به‌ازای هر درخواست فعال می‌شود؛ عبارت‌هایی مثل «think hard» بودجه‌ی تفکر را بالا می‌برند، و مدل‌های جدیدتر سطح تلاش را مستقیم در اختیار می‌گذارند.
+- Codex: `model_reasoning_effort` در پیکربندی، سطح کم، متوسط یا زیاد را تنظیم می‌کند؛ از انتخابگر مدل هم می‌توانید عوضش کنید.
+- Cursor: مدل‌های دارای قابلیت استدلال به‌صورت نسخه‌های «thinking» جداگانه یا یک کلید تفکر در فهرست مدل‌ها ظاهر می‌شوند.
 
-> “It's been thinking for two minutes on a one-line change.”
+## در گفت‌وگو
+
+> «دو دقیقه است دارد روی یک تغییر یک‌خطی فکر می‌کند.»
 >
-> “Drop the effort. Save the high setting for the migration plan, not for renaming a prop.”
+> «تلاش را پایین بیاور. تنظیم بالا را برای برنامه‌ی مهاجرت نگه دار، نه برای عوض کردن نام یک prop.»
 
-**Related:** [Inference](./inference.md) · [Usage limit](./usage-limit.md) · [Grilling](./grilling.md)
+**مرتبط:** [استنتاج](./inference.md) · [سقف مصرف](./usage-limit.md) · [بازجویی](./grilling.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Reasoning Models vs CoT Prompts](https://vibecodeschool.com/learn/pe-12-reasoning-models-vs-cot)
-- [Course 04 · Latency, Cost & Reliability Budgets](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
+- [دوره‌ی ۰۵ · مدل‌های استدلالی در برابر پرامپت‌های زنجیره‌ی تفکر](https://vibecodeschool.com/learn/pe-12-reasoning-models-vs-cot)
+- [دوره‌ی ۰۴ · بودجه‌های تأخیر، هزینه و قابلیت اطمینان](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/effort) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/effort.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

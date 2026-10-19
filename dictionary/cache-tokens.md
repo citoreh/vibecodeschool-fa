@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Cache tokens
+<div dir="rtl">
 
-> The share of a request's input served from the prefix cache. Heavily discounted, and the first thing to check when a session feels pricey.
+# توکن‌های کش (cache tokens)
 
-*§01 The Model · also called: Cached tokens, Cache read tokens, Cache hit · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/cache-tokens)*
+> بخشی از ورودی یک درخواست که از کش پیشوند تأمین می‌شود. تخفیف سنگینی دارد، و وقتی جلسه گران حس می‌شود اولین چیزی است که باید بررسی کنید.
 
-Cache tokens are the portion of a request's [input tokens](./input-tokens.md) that the [model provider](./model-provider.md) recognised from its [prefix cache](./prefix-cache.md) and didn't have to process again. They still count toward the [context window](./context-window.md) (the model sees them) but are billed at a fraction of the normal input rate and cost almost no latency. On a healthy coding session, the large majority of input on each request should be cache tokens.
+*§۰۱ مدل · نام‌های دیگر: Cached tokens، Cache read tokens، Cache hit · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/cache-tokens)*
 
-They're the number to watch when a session feels expensive. If a usage readout shows a big context but few cache tokens, something is breaking the cache on every request: an instruction file that's regenerated each turn, a tool whose definition changes, or gaps between messages long enough for the cache to expire. If cache tokens are high and the bill is still climbing, the problem is simply that the window is too big, and [compaction](./compaction.md) is the fix.
+توکن‌های کش بخشی از [توکن‌های ورودی](./input-tokens.md) یک درخواست‌اند که [ارائه‌دهنده‌ی مدل](./model-provider.md) آن‌ها را از [کش پیشوند](./prefix-cache.md) شناخته و لازم نبوده دوباره پردازششان کند. این توکن‌ها همچنان جزو [پنجره‌ی زمینه](./context-window.md) حساب می‌شوند (مدل آن‌ها را می‌بیند)، اما با کسری از نرخ معمول ورودی حساب می‌شوند و تقریباً هیچ تأخیری ندارند. در یک جلسه‌ی کدنویسی سالم، اکثریت بزرگ ورودیِ هر درخواست باید توکن کش باشد.
 
-Providers report them separately, and harnesses surface them. Learning to read that line ('cached' vs 'fresh' input) turns cost from a mystery into a diagnostic. Cache-write tokens are the other side: the first time a prefix is stored, some providers charge a small premium. That's fine as long as it's followed by many reads.
+وقتی جلسه گران حس می‌شود، این عددی است که باید زیر نظر بگیرید. اگر گزارش مصرف زمینه‌ای بزرگ اما توکن کش کمی نشان می‌دهد، چیزی در هر درخواست کش را می‌شکند: فایل دستورالعملی که هر نوبت از نو تولید می‌شود، ابزاری که تعریفش عوض می‌شود، یا فاصله‌هایی میان پیام‌ها که آن‌قدر طولانی‌اند که کش منقضی شود. اگر توکن‌های کش بالاست و صورت‌حساب باز بالا می‌رود، مشکل فقط این است که پنجره بیش از حد بزرگ است، و راه‌حل [فشرده‌سازی](./compaction.md) است.
 
-## In the tools
+ارائه‌دهندگان این توکن‌ها را جداگانه گزارش می‌کنند و هارنس‌ها نمایششان می‌دهند. یاد گرفتن خواندن همین سطر (ورودی «کش‌شده» در برابر «تازه») هزینه را از یک معما به یک ابزار تشخیص تبدیل می‌کند. توکن‌های نوشتن در کش روی دیگر ماجراست: اولین باری که یک پیشوند ذخیره می‌شود، برخی ارائه‌دهندگان کمی هزینه‌ی اضافه می‌گیرند. تا وقتی بعدش چندین بار خوانده شود، اشکالی ندارد.
 
-- Anthropic API: usage returns `cache_read_input_tokens` and `cache_creation_input_tokens` alongside plain input.
-- OpenAI API: `cached_tokens` appears under prompt token details when caching kicks in.
-- Claude Code: `/cost` splits the session's input into cached and uncached.
+## در ابزارها
 
-## In conversation
+- API شرکت Anthropic: گزارش مصرف `cache_read_input_tokens` و `cache_creation_input_tokens` را در کنار ورودی معمولی برمی‌گرداند.
+- API شرکت OpenAI: وقتی کش فعال شود، `cached_tokens` زیر جزئیات توکن‌های پرامپت ظاهر می‌شود.
+- Claude Code: `/cost` ورودی جلسه را به کش‌شده و کش‌نشده تقسیم می‌کند.
 
-> “The status line says 180k context but the cost barely moved this turn.”
+## در گفت‌وگو
+
+> «نوار وضعیت می‌گوید زمینه ۱۸۰ هزار توکن است ولی هزینه‌ی این نوبت تقریباً تکان نخورد.»
 >
-> “Most of it came back as cache tokens. You're paying for the new tool result, not the whole history.”
+> «بیشترش به‌صورت توکن کش برگشت. داری بهای نتیجه‌ی تازه‌ی ابزار را می‌دهی، نه کل تاریخچه را.»
 
-**Related:** [Model provider request](./model-provider-request.md) · [Usage limit](./usage-limit.md) · [Token](./token.md)
+**مرتبط:** [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) · [سقف مصرف](./usage-limit.md) · [توکن](./token.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · Latency, Cost & Reliability Budgets](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
+- [دوره‌ی ۰۴ · بودجه‌های تأخیر، هزینه و قابلیت اطمینان](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/cache-tokens) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/cache-tokens.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>
