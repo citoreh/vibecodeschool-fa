@@ -1,13 +1,18 @@
-# AGENTS.md template
+<div dir="rtl">
 
-`AGENTS.md` is the project-memory file read by OpenAI Codex (and an expanding
-set of agents). Same philosophy as CLAUDE.md — commands, constraints, and the
-corrections you're tired of repeating — different reader.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [این README](https://github.com/dineshxr/vibecodeschool/blob/main/templates/agents-md/README.md).
+> خود قالب AGENTS.md انگلیسی مانده تا ایجنت آن را همان‌طور که هست بخواند.
 
-- [`AGENTS.md`](./AGENTS.md) — the template. Copy to your repo root, delete
-  what isn't true.
-- Using both Claude Code and Codex? Keep both files, and keep them **agreeing**
-  — contradictory memory is how agents "randomly" misbehave between tools.
+# قالب AGENTS.md
 
-Codex specifics are covered in
-[Course 02 — Build Mobile Apps using Codex](https://vibecodeschool.com/courses/codex-mobile-apps).
+`AGENTS.md` فایل حافظه‌ی پروژه‌ای است که OpenAI Codex (و مجموعه‌ی رو‌به‌رشدی از ایجنت‌ها) می‌خوانند. همان
+فلسفه‌ی CLAUDE.md — دستورها، قیدها، و اصلاح‌هایی که از تکرارشان خسته شده‌اید — با خواننده‌ای متفاوت.
+
+- [`AGENTS.md`](./AGENTS.md) — خود قالب. در ریشه‌ی مخزنتان کپی کنید و هر چه درست نیست را پاک کنید.
+- هم از Claude Code و هم از Codex استفاده می‌کنید؟ هر دو فایل را نگه دارید، و آن‌ها را **با هم هماهنگ**
+  نگه دارید — حافظه‌ی متناقض همان چیزی است که باعث می‌شود ایجنت‌ها میان ابزارها «بی‌دلیل» بد رفتار کنند.
+
+جزئیات Codex در [دوره‌ی ۰۲ — ساخت اپ موبایل با Codex](https://vibecodeschool.com/courses/codex-mobile-apps)
+آمده است.
+
+</div>

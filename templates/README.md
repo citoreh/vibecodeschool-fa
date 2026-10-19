@@ -1,18 +1,28 @@
-# Templates
+<div dir="rtl">
 
-Copy-paste starting points for the agentic toolchain — the artifacts Course 01
-teaches you to build, ready to adapt:
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [templates/README.md](https://github.com/dineshxr/vibecodeschool/blob/main/templates/README.md)
+> از مخزن اصلی. **خود فایل‌های قالب (CLAUDE.md، AGENTS.md، دستورهای اسلش) عمداً انگلیسی مانده‌اند**،
+> چون ایجنت‌ها آن‌ها را به‌عنوان دستورالعمل می‌خوانند و بهتر است همان‌طور که هستند کپی شوند؛ توضیحات
+> فارسی در README هر پوشه آمده است. اگر می‌خواهید ایجنت به فارسی پاسخ دهد، کافی است یک خط مثل
+> `Reply to me in Persian.` به CLAUDE.md یا AGENTS.md خودتان اضافه کنید.
 
-| Folder | What's inside |
-|--------|---------------|
-| [`claude-md/`](./claude-md/) | CLAUDE.md project-memory templates: web app, Expo mobile app, monorepo |
-| [`slash-commands/`](./slash-commands/) | Six battle-tested custom commands for `.claude/commands/` |
-| [`hooks/`](./hooks/) | Hook recipes: auto-format on edit, protect files, test-after-change |
-| [`agents-md/`](./agents-md/) | AGENTS.md template for OpenAI Codex (and agents that read it) |
+# قالب‌ها
 
-Prefer a form? The [CLAUDE.md generator](https://vibecodeschool.com/demos/claude-md-generator)
-builds one from six questions, live.
+نقطه‌های شروع آماده‌ی کپی برای ابزارهای ایجنتی — همان آرتیفکت‌هایی که دوره‌ی ۰۱ ساختنشان را یاد می‌دهد،
+آماده‌ی تطبیق:
 
-**The rule behind all of these:** project memory should encode only what the
-agent can't infer from the code — commands, constraints, and the mistakes you've
-corrected twice. Short beats complete; stale memory is worse than none.
+| پوشه | محتوا |
+|------|-------|
+| [`claude-md/`](./claude-md/) | قالب‌های حافظه‌ی پروژه‌ی CLAUDE.md: وب‌اپ، اپ موبایل Expo، مونوریپو |
+| [`slash-commands/`](./slash-commands/) | شش دستور سفارشیِ آزموده برای `.claude/commands/` |
+| [`hooks/`](./hooks/) | دستورالعمل‌های هوک: قالب‌بندی خودکار پس از ویرایش، محافظت از فایل‌ها، تست پس از تغییر |
+| [`agents-md/`](./agents-md/) | قالب AGENTS.md برای OpenAI Codex (و ایجنت‌هایی که آن را می‌خوانند) |
+
+فرم را ترجیح می‌دهید؟ [سازنده‌ی CLAUDE.md](https://vibecodeschool.com/demos/claude-md-generator) با شش
+سؤال، به‌صورت زنده، یکی برایتان می‌سازد.
+
+**قاعده‌ی پشت همه‌ی این‌ها:** حافظه‌ی پروژه فقط باید چیزی را ثبت کند که ایجنت نمی‌تواند از کد استنتاج
+کند — دستورها، قیدها، و اشتباه‌هایی که دو بار اصلاحشان کرده‌اید. کوتاه بهتر از کامل است؛ حافظه‌ی کهنه از
+نبود حافظه بدتر است.
+
+</div>

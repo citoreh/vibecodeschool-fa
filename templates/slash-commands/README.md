@@ -1,20 +1,26 @@
-# Slash-command templates
+<div dir="rtl">
 
-Custom slash commands are markdown files in `.claude/commands/` — the filename
-becomes the command (`review-pr.md` → `/review-pr`). `$ARGUMENTS` is replaced
-with whatever you type after the command.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [این README](https://github.com/dineshxr/vibecodeschool/blob/main/templates/slash-commands/README.md).
+> فایل‌های دستورها خودشان انگلیسی مانده‌اند، چون متنشان پرامپتی است که مستقیم به ایجنت داده می‌شود.
 
-Copy any of these into your repo's `.claude/commands/` and adapt:
+# قالب‌های دستور اسلش
 
-| Command | What it does |
-|---------|--------------|
-| [`/review-pr`](./review-pr.md) | Reviews the current diff like a strict senior engineer |
-| [`/add-tests`](./add-tests.md) | Backfills tests for a file, failure cases first |
-| [`/fix-issue`](./fix-issue.md) | Takes a GitHub issue number, fixes it end-to-end |
-| [`/draft-changelog`](./draft-changelog.md) | Turns recent commits into a human changelog entry |
-| [`/find-todos`](./find-todos.md) | Inventories TODO/FIXME/HACK and ranks them |
-| [`/explain`](./explain.md) | Explains a file or symbol at your chosen depth |
+دستورهای اسلش سفارشی فایل‌های مارک‌داون در `.claude/commands/` هستند — نام فایل همان دستور می‌شود
+(`review-pr.md` ← `/review-pr`). `$ARGUMENTS` با هر چیزی که پس از دستور تایپ کنید جایگزین می‌شود.
 
-The pattern that makes commands good: **state the role, the exact steps, and
-the output format** — a command is a repeatable prompt, so invest in it like
-code. More in [Course 01](https://vibecodeschool.com/courses/claude-code-vibe-coding).
+هر کدام را که خواستید در `.claude/commands/` مخزنتان کپی کنید و تطبیق دهید:
+
+| دستور | چه می‌کند |
+|-------|-----------|
+| [`/review-pr`](./review-pr.md) | دیف فعلی را مثل یک مهندس ارشد سخت‌گیر بازبینی می‌کند |
+| [`/add-tests`](./add-tests.md) | برای یک فایل تست می‌نویسد، اول حالت‌های شکست |
+| [`/fix-issue`](./fix-issue.md) | شماره‌ی یک ایشوی GitHub را می‌گیرد و از سر تا ته رفعش می‌کند |
+| [`/draft-changelog`](./draft-changelog.md) | کامیت‌های اخیر را به یک مدخل changelog خوانا برای انسان تبدیل می‌کند |
+| [`/find-todos`](./find-todos.md) | TODO/FIXME/HACKها را فهرست و رتبه‌بندی می‌کند |
+| [`/explain`](./explain.md) | یک فایل یا نماد را در عمقی که انتخاب می‌کنید توضیح می‌دهد |
+
+الگویی که دستورها را خوب می‌کند: **نقش، گام‌های دقیق و قالب خروجی را بیان کنید** — یک دستور، پرامپتی
+تکرارپذیر است، پس مثل کد رویش سرمایه‌گذاری کنید. بیشتر در
+[دوره‌ی ۰۱](https://vibecodeschool.com/courses/claude-code-vibe-coding).
+
+</div>

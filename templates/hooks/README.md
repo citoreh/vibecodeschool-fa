@@ -1,16 +1,22 @@
-# Hook recipes
+<div dir="rtl">
 
-Hooks run shell commands at lifecycle points in a Claude Code session —
-deterministic guardrails that don't depend on the model remembering your
-rules. Configure them in `.claude/settings.json`. Docs:
-[code.claude.com/docs → hooks](https://code.claude.com/docs/en/hooks-guide).
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [این README](https://github.com/dineshxr/vibecodeschool/blob/main/templates/hooks/README.md).
+> بلوک‌های JSON دست نخورده‌اند و می‌توانید مستقیم کپی‌شان کنید.
 
-Three recipes that cover most teams' needs:
+# دستورالعمل‌های هوک
 
-## 1. Auto-format every file the agent edits
+هوک‌ها در نقطه‌های مشخصی از چرخه‌ی عمر یک جلسه‌ی Claude Code دستورهای شل اجرا می‌کنند — محافظ‌هایی
+قطعی که به این بستگی ندارند که مدل قاعده‌های شما را به یاد داشته باشد. آن‌ها را در `.claude/settings.json`
+پیکربندی کنید. مستندات: [code.claude.com/docs → hooks](https://code.claude.com/docs/en/hooks-guide).
 
-`PostToolUse` on Edit/Write — the agent never ships unformatted code, and you
-never see formatting noise in diffs:
+سه دستورالعمل که نیاز بیشتر تیم‌ها را پوشش می‌دهند:
+
+## ۱. قالب‌بندی خودکار هر فایلی که ایجنت ویرایش می‌کند
+
+`PostToolUse` روی Edit/Write — ایجنت هرگز کد قالب‌بندی‌نشده تحویل نمی‌دهد، و شما هرگز نویز قالب‌بندی را در
+دیف‌ها نمی‌بینید:
+
+</div>
 
 ```json
 {
@@ -30,10 +36,14 @@ never see formatting noise in diffs:
 }
 ```
 
-## 2. Protect files the agent must never touch
+<div dir="rtl">
 
-`PreToolUse` that blocks edits to protected paths (exit code 2 = block, stderr
-is shown to the agent as feedback):
+## ۲. محافظت از فایل‌هایی که ایجنت هرگز نباید به آن‌ها دست بزند
+
+یک `PreToolUse` که ویرایش مسیرهای محافظت‌شده را مسدود می‌کند (کد خروج 2 = مسدود، و stderr به‌عنوان
+بازخورد به ایجنت نشان داده می‌شود):
+
+</div>
 
 ```json
 {
@@ -53,11 +63,14 @@ is shown to the agent as feedback):
 }
 ```
 
-## 3. Surface test results after every logic change
+<div dir="rtl">
 
-`PostToolUse` that runs the affected package's quick tests and pipes failures
-straight back into the loop (the agent sees stderr and fixes without being
-asked):
+## ۳. نمایش نتیجه‌ی تست‌ها پس از هر تغییر منطقی
+
+یک `PostToolUse` که تست‌های سریع بسته‌ی مربوط را اجرا می‌کند و شکست‌ها را مستقیم به چرخه برمی‌گرداند
+(ایجنت stderr را می‌بیند و بدون این‌که از او خواسته شود رفعش می‌کند):
+
+</div>
 
 ```json
 {
@@ -77,8 +90,11 @@ asked):
 }
 ```
 
-**Rules of thumb:** hooks must be fast (they run synchronously on every
-matching tool call), fail loud (`exit 2` + stderr beats silent skipping), and
-enforce only things you'd also enforce in CI. Course 01's
-[hooks lesson](https://vibecodeschool.com/courses/claude-code-vibe-coding)
-covers the full lifecycle.
+<div dir="rtl">
+
+**قاعده‌های سرانگشتی:** هوک‌ها باید سریع باشند (روی هر فراخوانی ابزار منطبق به‌صورت هم‌زمان اجرا می‌شوند)،
+با صدای بلند شکست بخورند (`exit 2` همراه با stderr از رد شدن بی‌صدا بهتر است)، و فقط چیزهایی را اجبار کنند
+که در CI هم اجبار می‌کنید. [درس هوک‌ها](https://vibecodeschool.com/courses/claude-code-vibe-coding)
+در دوره‌ی ۰۱ کل چرخه‌ی عمر را پوشش می‌دهد.
+
+</div>

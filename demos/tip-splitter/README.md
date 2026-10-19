@@ -1,51 +1,57 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Tip Splitter
+<div dir="rtl">
 
-The classic first vibe-coding project — bill, tip, split, with honest cent-rounding. Built in four prompts.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [این گزارش ساخت](https://github.com/dineshxr/vibecodeschool/blob/main/demos/tip-splitter/README.md).
+> پرامپت‌های گفت‌وگو ترجمه شده‌اند؛ پرامپت بازسازی هم به انگلیسی (نسخه‌ی اصلی) و هم به فارسی آمده است.
 
-**[▶ Try it live](https://vibecodeschool.com/demos/tip-splitter)** · beginner · 4 prompts · built in ~10 min
+# Tip Splitter (تقسیم‌کننده‌ی انعام)
 
-## The build log
+پروژه‌ی کلاسیک اول وایب‌کدینگ — صورت‌حساب، انعام، تقسیم، با گرد کردن صادقانه‌ی سنت‌ها. ساخته‌شده در چهار پرامپت.
 
-Condensed from the real build session — every user prompt shown, repetitive
-tool turns trimmed. The [live version](https://vibecodeschool.com/demos/tip-splitter) replays this
-turn-by-turn.
+**[▶ نسخه‌ی زنده](https://vibecodeschool.com/demos/tip-splitter)** · مقدماتی · ۴ پرامپت · ساخته‌شده در حدود ۱۰ دقیقه
 
-> **You:** Build a tip splitter React component: bill amount input, tip % chips (10/15/18/20/25), a people stepper, and the per-person total shown big. TypeScript, no external deps.
+## گزارش ساخت
 
-**Claude:** Scaffolding a client component with three pieces of state — bill (string, so typing stays free), tipPct, people — and deriving the totals on render.
+خلاصه‌شده از جلسه‌ی واقعی ساخت — همه‌ی پرامپت‌های کاربر آمده‌اند و نوبت‌های تکراری ابزارها کوتاه شده‌اند.
+[نسخه‌ی زنده](https://vibecodeschool.com/demos/tip-splitter) این را نوبت به نوبت بازپخش می‌کند.
 
-`Write` → `components/demos/tip-splitter.tsx` — Created: inputs, chips, stepper, derived tipTotal / grandTotal / share, currency formatting via toLocaleString.
+> **شما:** یک کامپوننت React برای تقسیم انعام بساز: ورودی مبلغ صورت‌حساب، دکمه‌های درصد انعام (10/15/18/20/25)، یک شمارنده‌ی تعداد نفرات، و سهم هر نفر که بزرگ نشان داده شود. TypeScript، بدون وابستگی بیرونی.
 
-> **You:** Typing letters or clearing the field shows $NaN. Never show NaN anywhere — show a neutral "enter a bill" state instead.
+**Claude:** یک کامپوننت سمت کلاینت با سه تکه وضعیت می‌سازم — bill (رشته، تا تایپ آزاد بماند)، tipPct، people — و جمع‌ها را هنگام رندر محاسبه می‌کنم.
 
-**Claude:** Root cause: parseFloat on an empty string. Adding a `valid` guard (finite, > 0, people ≥ 1), stripping non-numeric characters on input, and rendering an empty-state panel when invalid.
+`Write` ← `components/demos/tip-splitter.tsx` — ساخته شد: ورودی‌ها، دکمه‌ها، شمارنده، مقادیر محاسبه‌شده‌ی tipTotal / grandTotal / share، قالب‌بندی ارز با toLocaleString.
 
-`Edit` → `tip-splitter.tsx · validation guard` — share/tip/total now compute only when valid; aria-live result region added.
+> **شما:** تایپ کردن حروف یا خالی کردن فیلد $NaN نشان می‌دهد. هیچ‌جا NaN نشان نده — به‌جایش یک حالت خنثیِ «مبلغ را وارد کنید» نشان بده.
 
-> **You:** Real tables round each share up to the cent. Add a checkbox for that — but if rounding makes us collect more than the bill, say so instead of hiding it.
+**Claude:** علت اصلی: parseFloat روی رشته‌ی خالی. یک محافظ `valid` اضافه می‌کنم (عدد متناهی، بزرگ‌تر از صفر، people ≥ 1)، کاراکترهای غیرعددی را هنگام ورود حذف می‌کنم، و وقتی نامعتبر است یک پنل حالت خالی نشان می‌دهم.
 
-**Claude:** Adding roundUp state: share = ceil(rawShare · 100)/100, then collected − grandTotal is the overshoot. Rendering it as "Overpay from rounding: $0.02 (tip it)" only when > a tenth of a cent.
+`Edit` ← `tip-splitter.tsx · validation guard` — share/tip/total حالا فقط وقتی معتبر است محاسبه می‌شوند؛ ناحیه‌ی نتیجه‌ی aria-live اضافه شد.
 
-`Edit` → `tip-splitter.tsx · rounding + overshoot row` — Checkbox wired; overshoot row renders conditionally.
+> **شما:** سر میزهای واقعی سهم هر نفر را تا سنت بالا گرد می‌کنند. یک چک‌باکس برایش بگذار — اما اگر گرد کردن باعث شود بیشتر از صورت‌حساب جمع کنیم، به‌جای پنهان کردن، بگو.
 
-> **You:** Polish: cap people at 50, label singular/plural correctly, and make the stepper buttons keyboard-accessible.
+**Claude:** وضعیت roundUp را اضافه می‌کنم: share = ceil(rawShare · 100)/100، بعد collected − grandTotal مقدار اضافه است. آن را به شکل «Overpay from rounding: $0.02 (tip it)» فقط وقتی بیشتر از یک‌دهم سنت باشد نشان می‌دهم.
 
-**Claude:** Done — Math.min(50) on increment, "person/people" ternary, aria-labels on both stepper buttons. The component is ~130 lines and has no dependencies.
+`Edit` ← `tip-splitter.tsx · rounding + overshoot row` — چک‌باکس وصل شد؛ ردیف مقدار اضافه شرطی نمایش داده می‌شود.
 
-## What to notice
+> **شما:** پرداخت نهایی: تعداد نفرات را حداکثر ۵۰ کن، مفرد و جمع را درست برچسب بزن، و دکمه‌های شمارنده را با کیبورد قابل دسترس کن.
 
-- Small turns: scaffold → wire math → edge cases → polish. Four prompts, each reviewable.
-- The agent's first version showed $NaN for an empty bill — saying "never show NaN" fixed the whole input-validation path in one turn.
-- Rounding shares up means the table overpays by a few cents. Surfacing that ("tip it") beats silently absorbing it — an honest-UI decision the agent won't make unless you ask.
+**Claude:** انجام شد — Math.min(50) هنگام افزایش، شرط سه‌تایی «person/people»، و aria-label روی هر دو دکمه‌ی شمارنده. کامپوننت حدود ۱۳۰ خط است و هیچ وابستگی ندارد.
 
-## Remix it yourself
+## به این‌ها توجه کنید
 
-Paste this into Claude Code (or Codex, or Cursor), then change one requirement
-and compare:
+- نوبت‌های کوچک: اسکلت ← وصل کردن محاسبات ← حالت‌های مرزی ← پرداخت نهایی. چهار پرامپت، هر کدام قابل بازبینی.
+- نسخه‌ی اول ایجنت برای صورت‌حساب خالی $NaN نشان می‌داد — گفتن «هرگز NaN نشان نده» کل مسیر اعتبارسنجی ورودی را در یک نوبت درست کرد.
+- بالا گرد کردن سهم‌ها یعنی میز چند سنت بیشتر می‌پردازد. آشکار کردن آن («tip it») بهتر از جذب بی‌صدای آن است — تصمیمی برای رابط کاربری صادق که ایجنت تا از او نخواهید نمی‌گیرد.
+
+## خودتان بازسازی‌اش کنید
+
+این را در Claude Code (یا Codex، یا Cursor) بچسبانید، بعد یک نیازمندی را عوض کنید و مقایسه کنید:
+
+</div>
 
 ```text
 Build a tip splitter as a single React component (TypeScript).
@@ -56,11 +62,26 @@ Handle invalid input by showing a neutral empty state, never NaN. When rounding 
 causes the table to overpay, show the overpay amount instead of hiding it.
 ```
 
-## Source
+<div dir="rtl">
 
-The exact component running on the live site: [`tip-splitter.tsx`](./tip-splitter.tsx)
-(React + TypeScript, no dependencies, MIT).
+همین پرامپت به فارسی (ایجنت‌ها پرامپت فارسی را هم می‌فهمند):
+
+```text
+یک تقسیم‌کننده‌ی انعام به‌صورت یک کامپوننت React تنها (TypeScript) بساز.
+ورودی‌ها: مبلغ صورت‌حساب (ورودی متنی با پیشوند $)، درصد انعام (دکمه‌های آماده: 10/15/18/20/25)،
+تعداد نفرات (شمارنده با دکمه‌های − و +، حداقل 1)، و یک چک‌باکس «سهم هر نفر را تا سنت بالا گرد کن».
+خروجی: سهم هر نفر بزرگ، جمع انعام و جمع کل میز کوچک.
+ورودی نامعتبر را با نمایش یک حالت خالی خنثی مدیریت کن، هرگز NaN. وقتی بالا گرد کردن باعث شود
+میز بیشتر بپردازد، مقدار اضافه را نشان بده به‌جای پنهان کردنش.
+```
+
+## کد منبع
+
+همان کامپوننتی که روی سایت زنده اجرا می‌شود: [`tip-splitter.tsx`](./tip-splitter.tsx)
+(React + TypeScript، بدون وابستگی، MIT).
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) · [more demos](https://vibecodeschool.com/demos)
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) · [دموهای بیشتر](https://vibecodeschool.com/demos)
+
+</div>

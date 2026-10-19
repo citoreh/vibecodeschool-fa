@@ -1,51 +1,57 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Focus Timer
+<div dir="rtl">
 
-A 25/5 pomodoro timer with phase auto-switching and a progress bar — and a React interval bug the agent had to fix properly.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [این گزارش ساخت](https://github.com/dineshxr/vibecodeschool/blob/main/demos/focus-timer/README.md).
+> پرامپت‌های گفت‌وگو ترجمه شده‌اند؛ پرامپت بازسازی هم به انگلیسی (نسخه‌ی اصلی) و هم به فارسی آمده است.
 
-**[▶ Try it live](https://vibecodeschool.com/demos/focus-timer)** · beginner · 4 prompts · built in ~12 min
+# Focus Timer (تایمر تمرکز)
 
-## The build log
+یک تایمر پومودوروی ۲۵/۵ با جابه‌جایی خودکار مرحله‌ها و نوار پیشرفت — و یک باگ interval در React که ایجنت باید درست رفعش می‌کرد.
 
-Condensed from the real build session — every user prompt shown, repetitive
-tool turns trimmed. The [live version](https://vibecodeschool.com/demos/focus-timer) replays this
-turn-by-turn.
+**[▶ نسخه‌ی زنده](https://vibecodeschool.com/demos/focus-timer)** · مقدماتی · ۴ پرامپت · ساخته‌شده در حدود ۱۲ دقیقه
 
-> **You:** Build a pomodoro timer component: 25 min focus, 5 min break, auto-switch, MM:SS display, start/pause/reset, session counter. TypeScript React, no deps.
+## گزارش ساخت
 
-**Claude:** Setting up phase/left/running/sessions state with a setInterval in an effect keyed on `running`, decrementing once per second and flipping phase when the clock hits zero.
+خلاصه‌شده از جلسه‌ی واقعی ساخت — همه‌ی پرامپت‌های کاربر آمده‌اند و نوبت‌های تکراری ابزارها کوتاه شده‌اند.
+[نسخه‌ی زنده](https://vibecodeschool.com/demos/focus-timer) این را نوبت به نوبت بازپخش می‌کند.
 
-`Write` → `components/demos/focus-timer.tsx` — Created: interval effect with cleanup, MM:SS via padStart, phase flip on zero.
+> **شما:** یک کامپوننت تایمر پومودورو بساز: ۲۵ دقیقه تمرکز، ۵ دقیقه استراحت، جابه‌جایی خودکار، نمایش MM:SS، شروع/مکث/بازنشانی، شمارنده‌ی جلسه‌ها. TypeScript React، بدون وابستگی.
 
-> **You:** Bug: in dev, sometimes the break phase gets skipped entirely and sessions count by 2. It flips straight from focus to focus.
+**Claude:** وضعیت‌های phase/left/running/sessions را با یک setInterval درون یک effect که به `running` وابسته است راه می‌اندازم؛ هر ثانیه یک واحد کم می‌شود و وقتی ساعت به صفر برسد مرحله عوض می‌شود.
 
-**Claude:** That's a StrictMode symptom: the phase flip lives inside the setLeft updater, and React invokes updaters twice in dev to surface exactly this impurity. Fix: the updater only counts down (pure); a separate effect watches for left === 0 and does the flip + session increment once.
+`Write` ← `components/demos/focus-timer.tsx` — ساخته شد: effect مربوط به interval همراه با پاک‌سازی، MM:SS با padStart، عوض شدن مرحله در صفر.
 
-`Edit` → `focus-timer.tsx · pure updater + zero-watcher effect` — Updater returns max(s−1, 0); new effect handles focus→break→focus transitions.
+> **شما:** باگ: در حالت توسعه، گاهی مرحله‌ی استراحت کلاً جا می‌افتد و جلسه‌ها دوتا دوتا شمرده می‌شوند. مستقیم از تمرکز به تمرکز می‌پرد.
 
-> **You:** Add a thin progress bar that fills over the phase, and make the button read Start / Pause / Resume depending on state.
+**Claude:** این نشانه‌ی StrictMode است: عوض شدن مرحله درون updaterِ setLeft انجام می‌شود، و React در حالت توسعه updaterها را دو بار صدا می‌زند دقیقاً برای آشکار کردن همین ناخالصی. راه‌حل: updater فقط شمارش معکوس می‌کند (خالص)؛ یک effect جداگانه left === 0 را زیر نظر دارد و عوض کردن مرحله و افزایش جلسه را یک بار انجام می‌دهد.
 
-**Claude:** Progress derives from (total − left) / total — no new state. Button label: running → Pause; left === total → Start; otherwise Resume.
+`Edit` ← `focus-timer.tsx · pure updater + zero-watcher effect` — updater مقدار max(s−1, 0) را برمی‌گرداند؛ effect جدید جابه‌جایی‌های تمرکز←استراحت←تمرکز را مدیریت می‌کند.
 
-`Edit` → `focus-timer.tsx · progress bar + button labels` — role=progressbar with aria values; data-phase attribute for styling.
+> **شما:** یک نوار پیشرفت باریک اضافه کن که در طول مرحله پر شود، و کاری کن دکمه بسته به وضعیت Start / Pause / Resume بنویسد.
 
-> **You:** Accessibility pass: the ticking clock shouldn't spam screen readers, but phase changes should be announced.
+**Claude:** پیشرفت از (total − left) / total به دست می‌آید — بدون وضعیت تازه. برچسب دکمه: در حال اجرا ← Pause؛ left === total ← Start؛ در غیر این صورت Resume.
 
-**Claude:** Set aria-live="off" on the clock (it changes every second) and left the phase label in normal flow — it changes rarely and reads naturally on focus. Done: ~100 lines, cleanup verified, no drift.
+`Edit` ← `focus-timer.tsx · progress bar + button labels` — role=progressbar با مقدارهای aria؛ ویژگی data-phase برای استایل‌دهی.
 
-## What to notice
+> **شما:** مرور دسترس‌پذیری: ساعتِ در حال تیک‌تاک نباید صفحه‌خوان‌ها را بمباران کند، اما تغییر مرحله باید اعلام شود.
 
-- The first version flipped phases *inside* the setLeft updater — React calls updaters twice in StrictMode, so breaks were skipped. The fix: updaters stay pure; the phase flip moved to its own effect watching for zero.
-- "Paste the error/behavior verbatim" applies to bugs you can *see* too: describing the exact symptom ("break phase gets skipped sometimes") let the agent name the StrictMode double-invoke immediately.
-- Deriving the progress bar from (total − left) / total means no extra state to keep in sync.
+**Claude:** روی ساعت aria-live="off" گذاشتم (هر ثانیه عوض می‌شود) و برچسب مرحله را در جریان عادی صفحه نگه داشتم — به‌ندرت عوض می‌شود و هنگام فوکوس طبیعی خوانده می‌شود. انجام شد: حدود ۱۰۰ خط، پاک‌سازی بررسی شد، بدون انحراف زمانی.
 
-## Remix it yourself
+## به این‌ها توجه کنید
 
-Paste this into Claude Code (or Codex, or Cursor), then change one requirement
-and compare:
+- نسخه‌ی اول مرحله‌ها را *درون* updaterِ setLeft عوض می‌کرد — React در StrictMode updaterها را دو بار صدا می‌زند، پس استراحت‌ها جا می‌افتادند. راه‌حل: updaterها خالص می‌مانند؛ عوض کردن مرحله به effect خودش منتقل شد که صفر را زیر نظر دارد.
+- «خطا یا رفتار را عیناً بچسبانید» درباره‌ی باگ‌هایی که *می‌بینید* هم صدق می‌کند: توصیف نشانه‌ی دقیق («مرحله‌ی استراحت گاهی جا می‌افتد») باعث شد ایجنت فوراً دو بار صدا زده شدن در StrictMode را تشخیص دهد.
+- به دست آوردن نوار پیشرفت از (total − left) / total یعنی هیچ وضعیت اضافه‌ای که باید همگام نگه داشته شود وجود ندارد.
+
+## خودتان بازسازی‌اش کنید
+
+این را در Claude Code (یا Codex، یا Cursor) بچسبانید، بعد یک نیازمندی را عوض کنید و مقایسه کنید:
+
+</div>
 
 ```text
 Build a pomodoro focus timer as a single React component (TypeScript).
@@ -55,11 +61,25 @@ counter. The setInterval must be cleaned up correctly (no drift, no double ticks
 StrictMode), and state updater functions must stay pure — no side effects inside them.
 ```
 
-## Source
+<div dir="rtl">
 
-The exact component running on the live site: [`focus-timer.tsx`](./focus-timer.tsx)
-(React + TypeScript, no dependencies, MIT).
+همین پرامپت به فارسی:
+
+```text
+یک تایمر تمرکز پومودورو به‌صورت یک کامپوننت React تنها (TypeScript) بساز.
+مرحله‌های ۲۵ دقیقه تمرکز / ۵ دقیقه استراحت که خودکار جابه‌جا می‌شوند. MM:SS را بزرگ نشان بده،
+یک نوار پیشرفت باریک، دکمه‌های Start/Pause/Resume و Reset، و شمارنده‌ی جلسه‌های تمام‌شده.
+setInterval باید درست پاک‌سازی شود (بدون انحراف زمانی، بدون تیک دوتایی در StrictMode)،
+و توابع updater وضعیت باید خالص بمانند — بدون هیچ اثر جانبی درونشان.
+```
+
+## کد منبع
+
+همان کامپوننتی که روی سایت زنده اجرا می‌شود: [`focus-timer.tsx`](./focus-timer.tsx)
+(React + TypeScript، بدون وابستگی، MIT).
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) · [more demos](https://vibecodeschool.com/demos)
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) · [دموهای بیشتر](https://vibecodeschool.com/demos)
+
+</div>
