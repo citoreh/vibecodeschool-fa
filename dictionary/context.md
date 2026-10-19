@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Context
+<div dir="rtl">
 
-> Everything the agent currently has in front of it that bears on the task: loaded files, your messages, tool results so far.
+# زمینه (context)
 
-*§02 Sessions, Context Windows & Turns · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/context)*
+> هر آنچه ایجنت همین حالا جلوی خود دارد و به کار ربط دارد: فایل‌های بارگذاری‌شده، پیام‌های شما، نتیجه‌های ابزار تا این لحظه.
 
-Context is the information the agent is actually working from right now. Not what exists in your repo, not what the model absorbed in [training](./training.md), but the specific text that has been loaded into the current [session](./session.md): your instructions, the files it has read, the command output it has seen, the plan it wrote three [turns](./turn.md) ago. If a fact is not in the context, the agent is either guessing from [parametric knowledge](./parametric-knowledge.md) or inventing.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/context)*
 
-This is why two people can run the same prompt and get wildly different results. One pasted the failing test and the relevant module; the other typed 'fix the bug'. The model was identical; the context was not. Most 'the AI is dumb today' complaints turn out to be 'the agent never saw the thing I assumed it knew'.
+زمینه اطلاعاتی است که ایجنت همین حالا واقعاً بر اساس آن کار می‌کند. نه آنچه در مخزن شما وجود دارد، نه آنچه مدل در [آموزش](./training.md) جذب کرده، بلکه متن مشخصی که در [جلسه‌ی](./session.md) جاری بارگذاری شده: دستورهای شما، فایل‌هایی که خوانده، خروجی دستورهایی که دیده، برنامه‌ای که سه [نوبت](./turn.md) پیش نوشته. اگر واقعیتی در زمینه نباشد، ایجنت یا از [دانش پارامتری](./parametric-knowledge.md) حدس می‌زند یا از خودش می‌سازد.
 
-Good context is relevant, current and small. Point the agent at the two files that matter instead of the whole directory; paste the actual error instead of describing it; drop stale plans once they are done. The container the context lives in is the [context window](./context-window.md), and it is finite, so every irrelevant line you load competes with the lines that matter. Managing this on purpose is the discipline of [context engineering](./context-engineering.md).
+به همین دلیل دو نفر می‌توانند یک پرامپت را اجرا کنند و نتیجه‌های کاملاً متفاوتی بگیرند. یکی تست شکست‌خورده و ماژول مربوط را چسبانده؛ دیگری تایپ کرده «باگ را درست کن». مدل یکسان بود؛ زمینه نه. بیشتر گلایه‌های «هوش مصنوعی امروز خنگ شده» در واقع یعنی «ایجنت هرگز چیزی را که فرض می‌کردم می‌داند ندیده بود».
 
-## In the tools
+زمینه‌ی خوب مرتبط، به‌روز و کوچک است. به‌جای کل پوشه، ایجنت را به دو فایلی که مهم‌اند ارجاع دهید؛ به‌جای توصیف خطا، خود خطا را بچسبانید؛ برنامه‌های کهنه را پس از انجام کنار بگذارید. ظرفی که زمینه در آن زندگی می‌کند [پنجره‌ی زمینه](./context-window.md) است و محدود است، پس هر خط نامربوطی که بارگذاری می‌کنید با خطوط مهم رقابت می‌کند. مدیریت آگاهانه‌ی این، همان انضباط [مهندسی زمینه](./context-engineering.md) است.
 
-- Claude Code: `/context` shows what is occupying the window; `@file` mentions load a file into context deliberately.
-- Cursor: the `@` menu attaches files, docs and web results to the request explicitly.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/context` نشان می‌دهد چه چیزی پنجره را اشغال کرده؛ اشاره‌های `@file` یک فایل را آگاهانه در زمینه بارگذاری می‌کنند.
+- Cursor: منوی `@` فایل‌ها، مستندات و نتیجه‌های وب را صریحاً به درخواست پیوست می‌کند.
 
-> “It keeps proposing a fix for a function that doesn't exist anymore.”
+## در گفت‌وگو
+
+> «مدام برای تابعی که دیگر وجود ندارد راه‌حل پیشنهاد می‌دهد.»
 >
-> “Check the context. It read that file before your refactor and hasn't looked since. Tell it to re-read the module.”
+> «زمینه را بررسی کن. آن فایل را پیش از بازآرایی‌ات خوانده و از آن موقع نگاهش نکرده. بگو ماژول را دوباره بخواند.»
 
-**Related:** [Contextual knowledge](./contextual-knowledge.md) · [Attention budget](./attention-budget.md) · [System prompt](./system-prompt.md)
+**مرتبط:** [دانش زمینه‌ای](./contextual-knowledge.md) · [بودجه‌ی توجه](./attention-budget.md) · [پرامپت سیستمی](./system-prompt.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 04 · Context Engineering](https://vibecodeschool.com/learn/aa-06-context-engineering)
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۴ · مهندسی زمینه](https://vibecodeschool.com/learn/aa-06-context-engineering)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/context) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/context.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

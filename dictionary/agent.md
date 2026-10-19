@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Agent
+<div dir="rtl">
 
-> A model wired to tools and a loop: it reads, acts, checks the result, and goes again until the task is done or you stop it.
+# ایجنت (agent)
 
-*§02 Sessions, Context Windows & Turns · also called: Coding agent, AI agent · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/agent)*
+> مدلی که به ابزارها و یک چرخه وصل شده: می‌خواند، اقدام می‌کند، نتیجه را بررسی می‌کند، و دوباره می‌رود تا کار تمام شود یا شما متوقفش کنید.
 
-An agent is a [model](./model.md) put to work inside a loop. The [harness](./harness.md) gives it a [system prompt](./system-prompt.md), a set of [tools](./tool.md) and a task; the model decides on an action, the harness carries it out and returns the result, and the model decides again. Claude Code, Codex, Cursor's agent mode and Antigravity's managed agents are all this same shape, with different tools, defaults and interfaces wrapped around it.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · نام‌های دیگر: Coding agent، AI agent · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/agent)*
 
-What separates an agent from a chat window is that it can act on the world and observe the consequences. A chat assistant can tell you how to fix the test; an agent runs the test, reads the failure, edits the file and runs it again. That loop is where the leverage comes from, and also where the risk comes from: a wrong assumption made early gets executed, not just described.
+ایجنت یک [مدل](./model.md) است که درون یک چرخه به کار گرفته شده. [هارنس](./harness.md) به آن یک [پرامپت سیستمی](./system-prompt.md)، مجموعه‌ای از [ابزارها](./tool.md) و یک کار می‌دهد؛ مدل درباره‌ی یک اقدام تصمیم می‌گیرد، هارنس آن را اجرا می‌کند و نتیجه را برمی‌گرداند، و مدل دوباره تصمیم می‌گیرد. Claude Code، Codex، حالت ایجنت Cursor و ایجنت‌های مدیریت‌شده‌ی Antigravity همه همین شکل را دارند، با ابزارها، پیش‌فرض‌ها و رابط‌های متفاوتی که دورش پیچیده شده.
 
-The practical skill is directing the loop, not replacing it. Give the agent a clear target and a way to verify it (a failing test, a command that must pass), decide how much autonomy to grant through its [permission mode](./permission-mode.md), and review what comes back. If you want to understand why one agent behaves differently from another running the same model, look at the harness, not the weights.
+آنچه ایجنت را از یک پنجره‌ی گفت‌وگو جدا می‌کند این است که می‌تواند در دنیا اقدام کند و پیامدها را ببیند. یک دستیار گفت‌وگو می‌تواند بگوید تست را چطور درست کنید؛ یک ایجنت تست را اجرا می‌کند، خطا را می‌خواند، فایل را ویرایش می‌کند و دوباره اجرایش می‌کند. اهرم از همین چرخه می‌آید، و خطر هم: یک فرض غلط در ابتدا اجرا می‌شود، نه فقط توصیف.
 
-## In the tools
+مهارت عملی، هدایت چرخه است، نه جایگزین کردنش. به ایجنت هدفی روشن و راهی برای بررسی آن بدهید (یک تست شکست‌خورده، دستوری که باید با موفقیت اجرا شود)، از طریق [حالت مجوزش](./permission-mode.md) تعیین کنید چقدر خودمختاری می‌دهید، و آنچه برمی‌گردد را بازبینی کنید. اگر می‌خواهید بفهمید چرا یک ایجنت با همان مدل رفتاری متفاوت از دیگری دارد، به هارنس نگاه کنید، نه وزن‌ها.
 
-- Claude Code: Anthropic's terminal agent; Bash, file edits, search and subagents are its core tools.
-- Codex: OpenAI's agent, available as a CLI, an IDE extension and cloud tasks that run in isolated containers.
-- Antigravity: Google's editor where a manager view runs several agents in parallel across workspaces.
+## در ابزارها
 
-## In conversation
+- Claude Code: ایجنت ترمینالی Anthropic؛ Bash، ویرایش فایل، جست‌وجو و زیرایجنت‌ها ابزارهای اصلی‌اش هستند.
+- Codex: ایجنت OpenAI، که به‌صورت ابزار خط فرمان، افزونه‌ی IDE و کارهای ابری در کانتینرهای ایزوله در دسترس است.
+- Antigravity: ویرایشگر گوگل که در آن یک نمای مدیر چند ایجنت را به‌صورت موازی در فضاهای کاری مختلف اجرا می‌کند.
 
-> “It ran the tests, saw two failures, fixed both, and reran them before I'd even read the first error.”
+## در گفت‌وگو
+
+> «تست‌ها را اجرا کرد، دو خطا دید، هر دو را رفع کرد، و پیش از این‌که من اولین خطا را بخوانم دوباره اجرایشان کرد.»
 >
-> “That's the agent loop doing its job. Your part is deciding what 'done' means before it starts.”
+> «این همان چرخه‌ی ایجنت است که کارش را می‌کند. سهم تو این است که پیش از شروع تعیین کنی «تمام‌شده» یعنی چه.»
 
-**Related:** [Turn](./turn.md) · [Subagent](./subagent.md) · [Agent mode](./agent-mode.md) · [Human-in-the-loop](./human-in-the-loop.md)
+**مرتبط:** [نوبت](./turn.md) · [زیرایجنت](./subagent.md) · [حالت ایجنت](./agent-mode.md) · [انسان در حلقه](./human-in-the-loop.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · The Agentic Loop](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
-- [Course 04 · What Makes a System Agentic](https://vibecodeschool.com/learn/aa-10-what-makes-a-system-agentic)
+- [دوره‌ی ۰۱ · چرخه‌ی ایجنتی](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
+- [دوره‌ی ۰۴ · چه چیزی یک سیستم را ایجنتی می‌کند](https://vibecodeschool.com/learn/aa-10-what-makes-a-system-agentic)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/agent) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/agent.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

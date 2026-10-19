@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Autocompact
+<div dir="rtl">
 
-> Compaction the harness triggers on its own when the context window nears its limit, without asking you first.
+# فشرده‌سازی خودکار (autocompact)
 
-*§05 Handoffs · also called: Auto-compaction, Automatic compaction · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/autocompact)*
+> فشرده‌سازی‌ای که هارنس خودش، وقتی پنجره‌ی زمینه به حدش نزدیک می‌شود، بدون پرسیدن از شما انجام می‌دهد.
 
-Autocompact is [compaction](./compaction.md) that the [harness](./harness.md) performs automatically when the [context window](./context-window.md) gets close to full. You do not ask for it; the harness notices the session is near the limit, summarizes the history, and carries on. Claude Code shows a warning as the threshold approaches and a notice when it happens. The point is to keep a long [session](./session.md) running instead of stopping it with an error.
+*§۰۵ تحویل کار · نام‌های دیگر: Auto-compaction، Automatic compaction · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/autocompact)*
 
-Because it fires on a size threshold rather than a task boundary, it tends to land at the worst moment: halfway through a multi-file change, with the plan half in the [agent](./agent.md)'s head. The agent continues from a summary it did not choose the timing of, and the drop in quality can look like the model suddenly getting worse. People often blame the model when the real event was an autocompact three [turns](./turn.md) ago.
+فشرده‌سازی خودکار همان [فشرده‌سازی](./compaction.md) است که [هارنس](./harness.md) وقتی [پنجره‌ی زمینه](./context-window.md) نزدیک پر شدن است خودکار انجام می‌دهد. شما درخواستش نمی‌کنید؛ هارنس متوجه می‌شود جلسه نزدیک حد است، تاریخچه را خلاصه می‌کند و ادامه می‌دهد. Claude Code با نزدیک شدن آستانه هشدار نشان می‌دهد و وقتی اتفاق افتاد اطلاعیه. هدف این است که یک [جلسه‌ی](./session.md) طولانی به‌جای توقف با خطا، ادامه پیدا کند.
 
-Do not let it be a surprise. Watch the context indicator and compact or [clear](./clearing.md) on your own terms before the harness does it for you. Keep state on disk, in commits, notes, and a [handoff artifact](./handoff-artifact.md), so a summary is never the only copy of anything. If your sessions autocompact regularly, the tasks are too big for one session; split them into [tickets](./ticket.md).
+چون با آستانه‌ی اندازه فعال می‌شود و نه در مرز کارها، معمولاً در بدترین لحظه فرود می‌آید: وسط یک تغییر چندفایلی، وقتی برنامه نیمه‌کاره در ذهن [ایجنت](./agent.md) است. ایجنت از روی خلاصه‌ای ادامه می‌دهد که زمانش را خودش انتخاب نکرده، و افت کیفیت می‌تواند شبیه این باشد که مدل ناگهان بدتر شده. مردم اغلب مدل را مقصر می‌دانند در حالی که اتفاق واقعی یک فشرده‌سازی خودکار سه [نوبت](./turn.md) قبل بوده.
 
-## In the tools
+نگذارید غافلگیرتان کند. نشانگر زمینه را زیر نظر داشته باشید و پیش از آن‌که هارنس این کار را برایتان بکند، با شرایط خودتان فشرده‌سازی یا [پاک‌سازی](./clearing.md) کنید. وضعیت را روی دیسک نگه دارید، در کامیت‌ها، یادداشت‌ها و یک [یادداشت تحویل](./handoff-artifact.md)، تا یک خلاصه هرگز تنها نسخه‌ی چیزی نباشد. اگر جلسه‌هایتان مرتب خودکار فشرده می‌شوند، کارها برای یک جلسه بیش از حد بزرگ‌اند؛ آن‌ها را به [تیکت‌ها](./ticket.md) بشکنید.
 
-- Claude Code: autocompact is on by default and warns as context fills; you can turn it off in `/config` and run `/compact` by hand.
-- Codex: the CLI compacts long threads automatically as well; a new task is often the cleaner move.
+## در ابزارها
 
-## In conversation
+- Claude Code: فشرده‌سازی خودکار به‌طور پیش‌فرض روشن است و با پر شدن زمینه هشدار می‌دهد؛ می‌توانید آن را در `/config` خاموش کنید و `/compact` را دستی اجرا کنید.
+- Codex: ابزار خط فرمان هم رشته‌های طولانی را خودکار فشرده می‌کند؛ یک کار تازه اغلب حرکت تمیزتری است.
 
-> “It was doing great and then suddenly started renaming things it had already renamed.”
+## در گفت‌وگو
+
+> «داشت عالی کار می‌کرد و یک‌دفعه شروع کرد چیزهایی را که قبلاً تغییر نام داده بود دوباره تغییر نام بدهد.»
 >
-> “Check the transcript. Did the context get compacted a few turns back?”
+> «متن گفت‌وگو را نگاه کن. چند نوبت پیش زمینه فشرده شد؟»
 >
-> “Yes, there's a notice I didn't see.”
+> «بله، اطلاعیه‌ای هست که ندیده بودم.»
 >
-> “That's your culprit. Next time compact yourself before it hits the threshold, and write the file list down first.”
+> «مقصر همین است. دفعه‌ی بعد پیش از رسیدن به آستانه خودت فشرده‌سازی کن، و اول فهرست فایل‌ها را بنویس.»
 
-**Related:** [Smart zone](./smart-zone.md) · [Attention degradation](./attention-degradation.md) · [Checkpoint](./checkpoint.md)
+**مرتبط:** [منطقه‌ی هوشمند](./smart-zone.md) · [افت توجه](./attention-degradation.md) · [نقطه‌ی بازگشت](./checkpoint.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/autocompact) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/autocompact.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

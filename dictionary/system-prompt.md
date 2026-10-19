@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# System prompt
+<div dir="rtl">
 
-> The standing instructions the harness puts in front of every request: who the agent is, what tools it has, how it should behave.
+# پرامپت سیستمی (system prompt)
 
-*§02 Sessions, Context Windows & Turns · also called: System message · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/system-prompt)*
+> دستورالعمل‌های ثابتی که هارنس جلوی هر درخواست می‌گذارد: ایجنت کیست، چه ابزارهایی دارد، چطور باید رفتار کند.
 
-The system prompt is the block of instructions the [harness](./harness.md) places at the top of every [model provider request](./model-provider-request.md), ahead of your messages. It tells the [model](./model.md) what role it is playing, which [tools](./tool.md) exist and how to call them, what the house rules are and, in coding agents, a good deal about how to work: when to ask, how to format edits, what to check before declaring a task done. You rarely see it, but the model sees it first on every single turn.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · نام‌های دیگر: System message · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/system-prompt)*
 
-Because it is resent each time and sits at the front of the [context](./context.md), the system prompt has outsized influence, and it explains a lot of behaviour that looks like the model's personality. Claude Code asking before a destructive command, Codex writing a summary at the end of a task, Cursor preferring small diffs: those are harness instructions. When two products on the same model behave differently, the system prompt is usually the first place the difference lives.
+پرامپت سیستمی بلوک دستورالعمل‌هایی است که [هارنس](./harness.md) در بالای هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md)، پیش از پیام‌های شما، قرار می‌دهد. به [مدل](./model.md) می‌گوید چه نقشی دارد، چه [ابزارهایی](./tool.md) وجود دارند و چطور صدایشان بزند، قواعد خانه چیست، و در ایجنت‌های کدنویسی، خیلی چیزها درباره‌ی شیوه‌ی کار: کی بپرسد، ویرایش‌ها را چطور قالب‌بندی کند، پیش از اعلام پایان کار چه چیزی را بررسی کند. به‌ندرت آن را می‌بینید، اما مدل در تک‌تک نوبت‌ها اول آن را می‌بیند.
 
-You do not edit the vendor's system prompt, but you extend it. Project instruction files such as [AGENTS.md](./agents-md.md) and CLAUDE.md are appended into the same request, which is why a rule written there feels 'built in' while a rule typed in chat fades as the session grows. Keep those files short and specific; they cost [input tokens](./input-tokens.md) on every request, and a bloated one dilutes its own rules.
+چون هر بار دوباره فرستاده می‌شود و در جلوی [زمینه](./context.md) نشسته، پرامپت سیستمی تأثیری فراتر از اندازه‌اش دارد، و خیلی از رفتارهایی را که شبیه شخصیت مدل به نظر می‌رسند توضیح می‌دهد. Claude Code که پیش از یک دستور مخرب اجازه می‌گیرد، Codex که در پایان کار خلاصه می‌نویسد، Cursor که دیف‌های کوچک را ترجیح می‌دهد: این‌ها دستورالعمل‌های هارنس‌اند. وقتی دو محصول روی یک مدل رفتار متفاوتی دارند، تفاوت معمولاً اول در پرامپت سیستمی است.
 
-## In the tools
+پرامپت سیستمی سازنده را ویرایش نمی‌کنید، اما گسترشش می‌دهید. فایل‌های دستورالعمل پروژه مثل [AGENTS.md](./agents-md.md) و CLAUDE.md به همان درخواست افزوده می‌شوند؛ برای همین قاعده‌ای که آن‌جا نوشته شده «داخلی» حس می‌شود در حالی که قاعده‌ای که در چت تایپ شده با رشد جلسه کم‌رنگ می‌شود. این فایل‌ها را کوتاه و مشخص نگه دارید؛ در هر درخواست [توکن‌های ورودی](./input-tokens.md) مصرف می‌کنند، و یک فایل پرحجم قاعده‌های خودش را رقیق می‌کند.
 
-- Claude Code: CLAUDE.md files (global, project and local) are folded into the system-level instructions on every request.
-- Anthropic API: the `system` parameter sets the prompt directly; a harness is just the layer that writes it for you.
+## در ابزارها
 
-## In conversation
+- Claude Code: فایل‌های CLAUDE.md (سراسری، پروژه و محلی) در هر درخواست درون دستورالعمل‌های سطح سیستم گنجانده می‌شوند.
+- API شرکت Anthropic: پارامتر `system` پرامپت را مستقیم تنظیم می‌کند؛ هارنس فقط لایه‌ای است که آن را برایتان می‌نویسد.
 
-> “Why does it always run the linter after editing, even when I didn't ask?”
+## در گفت‌وگو
+
+> «چرا همیشه بعد از ویرایش لینتر را اجرا می‌کند، حتی وقتی نخواسته‌ام؟»
 >
-> “That's in the system prompt, or in the CLAUDE.md that gets appended to it. Change the instruction there rather than fighting it every turn.”
+> «این در پرامپت سیستمی است، یا در CLAUDE.md که به آن افزوده می‌شود. به‌جای جنگیدن با آن در هر نوبت، دستورالعمل را همان‌جا عوض کن.»
 
-**Related:** [Prompt injection](./prompt-injection.md) · [Steering](./steering.md) · [Prefix cache](./prefix-cache.md)
+**مرتبط:** [تزریق پرامپت](./prompt-injection.md) · [هدایت](./steering.md) · [کش پیشوند](./prefix-cache.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Anatomy of a Prompt](https://vibecodeschool.com/learn/pe-02-anatomy-of-a-prompt)
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۵ · کالبدشناسی یک پرامپت](https://vibecodeschool.com/learn/pe-02-anatomy-of-a-prompt)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/system-prompt) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/system-prompt.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

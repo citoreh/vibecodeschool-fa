@@ -1,39 +1,45 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Context window
+<div dir="rtl">
 
-> The fixed-size buffer of tokens a model can read in one request; if something isn't in it, the model can't see it.
+# پنجره‌ی زمینه (context window)
 
-*§02 Sessions, Context Windows & Turns · also called: Context length, Window · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/context-window)*
+> حافظه‌ی موقت با اندازه‌ی ثابتی از توکن‌ها که مدل در یک درخواست می‌تواند بخواند؛ اگر چیزی در آن نباشد، مدل نمی‌تواند ببیندش.
 
-The context window is the maximum amount of text, measured in [tokens](./token.md), that a model can take in on a single [model provider request](./model-provider-request.md). The [system prompt](./system-prompt.md), every message in the session, every file the agent read and every command result it saw all have to fit inside it together. The size is a property of the model: current frontier models offer somewhere between roughly 200k and a million tokens, and the number moves with each release.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · نام‌های دیگر: Context length، Window · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/context-window)*
 
-The window fills faster than people expect. A coding session appends constantly: your prompts are small, but one `cat` of a large file or a noisy test run can consume tens of thousands of tokens in a single step. When the window is nearly full, the [harness](./harness.md) has to do something: [compact](./compaction.md) the history, drop old turns, or refuse to continue. Long before that point, quality usually slips, because the model is weighing more material than it can hold in focus (see [attention degradation](./attention-degradation.md)).
+پنجره‌ی زمینه حداکثر مقدار متنی است، سنجیده به [توکن](./token.md)، که یک مدل در یک [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) می‌تواند دریافت کند. [پرامپت سیستمی](./system-prompt.md)، همه‌ی پیام‌های جلسه، همه‌ی فایل‌هایی که ایجنت خوانده و همه‌ی نتیجه‌های دستورهایی که دیده، باید با هم در آن جا شوند. اندازه‌اش ویژگی خود مدل است: مدل‌های پیشرفته‌ی کنونی چیزی میان حدود ۲۰۰ هزار تا یک میلیون توکن ارائه می‌کنند، و این عدد با هر نسخه‌ی تازه جابه‌جا می‌شود.
 
-Treat the window as a budget rather than a limit. Load what the task needs and no more, prefer targeted reads over whole-repo dumps, and open a fresh [session](./session.md) for a new task instead of stacking it on the old one. A bigger window is not a licence to be careless about what goes in; it just moves the cliff further out.
+پنجره زودتر از آنچه مردم انتظار دارند پر می‌شود. یک جلسه‌ی کدنویسی مدام چیز اضافه می‌کند: پرامپت‌های شما کوچک‌اند، اما یک `cat` روی فایلی بزرگ یا یک اجرای پرسروصدای تست می‌تواند در یک گام ده‌ها هزار توکن مصرف کند. وقتی پنجره تقریباً پر است، [هارنس](./harness.md) باید کاری بکند: تاریخچه را [فشرده‌سازی](./compaction.md) کند، نوبت‌های قدیمی را دور بریزد، یا از ادامه سر باز بزند. خیلی پیش از آن نقطه، کیفیت معمولاً افت می‌کند، چون مدل دارد مطالبی بیش از آنچه می‌تواند در کانون توجه نگه دارد را می‌سنجد ([افت توجه](./attention-degradation.md) را ببینید).
 
-**Avoid:** Calling it 'memory'. The window is working space for the current session and is discarded when the session ends; anything you want remembered has to live in a file and be reloaded.
+پنجره را بودجه بدانید، نه سقف. آنچه کار لازم دارد و نه بیشتر را بارگذاری کنید، خواندن هدفمند را به ریختن کل مخزن ترجیح دهید، و برای یک کار تازه به‌جای انباشتن روی جلسه‌ی قبلی، یک [جلسه‌ی](./session.md) تازه باز کنید. پنجره‌ی بزرگ‌تر مجوز بی‌دقتی در آنچه واردش می‌شود نیست؛ فقط لبه‌ی پرتگاه را دورتر می‌برد.
 
-## In the tools
+**پرهیز کنید:** از «حافظه» نامیدنش. پنجره فضای کاری جلسه‌ی جاری است و با پایان جلسه دور ریخته می‌شود؛ هر چه می‌خواهید به یاد بماند باید در یک فایل زندگی کند و دوباره بارگذاری شود.
 
-- Claude Code: an indicator shows remaining context as the session grows; `/compact` frees space and `/clear` empties the window entirely.
-- Anthropic API: the window size is per model and covers both the input you send and the tokens the model generates in reply.
+## در ابزارها
 
-## In conversation
+- Claude Code: با رشد جلسه، یک نشانگر زمینه‌ی باقی‌مانده را نشان می‌دهد؛ `/compact` جا آزاد می‌کند و `/clear` پنجره را کاملاً خالی می‌کند.
+- API شرکت Anthropic: اندازه‌ی پنجره به مدل بستگی دارد و هم ورودی‌ای که می‌فرستید و هم توکن‌هایی که مدل در پاسخ تولید می‌کند را پوشش می‌دهد.
 
-> “The agent read every file in `src/` and now its answers are vague.”
+## در گفت‌وگو
+
+> «ایجنت همه‌ی فایل‌های `src/` را خواند و حالا پاسخ‌هایش مبهم شده‌اند.»
 >
-> “You spent most of the context window on files it didn't need. Clear, then point it at the two modules that matter.”
+> «بیشتر پنجره‌ی زمینه را صرف فایل‌هایی کردی که لازمشان نداشت. پاکش کن، بعد به دو ماژولی که مهم‌اند ارجاعش بده.»
 
-**Related:** [Input tokens](./input-tokens.md) · [Smart zone](./smart-zone.md) · [Clearing](./clearing.md)
+**مرتبط:** [توکن‌های ورودی](./input-tokens.md) · [منطقه‌ی هوشمند](./smart-zone.md) · [پاک‌سازی جلسه](./clearing.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
-- [Course 01 · The Agentic Loop](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۱ · چرخه‌ی ایجنتی](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/context-window) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/context-window.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

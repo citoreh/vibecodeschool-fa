@@ -1,41 +1,47 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Handoff artifact
+<div dir="rtl">
 
-> The written note that carries a task across a session boundary: what's done, what's left, what was decided, where to look.
+# یادداشت تحویل (handoff artifact)
 
-*§05 Handoffs · also called: Handoff doc, Handoff note · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/handoff-artifact)*
+> یادداشت نوشته‌ای که یک کار را از مرز جلسه عبور می‌دهد: چه انجام شده، چه مانده، چه تصمیمی گرفته شده، کجا را باید نگاه کرد.
 
-A handoff artifact is the document a [session](./session.md) leaves behind so the next session can continue the work. It is the concrete half of a [handoff](./handoff.md): a file in the repo, a pull request description, a comment on a [ticket](./ticket.md), or a note in a scratch directory. A good one answers four questions: what was done, what remains, what was decided and why, and which files, commands, or logs to read first.
+*§۰۵ تحویل کار · نام‌های دیگر: Handoff doc، Handoff note · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/handoff-artifact)*
 
-Weak artifacts are either too vague (“made progress on auth”) or too long, dumping the whole conversation into a file the next session has to wade through. Both fail for the same reason: the reader cannot tell what matters. And an artifact written from memory at the end of a tired session often records what the [agent](./agent.md) believes happened rather than what the diff shows.
+یادداشت تحویل سندی است که یک [جلسه](./session.md) به جا می‌گذارد تا جلسه‌ی بعدی بتواند کار را ادامه دهد. نیمه‌ی ملموسِ یک [تحویل کار](./handoff.md) است: فایلی در مخزن، توضیح یک درخواست ادغام، کامنتی روی یک [تیکت](./ticket.md)، یا یادداشتی در یک پوشه‌ی چرک‌نویس. یک یادداشت خوب به چهار پرسش پاسخ می‌دهد: چه انجام شده، چه مانده، چه تصمیمی گرفته شده و چرا، و اول کدام فایل‌ها، دستورها یا لاگ‌ها را باید خواند.
 
-Ask the agent to write the artifact while the session still has [context](./context.md), and have it cite [primary sources](./primary-source.md): file paths, test names, commit hashes. Keep it short enough to read in a minute. Store it where the next session will naturally find it, such as a `HANDOFF.md` next to the code or the PR body itself. The next session's first job is to read it, then verify the claims against the repo before building on them.
+یادداشت‌های ضعیف یا بیش از حد مبهم‌اند («در احراز هویت پیشرفت کردم») یا بیش از حد طولانی، و کل گفت‌وگو را در فایلی می‌ریزند که جلسه‌ی بعدی باید در آن دست‌وپا بزند. هر دو به یک دلیل شکست می‌خورند: خواننده نمی‌تواند تشخیص دهد چه چیزی مهم است. و یادداشتی که در پایان یک جلسه‌ی خسته از روی حافظه نوشته شود، اغلب آنچه [ایجنت](./agent.md) باور دارد اتفاق افتاده را ثبت می‌کند، نه آنچه دیف نشان می‌دهد.
 
-## In the tools
+از ایجنت بخواهید یادداشت را تا وقتی جلسه هنوز [زمینه](./context.md) دارد بنویسد، و بگویید به [منابع دست‌اول](./primary-source.md) ارجاع دهد: مسیر فایل‌ها، نام تست‌ها، شناسه‌ی کامیت‌ها. آن‌قدر کوتاه نگهش دارید که در یک دقیقه خوانده شود. جایی نگهش دارید که جلسه‌ی بعدی طبیعتاً پیدایش کند، مثل یک `HANDOFF.md` کنار کد یا متن خود درخواست ادغام. اولین کار جلسه‌ی بعد خواندن آن است، و بعد تطبیق ادعاهایش با مخزن پیش از ساختن روی آن‌ها.
 
-- Claude Code: have the agent write the note to a file, then `/clear`; the next session reads it with one Read call.
-- Antigravity: the walkthrough and task list an agent produces double as the handoff artifact for review.
-- Codex: the PR description Codex writes for a cloud task is the artifact; tighten it before you merge.
+## در ابزارها
 
-## In conversation
+- Claude Code: بگویید ایجنت یادداشت را در یک فایل بنویسد، بعد `/clear`؛ جلسه‌ی بعد با یک فراخوانی Read آن را می‌خواند.
+- Antigravity: گزارش گام‌به‌گام و فهرست کارهایی که یک ایجنت تولید می‌کند، هم‌زمان یادداشت تحویل برای بازبینی هم هستند.
+- Codex: توضیحی که Codex برای درخواست ادغامِ یک کار ابری می‌نویسد همان یادداشت است؛ پیش از ادغام دقیق‌ترش کنید.
 
-> “Before you stop, write the handoff.”
+## در گفت‌وگو
+
+> «پیش از این‌که دست نگه داری، یادداشت تحویل را بنویس.»
 >
-> “Sure. What goes in it?”
+> «حتماً. چه چیزی در آن بیاید؟»
 >
-> “Done, remaining, decisions with reasons, and the three files to read first. Paths, not descriptions.”
+> «انجام‌شده‌ها، باقی‌مانده‌ها، تصمیم‌ها همراه با دلیل، و سه فایلی که اول باید خوانده شوند. مسیرها، نه توصیف‌ها.»
 >
-> “Committed as HANDOFF.md. Tests green as of that commit.”
+> «با نام HANDOFF.md کامیت شد. تا همان کامیت تست‌ها سبزند.»
 
-**Related:** [Spec](./spec.md) · [Compaction](./compaction.md) · [Checkpoint](./checkpoint.md)
+**مرتبط:** [مشخصات](./spec.md) · [فشرده‌سازی](./compaction.md) · [نقطه‌ی بازگشت](./checkpoint.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Git Operations and Commits](https://vibecodeschool.com/learn/cc-09-git-and-commits)
+- [دوره‌ی ۰۱ · عملیات Git و کامیت‌ها](https://vibecodeschool.com/learn/cc-09-git-and-commits)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/handoff-artifact) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/handoff-artifact.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

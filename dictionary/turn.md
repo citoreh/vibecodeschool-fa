@@ -1,36 +1,42 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Turn
+<div dir="rtl">
 
-> Your message and all the work the agent does before it hands control back to you.
+# نوبت (turn)
 
-*§02 Sessions, Context Windows & Turns · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/turn)*
+> پیام شما و همه‌ی کاری که ایجنت پیش از برگرداندن کنترل به شما انجام می‌دهد.
 
-A turn is the unit of back-and-forth in a [session](./session.md): you say something, the [agent](./agent.md) works until it has nothing more to do without you, and control comes back. From your side that is one exchange. Underneath, a single turn can contain many [model provider requests](./model-provider-request.md), because after every [tool call](./tool-call.md) the harness feeds the result to the model and asks what comes next. A turn that reads eight files and runs the tests twice is a dozen round trips billed as one conversation step.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/turn)*
 
-This is the mismatch behind surprising bills and slow responses. The cost of a turn is not the length of your message; it is how many tool calls the agent needs and how much [context](./context.md) gets resent on each of them. Late in a long session every request carries the whole transcript, so the same simple turn costs several times what it cost at the start.
+نوبت واحد رفت‌وبرگشت در یک [جلسه](./session.md) است: شما چیزی می‌گویید، [ایجنت](./agent.md) کار می‌کند تا جایی که بدون شما کار دیگری نماند، و کنترل برمی‌گردد. از سمت شما این یک تبادل است. در زیر، یک نوبت می‌تواند [درخواست‌های به ارائه‌دهنده‌ی مدل](./model-provider-request.md) زیادی را در خود داشته باشد، چون پس از هر [فراخوانی ابزار](./tool-call.md)، هارنس نتیجه را به مدل می‌دهد و می‌پرسد بعد چه. نوبتی که هشت فایل می‌خواند و تست‌ها را دو بار اجرا می‌کند، ده‌دوازده رفت‌وبرگشت است که به‌عنوان یک گام گفت‌وگو حساب می‌شود.
 
-Shorter, more decisive turns tend to work better than sprawling ones. Give the agent a bounded task, let the turn run, review, then take the next turn with what you learned. If a turn is heading somewhere wrong, interrupt it (see [steering](./steering.md)) rather than letting it complete a plan you already know is off.
+همین ناهمخوانی پشت صورت‌حساب‌های غافلگیرکننده و پاسخ‌های کند است. هزینه‌ی یک نوبت طول پیام شما نیست؛ این است که ایجنت به چند فراخوانی ابزار نیاز دارد و در هر کدام چقدر [زمینه](./context.md) دوباره فرستاده می‌شود. در اواخر یک جلسه‌ی طولانی، هر درخواست کل متن گفت‌وگو را با خود می‌برد، پس همان نوبت ساده چند برابر ابتدای جلسه هزینه دارد.
 
-## In the tools
+نوبت‌های کوتاه‌تر و قاطع‌تر معمولاً از نوبت‌های پراکنده بهتر جواب می‌دهند. به ایجنت کاری محدود بدهید، بگذارید نوبت اجرا شود، بازبینی کنید، بعد با آنچه یاد گرفتید نوبت بعدی را بردارید. اگر نوبتی دارد به جای اشتباهی می‌رود، قطعش کنید ([هدایت](./steering.md) را ببینید)، به‌جای این‌که بگذارید برنامه‌ای را تمام کند که می‌دانید غلط است.
 
-- Claude Code: a turn ends when the agent stops and the prompt returns; Escape interrupts a running turn.
-- Antigravity: the manager view shows each agent's turns as steps you can inspect and approve individually.
+## در ابزارها
 
-## In conversation
+- Claude Code: یک نوبت وقتی تمام می‌شود که ایجنت می‌ایستد و خط فرمان برمی‌گردد؛ کلید Escape نوبت در حال اجرا را قطع می‌کند.
+- Antigravity: نمای مدیر، نوبت‌های هر ایجنت را به‌صورت گام‌هایی نشان می‌دهد که می‌توانید تک‌تک بررسی و تأییدشان کنید.
 
-> “That one turn took four minutes and cost more than my whole morning.”
+## در گفت‌وگو
+
+> «همان یک نوبت چهار دقیقه طول کشید و از کل صبحم گران‌تر شد.»
 >
-> “It made about thirty tool calls, and each one resends the context. Late-session turns are expensive; compact or start fresh.”
+> «حدود سی فراخوانی ابزار انجام داد، و هر کدام زمینه را دوباره می‌فرستد. نوبت‌های اواخر جلسه گران‌اند؛ فشرده‌سازی کن یا از نو شروع کن.»
 
-**Related:** [Output tokens](./output-tokens.md) · [Human-in-the-loop](./human-in-the-loop.md) · [Automated check](./automated-check.md)
+**مرتبط:** [توکن‌های خروجی](./output-tokens.md) · [انسان در حلقه](./human-in-the-loop.md) · [بررسی خودکار](./automated-check.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · The Agentic Loop](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
+- [دوره‌ی ۰۱ · چرخه‌ی ایجنتی](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/turn) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/turn.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

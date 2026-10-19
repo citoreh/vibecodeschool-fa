@@ -1,40 +1,46 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Secondary source
+<div dir="rtl">
 
-> An account of the thing rather than the thing itself: a summary, a paraphrase, a compaction. Useful, but one step removed from the truth.
+# منبع دست‌دوم (secondary source)
 
-*§05 Handoffs · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/secondary-source)*
+> روایتی از چیز، نه خود آن: یک خلاصه، یک بازگویی، یک فشرده‌سازی. مفید است، اما یک قدم از حقیقت فاصله دارد.
 
-A secondary source is a description of something rather than the something itself. A [handoff artifact](./handoff-artifact.md), a [compaction](./compaction.md) summary, a comment on a [ticket](./ticket.md), your own explanation of how the code works, or the [agent](./agent.md)'s recollection from earlier in the [session](./session.md) all count. Each one was accurate at some moment, through someone's eyes, at some level of detail. None of them is the code.
+*§۰۵ تحویل کار · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/secondary-source)*
 
-The problem is not that secondary sources are wrong, it is that they are quietly incomplete. A summary keeps what seemed important when it was written. If the task changes, the missing detail is often exactly what you now need, and nothing in the summary signals that it was dropped. Agents treat a clean summary with the same confidence as a file they just read, so the error stays invisible until something breaks.
+منبع دست‌دوم توصیف یک چیز است، نه خود آن چیز. یک [یادداشت تحویل](./handoff-artifact.md)، خلاصه‌ی یک [فشرده‌سازی](./compaction.md)، کامنتی روی یک [تیکت](./ticket.md)، توضیح خود شما از این‌که کد چطور کار می‌کند، یا یادآوری [ایجنت](./agent.md) از اوایل [جلسه](./session.md)، همه منبع دست‌دوم‌اند. هر کدام در لحظه‌ای، از چشم کسی و در سطحی از جزئیات درست بوده‌اند. هیچ‌کدام خود کد نیستند.
 
-Use secondary sources for orientation and [primary sources](./primary-source.md) for decisions. A handoff note is a good map of where to look; it is a poor substitute for looking. Before the agent changes code based on a summary, have it open the files the summary describes. When you write a handoff yourself, include paths and commands so the next reader can go straight to the source.
+مشکل این نیست که منابع دست‌دوم غلط‌اند؛ این است که بی‌صدا ناقص‌اند. یک خلاصه چیزی را نگه می‌دارد که هنگام نوشتنش مهم به نظر می‌رسید. اگر کار عوض شود، جزئیات جاافتاده اغلب دقیقاً همان چیزی است که حالا لازم دارید، و هیچ چیزی در خلاصه نشان نمی‌دهد که چیزی حذف شده. ایجنت‌ها با یک خلاصه‌ی تمیز با همان اطمینانی رفتار می‌کنند که با فایلی که همین الان خوانده‌اند، پس خطا تا وقتی چیزی نشکند نامرئی می‌ماند.
 
-## In the tools
+از منابع دست‌دوم برای جهت‌یابی استفاده کنید و از [منابع دست‌اول](./primary-source.md) برای تصمیم‌گیری. یک یادداشت تحویل نقشه‌ی خوبی است از این‌که کجا را نگاه کنید؛ جایگزین بدی است برای نگاه کردن. پیش از آن‌که ایجنت بر اساس یک خلاصه کد را تغییر دهد، بگویید فایل‌هایی را که خلاصه توصیف می‌کند باز کند. وقتی خودتان یادداشت تحویل می‌نویسید، مسیرها و دستورها را هم بگذارید تا خواننده‌ی بعدی مستقیم سراغ منبع برود.
 
-- Claude Code: the summary left behind by `/compact` is a secondary source; ask it to re-read key files after compacting.
-- Most tools: earlier turns in a chat count too, since the model is reading its own past output, not the current state.
+## در ابزارها
 
-## In conversation
+- Claude Code: خلاصه‌ای که `/compact` به جا می‌گذارد یک منبع دست‌دوم است؛ پس از فشرده‌سازی بخواهید فایل‌های کلیدی را دوباره بخواند.
+- بیشتر ابزارها: نوبت‌های قبلی یک گفت‌وگو هم حساب می‌شوند، چون مدل دارد خروجی گذشته‌ی خودش را می‌خواند، نه وضعیت فعلی را.
 
-> “The handoff said the auth middleware was already migrated, so I had it build on that.”
+## در گفت‌وگو
+
+> «یادداشت تحویل می‌گفت میان‌افزار احراز هویت قبلاً مهاجرت داده شده، پس گفتم روی آن بسازد.»
 >
-> “Was it? The handoff is a secondary source. Did anyone check the file?”
+> «داده شده بود؟ یادداشت تحویل منبع دست‌دوم است. کسی فایل را بررسی کرد؟»
 >
-> “No. Half of it is still on the old API.”
+> «نه. نصفش هنوز روی API قدیمی است.»
 >
-> “There it is. Orient with the note, decide from the code.”
+> «همین است. با یادداشت جهت پیدا کن، با کد تصمیم بگیر.»
 
-**Related:** [Autocompact](./autocompact.md) · [Hallucination](./hallucination.md) · [Contextual knowledge](./contextual-knowledge.md)
+**مرتبط:** [فشرده‌سازی خودکار](./autocompact.md) · [توهم](./hallucination.md) · [دانش زمینه‌ای](./contextual-knowledge.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/secondary-source) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/secondary-source.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

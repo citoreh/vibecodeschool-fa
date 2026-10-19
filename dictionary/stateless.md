@@ -1,36 +1,42 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Stateless
+<div dir="rtl">
 
-> Nothing carries over on its own: each model request starts from zero, and each new session does too.
+# بی‌حالت (stateless)
 
-*§02 Sessions, Context Windows & Turns · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/stateless)*
+> هیچ چیز خودبه‌خود منتقل نمی‌شود: هر درخواست به مدل از صفر شروع می‌شود، و هر جلسه‌ی تازه هم همین‌طور.
 
-A stateless system keeps nothing between calls. The model behind your coding agent is stateless in the strictest sense: every request it answers is a fresh computation over whatever text arrives with it, and when the response is finished, nothing is retained. The 'conversation' you see in Claude Code or Codex is not the model remembering. It is the [harness](./harness.md) resending the whole transcript on every [model provider request](./model-provider-request.md).
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/stateless)*
 
-The same is true one level up. By default an [agent](./agent.md) is stateless across [sessions](./session.md): close the terminal and the instructions you gave, the files it inspected and the decisions you made together are gone. The felt version is opening a new session, asking it to 'continue', and watching it re-explore the repo from scratch or break a rule you set an hour ago.
+سیستم بی‌حالت میان فراخوانی‌ها چیزی نگه نمی‌دارد. مدلی که پشت ایجنت کدنویسی شماست به سخت‌گیرانه‌ترین معنا بی‌حالت است: هر درخواستی که پاسخ می‌دهد محاسبه‌ای تازه روی همان متنی است که همراهش می‌رسد، و وقتی پاسخ تمام شد، هیچ چیز نگه داشته نمی‌شود. «گفت‌وگو»یی که در Claude Code یا Codex می‌بینید، به یاد آوردنِ مدل نیست. [هارنس](./harness.md) است که در هر [درخواست به ارائه‌دهنده‌ی مدل](./model-provider-request.md) کل متن گفت‌وگو را دوباره می‌فرستد.
 
-Nothing is broken here; this is the baseline you build on. Anything you want to survive has to be written down where the next session will read it: an [AGENTS.md](./agents-md.md) file, a [memory system](./memory-system.md), or a [handoff artifact](./handoff-artifact.md). Treat the model as an excellent colleague with total amnesia, and keep the durable state in files.
+یک سطح بالاتر هم همین صادق است. یک [ایجنت](./agent.md) به‌طور پیش‌فرض میان [جلسه‌ها](./session.md) بی‌حالت است: ترمینال را ببندید و دستورهایی که داده بودید، فایل‌هایی که بررسی کرده بود و تصمیم‌هایی که با هم گرفته بودید از بین می‌روند. نسخه‌ی حس‌شدنی‌اش این است: جلسه‌ی تازه‌ای باز می‌کنید، می‌گویید «ادامه بده»، و می‌بینید مخزن را از صفر دوباره می‌کاود یا قاعده‌ای را که یک ساعت پیش گذاشته بودید می‌شکند.
 
-## In the tools
+هیچ چیز خراب نیست؛ این خط پایه‌ای است که روی آن می‌سازید. هر چیزی که می‌خواهید بماند باید جایی نوشته شود که جلسه‌ی بعدی بخواندش: یک فایل [AGENTS.md](./agents-md.md)، یک [سیستم حافظه](./memory-system.md)، یا یک [یادداشت تحویل](./handoff-artifact.md). مدل را همکاری عالی با فراموشی کامل بدانید، و وضعیت ماندگار را در فایل‌ها نگه دارید.
 
-- Claude Code: the transcript is resent on every request; `claude --continue` or `--resume` reloads a saved transcript rather than restoring any model memory.
-- Most tools: 'memory' features are files or notes the harness re-injects into context; the model itself never remembers anything.
+## در ابزارها
 
-## In conversation
+- Claude Code: متن گفت‌وگو در هر درخواست دوباره فرستاده می‌شود؛ `claude --continue` یا `--resume` یک متن ذخیره‌شده را دوباره بار می‌کند، نه این‌که حافظه‌ای از مدل را بازگرداند.
+- بیشتر ابزارها: قابلیت‌های «حافظه» فایل‌ها یا یادداشت‌هایی‌اند که هارنس دوباره در زمینه تزریق می‌کند؛ خود مدل هرگز چیزی را به یاد نمی‌آورد.
 
-> “It fixed the linting rule yesterday. Why is it breaking it again today?”
+## در گفت‌وگو
+
+> «دیروز قاعده‌ی لینت را درست کرد. چرا امروز دوباره دارد می‌شکندش؟»
 >
-> “New session, new context. The model is stateless, and so is the session unless you write the rule into CLAUDE.md.”
+> «جلسه‌ی تازه، زمینه‌ی تازه. مدل بی‌حالت است، و جلسه هم همین‌طور، مگر این‌که قاعده را در CLAUDE.md بنویسی.»
 
-**Related:** [Stateful](./stateful.md) · [Context window](./context-window.md) · [Clearing](./clearing.md)
+**مرتبط:** [حالت‌مند](./stateful.md) · [پنجره‌ی زمینه](./context-window.md) · [پاک‌سازی جلسه](./clearing.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/stateless) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/stateless.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

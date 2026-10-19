@@ -1,38 +1,44 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Steering
+<div dir="rtl">
 
-> Nudging a running agent back on course, mid-turn or between turns, before a wrong call becomes the foundation for everything after it.
+# هدایت (steering)
 
-*§02 Sessions, Context Windows & Turns · also called: Interrupting, Redirecting, Course-correcting · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/steering)*
+> برگرداندن ایجنتی که در حال کار است به مسیر، وسط یک نوبت یا میان نوبت‌ها، پیش از آن‌که یک تصمیم غلط پایه‌ی همه‌ی کارهای بعدی شود.
 
-Steering is the act of correcting an [agent](./agent.md) while the work is in flight. It can happen mid-[turn](./turn.md) (in Claude Code, pressing Escape stops the current action and lets you type; most harnesses let you queue a message while the agent is still working) or between turns, with a short instruction that changes direction: stop, use the existing helper instead, that's the wrong file. The agent keeps its [context](./context.md) and continues from the correction rather than from scratch.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · نام‌های دیگر: Interrupting، Redirecting، Course-correcting · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/steering)*
 
-Timing decides the cost. An agent that makes a bad call in minute one and is redirected in minute two loses a minute. The same bad call left alone becomes the assumption every later edit builds on, and by the time you notice, unwinding it means reverting a dozen files and re-explaining the goal. This is why watching the first few actions of a task closely, then relaxing, beats checking in evenly throughout.
+هدایت یعنی اصلاح یک [ایجنت](./agent.md) در حالی که کار در جریان است. می‌تواند وسط یک [نوبت](./turn.md) اتفاق بیفتد (در Claude Code فشار دادن Escape اقدام جاری را متوقف می‌کند و اجازه می‌دهد تایپ کنید؛ بیشتر هارنس‌ها اجازه می‌دهند در حالی که ایجنت هنوز کار می‌کند پیامی را در صف بگذارید) یا میان نوبت‌ها، با دستوری کوتاه که جهت را عوض می‌کند: بایست، به‌جایش از تابع کمکی موجود استفاده کن، این فایل اشتباه است. ایجنت [زمینه‌اش](./context.md) را نگه می‌دارد و از همان اصلاح ادامه می‌دهد، نه از صفر.
 
-Steer with the smallest correction that fully removes the ambiguity. Name the file, paste the error, restate the goal in one line; long explanations mid-task add context without adding clarity. When the transcript has accumulated several corrections and the agent is still drifting, steering has stopped paying: [clearing](./clearing.md) and restarting with a better brief, or a [handoff artifact](./handoff-artifact.md) that captures what you learned, is cheaper than a fourth nudge.
+زمان‌بندی هزینه را تعیین می‌کند. ایجنتی که در دقیقه‌ی اول تصمیم بدی می‌گیرد و در دقیقه‌ی دوم مسیرش عوض می‌شود یک دقیقه از دست می‌دهد. همان تصمیم بد اگر رها شود، فرضی می‌شود که همه‌ی ویرایش‌های بعدی بر آن ساخته می‌شوند، و تا متوجه شوید، باز کردنش یعنی برگرداندن ده‌دوازده فایل و توضیح دوباره‌ی هدف. برای همین دقیق تماشا کردن چند اقدام اول یک کار و بعد آسوده‌تر شدن، از سر زدن یکنواخت در تمام طول کار بهتر است.
 
-## In the tools
+با کوچک‌ترین اصلاحی که ابهام را کامل برطرف کند هدایت کنید. نام فایل را بگویید، خطا را بچسبانید، هدف را در یک خط دوباره بگویید؛ توضیح‌های طولانی وسط کار زمینه اضافه می‌کنند بی‌آن‌که روشنی اضافه کنند. وقتی متن گفت‌وگو چند اصلاح را انباشته و ایجنت هنوز منحرف می‌شود، هدایت دیگر ارزشش را ندارد: [پاک‌سازی جلسه](./clearing.md) و شروع دوباره با شرح کاری بهتر، یا یک [یادداشت تحویل](./handoff-artifact.md) که آنچه یاد گرفتید را ثبت کند، از تلنگر چهارم ارزان‌تر است.
 
-- Claude Code: Escape interrupts the current action; typing while it works queues your message for the next step; Escape twice opens `/rewind` to restore an earlier checkpoint if a correction comes too late.
-- Antigravity: agents can be paused, redirected or cancelled from the manager view without losing their task history.
-- Cursor: stopping a generation keeps the partial changes for you to accept or reject before continuing.
+## در ابزارها
 
-## In conversation
+- Claude Code: Escape اقدام جاری را قطع می‌کند؛ تایپ کردن در حالی که کار می‌کند پیام شما را برای گام بعد در صف می‌گذارد؛ دو بار Escape، `/rewind` را باز می‌کند تا اگر اصلاح دیر رسید، یک نقطه‌ی بازگشت قبلی را برگردانید.
+- Antigravity: ایجنت‌ها را می‌توان از نمای مدیر متوقف کرد، تغییر مسیر داد یا لغو کرد، بی‌آن‌که تاریخچه‌ی کارشان از دست برود.
+- Cursor: متوقف کردن یک تولید، تغییرات ناتمام را نگه می‌دارد تا پیش از ادامه بپذیریدشان یا ردشان کنید.
 
-> “It's rewriting the whole auth module and I only asked for the logout bug.”
+## در گفت‌وگو
+
+> «دارد کل ماژول احراز هویت را بازنویسی می‌کند و من فقط باگ خروج را خواسته بودم.»
 >
-> “Hit Escape and steer it: 'Stop. Only touch `logout()`. Leave the rest.' Don't wait for it to finish the rewrite.”
+> «Escape را بزن و هدایتش کن: «بایست. فقط به `logout()` دست بزن. بقیه را رها کن.» منتظر نمان بازنویسی را تمام کند.»
 
-**Related:** [Human-in-the-loop](./human-in-the-loop.md) · [Checkpoint](./checkpoint.md) · [Plan mode](./plan-mode.md)
+**مرتبط:** [انسان در حلقه](./human-in-the-loop.md) · [نقطه‌ی بازگشت](./checkpoint.md) · [حالت برنامه‌ریزی](./plan-mode.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
-- [Course 03 · Stopping, Steering, and Retrying](https://vibecodeschool.com/learn/ag-14-cancellation-retries)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۳ · متوقف کردن، هدایت و تلاش دوباره](https://vibecodeschool.com/learn/ag-14-cancellation-retries)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/steering) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/steering.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

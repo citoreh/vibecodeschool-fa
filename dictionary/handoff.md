@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Handoff
+<div dir="rtl">
 
-> Ending one session and starting another on the same task, carrying the state forward in writing rather than in the window.
+# تحویل کار (handoff)
 
-*§05 Handoffs · also called: Hand-off, Session handoff · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/handoff)*
+> پایان دادن به یک جلسه و شروع جلسه‌ای دیگر روی همان کار، با انتقال وضعیت به‌صورت نوشته، نه درون پنجره.
 
-A handoff moves a task from one [session](./session.md) to the next without losing the plot. The old session ends, whether by [clearing](./clearing.md), [compaction](./compaction.md), or simply closing the terminal, and a new one picks the work up. Since the model is [stateless](./stateless.md) between sessions, nothing crosses that gap on its own. Anything the next session should know must be written down where it will look: a file in the repo, a commit message, a note on the [ticket](./ticket.md).
+*§۰۵ تحویل کار · نام‌های دیگر: Hand-off، Session handoff · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/handoff)*
 
-The failure looks like déjà vu. The new session re-investigates the codebase, rediscovers the constraint you settled an hour ago, and sometimes decides differently. Or it confidently continues from a summary that dropped the one detail that mattered, such as the reason you rejected the obvious approach. A handoff that lives only in your head is not a handoff.
+تحویل کار یک کار را از یک [جلسه](./session.md) به جلسه‌ی بعد منتقل می‌کند بی‌آن‌که رشته‌ی ماجرا گم شود. جلسه‌ی قدیمی تمام می‌شود، چه با [پاک‌سازی](./clearing.md)، چه با [فشرده‌سازی](./compaction.md)، چه فقط با بستن ترمینال، و یک جلسه‌ی تازه کار را دست می‌گیرد. چون مدل میان جلسه‌ها [بی‌حالت](./stateless.md) است، هیچ چیز خودبه‌خود از این شکاف عبور نمی‌کند. هر چیزی که جلسه‌ی بعدی باید بداند باید جایی نوشته شود که آن‌جا را نگاه می‌کند: فایلی در مخزن، یک پیام کامیت، یادداشتی روی [تیکت](./ticket.md).
 
-Do it on purpose. Before you leave a session, ask the [agent](./agent.md) to write a [handoff artifact](./handoff-artifact.md): what was done, what remains, what was decided and why, and which files to read first. Keep it grounded in [primary sources](./primary-source.md) like the actual diff and the test output, not the agent's memory of them. The next session starts by reading that note, checks it against the repo, and only then begins.
+شکست شبیه دژاوو است. جلسه‌ی تازه دوباره کدها را می‌کاود، قیدی را که یک ساعت پیش حل کرده بودید از نو کشف می‌کند، و گاهی تصمیم دیگری می‌گیرد. یا با اعتمادبه‌نفس از روی خلاصه‌ای ادامه می‌دهد که همان یک جزئیات مهم را جا انداخته، مثلاً دلیل این‌که راه‌حل آشکار را رد کرده بودید. تحویلی که فقط در ذهن شما زندگی می‌کند، تحویل نیست.
 
-## In the tools
+آگاهانه انجامش دهید. پیش از ترک یک جلسه، از [ایجنت](./agent.md) بخواهید یک [یادداشت تحویل](./handoff-artifact.md) بنویسد: چه انجام شده، چه مانده، چه تصمیمی گرفته شده و چرا، و اول کدام فایل‌ها را بخواند. آن را بر [منابع دست‌اول](./primary-source.md) مثل دیف واقعی و خروجی تست تکیه دهید، نه بر حافظه‌ی ایجنت از آن‌ها. جلسه‌ی بعدی با خواندن همان یادداشت شروع می‌کند، آن را با مخزن تطبیق می‌دهد، و تنها پس از آن کار را آغاز می‌کند.
 
-- Claude Code: ask for a HANDOFF.md before you `/clear`, or use `/compact` with instructions about what to keep.
-- Antigravity: task lists and walkthroughs are artifacts the next run can read instead of the chat.
-- Codex: a cloud task ends in a pull request, which is itself a handoff back to you.
+## در ابزارها
 
-## In conversation
+- Claude Code: پیش از `/clear` یک HANDOFF.md بخواهید، یا از `/compact` با دستورهایی درباره‌ی این‌که چه چیزی نگه داشته شود استفاده کنید.
+- Antigravity: فهرست کارها و گزارش‌های گام‌به‌گام آرتیفکت‌هایی‌اند که اجرای بعدی می‌تواند به‌جای گفت‌وگو بخواند.
+- Codex: یک کار ابری با یک درخواست ادغام تمام می‌شود، که خودش تحویلی دوباره به شماست.
 
-> “I'm out of context and the migration is half done. Do I just keep going?”
+## در گفت‌وگو
+
+> «زمینه‌ام تمام شده و مهاجرت نصفه مانده. همین‌طور ادامه بدهم؟»
 >
-> “No. Have it write a handoff: what's done, what's left, and the decisions. Commit it. Then clear and read it in.”
+> «نه. بگو یک یادداشت تحویل بنویسد: چه انجام شده، چه مانده، و تصمیم‌ها. کامیتش کن. بعد پاک کن و بخوانش.»
 >
-> “Feels like overhead.”
+> «حس سربار دارد.»
 >
-> “Ten minutes of overhead beats an hour of the next session re-learning the schema.”
+> «ده دقیقه سربار بهتر از یک ساعتی است که جلسه‌ی بعد صرف دوباره یاد گرفتن ساختار پایگاه‌داده کند.»
 
-**Related:** [Spec](./spec.md) · [Checkpoint](./checkpoint.md) · [Smart zone](./smart-zone.md)
+**مرتبط:** [مشخصات](./spec.md) · [نقطه‌ی بازگشت](./checkpoint.md) · [منطقه‌ی هوشمند](./smart-zone.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · Plans and Task Lists](https://vibecodeschool.com/learn/ag-06-planner-agents)
-- [Course 01 · Iterative Refinement](https://vibecodeschool.com/learn/cc-19-iterative-refinement)
+- [دوره‌ی ۰۳ · برنامه‌ها و فهرست کارها](https://vibecodeschool.com/learn/ag-06-planner-agents)
+- [دوره‌ی ۰۱ · بهبود تکرارشونده](https://vibecodeschool.com/learn/cc-19-iterative-refinement)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/handoff) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/handoff.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

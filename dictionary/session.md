@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Session
+<div dir="rtl">
 
-> One continuous run with an agent, from an empty context to the moment you clear it, close it, or hand its work off.
+# جلسه (session)
 
-*§02 Sessions, Context Windows & Turns · also called: Conversation, Thread · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/session)*
+> یک اجرای پیوسته با یک ایجنت، از زمینه‌ای خالی تا لحظه‌ای که پاکش می‌کنید، می‌بندیدش، یا کارش را تحویل می‌دهید.
 
-A session is a single stretch of work with an [agent](./agent.md), held together by one growing transcript. It begins with an empty [context window](./context-window.md) (apart from the [system prompt](./system-prompt.md) and any project files the [harness](./harness.md) loads), accumulates every [turn](./turn.md) you and the agent take, and ends when you clear it, close it, or it gets folded into a fresh one by [compaction](./compaction.md). Everything inside a session is visible to the model; everything outside it is not.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · نام‌های دیگر: Conversation، Thread · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/session)*
 
-Sessions have a shape. Early on the agent is sharp, with a small context and clear instructions. As the transcript grows with file reads, test output and half-abandoned plans, the same model gets vaguer and starts contradicting itself. The cheapest fix for many 'it got worse' moments is not a better prompt but a new session with a tight brief.
+جلسه یک بازه‌ی کاری واحد با یک [ایجنت](./agent.md) است که با یک متن گفت‌وگوی رو‌به‌رشد سرپا می‌ماند. با یک [پنجره‌ی زمینه‌ی](./context-window.md) خالی شروع می‌شود (جز [پرامپت سیستمی](./system-prompt.md) و فایل‌های پروژه‌ای که [هارنس](./harness.md) بارگذاری می‌کند)، هر [نوبت](./turn.md) شما و ایجنت را انباشته می‌کند، و وقتی پاکش کنید، ببندیدش، یا با [فشرده‌سازی](./compaction.md) در جلسه‌ای تازه جمع شود، تمام می‌شود. هر چیزی درون جلسه برای مدل دیدنی است؛ هر چیزی بیرون آن نه.
 
-So plan sessions as units of work. One task per session where you can; a clean [handoff](./handoff.md) between sessions when a task is bigger than one; and a written record of anything the next session must know, because the transcript itself will not follow you. Resuming an old session is handy for picking up exactly where you stopped, but it picks up all of the clutter too.
+جلسه‌ها شکل دارند. در ابتدا ایجنت تیز است، با زمینه‌ای کوچک و دستورهایی روشن. وقتی متن گفت‌وگو با خواندن فایل‌ها، خروجی تست‌ها و برنامه‌های نیمه‌رهاشده بزرگ می‌شود، همان مدل مبهم‌تر می‌شود و شروع به تناقض‌گویی می‌کند. ارزان‌ترین راه‌حل برای خیلی از لحظه‌های «بدتر شد» پرامپت بهتر نیست، بلکه یک جلسه‌ی تازه با شرح کاری فشرده است.
 
-## In the tools
+پس جلسه‌ها را به‌عنوان واحدهای کار برنامه‌ریزی کنید. تا جایی که می‌شود یک کار در هر جلسه؛ یک [تحویل کارِ](./handoff.md) تمیز میان جلسه‌ها وقتی کار از یک جلسه بزرگ‌تر است؛ و یک ثبت نوشتاری از هر چیزی که جلسه‌ی بعدی باید بداند، چون خود متن گفت‌وگو دنبالتان نمی‌آید. از سر گرفتن یک جلسه‌ی قدیمی برای ادامه دادن دقیقاً از همان جا که ایستاده بودید مفید است، اما همه‌ی آشفتگی‌اش را هم با خود می‌آورد.
 
-- Claude Code: `/clear` starts a new session in place; `claude --continue` and `claude --resume` reopen earlier ones from disk.
-- Codex: each cloud task runs as its own session in an isolated container; the CLI keeps a local transcript per run.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/clear` همان‌جا یک جلسه‌ی تازه شروع می‌کند؛ `claude --continue` و `claude --resume` جلسه‌های قبلی را از روی دیسک دوباره باز می‌کنند.
+- Codex: هر کار ابری به‌عنوان جلسه‌ی مستقلی در یک کانتینر ایزوله اجرا می‌شود؛ ابزار خط فرمان برای هر اجرا یک متن محلی نگه می‌دارد.
 
-> “Should I keep this session going for the API work too, or start over?”
+## در گفت‌وگو
+
+> «برای کار API هم همین جلسه را ادامه بدهم یا از نو شروع کنم؟»
 >
-> “Start over. You've been in this session for three hours and it's mostly test output now. Write the plan to a file and open a fresh one.”
+> «از نو شروع کن. سه ساعت است در این جلسه‌ای و حالا بیشترش خروجی تست است. برنامه را در یک فایل بنویس و یکی تازه باز کن.»
 
-**Related:** [Stateful](./stateful.md) · [Smart zone](./smart-zone.md) · [Clearing](./clearing.md)
+**مرتبط:** [حالت‌مند](./stateful.md) · [منطقه‌ی هوشمند](./smart-zone.md) · [پاک‌سازی جلسه](./clearing.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Your First Conversation](https://vibecodeschool.com/learn/cc-03-first-conversation)
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۱ · اولین گفت‌وگوی شما](https://vibecodeschool.com/learn/cc-03-first-conversation)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/session) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/session.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

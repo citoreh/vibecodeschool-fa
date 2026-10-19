@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Spec
+<div dir="rtl">
 
-> A written description of what to build and how you'll know it's right, agreed before the agent starts writing code.
+# مشخصات (spec)
 
-*§05 Handoffs · also called: Specification, PRD, Design doc · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/spec)*
+> توصیفی نوشته از این‌که چه باید ساخته شود و از کجا می‌فهمید درست است، که پیش از شروع کدنویسی ایجنت بر سرش توافق شده.
 
-A spec is the written statement of what the work should produce: the behaviour, the constraints, the edge cases, and how success will be checked. For an [agent](./agent.md) it is the most important input to a task, because a coding agent will happily build the wrong thing with great confidence. The spec converts your intent, which lives in your head, into [context](./context.md) the agent can actually use.
+*§۰۵ تحویل کار · نام‌های دیگر: Specification، PRD، Design doc · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/spec)*
 
-Without one, the agent fills every gap with its own guess. Ambiguity you would have caught in a five-minute conversation becomes a merged implementation of the wrong idea, and in an [AFK](./afk.md) run there is nobody to ask. A missing spec also makes review harder: you cannot tell whether the result is right when nobody wrote down what right means.
+مشخصات بیان نوشته‌ی چیزی است که کار باید تولید کند: رفتار، قیدها، حالت‌های مرزی، و این‌که موفقیت چطور بررسی می‌شود. برای یک [ایجنت](./agent.md) مهم‌ترین ورودی یک کار است، چون ایجنت کدنویسی با کمال میل و با اعتمادبه‌نفس فراوان چیز اشتباه را می‌سازد. مشخصات نیت شما را، که در ذهنتان زندگی می‌کند، به [زمینه‌ای](./context.md) تبدیل می‌کند که ایجنت واقعاً می‌تواند از آن استفاده کند.
 
-Write specs at the level of behaviour, not code. Say what happens when the input is empty, what the API returns, what must not change. Include the [checks](./automated-check.md) that will prove it: tests to add, commands that must pass. Many people build the spec through [grilling](./grilling.md), letting the agent interrogate the idea before anything is written. Then commit the spec so it survives [clearing](./clearing.md) and doubles as a [handoff artifact](./handoff-artifact.md).
+بدون آن، ایجنت هر شکافی را با حدس خودش پر می‌کند. ابهامی که در یک گفت‌وگوی پنج‌دقیقه‌ای پیدا می‌کردید، به پیاده‌سازی ادغام‌شده‌ی یک ایده‌ی اشتباه تبدیل می‌شود، و در یک اجرای [AFK](./afk.md) کسی نیست که بشود از او پرسید. نبودِ مشخصات بازبینی را هم سخت‌تر می‌کند: وقتی کسی ننوشته «درست» یعنی چه، نمی‌توانید بگویید نتیجه درست است یا نه.
 
-## In the tools
+مشخصات را در سطح رفتار بنویسید، نه کد. بگویید وقتی ورودی خالی است چه اتفاقی می‌افتد، API چه برمی‌گرداند، چه چیزی نباید تغییر کند. [بررسی‌هایی](./automated-check.md) را که درستی‌اش را ثابت می‌کنند هم بیاورید: تست‌هایی که باید اضافه شوند، دستورهایی که باید با موفقیت اجرا شوند. خیلی‌ها مشخصات را از طریق [بازجویی](./grilling.md) می‌سازند، یعنی اجازه می‌دهند ایجنت پیش از نوشتن هر چیزی ایده را سؤال‌پیچ کند. بعد مشخصات را کامیت کنید تا از [پاک‌سازی جلسه](./clearing.md) جان سالم به در ببرد و هم‌زمان نقش [یادداشت تحویل](./handoff-artifact.md) را هم بازی کند.
 
-- Claude Code: draft the spec in plan mode, save it to a file, and reference it from CLAUDE.md or the task prompt.
-- Antigravity: the implementation plan the manager produces is a spec you approve before execution starts.
-- Most tools: a spec in the repo outlives any single chat; a spec that only lives in the prompt dies with the session.
+## در ابزارها
 
-## In conversation
+- Claude Code: پیش‌نویس مشخصات را در حالت برنامه‌ریزی بنویسید، در یک فایل ذخیره‌اش کنید، و از CLAUDE.md یا پرامپت کار به آن ارجاع دهید.
+- Antigravity: برنامه‌ی پیاده‌سازی‌ای که مدیر ایجنت تولید می‌کند، مشخصاتی است که پیش از شروع اجرا تأییدش می‌کنید.
+- بیشتر ابزارها: مشخصاتی که در مخزن است از هر گفت‌وگوی منفردی بیشتر عمر می‌کند؛ مشخصاتی که فقط در پرامپت زندگی می‌کند با جلسه می‌میرد.
 
-> “It built a whole notifications system and it's not what I meant at all.”
+## در گفت‌وگو
+
+> «یک سیستم اعلان کامل ساخت و اصلاً منظور من این نبود.»
 >
-> “What did the spec say?”
+> «مشخصات چه می‌گفت؟»
 >
-> “There wasn't one. I described it in the prompt.”
+> «مشخصاتی نبود. در پرامپت توصیفش کردم.»
 >
-> “Write the spec first next time. Three paragraphs and a list of tests would have caught this.”
+> «دفعه‌ی بعد اول مشخصات را بنویس. سه پاراگراف و یک فهرست تست جلوی این را می‌گرفت.»
 
-**Related:** [Plan mode](./plan-mode.md) · [Ticket](./ticket.md) · [Design concept](./design-concept.md) · [One-shot](./one-shot.md)
+**مرتبط:** [حالت برنامه‌ریزی](./plan-mode.md) · [تیکت](./ticket.md) · [مفهوم طراحی](./design-concept.md) · [یک‌باره](./one-shot.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Spec → Tests → Code](https://vibecodeschool.com/learn/cc-18-spec-tests-code)
-- [Course 01 · Writing Tests-First](https://vibecodeschool.com/learn/cc-24-tests-first)
+- [دوره‌ی ۰۱ · مشخصات ← تست‌ها ← کد](https://vibecodeschool.com/learn/cc-18-spec-tests-code)
+- [دوره‌ی ۰۱ · اول تست بنویسید](https://vibecodeschool.com/learn/cc-24-tests-first)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/spec) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/spec.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

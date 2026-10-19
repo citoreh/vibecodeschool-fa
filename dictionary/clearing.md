@@ -1,41 +1,47 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Clearing
+<div dir="rtl">
 
-> Wiping the session so the next request starts from an empty context window, keeping only the standing instructions.
+# پاک‌سازی جلسه (clearing)
 
-*§05 Handoffs · also called: /clear, Fresh session, Starting over · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/clearing)*
+> پاک کردن جلسه تا درخواست بعدی از یک پنجره‌ی زمینه‌ی خالی شروع شود و فقط دستورالعمل‌های ثابت باقی بمانند.
 
-Clearing throws away the current [session](./session.md)'s conversation so the next request starts from an empty [context window](./context-window.md). Only the standing pieces survive: the [system prompt](./system-prompt.md), your [AGENTS.md](./agents-md.md) file, and whatever the [memory system](./memory-system.md) loads on startup. Everything else, including every file the [agent](./agent.md) read and every decision it made along the way, is gone. In Claude Code the command is `/clear`; other harnesses call it a new chat or a fresh thread.
+*§۰۵ تحویل کار · نام‌های دیگر: /clear، Fresh session، Starting over · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/clearing)*
 
-Clearing feels like losing work, so people avoid it and push a bloated session onward instead. That is usually the wrong trade. Nothing you cleared was saved anywhere except in the window, so if a fact matters it should already live in a file, a commit, or a note. What a long session mostly holds is stale tool output and abandoned dead ends, and dragging those along is what pushes the agent out of the [smart zone](./smart-zone.md).
+پاک‌سازی گفت‌وگوی [جلسه‌ی](./session.md) جاری را دور می‌ریزد تا درخواست بعدی از یک [پنجره‌ی زمینه‌ی](./context-window.md) خالی شروع شود. فقط بخش‌های ثابت باقی می‌مانند: [پرامپت سیستمی](./system-prompt.md)، فایل [AGENTS.md](./agents-md.md) شما، و هر چیزی که [سیستم حافظه](./memory-system.md) هنگام شروع بارگذاری می‌کند. همه‌ی بقیه، از جمله هر فایلی که [ایجنت](./agent.md) خوانده و هر تصمیمی که در طول راه گرفته، از بین می‌رود. در Claude Code دستورش `/clear` است؛ هارنس‌های دیگر به آن گفت‌وگوی تازه یا رشته‌ی تازه می‌گویند.
 
-Clear at task boundaries, not mid-task. Finish the piece of work, commit it, write down anything the next session needs, then clear and start the next piece with a clean window. If the task is too big to finish before quality drops, that is a cue to write a [handoff](./handoff.md) rather than to push through. Prefer clearing over [compaction](./compaction.md) whenever the summary would need to carry more than a couple of sentences.
+پاک‌سازی حس از دست دادن کار را می‌دهد، پس مردم از آن پرهیز می‌کنند و به‌جایش یک جلسه‌ی پرحجم را جلو می‌برند. این معمولاً معامله‌ی اشتباهی است. هیچ چیزی که پاک کردید جز در پنجره جایی ذخیره نشده بود، پس اگر واقعیتی مهم است باید از قبل در یک فایل، یک کامیت یا یک یادداشت زندگی کند. آنچه یک جلسه‌ی طولانی بیشتر در خود دارد، خروجی کهنه‌ی ابزارها و بن‌بست‌های رهاشده است، و کشیدن همین‌هاست که ایجنت را از [منطقه‌ی هوشمند](./smart-zone.md) بیرون می‌برد.
 
-## In the tools
+در مرز کارها پاک کنید، نه وسط کار. تکه‌ی کار را تمام کنید، کامیتش کنید، هر چیزی که جلسه‌ی بعدی لازم دارد را بنویسید، بعد پاک کنید و تکه‌ی بعدی را با پنجره‌ای تمیز شروع کنید. اگر کار آن‌قدر بزرگ است که پیش از افت کیفیت تمام نمی‌شود، این نشانه‌ای است برای نوشتن یک [تحویل کار](./handoff.md)، نه برای زور زدن و ادامه دادن. هر وقت خلاصه باید بیش از چند جمله را حمل کند، پاک‌سازی را به [فشرده‌سازی](./compaction.md) ترجیح دهید.
 
-- Claude Code: `/clear` empties the conversation; CLAUDE.md and memory files are read again on the next turn.
-- Codex: starting a new thread in the app, or a new `codex` run in the terminal, is the same move.
-- Cursor: open a new chat instead of continuing the old one; rules files still apply.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/clear` گفت‌وگو را خالی می‌کند؛ CLAUDE.md و فایل‌های حافظه در نوبت بعد دوباره خوانده می‌شوند.
+- Codex: شروع یک رشته‌ی تازه در اپ، یا یک اجرای تازه‌ی `codex` در ترمینال، همین حرکت است.
+- Cursor: به‌جای ادامه‌ی گفت‌وگوی قبلی یک گفت‌وگوی تازه باز کنید؛ فایل‌های قواعد همچنان اعمال می‌شوند.
 
-> “It just rewrote the helper I told it not to touch, three times now.”
+## در گفت‌وگو
+
+> «همین الان تابع کمکی‌ای را که گفته بودم دست نزند بازنویسی کرد، این سومین بار است.»
 >
-> “You've been in that session since lunch. Commit what's good, clear, and start the next piece with a fresh window.”
+> «از ناهار تا حالا در آن جلسه‌ای. آنچه خوب است را کامیت کن، پاک کن، و تکه‌ی بعدی را با پنجره‌ای تازه شروع کن.»
 >
-> “And re-explain everything?”
+> «و همه چیز را دوباره توضیح بدهم؟»
 >
-> “Only the two lines that matter. Everything else it can read from the repo.”
+> «فقط همان دو خطی که مهم است. بقیه را خودش از مخزن می‌خواند.»
 
-**Related:** [Checkpoint](./checkpoint.md) · [Attention degradation](./attention-degradation.md) · [Context engineering](./context-engineering.md)
+**مرتبط:** [نقطه‌ی بازگشت](./checkpoint.md) · [افت توجه](./attention-degradation.md) · [مهندسی زمینه](./context-engineering.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/clearing) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/clearing.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

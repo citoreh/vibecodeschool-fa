@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Ticket
+<div dir="rtl">
 
-> A bounded unit of work with a clear done state, sized so an agent can finish it in one session.
+# تیکت (ticket)
 
-*§05 Handoffs · also called: Issue, Task · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/ticket)*
+> یک واحد کار محدود با وضعیت «تمام‌شده»ی روشن، به اندازه‌ای که یک ایجنت بتواند آن را در یک جلسه تمام کند.
 
-A ticket is one bounded piece of work: a title, enough description to act on, and a definition of done. Issue trackers have used the word for decades; in agentic coding it takes on a second meaning as the natural unit you hand an [agent](./agent.md). A ticket is smaller than a [spec](./spec.md) and larger than a single prompt. It should fit inside one [session](./session.md) with room to spare.
+*§۰۵ تحویل کار · نام‌های دیگر: Issue، Task · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/ticket)*
 
-Tickets that are too big are the common failure. “Migrate the app to the new auth provider” sounds like a task, but it is a project, and an agent given a project will run until it drifts out of the [smart zone](./smart-zone.md), then keep going anyway. Tickets that are too vague fail differently: the agent picks an interpretation and builds it, and you find out at review time.
+تیکت یک تکه‌کار محدود است: یک عنوان، توضیح کافی برای اقدام، و تعریفی از «تمام‌شده». سامانه‌های پیگیری ایشو ده‌ها سال است این واژه را به کار می‌برند؛ در کدنویسی ایجنتی معنای دومی هم پیدا می‌کند: واحد طبیعی‌ای که به یک [ایجنت](./agent.md) می‌سپارید. تیکت از [مشخصات](./spec.md) کوچک‌تر و از یک پرامپت تنها بزرگ‌تر است. باید با جای خالی کافی درون یک [جلسه](./session.md) جا شود.
 
-Slice work into tickets that end in something checkable: a passing test, a green [automated check](./automated-check.md), a screen you can open. Put the acceptance criteria in the ticket itself, so the same text works as the prompt, the [handoff artifact](./handoff-artifact.md), and the review checklist. When an agent runs [AFK](./afk.md), one ticket per run keeps failures small and diffs reviewable.
+تیکت‌های بیش از حد بزرگ شکست رایج‌اند. «اپ را به ارائه‌دهنده‌ی جدید احراز هویت مهاجرت بده» شبیه یک کار به نظر می‌رسد، اما یک پروژه است، و ایجنتی که یک پروژه به آن داده شود آن‌قدر می‌رود تا از [منطقه‌ی هوشمند](./smart-zone.md) بیرون بیفتد، و باز هم ادامه می‌دهد. تیکت‌های بیش از حد مبهم جور دیگری شکست می‌خورند: ایجنت یک برداشت را انتخاب می‌کند و می‌سازدش، و شما هنگام بازبینی متوجه می‌شوید.
 
-## In the tools
+کار را به تیکت‌هایی ببرید که به چیزی قابل بررسی ختم شوند: یک تست قبول‌شده، یک [بررسی خودکارِ](./automated-check.md) سبز، صفحه‌ای که بتوانید بازش کنید. معیارهای پذیرش را در خود تیکت بگذارید، تا همان متن هم پرامپت باشد، هم [یادداشت تحویل](./handoff-artifact.md)، و هم چک‌لیست بازبینی. وقتی یک ایجنت به‌صورت [AFK](./afk.md) اجرا می‌شود، یک تیکت در هر اجرا شکست‌ها را کوچک و دیف‌ها را قابل بازبینی نگه می‌دارد.
 
-- Codex: cloud tasks are ticket-shaped by design; one task, one sandbox, one pull request.
-- Claude Code: paste the ticket as the first message, or point the agent at the GitHub issue with `gh issue view`.
-- Antigravity: the manager breaks a request into tasks; keep each one ticket-sized before you approve the plan.
+## در ابزارها
 
-## In conversation
+- Codex: کارهای ابری ذاتاً هم‌اندازه‌ی تیکت طراحی شده‌اند؛ یک کار، یک سندباکس، یک درخواست ادغام.
+- Claude Code: تیکت را به‌عنوان اولین پیام بچسبانید، یا با `gh issue view` ایجنت را به ایشوی GitHub ارجاع دهید.
+- Antigravity: مدیر ایجنت یک درخواست را به چند کار می‌شکند؛ پیش از تأیید برنامه، هر کدام را به اندازه‌ی یک تیکت نگه دارید.
 
-> “Can I give it the whole redesign in one go?”
+## در گفت‌وگو
+
+> «می‌توانم کل بازطراحی را یک‌جا به آن بدهم؟»
 >
-> “Split it into tickets first. One screen, one ticket, each with a done condition.”
+> «اول به تیکت‌ها بشکنش. یک صفحه، یک تیکت، هر کدام با یک شرط پایان.»
 >
-> “That's like twelve runs.”
+> «این می‌شود حدود دوازده اجرا.»
 >
-> “Twelve reviewable PRs instead of one you can't read. That's the point.”
+> «دوازده درخواست ادغام قابل بازبینی به‌جای یکی که نمی‌توانی بخوانی‌اش. نکته همین است.»
 
-**Related:** [One-shot](./one-shot.md) · [Human review](./human-review.md) · [Worktree](./worktree.md)
+**مرتبط:** [یک‌باره](./one-shot.md) · [بازبینی انسانی](./human-review.md) · [ورک‌تری](./worktree.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 03 · Plans and Task Lists](https://vibecodeschool.com/learn/ag-06-planner-agents)
-- [Course 01 · Building a Next.js Feature](https://vibecodeschool.com/learn/cc-23-nextjs-feature)
+- [دوره‌ی ۰۳ · برنامه‌ها و فهرست کارها](https://vibecodeschool.com/learn/ag-06-planner-agents)
+- [دوره‌ی ۰۱ · ساختن یک قابلیت در Next.js](https://vibecodeschool.com/learn/cc-23-nextjs-feature)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/ticket) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/ticket.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

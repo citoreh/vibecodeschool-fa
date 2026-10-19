@@ -1,42 +1,48 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Compaction
+<div dir="rtl">
 
-> Replacing the session so far with a shorter summary of it, freeing the context window at the cost of detail.
+# فشرده‌سازی (compaction)
 
-*§05 Handoffs · also called: /compact, Context summarization · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/compaction)*
+> جایگزین کردن جلسه‌ی تا این لحظه با خلاصه‌ای کوتاه‌تر از آن، که پنجره‌ی زمینه را به بهای از دست دادن جزئیات آزاد می‌کند.
 
-Compaction shrinks a [session](./session.md) by replacing its history with a summary. The [harness](./harness.md) asks the [model](./model.md) to condense everything so far, throws away the original messages and [tool results](./tool-result.md), and continues with the summary in their place. The [context window](./context-window.md) gets room back; what you keep is a [secondary source](./secondary-source.md) account of what happened rather than the record itself. In Claude Code the manual command is `/compact`.
+*§۰۵ تحویل کار · نام‌های دیگر: /compact، Context summarization · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/compaction)*
 
-The cost is silent. The summary keeps what the model judged important, which is not always what you will need next. A constraint you mentioned once, a file path, the exact error text, the reason a fix was rejected: any of them can vanish, and the agent that continues has no idea it is missing something. The first few [turns](./turn.md) after compaction are where confident mistakes cluster.
+فشرده‌سازی یک [جلسه](./session.md) را با جایگزین کردن تاریخچه‌اش با یک خلاصه کوچک می‌کند. [هارنس](./harness.md) از [مدل](./model.md) می‌خواهد همه چیز را تا این لحظه خلاصه کند، پیام‌ها و [نتیجه‌های ابزارِ](./tool-result.md) اصلی را دور می‌ریزد، و با خلاصه به‌جای آن‌ها ادامه می‌دهد. [پنجره‌ی زمینه](./context-window.md) جا پس می‌گیرد؛ آنچه نگه می‌دارید روایتی [دست‌دوم](./secondary-source.md) از آنچه اتفاق افتاده است، نه خود سابقه. در Claude Code دستور دستی‌اش `/compact` است.
 
-Compact deliberately, at a natural boundary, and tell the harness what to preserve: “keep the list of files changed and the failing test names.” Better still, write the important state to disk first so it survives regardless. If the summary would need to carry a lot, that is a sign to write a [handoff artifact](./handoff-artifact.md) and use [clearing](./clearing.md) instead. Compaction is a bridge, not a memory system.
+هزینه بی‌صداست. خلاصه چیزی را نگه می‌دارد که مدل مهم تشخیص داده، که همیشه همان چیزی نیست که بعداً لازم دارید. قیدی که یک بار گفته بودید، یک مسیر فایل، متن دقیق یک خطا، دلیل رد شدن یک راه‌حل: هر کدام ممکن است ناپدید شود، و ایجنتی که ادامه می‌دهد خبر ندارد چیزی کم دارد. چند [نوبت](./turn.md) اول پس از فشرده‌سازی جایی است که اشتباه‌های پراعتمادبه‌نفس جمع می‌شوند.
 
-## In the tools
+آگاهانه و در یک مرز طبیعی فشرده‌سازی کنید، و به هارنس بگویید چه چیزی را نگه دارد: «فهرست فایل‌های تغییرکرده و نام تست‌های شکست‌خورده را نگه دار.» از آن بهتر، وضعیت مهم را اول روی دیسک بنویسید تا در هر حال بماند. اگر خلاصه باید چیزهای زیادی را حمل کند، این نشانه‌ای است برای نوشتن یک [یادداشت تحویل](./handoff-artifact.md) و استفاده از [پاک‌سازی جلسه](./clearing.md) به‌جای آن. فشرده‌سازی یک پل است، نه یک سیستم حافظه.
 
-- Claude Code: `/compact` accepts instructions, e.g. `/compact keep the migration checklist`; the summary replaces the transcript.
-- Codex: the CLI has its own `/compact`; treat it the same way and start a new task when a summary would lose too much.
-- Most tools: after any compaction, re-read the files you care about rather than trusting the summary.
+## در ابزارها
 
-## In conversation
+- Claude Code: `/compact` دستورالعمل می‌پذیرد، مثلاً `/compact keep the migration checklist`؛ خلاصه جای متن گفت‌وگو را می‌گیرد.
+- Codex: ابزار خط فرمان `/compact` خودش را دارد؛ با آن هم همین‌طور رفتار کنید و وقتی خلاصه چیزهای زیادی را از دست می‌دهد، یک کار تازه شروع کنید.
+- بیشتر ابزارها: پس از هر فشرده‌سازی، به‌جای اعتماد به خلاصه، فایل‌هایی را که برایتان مهم‌اند دوباره بخوانید.
 
-> “Context is at ninety percent and I'm mid-refactor.”
+## در گفت‌وگو
+
+> «زمینه روی نود درصد است و وسط یک بازآرایی‌ام.»
 >
-> “Compact it, but tell it what to keep: the module list and the test that's still red.”
+> «فشرده‌اش کن، اما بگو چه چیزی را نگه دارد: فهرست ماژول‌ها و تستی که هنوز قرمز است.»
 >
-> “Won't it forget the API constraint?”
+> «قید API را فراموش نمی‌کند؟»
 >
-> “It might. Put that line in the repo notes before you compact, then it can't.”
+> «ممکن است. پیش از فشرده‌سازی آن خط را در یادداشت‌های مخزن بگذار؛ آن‌وقت نمی‌تواند.»
 
-**Related:** [Autocompact](./autocompact.md) · [Attention degradation](./attention-degradation.md) · [Smart zone](./smart-zone.md) · [Primary source](./primary-source.md)
+**مرتبط:** [فشرده‌سازی خودکار](./autocompact.md) · [افت توجه](./attention-degradation.md) · [منطقه‌ی هوشمند](./smart-zone.md) · [منبع دست‌اول](./primary-source.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
-- [Course 05 · Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
+- [دوره‌ی ۰۱ · کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)
+- [دوره‌ی ۰۵ · پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/compaction) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/compaction.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

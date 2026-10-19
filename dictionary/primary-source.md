@@ -1,41 +1,47 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Primary source
+<div dir="rtl">
 
-> The real thing: the file, the diff, the test output, the docs page. What the agent should read instead of a description of it.
+# منبع دست‌اول (primary source)
 
-*§05 Handoffs · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/primary-source)*
+> خودِ چیز واقعی: فایل، دیف، خروجی تست، صفحه‌ی مستندات. چیزی که ایجنت باید به‌جای توصیفش بخواند.
 
-A primary source is the original material itself: the actual file on disk, the failing test's output, the API's own documentation, the commit diff. It stands opposite to a [secondary source](./secondary-source.md), which is someone's account of that material, including the [agent](./agent.md)'s own earlier summary of it. When the agent reads a primary source, what lands in [context](./context.md) is the truth as of right now, not a recollection of it.
+*§۰۵ تحویل کار · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/primary-source)*
 
-Agents drift when they work from descriptions. You tell it the endpoint returns a list, it builds around a list, and the endpoint has returned a paginated object since March. Or a [handoff artifact](./handoff-artifact.md) says the tests pass, the new session trusts that, and builds on a broken base. Every layer of retelling loses detail, and the model fills the gaps with [parametric knowledge](./parametric-knowledge.md) that may be out of date.
+منبع دست‌اول خود مطلب اصلی است: فایل واقعی روی دیسک، خروجی تست شکست‌خورده، مستندات خودِ API، دیف کامیت. در برابرش [منبع دست‌دوم](./secondary-source.md) قرار دارد، که روایت کسی از آن مطلب است، از جمله خلاصه‌ی قبلی خودِ [ایجنت](./agent.md). وقتی ایجنت یک منبع دست‌اول را می‌خواند، آنچه وارد [زمینه](./context.md) می‌شود حقیقت همین لحظه است، نه یادآوری‌ای از آن.
 
-Point the agent at sources, not summaries. Instead of explaining what a function does, say “read `lib/auth.ts` before you change the login flow.” When a library is newer than the model's [knowledge cutoff](./knowledge-cutoff.md), have it fetch the current docs rather than guess. When a handoff makes a claim, verify it against the repo before trusting it. This is cheap: a [tool call](./tool-call.md) costs less than a wrong assumption.
+ایجنت‌ها وقتی از روی توصیف کار می‌کنند منحرف می‌شوند. به آن می‌گویید فلان endpoint یک فهرست برمی‌گرداند، دورش یک فهرست می‌سازد، در حالی که آن endpoint از مارس یک شیء صفحه‌بندی‌شده برمی‌گرداند. یا یک [یادداشت تحویل](./handoff-artifact.md) می‌گوید تست‌ها قبول‌اند، جلسه‌ی تازه به آن اعتماد می‌کند و روی پایه‌ای خراب می‌سازد. هر لایه‌ی بازگویی جزئیات را از دست می‌دهد، و مدل شکاف‌ها را با [دانش پارامتری‌ای](./parametric-knowledge.md) پر می‌کند که شاید کهنه باشد.
 
-## In the tools
+ایجنت را به منابع ارجاع دهید، نه خلاصه‌ها. به‌جای توضیح این‌که یک تابع چه می‌کند، بگویید «پیش از تغییر جریان ورود، `lib/auth.ts` را بخوان.» وقتی یک کتابخانه از [تاریخ قطع دانش](./knowledge-cutoff.md) مدل تازه‌تر است، بگذارید مستندات فعلی را دریافت کند به‌جای این‌که حدس بزند. وقتی یک یادداشت تحویل ادعایی می‌کند، پیش از اعتماد آن را با مخزن تطبیق دهید. این ارزان است: یک [فراخوانی ابزار](./tool-call.md) کمتر از یک فرض غلط هزینه دارد.
 
-- Claude Code: the Read tool and `@file` mentions pull primary sources into context; WebFetch does the same for docs.
-- Cursor: `@file` and `@docs` references attach the source itself rather than your paraphrase of it.
-- Most tools: pasting a URL is not the same as fetching it; check that the agent actually read the page.
+## در ابزارها
 
-## In conversation
+- Claude Code: ابزار Read و اشاره‌های `@file` منابع دست‌اول را به زمینه می‌آورند؛ WebFetch همین کار را برای مستندات می‌کند.
+- Cursor: ارجاع‌های `@file` و `@docs` خود منبع را پیوست می‌کنند، نه بازگویی شما از آن را.
+- بیشتر ابزارها: چسباندن یک نشانی اینترنتی با دریافت آن یکی نیست؛ بررسی کنید ایجنت واقعاً صفحه را خوانده باشد.
 
-> “I told it the config lives in settings.json and it still wrote to the wrong path.”
+## در گفت‌وگو
+
+> «گفتم پیکربندی در settings.json است و باز در مسیر اشتباه نوشت.»
 >
-> “Did it read the file, or just your description of it?”
+> «فایل را خواند، یا فقط توصیف تو را؟»
 >
-> “My description.”
+> «توصیف من را.»
 >
-> “Have it open the actual file. The primary source beats anything either of you remembers.”
+> «بگو خود فایل را باز کند. منبع دست‌اول بر هر چیزی که هر کدامتان به یاد دارید برتری دارد.»
 
-**Related:** [Contextual knowledge](./contextual-knowledge.md) · [Hallucination](./hallucination.md) · [Grilling](./grilling.md)
+**مرتبط:** [دانش زمینه‌ای](./contextual-knowledge.md) · [توهم](./hallucination.md) · [بازجویی](./grilling.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · Reading and Editing Files](https://vibecodeschool.com/learn/cc-06-reading-and-editing)
+- [دوره‌ی ۰۱ · خواندن و ویرایش فایل‌ها](https://vibecodeschool.com/learn/cc-06-reading-and-editing)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/primary-source) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/primary-source.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>

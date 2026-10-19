@@ -1,37 +1,43 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Stateful
+<div dir="rtl">
 
-> Carries information forward from one step to the next; a session is stateful across turns even though the model underneath is not.
+# حالت‌مند (stateful)
 
-*§02 Sessions, Context Windows & Turns · [interactive version](https://vibecodeschool.com/ai-coding-dictionary/stateful)*
+> اطلاعات را از یک گام به گام بعد منتقل می‌کند؛ یک جلسه در طول نوبت‌ها حالت‌مند است، هرچند مدلِ زیر آن نیست.
 
-A stateful system remembers. Within a [session](./session.md), your coding agent is stateful: what you said in turn one still shapes turn twenty, because the [harness](./harness.md) keeps the transcript and sends the accumulated history with every request. That statefulness is manufactured. The [model](./model.md) receives the whole history each time and reconstructs 'what we were doing' from scratch; it just does so reliably enough to feel like continuity.
+*§۰۲ جلسه‌ها، پنجره‌های زمینه و نوبت‌ها · [نسخه‌ی تعاملی (انگلیسی)](https://vibecodeschool.com/ai-coding-dictionary/stateful)*
 
-Across sessions the default flips back to [stateless](./stateless.md). Making an agent stateful over days and weeks means adding a layer that writes things down and reads them back: project instruction files, a [memory system](./memory-system.md), notes it leaves for its future self. Where that layer is thin you get the familiar symptom of re-explaining your architecture every morning.
+سیستم حالت‌مند به یاد می‌آورد. درون یک [جلسه](./session.md)، ایجنت کدنویسی شما حالت‌مند است: آنچه در نوبت اول گفتید هنوز نوبت بیستم را شکل می‌دهد، چون [هارنس](./harness.md) متن گفت‌وگو را نگه می‌دارد و تاریخچه‌ی انباشته را با هر درخواست می‌فرستد. این حالت‌مندی ساختگی است. [مدل](./model.md) هر بار کل تاریخچه را دریافت می‌کند و «این‌که داشتیم چه می‌کردیم» را از صفر بازسازی می‌کند؛ فقط آن‌قدر قابل اعتماد این کار را می‌کند که حس پیوستگی بدهد.
 
-Statefulness has a cost as well as a benefit. Everything the session retains occupies the [context window](./context-window.md) and competes for the model's attention, so a session that remembers everything also gets slower and vaguer. The useful stance is selective: make the state that matters durable in files, and let the rest expire with the session.
+میان جلسه‌ها پیش‌فرض دوباره به [بی‌حالت](./stateless.md) برمی‌گردد. حالت‌مند کردن یک ایجنت در طول روزها و هفته‌ها یعنی افزودن لایه‌ای که چیزها را می‌نویسد و دوباره می‌خواند: فایل‌های دستورالعمل پروژه، یک [سیستم حافظه](./memory-system.md)، یادداشت‌هایی که برای خود آینده‌اش می‌گذارد. جایی که این لایه نازک است، نشانه‌ی آشنا را می‌بینید: هر صبح معماری‌تان را از نو توضیح می‌دهید.
 
-## In the tools
+حالت‌مندی هم هزینه دارد و هم فایده. هر چیزی که جلسه نگه می‌دارد [پنجره‌ی زمینه](./context-window.md) را اشغال می‌کند و بر سر توجه مدل رقابت می‌کند، پس جلسه‌ای که همه چیز را به یاد دارد کندتر و مبهم‌تر هم می‌شود. موضع مفید گزینشی بودن است: وضعیتی که مهم است را در فایل‌ها ماندگار کنید، و بگذارید بقیه با جلسه منقضی شود.
 
-- Claude Code: session state lives in the transcript on disk; `claude --resume` reopens it, while CLAUDE.md and auto-memory carry state between sessions.
-- Claude Cowork: projects keep files and instructions attached across conversations, which is the same trick applied to everyday work.
+## در ابزارها
 
-## In conversation
+- Claude Code: وضعیت جلسه در متن ذخیره‌شده روی دیسک زندگی می‌کند؛ `claude --resume` آن را دوباره باز می‌کند، در حالی که CLAUDE.md و حافظه‌ی خودکار وضعیت را میان جلسه‌ها منتقل می‌کنند.
+- Claude Cowork: پروژه‌ها فایل‌ها و دستورالعمل‌ها را در طول گفت‌وگوها پیوست نگه می‌دارند، که همان ترفند است برای کارهای روزمره.
 
-> “I told it to use pnpm in the first message and it's still using pnpm twenty turns later. So it does remember?”
+## در گفت‌وگو
+
+> «در پیام اول گفتم از pnpm استفاده کند و بیست نوبت بعد هنوز از pnpm استفاده می‌کند. پس به یاد می‌آورد؟»
 >
-> “Within the session, yes, it's stateful. Open a new one tomorrow and that instruction is gone unless it's in your project file.”
+> «درون جلسه، بله، حالت‌مند است. فردا یکی تازه باز کن و آن دستور از بین رفته، مگر این‌که در فایل پروژه‌ات باشد.»
 
-**Related:** [AGENTS.md](./agents-md.md) · [Turn](./turn.md) · [Handoff](./handoff.md)
+**مرتبط:** [AGENTS.md](./agents-md.md) · [نوبت](./turn.md) · [تحویل کار](./handoff.md)
 
-## Learn it in the school
+## در مدرسه یادش بگیرید
 
-- [Course 01 · CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
-- [Course 06 · Projects, Memory, and Context](https://vibecodeschool.com/learn/cw-10-projects-and-memory)
+- [دوره‌ی ۰۱ · CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)
+- [دوره‌ی ۰۶ · پروژه‌ها، حافظه و زمینه](https://vibecodeschool.com/learn/cw-10-projects-and-memory)
 
 ---
 
-Part of the [AI Coding Dictionary](./README.md) by [Vibe Code School](https://vibecodeschool.com) · [read this entry on the site](https://vibecodeschool.com/ai-coding-dictionary/stateful) · added 2026-09-12
+بخشی از [واژه‌نامه‌ی کدنویسی با هوش مصنوعی](./README.md) از [Vibe Code School](https://vibecodeschool.com) ·
+ترجمه‌ی فارسیِ [مدخل اصلی](https://github.com/dineshxr/vibecodeschool/blob/main/dictionary/stateful.md) تحت CC BY-SA 4.0 · افزوده‌شده در 2026-09-12
+
+</div>
