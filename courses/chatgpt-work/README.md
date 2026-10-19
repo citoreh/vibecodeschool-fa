@@ -1,76 +1,89 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# ChatGPT Work: Delegate the Busywork
+<div dir="rtl">
 
-> OpenAI's agent mode for everyone: finished decks, spreadsheets, sites, and automations — commissioned, reviewed, shipped.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [سرفصل این دوره](https://github.com/dineshxr/vibecodeschool/blob/main/courses/chatgpt-work/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. پیوند هر درس به نسخه‌ی تعاملی انگلیسی آن روی سایت می‌رود.
 
-ChatGPT Work turns ChatGPT from an app that answers into an agent that ships finished work. Learn the four-stage run, the editing loop, plugins and @-mentions, blocks and diagrams, scheduled automations, the agent browser, voice and remote control, and the cloud-vs-local rules that make automations reliable — ending with a measured pilot of one real workflow. Beginner-friendly, no code.
+# ChatGPT Work: کارهای وقت‌گیر را بسپارید
+
+> حالت ایجنت OpenAI برای همه: ارائه‌ها، صفحه‌گسترده‌ها، سایت‌ها و خودکارسازی‌های تمام‌شده — سفارش داده‌شده،
+> بازبینی‌شده، منتشرشده.
+
+ChatGPT Work، ChatGPT را از اپی که جواب می‌دهد به ایجنتی تبدیل می‌کند که کار تمام‌شده تحویل می‌دهد. با اجرای
+چهارمرحله‌ای، چرخه‌ی ویرایش، افزونه‌ها و @-اشاره‌ها، بلوک‌ها و نمودارها، خودکارسازی‌های زمان‌بندی‌شده،
+مرورگر ایجنت، صدا و کنترل از راه دور، و قواعد ابری در برابر محلی که خودکارسازی‌ها را قابل اعتماد می‌کنند
+آشنا شوید — و در پایان، آزمایشی سنجیده روی یک گردش‌کار واقعی اجرا کنید. مناسب تازه‌کارها، بدون کد.
 
 | | |
 |---|---|
-| **Level** | Beginner |
-| **Lessons** | 16 across 4 modules |
-| **Time** | ~9 hours |
-| **Cost** | Free · no signup |
-| **Take it interactively** | [https://vibecodeschool.com/courses/chatgpt-work](https://vibecodeschool.com/courses/chatgpt-work) |
+| **سطح** | مقدماتی |
+| **درس‌ها** | ۱۶ درس در ۴ بخش |
+| **زمان** | حدود ۹ ساعت |
+| **هزینه** | رایگان · بدون ثبت‌نام |
+| **نسخه‌ی تعاملی** | [vibecodeschool.com/courses/chatgpt-work](https://vibecodeschool.com/courses/chatgpt-work) |
 
-Every lesson below links to its interactive version — steps you run locally,
-scrubbable agent-session replays, and a quiz that gates completion.
+هر درس زیر به نسخه‌ی تعاملی‌اش پیوند دارد — گام‌هایی که روی سیستم خودتان اجرا می‌کنید، بازپخش جلسه‌های
+ایجنت که می‌توانید جلو و عقبشان ببرید، و آزمونکی که باید پیش از تمام‌کردن درس بگذرانید.
 
-## Module 1 — Flip the Toggle
+## بخش ۱ — کلید را بزنید
 
-What Work is, the four-stage run, your first research deck, and the editing loop.
+Work چیست، اجرای چهارمرحله‌ای، اولین ارائه‌ی پژوهشی‌تان، و چرخه‌ی ویرایش.
 
-- **[What Is ChatGPT Work](https://vibecodeschool.com/learn/gw-01-what-is-chatgpt-work)** · Concept · 9 min
-  OpenAI's agent mode: give it a goal, and it returns a finished spreadsheet, deck, document, or web app — not a chat reply.
-- **[Anatomy of a Work Run](https://vibecodeschool.com/learn/gw-02-the-four-stage-run)** · Concept · 8 min
-  Context → plan → execution → artifact: what happens between your prompt and the finished file.
-- **[Your First Deliverable: A Research Deck](https://vibecodeschool.com/learn/gw-03-first-deliverable-research-deck)** · Walkthrough · 12 min
-  Commission a consulting-style presentation with deep research — the canonical first Work task.
-- **[The Editing Loop](https://vibecodeschool.com/learn/gw-04-the-editing-loop)** · Concept · 9 min
-  Docs, sheets, and decks improve by conversation: scoped edits, reference files, and templates.
+- **[ChatGPT Work چیست](https://vibecodeschool.com/learn/gw-01-what-is-chatgpt-work)** · مفهومی · ۹ دقیقه
+  حالت ایجنت OpenAI: یک هدف به آن بدهید، و صفحه‌گسترده، ارائه، سند یا وب‌اپ تمام‌شده تحویل می‌دهد — نه یک پاسخ گفت‌وگویی.
+- **[کالبدشناسی یک اجرای Work](https://vibecodeschool.com/learn/gw-02-the-four-stage-run)** · مفهومی · ۸ دقیقه
+  زمینه ← برنامه ← اجرا ← آرتیفکت: میان پرامپت شما و فایل تمام‌شده چه اتفاقی می‌افتد.
+- **[اولین خروجی شما: یک ارائه‌ی پژوهشی](https://vibecodeschool.com/learn/gw-03-first-deliverable-research-deck)** · راهنمای گام‌به‌گام · ۱۲ دقیقه
+  یک ارائه به سبک شرکت‌های مشاوره با پژوهش عمیق سفارش دهید — کار اول کلاسیک در Work.
+- **[چرخه‌ی ویرایش](https://vibecodeschool.com/learn/gw-04-the-editing-loop)** · مفهومی · ۹ دقیقه
+  سندها، صفحه‌گسترده‌ها و ارائه‌ها با گفت‌وگو بهتر می‌شوند: ویرایش‌های محدود، فایل‌های مرجع و قالب‌ها.
 
-## Module 2 — Plugins, Blocks, and Artifacts
+## بخش ۲ — افزونه‌ها، بلوک‌ها و آرتیفکت‌ها
 
-Connect your apps, draft in blocks and diagrams, build trustworthy spreadsheets, and edit images like a reviewer.
+اپ‌هایتان را وصل کنید، در قالب بلوک و نمودار پیش‌نویس کنید، صفحه‌گسترده‌های قابل اعتماد بسازید، و تصویرها را
+مثل یک بازبین ویرایش کنید.
 
-- **[Plugins 101](https://vibecodeschool.com/learn/gw-05-plugins-101)** · Walkthrough · 11 min
-  Connect Gmail, Calendar, Drive, and Notion — and learn @-mentions and the skills each plugin bundles.
-- **[Blocks and Diagrams](https://vibecodeschool.com/learn/gw-06-blocks-and-diagrams)** · Concept · 8 min
-  Editable blocks inside the chat: text you can revise in place, plus mind maps, flowcharts, and timelines.
-- **[Spreadsheets and Dashboards](https://vibecodeschool.com/learn/gw-07-spreadsheets-and-dashboards)** · Concept · 10 min
-  Multi-tab research workbooks with a sources tab, a checks tab, and a dashboard — exported to Google Sheets.
-- **[Images at Work](https://vibecodeschool.com/learn/gw-08-images-at-work)** · Concept · 8 min
-  GPT Image 2 for real image jobs: targeted edits, queued changes mid-generation, and pinned comments.
+- **[مقدمات افزونه‌ها](https://vibecodeschool.com/learn/gw-05-plugins-101)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  Gmail، Calendar، Drive و Notion را وصل کنید — و @-اشاره‌ها و مهارت‌هایی را که هر افزونه با خود دارد یاد بگیرید.
+- **[بلوک‌ها و نمودارها](https://vibecodeschool.com/learn/gw-06-blocks-and-diagrams)** · مفهومی · ۸ دقیقه
+  بلوک‌های قابل ویرایش درون گفت‌وگو: متنی که همان‌جا بازنویسی‌اش می‌کنید، به‌علاوه‌ی نقشه‌ی ذهنی، فلوچارت و خط زمانی.
+- **[صفحه‌گسترده‌ها و داشبوردها](https://vibecodeschool.com/learn/gw-07-spreadsheets-and-dashboards)** · مفهومی · ۱۰ دقیقه
+  کارپوشه‌های پژوهشی چندبرگه‌ای با برگه‌ی منابع، برگه‌ی بررسی و یک داشبورد — که به Google Sheets خروجی گرفته می‌شوند.
+- **[تصویر در کار](https://vibecodeschool.com/learn/gw-08-images-at-work)** · مفهومی · ۸ دقیقه
+  GPT Image 2 برای کارهای واقعی تصویری: ویرایش‌های هدفمند، صف کردن تغییرات در میانه‌ی تولید، و کامنت‌های سنجاق‌شده.
 
-## Module 3 — Automation That Sticks
+## بخش ۳ — خودکارسازی ماندگار
 
-Scheduled tasks, inbox autopilot, the agent browser and computer use, and Sites.
+کارهای زمان‌بندی‌شده، خلبان خودکار صندوق ایمیل، مرورگر ایجنت و کار با رایانه، و Sites.
 
-- **[Scheduled Tasks and Automations](https://vibecodeschool.com/learn/gw-09-scheduled-tasks)** · Walkthrough · 11 min
-  Recurring reports, one-time reminders, and event-triggered automations — proven manually, then scheduled.
-- **[Inbox Autopilot](https://vibecodeschool.com/learn/gw-10-inbox-autopilot)** · Concept · 9 min
-  Triage tables, draft-then-confirm replies, and follow-up insurance: email as a delegated system.
-- **[The Agent Browser and Computer Use](https://vibecodeschool.com/learn/gw-11-agent-browser-computer-use)** · Concept · 9 min
-  Work inside websites and desktop apps: the in-app browser, the Chrome extension, and an agent with its own cursor.
-- **[From Chat to Website: Sites](https://vibecodeschool.com/learn/gw-12-from-chat-to-website)** · Concept · 9 min
-  Turn any output into an interactive web app — hosted instantly, then promoted to the public internet.
+- **[کارهای زمان‌بندی‌شده و خودکارسازی‌ها](https://vibecodeschool.com/learn/gw-09-scheduled-tasks)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  گزارش‌های دوره‌ای، یادآورهای یک‌باره، و خودکارسازی‌هایی که با رویداد فعال می‌شوند — اول دستی آزموده، بعد زمان‌بندی‌شده.
+- **[خلبان خودکار صندوق ایمیل](https://vibecodeschool.com/learn/gw-10-inbox-autopilot)** · مفهومی · ۹ دقیقه
+  جدول‌های اولویت‌بندی، پاسخ‌هایی که اول پیش‌نویس و بعد تأیید می‌شوند، و بیمه‌ی پیگیری: ایمیل به‌عنوان سیستمی سپرده‌شده.
+- **[مرورگر ایجنت و کار با رایانه](https://vibecodeschool.com/learn/gw-11-agent-browser-computer-use)** · مفهومی · ۹ دقیقه
+  کار درون وب‌سایت‌ها و اپ‌های دسکتاپ: مرورگر درون‌برنامه‌ای، افزونه‌ی کروم، و ایجنتی با نشانگر ماوس خودش.
+- **[از گفت‌وگو تا وب‌سایت: Sites](https://vibecodeschool.com/learn/gw-12-from-chat-to-website)** · مفهومی · ۹ دقیقه
+  هر خروجی‌ای را به یک وب‌اپ تعاملی تبدیل کنید — فوراً میزبانی می‌شود، و بعد به اینترنت عمومی منتقل.
 
-## Module 4 — Power Workflows
+## بخش ۴ — گردش‌کارهای قدرتمند
 
-Cloud vs local, voice and remote, multi-agent workspaces, and a measured capstone pilot.
+ابری در برابر محلی، صدا و کنترل از راه دور، فضاهای کاری چندایجنتی، و یک آزمایش پایانی سنجیده.
 
-- **[Cloud vs Local: Where Things Live](https://vibecodeschool.com/learn/gw-13-cloud-vs-local)** · Concept · 9 min
-  The gotcha lesson: which side runs your scheduled tasks, sees your files, and carries your skills.
-- **[Voice and Remote](https://vibecodeschool.com/learn/gw-14-voice-and-remote)** · Concept · 9 min
-  Ramble instead of write — and run your whole agent fleet from a phone on a morning walk.
-- **[Branches, Pins, and the Multi-Agent Workspace](https://vibecodeschool.com/learn/gw-15-branches-pins-multi-agent)** · Concept · 8 min
-  One chat per task: fork with /branch, organize with /pin, and tile parallel sessions like a pro.
-- **[Capstone: Pilot One Real Workflow](https://vibecodeschool.com/learn/gw-16-capstone-pilot-workflow)** · Walkthrough · 20 min
-  Pick one workflow you own, run it through Work with approvals on, measure honestly, and decide like an operator.
+- **[ابری در برابر محلی: هر چیز کجا زندگی می‌کند](https://vibecodeschool.com/learn/gw-13-cloud-vs-local)** · مفهومی · ۹ دقیقه
+  درسِ تله‌ها: کدام طرف کارهای زمان‌بندی‌شده‌تان را اجرا می‌کند، فایل‌هایتان را می‌بیند و مهارت‌هایتان را با خود دارد.
+- **[صدا و کنترل از راه دور](https://vibecodeschool.com/learn/gw-14-voice-and-remote)** · مفهومی · ۹ دقیقه
+  به‌جای نوشتن، حرف بزنید — و کل ناوگان ایجنت‌هایتان را در پیاده‌روی صبحگاهی از گوشی اداره کنید.
+- **[شاخه‌ها، سنجاق‌ها و فضای کاری چندایجنتی](https://vibecodeschool.com/learn/gw-15-branches-pins-multi-agent)** · مفهومی · ۸ دقیقه
+  یک گفت‌وگو برای هر کار: با `/branch` انشعاب بگیرید، با `/pin` مرتب کنید، و جلسه‌های موازی را حرفه‌ای کنار هم بچینید.
+- **[پروژه‌ی پایانی: یک گردش‌کار واقعی را آزمایش کنید](https://vibecodeschool.com/learn/gw-16-capstone-pilot-workflow)** · راهنمای گام‌به‌گام · ۲۰ دقیقه
+  یک گردش‌کار را که مسئولش هستید انتخاب کنید، با تأییدهای فعال از طریق Work اجرایش کنید، صادقانه بسنجید، و مثل یک مدیر عملیات تصمیم بگیرید.
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and [start the course free](https://vibecodeschool.com/courses/chatgpt-work).
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و [دوره را رایگان شروع کنید](https://vibecodeschool.com/courses/chatgpt-work).
+
+</div>

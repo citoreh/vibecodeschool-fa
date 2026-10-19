@@ -1,104 +1,119 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Agentic AI Engineering
+<div dir="rtl">
 
-> The systems track: everything around the model that makes AI products actually work.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [سرفصل این دوره](https://github.com/dineshxr/vibecodeschool/blob/main/courses/agentic-ai/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. پیوند هر درس به نسخه‌ی تعاملی انگلیسی آن روی سایت می‌رود.
 
-From tokens to production: LLM fundamentals, RAG and context engineering, agent architectures with MCP and A2A, LangGraph orchestration, LoRA finetuning and local models with Ollama, evals and observability, and the security layer — injection defense, guardrails, red teaming, governance.
+# مهندسی هوش مصنوعی ایجنتی
+
+> مسیر سیستم‌ها: هر چیزی پیرامون مدل که محصولات هوش مصنوعی را واقعاً کارا می‌کند.
+
+از توکن‌ها تا محیط تولید: مبانی مدل‌های زبانی بزرگ (LLM)، RAG و مهندسی زمینه، معماری‌های ایجنتی با MCP و
+A2A، هماهنگ‌سازی با LangGraph، تنظیم دقیق با LoRA و مدل‌های محلی با Ollama، ارزیابی‌ها و مشاهده‌پذیری،
+و لایه‌ی امنیت — دفاع در برابر تزریق، محافظ‌ها، آزمون تیم قرمز، حاکمیت.
 
 | | |
 |---|---|
-| **Level** | Intermediate |
-| **Lessons** | 25 across 6 modules |
-| **Time** | ~16 hours |
-| **Cost** | Free · no signup |
-| **Take it interactively** | [https://vibecodeschool.com/courses/agentic-ai](https://vibecodeschool.com/courses/agentic-ai) |
+| **سطح** | متوسط |
+| **درس‌ها** | ۲۵ درس در ۶ بخش |
+| **زمان** | حدود ۱۶ ساعت |
+| **هزینه** | رایگان · بدون ثبت‌نام |
+| **نسخه‌ی تعاملی** | [vibecodeschool.com/courses/agentic-ai](https://vibecodeschool.com/courses/agentic-ai) |
 
-Every lesson below links to its interactive version — steps you run locally,
-scrubbable agent-session replays, and a quiz that gates completion.
+هر درس زیر به نسخه‌ی تعاملی‌اش پیوند دارد — گام‌هایی که روی سیستم خودتان اجرا می‌کنید، بازپخش جلسه‌های
+ایجنت که می‌توانید جلو و عقبشان ببرید، و آزمونکی که باید پیش از تمام‌کردن درس بگذرانید.
 
-## Module 1 — GenAI Building Blocks
+## بخش ۱ — اجزای پایه‌ی هوش مصنوعی مولد
 
-Tokens, prompting, function calling, structured outputs, the modern stack — and the latency/cost/reliability budgets that shape everything.
+توکن‌ها، پرامپت‌نویسی، فراخوانی تابع، خروجی‌های ساختاریافته، پشته‌ی مدرن — و بودجه‌های تأخیر، هزینه و
+قابلیت اطمینان که همه چیز را شکل می‌دهند.
 
-- **[How LLMs Actually Work](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)** · Concept · 10 min
-  Tokens, next-token prediction, context windows, and why temperature exists — the mental model everything else builds on.
-- **[Prompting That Survives Contact](https://vibecodeschool.com/learn/aa-02-prompting-that-survives-contact)** · Concept · 12 min
-  System prompts, few-shot examples, and output contracts — prompting as engineering, not incantation.
-- **[Function Calling & Structured Outputs](https://vibecodeschool.com/learn/aa-03-function-calling-structured-outputs)** · Walkthrough · 14 min
-  Give the model tools and typed outputs — the two primitives that turn text prediction into software you can build on.
-- **[The Modern AI Stack](https://vibecodeschool.com/learn/aa-04-the-modern-ai-stack)** · Concept · 10 min
-  Providers, gateways, tools, and platforms — the map of what you assemble versus what you build.
-- **[Latency, Cost & Reliability Budgets](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)** · Concept · 11 min
-  The three production constraints that kill AI features — and the standard levers for each.
+- **[مدل‌های زبانی بزرگ واقعاً چطور کار می‌کنند](https://vibecodeschool.com/learn/aa-01-how-llms-actually-work)** · مفهومی · ۱۰ دقیقه
+  توکن‌ها، پیش‌بینی توکن بعدی، پنجره‌های زمینه، و این‌که چرا دما (temperature) وجود دارد — مدل ذهنی‌ای که همه چیز روی آن ساخته می‌شود.
+- **[پرامپت‌نویسی‌ای که در برخورد با واقعیت دوام می‌آورد](https://vibecodeschool.com/learn/aa-02-prompting-that-survives-contact)** · مفهومی · ۱۲ دقیقه
+  پرامپت‌های سیستمی، مثال‌های چندنمونه‌ای (few-shot) و قراردادهای خروجی — پرامپت‌نویسی به‌عنوان مهندسی، نه ورد خواندن.
+- **[فراخوانی تابع و خروجی‌های ساختاریافته](https://vibecodeschool.com/learn/aa-03-function-calling-structured-outputs)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  به مدل ابزار و خروجی نوع‌دار بدهید — دو جزء پایه‌ای که پیش‌بینی متن را به نرم‌افزاری تبدیل می‌کنند که بشود رویش ساخت.
+- **[پشته‌ی مدرن هوش مصنوعی](https://vibecodeschool.com/learn/aa-04-the-modern-ai-stack)** · مفهومی · ۱۰ دقیقه
+  ارائه‌دهندگان، دروازه‌ها، ابزارها و پلتفرم‌ها — نقشه‌ی آنچه سرهم می‌کنید در برابر آنچه می‌سازید.
+- **[بودجه‌های تأخیر، هزینه و قابلیت اطمینان](https://vibecodeschool.com/learn/aa-05-latency-cost-reliability)** · مفهومی · ۱۱ دقیقه
+  سه محدودیت محیط تولید که قابلیت‌های هوش مصنوعی را از پا درمی‌آورند — و اهرم‌های استاندارد هر کدام.
 
-## Module 2 — Grounding: RAG & Context Engineering
+## بخش ۲ — پایه‌گذاری: RAG و مهندسی زمینه
 
-Curate the window, anchor answers in your own data, and know which advanced retrieval patterns earn their complexity.
+پنجره‌ی زمینه را گزینش کنید، پاسخ‌ها را به داده‌های خودتان تکیه دهید، و بدانید کدام الگوهای پیشرفته‌ی
+بازیابی ارزش پیچیدگی‌شان را دارند.
 
-- **[Context Engineering](https://vibecodeschool.com/learn/aa-06-context-engineering)** · Concept · 12 min
-  The discipline that replaced 'prompt engineering': curating everything in the window — instructions, retrieval, tools, memory — as one budget.
-- **[RAG Fundamentals](https://vibecodeschool.com/learn/aa-07-rag-fundamentals)** · Concept · 13 min
-  Embeddings, chunking, vector search — how retrieval anchors the model in your truth instead of its training data.
-- **[Build a RAG Pipeline](https://vibecodeschool.com/learn/aa-08-build-a-rag-pipeline)** · Walkthrough · 18 min
-  Ship a minimal, honest RAG system: ingest, retrieve, answer with citations, and eyeball-test it before you trust it.
-- **[Advanced RAG Patterns](https://vibecodeschool.com/learn/aa-09-advanced-rag-patterns)** · Concept · 13 min
-  Hybrid search, reranking, query rewriting, and agentic retrieval — the upgrades, and the eval discipline that decides which you need.
+- **[مهندسی زمینه](https://vibecodeschool.com/learn/aa-06-context-engineering)** · مفهومی · ۱۲ دقیقه
+  رشته‌ای که جای «مهندسی پرامپت» را گرفت: گزینش همه‌ی محتوای پنجره — دستورها، بازیابی، ابزارها، حافظه — به‌عنوان یک بودجه‌ی واحد.
+- **[مبانی RAG](https://vibecodeschool.com/learn/aa-07-rag-fundamentals)** · مفهومی · ۱۳ دقیقه
+  تعبیه‌ها (embeddings)، قطعه‌بندی، جست‌وجوی برداری — بازیابی چطور مدل را به حقیقت شما تکیه می‌دهد به‌جای داده‌های آموزشی‌اش.
+- **[ساختن یک خط تولید RAG](https://vibecodeschool.com/learn/aa-08-build-a-rag-pipeline)** · راهنمای گام‌به‌گام · ۱۸ دقیقه
+  یک سیستم RAG کوچک و صادق منتشر کنید: ورود داده، بازیابی، پاسخ با ارجاع به منبع، و پیش از اعتماد، با چشم خودتان آزمایشش کنید.
+- **[الگوهای پیشرفته‌ی RAG](https://vibecodeschool.com/learn/aa-09-advanced-rag-patterns)** · مفهومی · ۱۳ دقیقه
+  جست‌وجوی ترکیبی، رتبه‌بندی دوباره، بازنویسی پرسش و بازیابی ایجنتی — ارتقاها، و انضباط ارزیابی که تعیین می‌کند به کدام نیاز دارید.
 
-## Module 3 — The Agentic Leap
+## بخش ۳ — جهش ایجنتی
 
-From workflows to agents: architecture patterns, MCP for tools, A2A for peers, and LangGraph when orchestration gets real.
+از گردش‌کار تا ایجنت: الگوهای معماری، MCP برای ابزارها، A2A برای همتایان، و LangGraph وقتی هماهنگ‌سازی
+جدی می‌شود.
 
-- **[What Makes a System Agentic](https://vibecodeschool.com/learn/aa-10-what-makes-a-system-agentic)** · Sandbox replay · 12 min
-  The loop that separates agents from workflows — watch one run, then learn when NOT to build one.
-- **[Agentic Architecture Patterns](https://vibecodeschool.com/learn/aa-11-agentic-architecture-patterns)** · Concept · 13 min
-  The five composable patterns between 'one prompt' and 'full agent' — and how real products stack them.
-- **[MCP — Model Context Protocol](https://vibecodeschool.com/learn/aa-12-mcp-model-context-protocol)** · Walkthrough · 15 min
-  The USB-C of agent tooling: one protocol that lets any client use any tool server — build one, wire one, and learn the security posture.
-- **[A2A — Agents Talking to Agents](https://vibecodeschool.com/learn/aa-13-a2a-agent-to-agent)** · Concept · 10 min
-  The Agent2Agent protocol: discovery via agent cards, task lifecycles, and where it fits next to MCP.
-- **[Orchestration: LangChain & LangGraph](https://vibecodeschool.com/learn/aa-14-langchain-langgraph)** · Walkthrough · 16 min
-  When a framework earns its keep — and the LangGraph core loop: state, nodes, edges, checkpoints, human-in-the-loop.
+- **[چه چیزی یک سیستم را ایجنتی می‌کند](https://vibecodeschool.com/learn/aa-10-what-makes-a-system-agentic)** · بازپخش سندباکس · ۱۲ دقیقه
+  چرخه‌ای که ایجنت‌ها را از گردش‌کارها جدا می‌کند — اجرای یکی را ببینید، بعد یاد بگیرید کی نباید ایجنت بسازید.
+- **[الگوهای معماری ایجنتی](https://vibecodeschool.com/learn/aa-11-agentic-architecture-patterns)** · مفهومی · ۱۳ دقیقه
+  پنج الگوی ترکیب‌پذیر میان «یک پرامپت» و «ایجنت کامل» — و این‌که محصولات واقعی چطور آن‌ها را روی هم می‌چینند.
+- **[MCP — پروتکل زمینه‌ی مدل](https://vibecodeschool.com/learn/aa-12-mcp-model-context-protocol)** · راهنمای گام‌به‌گام · ۱۵ دقیقه
+  USB-C ابزارهای ایجنت: یک پروتکل که به هر کلاینتی اجازه می‌دهد از هر سرور ابزاری استفاده کند — یکی بسازید، یکی وصل کنید، و ملاحظات امنیتی‌اش را یاد بگیرید.
+- **[A2A — گفت‌وگوی ایجنت‌ها با ایجنت‌ها](https://vibecodeschool.com/learn/aa-13-a2a-agent-to-agent)** · مفهومی · ۱۰ دقیقه
+  پروتکل Agent2Agent: کشف از طریق کارت‌های ایجنت، چرخه‌ی عمر کارها، و جایگاهش در کنار MCP.
+- **[هماهنگ‌سازی: LangChain و LangGraph](https://vibecodeschool.com/learn/aa-14-langchain-langgraph)** · راهنمای گام‌به‌گام · ۱۶ دقیقه
+  کی یک فریم‌ورک ارزش استفاده دارد — و چرخه‌ی اصلی LangGraph: وضعیت، گره‌ها، یال‌ها، نقاط بازیابی، انسان در حلقه.
 
-## Module 4 — Finetuning & Local Models
+## بخش ۴ — تنظیم دقیق و مدل‌های محلی
 
-When training pays off, LoRA/QLoRA in practice, and running open-weight models locally with Ollama.
+آموزش دادن کی به‌صرفه است، LoRA/QLoRA در عمل، و اجرای مدل‌های وزن‌باز به صورت محلی با Ollama.
 
-- **[Finetuning: When It Pays Off](https://vibecodeschool.com/learn/aa-15-finetuning-fundamentals)** · Concept · 12 min
-  What training actually changes, and the decision framework — because most teams reach for finetuning exactly when they shouldn't.
-- **[LoRA & QLoRA](https://vibecodeschool.com/learn/aa-16-lora-qlora)** · Concept · 12 min
-  Parameter-efficient finetuning: train adapters, not the model — how it works and the practical recipe.
-- **[Running Models Locally with Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)** · Walkthrough · 14 min
-  Pull an open-weight model, serve it over an API, customize it with a Modelfile — and know when local actually makes sense.
+- **[تنظیم دقیق: کی به‌صرفه است](https://vibecodeschool.com/learn/aa-15-finetuning-fundamentals)** · مفهومی · ۱۲ دقیقه
+  آموزش واقعاً چه چیزی را تغییر می‌دهد، و چارچوب تصمیم‌گیری — چون بیشتر تیم‌ها درست وقتی سراغ تنظیم دقیق می‌روند که نباید.
+- **[LoRA و QLoRA](https://vibecodeschool.com/learn/aa-16-lora-qlora)** · مفهومی · ۱۲ دقیقه
+  تنظیم دقیق کم‌پارامتر: آداپتور آموزش دهید، نه کل مدل — چطور کار می‌کند و دستورالعمل عملی‌اش.
+- **[اجرای محلی مدل‌ها با Ollama](https://vibecodeschool.com/learn/aa-17-local-models-ollama)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  یک مدل وزن‌باز دریافت کنید، از طریق API ارائه‌اش دهید، با یک Modelfile سفارشی‌اش کنید — و بدانید اجرای محلی کی واقعاً منطقی است.
 
-## Module 5 — Evals, Observability & Monitoring
+## بخش ۵ — ارزیابی، مشاهده‌پذیری و پایش
 
-Golden datasets, failure analysis, LLM-as-judge, tracing, and the production eval loop that catches regressions before users do.
+مجموعه‌داده‌های طلایی، تحلیل شکست، مدل زبانی در نقش داور، ردیابی، و چرخه‌ی ارزیابی در محیط تولید که
+پسرفت‌ها را پیش از کاربران پیدا می‌کند.
 
-- **[Why Traditional Testing Fails for AI](https://vibecodeschool.com/learn/aa-18-why-traditional-testing-fails)** · Concept · 12 min
-  Nondeterminism, no single right answer, silent regressions — and the golden dataset + failure analysis foundation that replaces assertEquals.
-- **[LLM-as-a-Judge](https://vibecodeschool.com/learn/aa-19-llm-as-judge)** · Walkthrough · 15 min
-  Scale fuzzy grading with a judge model — rubrics, pairwise comparison, the known biases, and calibration against humans.
-- **[Observability & Monitoring](https://vibecodeschool.com/learn/aa-20-observability-and-monitoring)** · Concept · 12 min
-  Traces for multi-step AI systems, the metrics dashboard that matters, and an honest survey of the platform landscape.
-- **[Production Eval Loops](https://vibecodeschool.com/learn/aa-21-production-eval-loops)** · Concept · 12 min
-  Wiring evals into CI, canaries, and production feedback — the loop that catches regressions and hallucinations before users do.
+- **[چرا تست سنتی برای هوش مصنوعی جواب نمی‌دهد](https://vibecodeschool.com/learn/aa-18-why-traditional-testing-fails)** · مفهومی · ۱۲ دقیقه
+  نامعین بودن، نبودِ یک پاسخ درست واحد، پسرفت‌های بی‌صدا — و پایه‌ی مجموعه‌داده‌ی طلایی و تحلیل شکست که جای `assertEquals` را می‌گیرد.
+- **[مدل زبانی در نقش داور (LLM-as-a-Judge)](https://vibecodeschool.com/learn/aa-19-llm-as-judge)** · راهنمای گام‌به‌گام · ۱۵ دقیقه
+  نمره‌دهی مبهم را با یک مدل داور مقیاس‌پذیر کنید — معیارهای ارزیابی، مقایسه‌ی دوبه‌دو، سوگیری‌های شناخته‌شده، و تنظیم در برابر داوری انسانی.
+- **[مشاهده‌پذیری و پایش](https://vibecodeschool.com/learn/aa-20-observability-and-monitoring)** · مفهومی · ۱۲ دقیقه
+  ردیابی برای سیستم‌های هوش مصنوعی چندمرحله‌ای، داشبورد معیارهایی که اهمیت دارند، و مروری صادقانه بر پلتفرم‌های موجود.
+- **[چرخه‌های ارزیابی در محیط تولید](https://vibecodeschool.com/learn/aa-21-production-eval-loops)** · مفهومی · ۱۲ دقیقه
+  اتصال ارزیابی‌ها به CI، انتشار آزمایشی (canary) و بازخورد محیط تولید — چرخه‌ای که پسرفت‌ها و توهم‌ها را پیش از کاربران پیدا می‌کند.
 
-## Module 6 — AI Security & Safety
+## بخش ۶ — امنیت و ایمنی هوش مصنوعی
 
-The threat surface, injection and PII defense, guardrails that fail closed, red teaming, and governance — production readiness, proven.
+سطح تهدید، دفاع در برابر تزریق و نشت اطلاعات شخصی (PII)، محافظ‌هایی که در صورت خطا بسته می‌مانند، آزمون
+تیم قرمز، و حاکمیت — آمادگی برای تولید، به اثبات‌رسیده.
 
-- **[The AI Threat Surface](https://vibecodeschool.com/learn/aa-22-the-ai-threat-surface)** · Concept · 12 min
-  OWASP's LLM Top 10, trust boundaries, and the lethal trifecta that turns helpful agents into exfiltration machines.
-- **[Prompt Injection, Hallucinations & PII](https://vibecodeschool.com/learn/aa-23-prompt-injection-and-pii)** · Walkthrough · 15 min
-  Attack your own RAG bot, see indirect injection land, and install the data-handling defenses that actually reduce blast radius.
-- **[Guardrails & Runtime Checks](https://vibecodeschool.com/learn/aa-24-guardrails-and-runtime-checks)** · Concept · 12 min
-  Input rails, output rails, tool policies, and sandboxes — the deterministic containment layer around a probabilistic core.
-- **[Red Teaming, Governance & Production Readiness](https://vibecodeschool.com/learn/aa-25-red-teaming-and-governance)** · Concept · 13 min
-  Attack your system on schedule, run incidents like ops, satisfy the governance layer — and the checklist that says you're actually ready to ship.
+- **[سطح تهدید هوش مصنوعی](https://vibecodeschool.com/learn/aa-22-the-ai-threat-surface)** · مفهومی · ۱۲ دقیقه
+  فهرست ۱۰ خطر اصلی LLM از OWASP، مرزهای اعتماد، و سه‌گانه‌ی مرگبار که ایجنت‌های مفید را به ماشین بیرون‌کشیدن داده تبدیل می‌کند.
+- **[تزریق پرامپت، توهم و اطلاعات شخصی](https://vibecodeschool.com/learn/aa-23-prompt-injection-and-pii)** · راهنمای گام‌به‌گام · ۱۵ دقیقه
+  به ربات RAG خودتان حمله کنید، نشستن تزریق غیرمستقیم را ببینید، و دفاع‌های مدیریت داده را نصب کنید که واقعاً شعاع آسیب را کم می‌کنند.
+- **[محافظ‌ها و بررسی‌های زمان اجرا](https://vibecodeschool.com/learn/aa-24-guardrails-and-runtime-checks)** · مفهومی · ۱۲ دقیقه
+  محافظ ورودی، محافظ خروجی، سیاست‌های ابزار و سندباکس‌ها — لایه‌ی مهار قطعی پیرامون یک هسته‌ی احتمالاتی.
+- **[آزمون تیم قرمز، حاکمیت و آمادگی برای تولید](https://vibecodeschool.com/learn/aa-25-red-teaming-and-governance)** · مفهومی · ۱۳ دقیقه
+  طبق برنامه به سیستمتان حمله کنید، حادثه‌ها را مثل تیم عملیات مدیریت کنید، الزامات حاکمیتی را برآورده کنید — و چک‌لیستی که می‌گوید واقعاً آماده‌ی انتشارید.
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and [start the course free](https://vibecodeschool.com/courses/agentic-ai).
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و [دوره را رایگان شروع کنید](https://vibecodeschool.com/courses/agentic-ai).
+
+</div>

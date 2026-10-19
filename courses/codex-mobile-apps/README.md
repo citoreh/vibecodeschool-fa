@@ -1,99 +1,108 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Build Mobile Apps using Codex
+<div dir="rtl">
 
-> Ship to TestFlight and Play Store with OpenAI's Codex as your pair.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [سرفصل این دوره](https://github.com/dineshxr/vibecodeschool/blob/main/courses/codex-mobile-apps/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. پیوند هر درس به نسخه‌ی تعاملی انگلیسی آن روی سایت می‌رود.
 
-React Native / Expo from scratch with Codex driving. Auth, payments, push notifications, native modules — all via prompts that produce real, reviewable code.
+# ساخت اپ موبایل با Codex
+
+> با Codex شرکت OpenAI به‌عنوان هم‌تیمی، اپتان را به TestFlight و Play Store برسانید.
+
+React Native / Expo از صفر، با Codex پشت فرمان. احراز هویت، پرداخت، اعلان‌های پوش، ماژول‌های بومی —
+همه با پرامپت‌هایی که کد واقعی و قابل بازبینی تولید می‌کنند.
 
 | | |
 |---|---|
-| **Level** | Intermediate |
-| **Lessons** | 25 across 5 modules |
-| **Time** | ~18 hours |
-| **Cost** | Free · no signup |
-| **Take it interactively** | [https://vibecodeschool.com/courses/codex-mobile-apps](https://vibecodeschool.com/courses/codex-mobile-apps) |
+| **سطح** | متوسط |
+| **درس‌ها** | ۲۵ درس در ۵ بخش |
+| **زمان** | حدود ۱۸ ساعت |
+| **هزینه** | رایگان · بدون ثبت‌نام |
+| **نسخه‌ی تعاملی** | [vibecodeschool.com/courses/codex-mobile-apps](https://vibecodeschool.com/courses/codex-mobile-apps) |
 
-Every lesson below links to its interactive version — steps you run locally,
-scrubbable agent-session replays, and a quiz that gates completion.
+هر درس زیر به نسخه‌ی تعاملی‌اش پیوند دارد — گام‌هایی که روی سیستم خودتان اجرا می‌کنید، بازپخش جلسه‌های
+ایجنت که می‌توانید جلو و عقبشان ببرید، و آزمونکی که باید پیش از تمام‌کردن درس بگذرانید.
 
-## Module 1 — Codex + Mobile Foundations
+## بخش ۱ — پایه‌های Codex و موبایل
 
-Install Codex, scaffold an Expo app, understand the constraints of mobile vs web.
+Codex را نصب کنید، اسکلت یک اپ Expo را بسازید، محدودیت‌های موبایل در برابر وب را بشناسید.
 
-- **[Meet Codex](https://vibecodeschool.com/learn/cm-01-meet-codex)** · Concept · 8 min
-  OpenAI's agentic CLI. Different posture from Claude Code, same family of skills.
-- **[Install and Authenticate](https://vibecodeschool.com/learn/cm-02-install-and-authenticate)** · Walkthrough · 7 min
-  Codex CLI on macOS / Linux, signing in, picking a model.
-- **[Codex vs Claude Code](https://vibecodeschool.com/learn/cm-03-codex-vs-claude-code)** · Concept · 9 min
-  Same shape, different reflexes. Knowing each tool's bias makes you faster in both.
-- **[Scaffold an Expo App](https://vibecodeschool.com/learn/cm-04-scaffold-expo-app)** · Sandbox replay · 10 min
-  From `npx create-expo-app` to a running iOS simulator in five turns.
-- **[The Mobile Loop](https://vibecodeschool.com/learn/cm-05-the-mobile-loop)** · Concept · 10 min
-  Why offline, push, and native pickers change how you prompt.
+- **[آشنایی با Codex](https://vibecodeschool.com/learn/cm-01-meet-codex)** · مفهومی · ۸ دقیقه
+  ابزار خط فرمان ایجنتی OpenAI. رویکردی متفاوت با Claude Code، اما از همان خانواده‌ی مهارت‌ها.
+- **[نصب و احراز هویت](https://vibecodeschool.com/learn/cm-02-install-and-authenticate)** · راهنمای گام‌به‌گام · ۷ دقیقه
+  Codex CLI روی macOS / Linux، ورود به حساب، انتخاب مدل.
+- **[Codex در برابر Claude Code](https://vibecodeschool.com/learn/cm-03-codex-vs-claude-code)** · مفهومی · ۹ دقیقه
+  شکل یکسان، واکنش‌های متفاوت. شناختن گرایش هر ابزار شما را در هر دو سریع‌تر می‌کند.
+- **[ساختن اسکلت یک اپ Expo](https://vibecodeschool.com/learn/cm-04-scaffold-expo-app)** · بازپخش سندباکس · ۱۰ دقیقه
+  از `npx create-expo-app` تا شبیه‌ساز iOS در حال اجرا، در پنج نوبت.
+- **[چرخه‌ی موبایل](https://vibecodeschool.com/learn/cm-05-the-mobile-loop)** · مفهومی · ۱۰ دقیقه
+  چرا آفلاین بودن، اعلان پوش و انتخابگرهای بومی شیوه‌ی پرامپت‌نویسی را عوض می‌کنند.
 
-## Module 2 — Building UI
+## بخش ۲ — ساختن رابط کاربری
 
-Screens, navigation, forms, theming — the visible surface of your app.
+صفحه‌ها، ناوبری، فرم‌ها، پوسته‌ها — سطح دیدنی اپ شما.
 
-- **[React Native Primitives](https://vibecodeschool.com/learn/cm-06-rn-primitives)** · Concept · 9 min
-  View, Text, Image, ScrollView — and why they're not divs.
-- **[Generating Screens from a Sketch](https://vibecodeschool.com/learn/cm-07-screens-from-sketch)** · Sandbox replay · 11 min
-  Hand a screenshot or wireframe; get back a rendered screen.
-- **[Navigation with Expo Router](https://vibecodeschool.com/learn/cm-08-expo-router)** · Walkthrough · 12 min
-  File-based routing for mobile: tabs, stacks, modals.
-- **[Forms and the Keyboard](https://vibecodeschool.com/learn/cm-09-forms-keyboard)** · Sandbox replay · 10 min
-  Inputs, KeyboardAvoidingView, focus management — without the rage.
-- **[Theming and Dark Mode](https://vibecodeschool.com/learn/cm-10-theming)** · Sandbox replay · 10 min
-  One source of truth for colors; system theme that just works.
-- **[Lists and Performance](https://vibecodeschool.com/learn/cm-11-lists-perf)** · Sandbox replay · 11 min
-  FlashList vs FlatList. Avoiding the dropped-frame trap on long scrolls.
+- **[اجزای پایه‌ی React Native](https://vibecodeschool.com/learn/cm-06-rn-primitives)** · مفهومی · ۹ دقیقه
+  View، Text، Image، ScrollView — و این‌که چرا div نیستند.
+- **[ساختن صفحه از روی یک طرح دستی](https://vibecodeschool.com/learn/cm-07-screens-from-sketch)** · بازپخش سندباکس · ۱۱ دقیقه
+  یک اسکرین‌شات یا وایرفریم بدهید؛ یک صفحه‌ی ساخته‌شده تحویل بگیرید.
+- **[ناوبری با Expo Router](https://vibecodeschool.com/learn/cm-08-expo-router)** · راهنمای گام‌به‌گام · ۱۲ دقیقه
+  مسیریابی مبتنی بر فایل برای موبایل: تب‌ها، پشته‌ها، پنجره‌های مودال.
+- **[فرم‌ها و صفحه‌کلید](https://vibecodeschool.com/learn/cm-09-forms-keyboard)** · بازپخش سندباکس · ۱۰ دقیقه
+  ورودی‌ها، KeyboardAvoidingView، مدیریت فوکوس — بدون حرص خوردن.
+- **[پوسته‌ها و حالت تاریک](https://vibecodeschool.com/learn/cm-10-theming)** · بازپخش سندباکس · ۱۰ دقیقه
+  یک منبع واحد برای رنگ‌ها؛ پوسته‌ی سیستمی که بی‌دردسر کار می‌کند.
+- **[فهرست‌ها و کارایی](https://vibecodeschool.com/learn/cm-11-lists-perf)** · بازپخش سندباکس · ۱۱ دقیقه
+  FlashList در برابر FlatList. پرهیز از تله‌ی افت فریم در اسکرول‌های طولانی.
 
-## Module 3 — State and Data
+## بخش ۳ — وضعیت و داده
 
-Local, global, offline, and live — how data moves through a real app.
+محلی، سراسری، آفلاین و زنده — داده چطور در یک اپ واقعی جابه‌جا می‌شود.
 
-- **[Local vs Global State](https://vibecodeschool.com/learn/cm-12-state-shapes)** · Concept · 8 min
-  When useState is fine and when it isn't.
-- **[Offline-First with AsyncStorage](https://vibecodeschool.com/learn/cm-13-offline-asyncstorage)** · Walkthrough · 11 min
-  Persist enough that the app is useful with no network.
-- **[Connecting to a REST API](https://vibecodeschool.com/learn/cm-14-rest-api)** · Sandbox replay · 10 min
-  Fetch + caching + revalidation patterns that don't blow up your battery.
-- **[Auth with Supabase](https://vibecodeschool.com/learn/cm-15-supabase-auth)** · Walkthrough · 13 min
-  Email + magic link + OAuth, all in under an hour.
-- **[Realtime Subscriptions](https://vibecodeschool.com/learn/cm-16-realtime)** · Sandbox replay · 10 min
-  Live updates that survive backgrounding.
+- **[وضعیت محلی در برابر سراسری](https://vibecodeschool.com/learn/cm-12-state-shapes)** · مفهومی · ۸ دقیقه
+  کی useState کافی است و کی نیست.
+- **[اول آفلاین با AsyncStorage](https://vibecodeschool.com/learn/cm-13-offline-asyncstorage)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  آن‌قدر داده نگه دارید که اپ بدون اینترنت هم به کار بیاید.
+- **[اتصال به یک REST API](https://vibecodeschool.com/learn/cm-14-rest-api)** · بازپخش سندباکس · ۱۰ دقیقه
+  الگوهای دریافت، کش و اعتبارسنجی دوباره که باتری را نمی‌سوزانند.
+- **[احراز هویت با Supabase](https://vibecodeschool.com/learn/cm-15-supabase-auth)** · راهنمای گام‌به‌گام · ۱۳ دقیقه
+  ایمیل، لینک جادویی و OAuth، همه در کمتر از یک ساعت.
+- **[اشتراک‌های بلادرنگ](https://vibecodeschool.com/learn/cm-16-realtime)** · بازپخش سندباکس · ۱۰ دقیقه
+  به‌روزرسانی‌های زنده که از رفتن اپ به پس‌زمینه جان سالم به در می‌برند.
 
-## Module 4 — Native Features
+## بخش ۴ — قابلیت‌های بومی
 
-The capabilities that make it feel like a real app, not a wrapped website.
+قابلیت‌هایی که حس یک اپ واقعی می‌دهند، نه وب‌سایتی که در پوسته‌ی اپ پیچیده شده.
 
-- **[Camera and Image Picker](https://vibecodeschool.com/learn/cm-17-camera-images)** · Sandbox replay · 10 min
-  Capture, compress, upload — without permission-prompt hell.
-- **[Push Notifications](https://vibecodeschool.com/learn/cm-18-push-notifications)** · Walkthrough · 13 min
-  Expo's push service, your own server, both.
-- **[Maps and Location](https://vibecodeschool.com/learn/cm-19-maps-location)** · Sandbox replay · 10 min
-  Showing where the user is without burning their battery.
-- **[Haptics and Gestures](https://vibecodeschool.com/learn/cm-20-haptics-gestures)** · Sandbox replay · 9 min
-  The small UX details that separate a real app from a website.
-- **[Native Modules and Expo Plugins](https://vibecodeschool.com/learn/cm-21-native-modules)** · Concept · 10 min
-  When you need to drop down to Swift/Kotlin and how to do it cleanly.
+- **[دوربین و انتخابگر تصویر](https://vibecodeschool.com/learn/cm-17-camera-images)** · بازپخش سندباکس · ۱۰ دقیقه
+  عکس گرفتن، فشرده‌سازی، بارگذاری — بدون جهنم پنجره‌های درخواست مجوز.
+- **[اعلان‌های پوش](https://vibecodeschool.com/learn/cm-18-push-notifications)** · راهنمای گام‌به‌گام · ۱۳ دقیقه
+  سرویس پوش Expo، سرور خودتان، یا هر دو.
+- **[نقشه و موقعیت مکانی](https://vibecodeschool.com/learn/cm-19-maps-location)** · بازپخش سندباکس · ۱۰ دقیقه
+  نشان دادن جای کاربر بدون سوزاندن باتری‌اش.
+- **[بازخورد لمسی و حرکات](https://vibecodeschool.com/learn/cm-20-haptics-gestures)** · بازپخش سندباکس · ۹ دقیقه
+  جزئیات کوچک تجربه‌ی کاربری که یک اپ واقعی را از یک وب‌سایت جدا می‌کند.
+- **[ماژول‌های بومی و افزونه‌های Expo](https://vibecodeschool.com/learn/cm-21-native-modules)** · مفهومی · ۱۰ دقیقه
+  کی باید به Swift/Kotlin پایین بروید و چطور این کار را تمیز انجام دهید.
 
-## Module 5 — Ship It
+## بخش ۵ — منتشرش کنید
 
-From local sim to App Store / Play Store, with humans testing in between.
+از شبیه‌ساز محلی تا App Store / Play Store، با آزمایش انسانی در میانه‌ی راه.
 
-- **[Building IPA and APK](https://vibecodeschool.com/learn/cm-22-build-ipa-apk)** · Walkthrough · 12 min
-  EAS Build basics. The .ipa and .apk artifacts you'll need.
-- **[TestFlight and Internal Testing](https://vibecodeschool.com/learn/cm-23-testflight)** · Walkthrough · 10 min
-  Getting builds in front of real testers in under a day.
-- **[In-App Purchases](https://vibecodeschool.com/learn/cm-24-iap)** · Walkthrough · 14 min
-  RevenueCat, the only sane way to do IAP cross-platform.
-- **[App Store and Play Store Submission](https://vibecodeschool.com/learn/cm-25-store-submission)** · Walkthrough · 16 min
-  The metadata, the screenshots, the review notes that matter.
+- **[ساختن IPA و APK](https://vibecodeschool.com/learn/cm-22-build-ipa-apk)** · راهنمای گام‌به‌گام · ۱۲ دقیقه
+  مبانی EAS Build. فایل‌های `.ipa` و `.apk` که لازم خواهید داشت.
+- **[TestFlight و آزمایش داخلی](https://vibecodeschool.com/learn/cm-23-testflight)** · راهنمای گام‌به‌گام · ۱۰ دقیقه
+  رساندن نسخه‌ها به دست آزمایش‌کنندگان واقعی در کمتر از یک روز.
+- **[خرید درون‌برنامه‌ای](https://vibecodeschool.com/learn/cm-24-iap)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  RevenueCat، تنها راه معقول برای خرید درون‌برنامه‌ای چندسکویی.
+- **[ارسال به App Store و Play Store](https://vibecodeschool.com/learn/cm-25-store-submission)** · راهنمای گام‌به‌گام · ۱۶ دقیقه
+  فراداده‌ها، اسکرین‌شات‌ها و یادداشت‌های بازبینی که اهمیت دارند.
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and [start the course free](https://vibecodeschool.com/courses/codex-mobile-apps).
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و [دوره را رایگان شروع کنید](https://vibecodeschool.com/courses/codex-mobile-apps).
+
+</div>

@@ -1,76 +1,91 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Claude Cowork: AI for Everyday Work
+<div dir="rtl">
 
-> The no-code agent course: hand Claude real work — files, docs, spreadsheets, research, schedules — and review finished results.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [سرفصل این دوره](https://github.com/dineshxr/vibecodeschool/blob/main/courses/claude-cowork/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. پیوند هر درس به نسخه‌ی تعاملی انگلیسی آن روی سایت می‌رود.
 
-Claude Code changed programming; Cowork brings the same agentic loop to everyone else. Learn to delegate real knowledge work to Claude: set up workspaces, master the approval loop, build self-checking spreadsheets, connect your tools, teach skills, schedule work that runs while you sleep, and assemble it all into standing systems. No terminal, no code — built for beginners.
+# Claude Cowork: هوش مصنوعی برای کارهای روزمره
+
+> دوره‌ی ایجنت بدون کد: کار واقعی — فایل‌ها، اسناد، صفحه‌گسترده‌ها، پژوهش، زمان‌بندی‌ها — را به Claude بسپارید و
+> نتیجه‌ی تمام‌شده را بازبینی کنید.
+
+Claude Code برنامه‌نویسی را عوض کرد؛ Cowork همان چرخه‌ی ایجنتی را برای بقیه‌ی آدم‌ها می‌آورد. یاد بگیرید
+کارهای دانشی واقعی را به Claude بسپارید: فضای کاری بسازید، بر چرخه‌ی تأیید مسلط شوید، صفحه‌گسترده‌هایی
+بسازید که خودشان را بررسی می‌کنند، ابزارهایتان را وصل کنید، مهارت یاد بدهید، کارهایی زمان‌بندی کنید که
+وقتی خوابید اجرا می‌شوند، و همه را در قالب سیستم‌های دائمی کنار هم بگذارید. بدون ترمینال، بدون کد —
+ساخته‌شده برای تازه‌کارها.
 
 | | |
 |---|---|
-| **Level** | Beginner |
-| **Lessons** | 16 across 4 modules |
-| **Time** | ~9 hours |
-| **Cost** | Free · no signup |
-| **Take it interactively** | [https://vibecodeschool.com/courses/claude-cowork](https://vibecodeschool.com/courses/claude-cowork) |
+| **سطح** | مقدماتی |
+| **درس‌ها** | ۱۶ درس در ۴ بخش |
+| **زمان** | حدود ۹ ساعت |
+| **هزینه** | رایگان · بدون ثبت‌نام |
+| **نسخه‌ی تعاملی** | [vibecodeschool.com/courses/claude-cowork](https://vibecodeschool.com/courses/claude-cowork) |
 
-Every lesson below links to its interactive version — steps you run locally,
-scrubbable agent-session replays, and a quiz that gates completion.
+هر درس زیر به نسخه‌ی تعاملی‌اش پیوند دارد — گام‌هایی که روی سیستم خودتان اجرا می‌کنید، بازپخش جلسه‌های
+ایجنت که می‌توانید جلو و عقبشان ببرید، و آزمونکی که باید پیش از تمام‌کردن درس بگذرانید.
 
-## Module 1 — Meet Your AI Coworker
+## بخش ۱ — با همکار هوش مصنوعی‌تان آشنا شوید
 
-What Cowork is, setting it up, your first real task, and the approval loop that keeps you in charge.
+Cowork چیست، راه‌اندازی‌اش، اولین کار واقعی‌تان، و چرخه‌ی تأییدی که کنترل را دست شما نگه می‌دارد.
 
-- **[What Is Claude Cowork](https://vibecodeschool.com/learn/cw-01-what-is-cowork)** · Concept · 8 min
-  Claude Code for the rest of your work: an agent that does real tasks with real files — no terminal, no code.
-- **[Set Up Cowork](https://vibecodeschool.com/learn/cw-02-set-up-cowork)** · Walkthrough · 10 min
-  Get Cowork running on your machine, give it a workspace folder, and verify it can actually work.
-- **[Your First Real Task](https://vibecodeschool.com/learn/cw-03-your-first-task)** · Sandbox replay · 10 min
-  Watch a full Cowork task from handoff to deliverable: messy folder in, organized expense summary out.
-- **[The Approval Loop](https://vibecodeschool.com/learn/cw-04-the-approval-loop)** · Concept · 8 min
-  Nothing ships until you've reviewed it. How Cowork's pauses, notifications, and reviews keep you in charge.
+- **[Claude Cowork چیست](https://vibecodeschool.com/learn/cw-01-what-is-cowork)** · مفهومی · ۸ دقیقه
+  Claude Code برای بقیه‌ی کارهایتان: ایجنتی که کارهای واقعی را با فایل‌های واقعی انجام می‌دهد — بدون ترمینال، بدون کد.
+- **[راه‌اندازی Cowork](https://vibecodeschool.com/learn/cw-02-set-up-cowork)** · راهنمای گام‌به‌گام · ۱۰ دقیقه
+  Cowork را روی سیستمتان راه بیندازید، یک پوشه‌ی کاری به آن بدهید، و مطمئن شوید واقعاً می‌تواند کار کند.
+- **[اولین کار واقعی شما](https://vibecodeschool.com/learn/cw-03-your-first-task)** · بازپخش سندباکس · ۱۰ دقیقه
+  یک کار کامل Cowork را از سپردن تا تحویل ببینید: یک پوشه‌ی درهم وارد می‌شود، یک خلاصه‌ی مرتب هزینه‌ها بیرون می‌آید.
+- **[چرخه‌ی تأیید](https://vibecodeschool.com/learn/cw-04-the-approval-loop)** · مفهومی · ۸ دقیقه
+  تا بازبینی‌اش نکرده‌اید، هیچ چیز منتشر نمی‌شود. مکث‌ها، اعلان‌ها و بازبینی‌های Cowork چطور کنترل را دست شما نگه می‌دارند.
 
-## Module 2 — Real Work, Real Files
+## بخش ۲ — کار واقعی، فایل‌های واقعی
 
-Folder craft, office documents, self-checking spreadsheets, and research with checkable sources.
+مهارت در کار با پوشه‌ها، اسناد اداری، صفحه‌گسترده‌هایی که خودشان را بررسی می‌کنند، و پژوهش با منابع قابل
+بررسی.
 
-- **[Files In, Files Out](https://vibecodeschool.com/learn/cw-05-files-in-files-out)** · Concept · 7 min
-  The folder is the interface: how to stage inputs, name deliverables, and keep projects tidy.
-- **[Docs, Slides, and Redlines](https://vibecodeschool.com/learn/cw-06-docs-slides-redlines)** · Concept · 9 min
-  The office trio: polished documents, decks that match your house style, and contract redlines you review.
-- **[Spreadsheets That Check Themselves](https://vibecodeschool.com/learn/cw-07-spreadsheets-that-check-themselves)** · Walkthrough · 14 min
-  The assumptions-and-deliverables prompt pattern for financial models — including the checks tab that catches errors.
-- **[Research With Receipts](https://vibecodeschool.com/learn/cw-08-research-with-receipts)** · Concept · 9 min
-  Long-running research that returns organized findings with sources you can actually check.
+- **[فایل وارد، فایل خارج](https://vibecodeschool.com/learn/cw-05-files-in-files-out)** · مفهومی · ۷ دقیقه
+  پوشه همان رابط است: چطور ورودی‌ها را آماده کنید، خروجی‌ها را نام‌گذاری کنید و پروژه‌ها را مرتب نگه دارید.
+- **[اسناد، اسلایدها و بازبینی قرارداد](https://vibecodeschool.com/learn/cw-06-docs-slides-redlines)** · مفهومی · ۹ دقیقه
+  سه‌گانه‌ی اداری: اسناد پرداخته، ارائه‌هایی هماهنگ با سبک سازمان شما، و نشانه‌گذاری تغییرات قرارداد که خودتان بازبینی می‌کنید.
+- **[صفحه‌گسترده‌هایی که خودشان را بررسی می‌کنند](https://vibecodeschool.com/learn/cw-07-spreadsheets-that-check-themselves)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  الگوی پرامپت «فرض‌ها و خروجی‌ها» برای مدل‌های مالی — به‌همراه برگه‌ی بررسی که خطاها را پیدا می‌کند.
+- **[پژوهش با سند و مدرک](https://vibecodeschool.com/learn/cw-08-research-with-receipts)** · مفهومی · ۹ دقیقه
+  پژوهش طولانی‌مدت که یافته‌های مرتب را با منابعی برمی‌گرداند که واقعاً می‌توانید بررسی‌شان کنید.
 
-## Module 3 — Connect Your World
+## بخش ۳ — دنیایتان را وصل کنید
 
-Connectors and plugins, Projects and memory, reusable skills, and the browser/computer-use previews.
+کانکتورها و افزونه‌ها، پروژه‌ها و حافظه، مهارت‌های قابل استفاده‌ی دوباره، و پیش‌نمایش‌های کار با مرورگر و
+رایانه.
 
-- **[Connectors and the Plugin Marketplace](https://vibecodeschool.com/learn/cw-09-connectors-and-plugins)** · Concept · 9 min
-  Give Claude reach into Gmail, Calendar, Drive, and your team's tools — deliberately, one connection at a time.
-- **[Projects, Memory, and Context](https://vibecodeschool.com/learn/cw-10-projects-and-memory)** · Concept · 8 min
-  How Cowork remembers: shared Projects across Chat and Cowork, plus memory that carries your preferences.
-- **[Skills: Teach It Your Way of Working](https://vibecodeschool.com/learn/cw-11-skills-teach-it-your-way)** · Concept · 9 min
-  Skills are reusable instruction packs — write one from your best session and reuse it forever.
-- **[Browser and Computer Use](https://vibecodeschool.com/learn/cw-12-browser-and-computer-use)** · Concept · 8 min
-  When work lives in web apps instead of files: Claude in your browser, and the computer-use preview.
+- **[کانکتورها و بازارچه‌ی افزونه‌ها](https://vibecodeschool.com/learn/cw-09-connectors-and-plugins)** · مفهومی · ۹ دقیقه
+  به Claude دسترسی به Gmail، Calendar، Drive و ابزارهای تیمتان بدهید — آگاهانه، یک اتصال در هر بار.
+- **[پروژه‌ها، حافظه و زمینه](https://vibecodeschool.com/learn/cw-10-projects-and-memory)** · مفهومی · ۸ دقیقه
+  Cowork چطور به یاد می‌آورد: پروژه‌های مشترک میان Chat و Cowork، و حافظه‌ای که ترجیحات شما را با خود می‌برد.
+- **[مهارت‌ها: روش کارتان را یادش بدهید](https://vibecodeschool.com/learn/cw-11-skills-teach-it-your-way)** · مفهومی · ۹ دقیقه
+  مهارت‌ها بسته‌های دستورالعمل قابل استفاده‌ی دوباره‌اند — یکی را از بهترین جلسه‌تان بنویسید و برای همیشه از آن استفاده کنید.
+- **[کار با مرورگر و رایانه](https://vibecodeschool.com/learn/cw-12-browser-and-computer-use)** · مفهومی · ۸ دقیقه
+  وقتی کار به‌جای فایل در وب‌اپ‌هاست: Claude در مرورگر شما، و پیش‌نمایش کار با رایانه.
 
-## Module 4 — Work That Runs Without You
+## بخش ۴ — کاری که بدون شما پیش می‌رود
 
-Cloud sessions, phone steering, scheduled tasks, and composing everything into standing AI systems.
+جلسه‌های ابری، هدایت از گوشی، کارهای زمان‌بندی‌شده، و ترکیب همه در قالب سیستم‌های دائمی هوش مصنوعی.
 
-- **[Cloud Sessions and Your Phone](https://vibecodeschool.com/learn/cw-13-cloud-sessions-and-mobile)** · Concept · 8 min
-  Close the laptop, keep the work going: remote sessions, synced state, and steering from your phone.
-- **[Scheduled Tasks](https://vibecodeschool.com/learn/cw-14-scheduled-tasks)** · Walkthrough · 10 min
-  Work that runs at 6am Monday without you: recurring reports, monitors, and follow-ups.
-- **[An AI Employee, Not a Chatbot](https://vibecodeschool.com/learn/cw-15-your-ai-employee)** · Concept · 9 min
-  Assembling the pieces — folders, skills, connectors, schedules — into standing systems that run your recurring work.
-- **[Capstone: Your Weekly Report System](https://vibecodeschool.com/learn/cw-16-capstone-weekly-system)** · Walkthrough · 20 min
-  Build a complete standing system end-to-end: brief, skill, schedule, and two weeks of reviewed runs.
+- **[جلسه‌های ابری و گوشی شما](https://vibecodeschool.com/learn/cw-13-cloud-sessions-and-mobile)** · مفهومی · ۸ دقیقه
+  لپ‌تاپ را ببندید، کار ادامه پیدا کند: جلسه‌های از راه دور، وضعیت همگام‌شده، و هدایت از گوشی.
+- **[کارهای زمان‌بندی‌شده](https://vibecodeschool.com/learn/cw-14-scheduled-tasks)** · راهنمای گام‌به‌گام · ۱۰ دقیقه
+  کاری که دوشنبه ساعت ۶ صبح بدون شما اجرا می‌شود: گزارش‌های دوره‌ای، پایشگرها، و پیگیری‌ها.
+- **[یک کارمند هوش مصنوعی، نه یک چت‌بات](https://vibecodeschool.com/learn/cw-15-your-ai-employee)** · مفهومی · ۹ دقیقه
+  کنار هم گذاشتن اجزا — پوشه‌ها، مهارت‌ها، کانکتورها، زمان‌بندی‌ها — در قالب سیستم‌های دائمی که کارهای تکراری‌تان را اداره می‌کنند.
+- **[پروژه‌ی پایانی: سیستم گزارش هفتگی شما](https://vibecodeschool.com/learn/cw-16-capstone-weekly-system)** · راهنمای گام‌به‌گام · ۲۰ دقیقه
+  یک سیستم دائمی کامل را از سر تا ته بسازید: شرح کار، مهارت، زمان‌بندی، و دو هفته اجرای بازبینی‌شده.
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and [start the course free](https://vibecodeschool.com/courses/claude-cowork).
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و [دوره را رایگان شروع کنید](https://vibecodeschool.com/courses/claude-cowork).
+
+</div>

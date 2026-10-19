@@ -1,124 +1,140 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Prompt Engineering Mastery
+<div dir="rtl">
 
-> Every technique that matters in 2026 — from zero-shot to chain-of-thought to prompt injection defense.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [سرفصل این دوره](https://github.com/dineshxr/vibecodeschool/blob/main/courses/prompt-engineering/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. پیوند هر درس به نسخه‌ی تعاملی انگلیسی آن روی سایت می‌رود.
 
-The complete prompting curriculum: foundations, reasoning techniques, reliability, structured output, image and multimodal prompting, and the security layer — prompt hacking and how to defend against it. 35 lessons, every one hands-on, every technique tested against current frontier models.
+# تسلط بر مهندسی پرامپت
+
+> هر فنی که در ۲۰۲۶ اهمیت دارد — از بدون‌نمونه (zero-shot) تا زنجیره‌ی تفکر تا دفاع در برابر تزریق پرامپت.
+
+برنامه‌ی درسی کامل پرامپت‌نویسی: پایه‌ها، فنون استدلال، قابلیت اطمینان، خروجی ساختاریافته، پرامپت تصویر و
+چندوجهی، و لایه‌ی امنیت — نفوذ پرامپتی و چگونگی دفاع در برابرش. ۳۵ درس، همه عملی، و هر فن روی
+پیشرفته‌ترین مدل‌های فعلی آزموده شده.
 
 | | |
 |---|---|
-| **Level** | Beginner |
-| **Lessons** | 35 across 6 modules |
-| **Time** | ~24 hours |
-| **Cost** | Free · no signup |
-| **Take it interactively** | [https://vibecodeschool.com/courses/prompt-engineering](https://vibecodeschool.com/courses/prompt-engineering) |
+| **سطح** | مقدماتی |
+| **درس‌ها** | ۳۵ درس در ۶ بخش |
+| **زمان** | حدود ۲۴ ساعت |
+| **هزینه** | رایگان · بدون ثبت‌نام |
+| **نسخه‌ی تعاملی** | [vibecodeschool.com/courses/prompt-engineering](https://vibecodeschool.com/courses/prompt-engineering) |
 
-Every lesson below links to its interactive version — steps you run locally,
-scrubbable agent-session replays, and a quiz that gates completion.
+هر درس زیر به نسخه‌ی تعاملی‌اش پیوند دارد — گام‌هایی که روی سیستم خودتان اجرا می‌کنید، بازپخش جلسه‌های
+ایجنت که می‌توانید جلو و عقبشان ببرید، و آزمونکی که باید پیش از تمام‌کردن درس بگذرانید.
 
-## Module 1 — Prompting Foundations
+## بخش ۱ — پایه‌های پرامپت‌نویسی
 
-The working parts of a prompt — precise instructions, delimiters, roles, and examples — assembled into contracts that hold up under real input.
+اجزای کاری یک پرامپت — دستورهای دقیق، جداکننده‌ها، نقش‌ها و مثال‌ها — که در قالب قراردادهایی کنار هم
+می‌نشینند که زیر ورودی واقعی دوام می‌آورند.
 
-- **[What Prompt Engineering Actually Is](https://vibecodeschool.com/learn/pe-01-what-is-prompt-engineering)** · Concept · 9 min
-  Prompting is interface design for a probabilistic machine — you arrange context so the output you want becomes the most likely continuation.
-- **[Anatomy of a Prompt](https://vibecodeschool.com/learn/pe-02-anatomy-of-a-prompt)** · Concept · 10 min
-  Role, instruction, context, input data, output format — the five working parts of a prompt, and why their order changes behavior.
-- **[Instructions & Constraints](https://vibecodeschool.com/learn/pe-03-instructions-and-constraints)** · Walkthrough · 14 min
-  Turn vague asks into precise instructions with positive constraints, hard delimiters, and an output contract that survives hostile input.
-- **[Role Prompting](https://vibecodeschool.com/learn/pe-04-role-prompting)** · Concept · 9 min
-  Personas change vocabulary, framing, and priorities — not capability. When a role earns its tokens and when it's superstition.
-- **[Zero-Shot, One-Shot, Few-Shot](https://vibecodeschool.com/learn/pe-05-zero-one-few-shot)** · Walkthrough · 14 min
-  Dial examples from zero to few and watch behavior lock in — plus how example choice, balance, and order quietly steer the model.
-- **[Combining the Basics](https://vibecodeschool.com/learn/pe-06-combining-basics)** · Sandbox replay · 16 min
-  Watch a vague classifier prompt become production-grade: label space, output contract, few-shot edge cases, and a hostile-input test.
+- **[مهندسی پرامپت واقعاً چیست](https://vibecodeschool.com/learn/pe-01-what-is-prompt-engineering)** · مفهومی · ۹ دقیقه
+  پرامپت‌نویسی طراحی رابط برای یک ماشین احتمالاتی است — زمینه را طوری می‌چینید که خروجی دلخواهتان محتمل‌ترین ادامه شود.
+- **[کالبدشناسی یک پرامپت](https://vibecodeschool.com/learn/pe-02-anatomy-of-a-prompt)** · مفهومی · ۱۰ دقیقه
+  نقش، دستور، زمینه، داده‌ی ورودی، قالب خروجی — پنج جزء کاری یک پرامپت، و این‌که چرا ترتیبشان رفتار را عوض می‌کند.
+- **[دستورها و قیدها](https://vibecodeschool.com/learn/pe-03-instructions-and-constraints)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  درخواست‌های مبهم را با قیدهای مثبت، جداکننده‌های محکم و قرارداد خروجی‌ای که در برابر ورودی خصمانه دوام می‌آورد، به دستورهای دقیق تبدیل کنید.
+- **[پرامپت‌نویسی با نقش](https://vibecodeschool.com/learn/pe-04-role-prompting)** · مفهومی · ۹ دقیقه
+  نقش‌ها واژگان، چارچوب‌بندی و اولویت‌ها را تغییر می‌دهند — نه توانایی را. کی یک نقش ارزش توکن‌هایش را دارد و کی خرافه است.
+- **[بدون نمونه، تک‌نمونه، چندنمونه](https://vibecodeschool.com/learn/pe-05-zero-one-few-shot)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  تعداد مثال‌ها را از صفر به چند برسانید و تثبیت رفتار را ببینید — به‌علاوه‌ی این‌که انتخاب، توازن و ترتیب مثال‌ها چطور بی‌صدا مدل را هدایت می‌کنند.
+- **[ترکیب پایه‌ها](https://vibecodeschool.com/learn/pe-06-combining-basics)** · بازپخش سندباکس · ۱۶ دقیقه
+  ببینید یک پرامپت دسته‌بندی مبهم چطور به سطح تولید می‌رسد: فضای برچسب‌ها، قرارداد خروجی، حالت‌های مرزی چندنمونه‌ای، و آزمون ورودی خصمانه.
 
-## Module 2 — Reasoning Techniques
+## بخش ۲ — فنون استدلال
 
-Make models show and improve their work: chain-of-thought, decomposition, voting across samples, and where 2026 reasoning models change the playbook.
+کاری کنید مدل‌ها روند کارشان را نشان دهند و بهترش کنند: زنجیره‌ی تفکر، تجزیه‌ی مسئله، رأی‌گیری میان نمونه‌ها،
+و جاهایی که مدل‌های استدلالی ۲۰۲۶ قواعد بازی را عوض می‌کنند.
 
-- **[Chain-of-Thought Prompting](https://vibecodeschool.com/learn/pe-07-chain-of-thought)** · Concept · 10 min
-  Showing worked reasoning before the answer makes multi-step tasks dramatically more reliable — when the task actually has steps.
-- **[Zero-Shot CoT & Step-by-Step Triggers](https://vibecodeschool.com/learn/pe-08-zero-shot-cot)** · Walkthrough · 13 min
-  Trigger reasoning without examples, structure the scratchpad, and extract clean final answers your code can parse.
-- **[Self-Consistency](https://vibecodeschool.com/learn/pe-09-self-consistency)** · Concept · 9 min
-  Sample several reasoning paths and let them vote — buying accuracy with compute on tasks that have a checkable final answer.
-- **[Decomposition: Least-to-Most & Subproblems](https://vibecodeschool.com/learn/pe-10-decomposition-least-to-most)** · Walkthrough · 14 min
-  Break a hard task into ordered subquestions, solve them one by one, and feed each answer forward — reasoning as a pipeline, not a leap.
-- **[Generated Knowledge & Prompt Priming](https://vibecodeschool.com/learn/pe-11-generated-knowledge-priming)** · Concept · 10 min
-  Have the model write down relevant facts before answering — surfacing latent knowledge into context, where it constrains the answer.
-- **[Reasoning Models vs CoT Prompts](https://vibecodeschool.com/learn/pe-12-reasoning-models-vs-cot)** · Concept · 11 min
-  Extended-thinking models do CoT natively — what that retires, what it doesn't, and how to split work between fast and thinking modes.
+- **[پرامپت زنجیره‌ی تفکر](https://vibecodeschool.com/learn/pe-07-chain-of-thought)** · مفهومی · ۱۰ دقیقه
+  نشان دادن استدلال پیش از پاسخ، کارهای چندمرحله‌ای را به‌مراتب قابل اعتمادتر می‌کند — وقتی کار واقعاً مرحله داشته باشد.
+- **[زنجیره‌ی تفکر بدون نمونه و محرک‌های «گام‌به‌گام»](https://vibecodeschool.com/learn/pe-08-zero-shot-cot)** · راهنمای گام‌به‌گام · ۱۳ دقیقه
+  بدون مثال استدلال را فعال کنید، چرک‌نویس را ساختار بدهید، و پاسخ‌های نهایی تمیزی بیرون بکشید که کدتان بتواند تجزیه‌شان کند.
+- **[خودسازگاری](https://vibecodeschool.com/learn/pe-09-self-consistency)** · مفهومی · ۹ دقیقه
+  چند مسیر استدلال نمونه بگیرید و بگذارید رأی بدهند — خریدن دقت با محاسبه، در کارهایی که پاسخ نهایی قابل بررسی دارند.
+- **[تجزیه: از ساده به دشوار و زیرمسئله‌ها](https://vibecodeschool.com/learn/pe-10-decomposition-least-to-most)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  یک کار سخت را به زیرپرسش‌های مرتب بشکنید، یکی‌یکی حلشان کنید، و هر پاسخ را به مرحله‌ی بعد بدهید — استدلال به‌عنوان یک خط تولید، نه یک جهش.
+- **[دانش تولیدشده و آماده‌سازی پرامپت](https://vibecodeschool.com/learn/pe-11-generated-knowledge-priming)** · مفهومی · ۱۰ دقیقه
+  از مدل بخواهید پیش از پاسخ، واقعیت‌های مرتبط را بنویسد — دانش نهفته را به زمینه بیاورید، جایی که پاسخ را مقید می‌کند.
+- **[مدل‌های استدلالی در برابر پرامپت‌های زنجیره‌ی تفکر](https://vibecodeschool.com/learn/pe-12-reasoning-models-vs-cot)** · مفهومی · ۱۱ دقیقه
+  مدل‌های تفکر گسترده خودشان زنجیره‌ی تفکر انجام می‌دهند — این چه چیزی را بازنشسته می‌کند، چه چیزی را نه، و چطور کار را میان حالت سریع و حالت تفکر تقسیم کنیم.
 
-## Module 3 — Reliability & Truthfulness
+## بخش ۳ — قابلیت اطمینان و راستگویی
 
-Why models fabricate, and the countermeasures that ship: calibrated abstention, critique loops, ensembles, debiasing, and prompt test sets.
+چرا مدل‌ها چیز می‌سازند، و راهکارهایی که در عمل جواب می‌دهند: خودداری سنجیده از پاسخ، چرخه‌های نقد، ترکیب
+چند پاسخ، کاهش سوگیری، و مجموعه‌های آزمون پرامپت.
 
-- **[Why Models Hallucinate](https://vibecodeschool.com/learn/pe-13-why-models-hallucinate)** · Concept · 10 min
-  Fluency is probability, not truth — the mechanics of confident fabrication, and a taxonomy that tells you which fix fits which failure.
-- **[Calibration: Getting 'I Don't Know'](https://vibecodeschool.com/learn/pe-14-calibration-and-uncertainty)** · Walkthrough · 14 min
-  Give the model permission, vocabulary, and incentive to say 'I don't know' — abstention rules, confidence labels, and source-bound answers.
-- **[Self-Critique & Revision Loops](https://vibecodeschool.com/learn/pe-15-self-critique-loops)** · Walkthrough · 14 min
-  Draft, critique against a rubric, revise — and the tricks (fresh context, forced findings) that stop self-review from rubber-stamping.
-- **[Prompt Ensembling & Voting](https://vibecodeschool.com/learn/pe-16-prompt-ensembling)** · Concept · 10 min
-  Ask several ways, let the answers vote — prompt variants, format mixes, and cross-model panels that catch what any single prompt misses.
-- **[Order Effects & Debiasing](https://vibecodeschool.com/learn/pe-17-debiasing-and-ordering)** · Concept · 10 min
-  Position boosts, majority-label leaks, and recency pulls — the ordering biases in prompts and judges, and the habits that neutralize them.
-- **[Testing Prompts Like Code](https://vibecodeschool.com/learn/pe-18-testing-prompts-like-code)** · Walkthrough · 15 min
-  A 20-case test set, a scoreboard, and a regression rule — the smallest setup that turns prompt edits from vibes into engineering.
+- **[چرا مدل‌ها دچار توهم می‌شوند](https://vibecodeschool.com/learn/pe-13-why-models-hallucinate)** · مفهومی · ۱۰ دقیقه
+  روانی کلام یعنی احتمال، نه حقیقت — سازوکار ساختن با اعتمادبه‌نفس، و دسته‌بندی‌ای که می‌گوید کدام راه‌حل به کدام خطا می‌خورد.
+- **[تنظیم اطمینان: گرفتن «نمی‌دانم»](https://vibecodeschool.com/learn/pe-14-calibration-and-uncertainty)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  به مدل اجازه، واژگان و انگیزه بدهید تا بگوید «نمی‌دانم» — قواعد خودداری، برچسب‌های اطمینان، و پاسخ‌های مقید به منبع.
+- **[چرخه‌های خودنقدی و بازنویسی](https://vibecodeschool.com/learn/pe-15-self-critique-loops)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  پیش‌نویس، نقد بر اساس معیار، بازنویسی — و ترفندهایی (زمینه‌ی تازه، اجبار به یافتن ایراد) که نمی‌گذارند خودبازبینی به مُهر تأیید خشک‌وخالی تبدیل شود.
+- **[ترکیب پرامپت‌ها و رأی‌گیری](https://vibecodeschool.com/learn/pe-16-prompt-ensembling)** · مفهومی · ۱۰ دقیقه
+  به چند شکل بپرسید، بگذارید پاسخ‌ها رأی بدهند — گونه‌های پرامپت، ترکیب قالب‌ها، و هیئت‌هایی از چند مدل که آنچه یک پرامپت تنها جا می‌اندازد را پیدا می‌کنند.
+- **[اثر ترتیب و کاهش سوگیری](https://vibecodeschool.com/learn/pe-17-debiasing-and-ordering)** · مفهومی · ۱۰ دقیقه
+  برتری جایگاه، نشت برچسب اکثریت و کشش تازگی — سوگیری‌های ترتیب در پرامپت‌ها و داورها، و عادت‌هایی که خنثی‌شان می‌کنند.
+- **[آزمودن پرامپت‌ها مثل کد](https://vibecodeschool.com/learn/pe-18-testing-prompts-like-code)** · راهنمای گام‌به‌گام · ۱۵ دقیقه
+  یک مجموعه‌ی آزمون ۲۰ موردی، یک جدول امتیاز و یک قاعده‌ی پسرفت — کوچک‌ترین چیدمانی که ویرایش پرامپت را از حس‌وحال به مهندسی تبدیل می‌کند.
 
-## Module 4 — Structured Output & Production Prompting
+## بخش ۴ — خروجی ساختاریافته و پرامپت‌نویسی برای تولید
 
-Prompts that survive production — strict output contracts, long-context and RAG patterns, agent system prompts, meta-prompting, and versioning.
+پرامپت‌هایی که در محیط تولید زنده می‌مانند — قراردادهای سخت‌گیرانه‌ی خروجی، الگوهای زمینه‌ی طولانی و RAG،
+پرامپت سیستمی ایجنت‌ها، فراپرامپت‌نویسی، و نسخه‌بندی.
 
-- **[Output Contracts: JSON, Schemas, Delimiters](https://vibecodeschool.com/learn/pe-19-output-contracts-json-schemas)** · Walkthrough · 14 min
-  Turn 'usually valid JSON' into valid, typed data — schemas, delimiters, and validate-then-repair as a real output contract.
-- **[Long-Context Prompting](https://vibecodeschool.com/learn/pe-20-long-context-prompting)** · Concept · 10 min
-  Placement, labeling, and quote-then-answer — how to prompt reliably when the context is huge and attention isn't uniform.
-- **[RAG Prompting Patterns](https://vibecodeschool.com/learn/pe-21-rag-prompting-patterns)** · Concept · 11 min
-  Grounding, citations, and a scripted no-answer — the prompt patterns that make retrieval-augmented generation trustworthy.
-- **[Prompting AI Agents](https://vibecodeschool.com/learn/pe-22-prompting-ai-agents)** · Concept · 11 min
-  System prompts for tool-using agents: tool descriptions, stop conditions, and guardrails a chat prompt never needed.
-- **[Meta-Prompting: AI That Writes Prompts](https://vibecodeschool.com/learn/pe-23-meta-prompting)** · Walkthrough · 14 min
-  Use a strong model to draft, critique, and repair your prompts — and know the cases where hand-tuning still wins.
-- **[Prompt Versioning & Model Migration](https://vibecodeschool.com/learn/pe-24-prompt-versioning-and-migration)** · Concept · 10 min
-  Prompts are code: version them, changelog them, A/B them against a fixed test set, and migrate them safely across models.
+- **[قراردادهای خروجی: JSON، طرح‌واره‌ها، جداکننده‌ها](https://vibecodeschool.com/learn/pe-19-output-contracts-json-schemas)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  «JSON معمولاً معتبر» را به داده‌ی معتبر و نوع‌دار تبدیل کنید — طرح‌واره‌ها، جداکننده‌ها، و اعتبارسنجی سپس ترمیم به‌عنوان یک قرارداد خروجی واقعی.
+- **[پرامپت‌نویسی با زمینه‌ی طولانی](https://vibecodeschool.com/learn/pe-20-long-context-prompting)** · مفهومی · ۱۰ دقیقه
+  جای‌گذاری، برچسب‌گذاری، و «اول نقل‌قول بعد پاسخ» — چطور وقتی زمینه عظیم است و توجه یکنواخت نیست، قابل اعتماد پرامپت بنویسیم.
+- **[الگوهای پرامپت‌نویسی RAG](https://vibecodeschool.com/learn/pe-21-rag-prompting-patterns)** · مفهومی · ۱۱ دقیقه
+  تکیه بر منبع، ارجاع‌ها، و یک پاسخ ازپیش‌نوشته برای «پاسخی نیست» — الگوهایی که تولید افزوده با بازیابی را قابل اعتماد می‌کنند.
+- **[پرامپت‌نویسی برای ایجنت‌های هوش مصنوعی](https://vibecodeschool.com/learn/pe-22-prompting-ai-agents)** · مفهومی · ۱۱ دقیقه
+  پرامپت سیستمی برای ایجنت‌های ابزاربه‌دست: توصیف ابزارها، شرط‌های توقف، و محافظ‌هایی که پرامپت گفت‌وگو هرگز لازم نداشت.
+- **[فراپرامپت‌نویسی: هوش مصنوعی‌ای که پرامپت می‌نویسد](https://vibecodeschool.com/learn/pe-23-meta-prompting)** · راهنمای گام‌به‌گام · ۱۴ دقیقه
+  از یک مدل قوی برای پیش‌نویس، نقد و ترمیم پرامپت‌هایتان استفاده کنید — و بدانید کجا تنظیم دستی هنوز برنده است.
+- **[نسخه‌بندی پرامپت و مهاجرت میان مدل‌ها](https://vibecodeschool.com/learn/pe-24-prompt-versioning-and-migration)** · مفهومی · ۱۰ دقیقه
+  پرامپت‌ها کدند: نسخه‌بندی‌شان کنید، تغییراتشان را ثبت کنید، در برابر یک مجموعه‌ی آزمون ثابت A/B کنید، و با خیال راحت به مدل‌های دیگر ببریدشان.
 
-## Module 5 — Image & Multimodal Prompting
+## بخش ۵ — پرامپت تصویر و چندوجهی
 
-Prompt beyond text — generating images with control, steering with negatives and weights, reading images as input, and the voice and video frontier.
+پرامپت فراتر از متن — تولید تصویر با کنترل، هدایت با پرامپت منفی و وزن‌ها، خواندن تصویر به‌عنوان ورودی، و
+مرزهای صدا و ویدیو.
 
-- **[Text-to-Image Prompting Basics](https://vibecodeschool.com/learn/pe-25-text-to-image-basics)** · Concept · 10 min
-  The anatomy of an image prompt — subject, medium, style, composition, lighting — and an iteration workflow across 2026's tools.
-- **[Style Modifiers & Quality Boosters](https://vibecodeschool.com/learn/pe-26-style-modifiers-quality-boosters)** · Walkthrough · 15 min
-  Build one base prompt into a controlled result by layering medium, style, lighting, lens, and render terms — then save the recipe.
-- **[Negative Prompts & Weighted Terms](https://vibecodeschool.com/learn/pe-27-negative-prompts-and-weighting)** · Concept · 9 min
-  Excluding elements, the tool-specific syntax for emphasis, and the predictable ways negatives and weights fail.
-- **[Prompting With Images as Input](https://vibecodeschool.com/learn/pe-28-prompting-with-images-as-input)** · Walkthrough · 15 min
-  Vision prompting that ships: screenshots to bug reports, charts to data, photos to JSON — grounded and few-shot.
-- **[Voice, Video & Multimodal Frontiers](https://vibecodeschool.com/learn/pe-29-voice-video-multimodal)** · Concept · 10 min
-  Realtime voice, video understanding and generation, and cross-modal chains — where the prompting fundamentals still apply.
+- **[مبانی پرامپت متن به تصویر](https://vibecodeschool.com/learn/pe-25-text-to-image-basics)** · مفهومی · ۱۰ دقیقه
+  کالبدشناسی یک پرامپت تصویر — سوژه، رسانه، سبک، ترکیب‌بندی، نورپردازی — و یک گردش‌کار تکرارشونده در ابزارهای ۲۰۲۶.
+- **[اصلاح‌گرهای سبک و تقویت‌کننده‌های کیفیت](https://vibecodeschool.com/learn/pe-26-style-modifiers-quality-boosters)** · راهنمای گام‌به‌گام · ۱۵ دقیقه
+  یک پرامپت پایه را با لایه‌لایه افزودن رسانه، سبک، نور، لنز و اصطلاحات رندر به نتیجه‌ای کنترل‌شده برسانید — بعد دستورالعملش را ذخیره کنید.
+- **[پرامپت‌های منفی و اصطلاحات وزن‌دار](https://vibecodeschool.com/learn/pe-27-negative-prompts-and-weighting)** · مفهومی · ۹ دقیقه
+  حذف عناصر، نحو تأکید مخصوص هر ابزار، و راه‌های قابل پیش‌بینی‌ای که پرامپت منفی و وزن‌ها شکست می‌خورند.
+- **[پرامپت‌نویسی با تصویر به‌عنوان ورودی](https://vibecodeschool.com/learn/pe-28-prompting-with-images-as-input)** · راهنمای گام‌به‌گام · ۱۵ دقیقه
+  پرامپت‌نویسی بینایی که در عمل جواب می‌دهد: اسکرین‌شات به گزارش باگ، نمودار به داده، عکس به JSON — متکی بر منبع و چندنمونه‌ای.
+- **[مرزهای صدا، ویدیو و چندوجهی](https://vibecodeschool.com/learn/pe-29-voice-video-multimodal)** · مفهومی · ۱۰ دقیقه
+  صدای بلادرنگ، فهم و تولید ویدیو، و زنجیره‌های میان‌وجهی — جاهایی که اصول پایه‌ی پرامپت‌نویسی هنوز صدق می‌کنند.
 
-## Module 6 — Prompt Hacking & Defense
+## بخش ۶ — نفوذ پرامپتی و دفاع
 
-The security layer every builder needs — how prompt injection, jailbreaks, and prompt leaking work, and how to defend your own app in depth.
+لایه‌ی امنیتی که هر سازنده‌ای لازم دارد — تزریق پرامپت، جیلبریک و نشت پرامپت چطور کار می‌کنند، و چطور از
+اپ خودتان دفاعی چندلایه کنید.
 
-- **[Prompt Injection](https://vibecodeschool.com/learn/pe-30-prompt-injection)** · Concept · 11 min
-  The #1 LLM app risk: how untrusted text becomes instructions, direct versus indirect, and the incident patterns to expect.
-- **[Jailbreaking: A Taxonomy](https://vibecodeschool.com/learn/pe-31-jailbreaking-taxonomy)** · Concept · 10 min
-  The main jailbreak classes as concepts — role-play, obfuscation, many-shot, crescendo — and why defense must be layered.
-- **[Prompt Leaking & System Prompt Extraction](https://vibecodeschool.com/learn/pe-32-prompt-leaking)** · Concept · 9 min
-  Why 'please don't reveal this' fails, and how to design a system prompt that's safe to leak in the first place.
-- **[Defense in Depth for LLM Apps](https://vibecodeschool.com/learn/pe-33-defensive-prompting)** · Walkthrough · 16 min
-  Stack the layers — spotlighting, instruction hierarchy, sandwich, output filtering, least-privilege tools — into a defended prompt.
-- **[Red-Teaming Your Own App](https://vibecodeschool.com/learn/pe-34-red-teaming-your-app)** · Walkthrough · 15 min
-  Build an attack suite for YOUR app, score its block rate, fix the failures, and regression-test your defenses in CI.
-- **[Capstone: Your Prompt Playbook](https://vibecodeschool.com/learn/pe-35-capstone-prompt-playbook)** · Walkthrough · 16 min
-  Assemble everything into a living playbook: five task templates, a test set, a defense checklist, and a migration log.
+- **[تزریق پرامپت](https://vibecodeschool.com/learn/pe-30-prompt-injection)** · مفهومی · ۱۱ دقیقه
+  خطر شماره‌ی ۱ اپ‌های مبتنی بر LLM: متن غیرقابل اعتماد چطور به دستور تبدیل می‌شود، مستقیم در برابر غیرمستقیم، و الگوهای حادثه‌ای که باید انتظارشان را داشت.
+- **[جیلبریک: یک دسته‌بندی](https://vibecodeschool.com/learn/pe-31-jailbreaking-taxonomy)** · مفهومی · ۱۰ دقیقه
+  دسته‌های اصلی جیلبریک در سطح مفهوم — نقش‌آفرینی، پنهان‌سازی، چندنمونه‌ای، تشدید تدریجی — و این‌که چرا دفاع باید لایه‌لایه باشد.
+- **[نشت پرامپت و بیرون‌کشیدن پرامپت سیستمی](https://vibecodeschool.com/learn/pe-32-prompt-leaking)** · مفهومی · ۹ دقیقه
+  چرا «لطفاً این را فاش نکن» جواب نمی‌دهد، و چطور از اول پرامپت سیستمی‌ای طراحی کنیم که نشتش خطری نداشته باشد.
+- **[دفاع چندلایه برای اپ‌های LLM](https://vibecodeschool.com/learn/pe-33-defensive-prompting)** · راهنمای گام‌به‌گام · ۱۶ دقیقه
+  لایه‌ها را روی هم بچینید — برجسته‌سازی ورودی، سلسله‌مراتب دستورها، ساندویچ، فیلتر خروجی، ابزارهای با کمترین دسترسی — تا یک پرامپت دفاع‌شده بسازید.
+- **[آزمون تیم قرمز روی اپ خودتان](https://vibecodeschool.com/learn/pe-34-red-teaming-your-app)** · راهنمای گام‌به‌گام · ۱۵ دقیقه
+  یک مجموعه حمله برای اپ خودتان بسازید، نرخ مسدودسازی‌اش را بسنجید، خطاها را رفع کنید، و دفاع‌هایتان را در CI آزمون پسرفت کنید.
+- **[پروژه‌ی پایانی: دفترچه‌ی پرامپت شما](https://vibecodeschool.com/learn/pe-35-capstone-prompt-playbook)** · راهنمای گام‌به‌گام · ۱۶ دقیقه
+  همه چیز را در یک دفترچه‌ی زنده جمع کنید: پنج قالب کار، یک مجموعه‌ی آزمون، یک چک‌لیست دفاعی، و یک گزارش مهاجرت.
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and [start the course free](https://vibecodeschool.com/courses/prompt-engineering).
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و [دوره را رایگان شروع کنید](https://vibecodeschool.com/courses/prompt-engineering).
+
+</div>

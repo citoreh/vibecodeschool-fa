@@ -1,44 +1,56 @@
-# Contributing
+<div dir="rtl">
 
-Thanks for helping make the vibe coding curriculum better. Three kinds of
-contributions are welcome, in increasing order of effort:
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [CONTRIBUTING.md](https://github.com/dineshxr/vibecodeschool/blob/main/CONTRIBUTING.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. راهنمای ترجمه: [TRANSLATION.md](./TRANSLATION.md).
 
-## 1. Fix or improve content (most wanted)
+# مشارکت
 
-The AI-tool landscape changes monthly, so **factual corrections are the most
-valuable PRs** — a renamed flag, a changed pricing tier, a deprecated command,
-a stale model name.
+ممنون که به بهتر شدن برنامه‌ی درسی وایب‌کدینگ کمک می‌کنید. سه نوع مشارکت پذیرفته می‌شود، به ترتیب
+از کم‌زحمت به پرزحمت:
 
-- **Curriculum files** (`courses/`, `roadmap/`) are **generated** from the
-  site's source of truth (each file says so at the top). Open the PR against
-  the generated file anyway — maintainers apply the fix to the site source,
-  re-export, and credit you in the merge. Small fix? An issue with a link to
-  the wrong line is enough.
-- **Awesome list** (`awesome/README.md`) is hand-maintained — edit it directly.
+## ۰. ترجمه‌ی فارسی (مخصوص این مخزن)
 
-## 2. Add to the awesome list
+- اشتباه ترجمه، اصطلاح نادرست یا جمله‌ی نامفهوم دیدید؟ همین‌جا ایشو یا درخواست ادغام (PR) باز کنید.
+- برای ترجمه‌ی بخش‌های باقی‌مانده (واژه‌نامه، قالب‌ها، دموها)، اول ایشو باز کنید تا دو نفر روی یک
+  فایل کار نکنند.
+- معادل‌ها را از [واژه‌نامه‌ی ترجمه](./TRANSLATION.md#واژهنامهی-ترجمه) بردارید تا ترجمه یکدست بماند.
+- اصلاح‌های **محتوایی** (اطلاعات قدیمی یا نادرست در خود درس) را در
+  [مخزن اصلی](https://github.com/dineshxr/vibecodeschool) مطرح کنید تا به همه‌ی زبان‌ها برسد.
 
-One PR per addition. A good entry:
+## ۱. اصلاح یا بهبود محتوا (بیشترین نیاز)
 
-- Fits an existing category (or argues briefly for a new one)
-- Is something you've actually used — one line on *why it earns the spot*
-- Isn't your own product… unless it's genuinely good and you disclose it
+دنیای ابزارهای هوش مصنوعی هر ماه عوض می‌شود، پس **اصلاح‌های واقعی ارزشمندترین درخواست‌های ادغام‌اند** —
+پرچمی که نامش عوض شده، سطح قیمتی که تغییر کرده، دستوری که منسوخ شده، نام مدلی که قدیمی شده.
 
-## 3. Suggest lessons or translations
+- **فایل‌های برنامه‌ی درسی** (`courses/`، `roadmap/`) از منبع اصلی سایت **تولید** می‌شوند (بالای هر
+  فایل این را نوشته). با این حال درخواست ادغام را روی همان فایل تولیدشده باز کنید — نگه‌دارندگان
+  اصلاح را در منبع سایت اعمال می‌کنند، دوباره خروجی می‌گیرند و در ادغام از شما نام می‌برند. اصلاح
+  کوچک است؟ یک ایشو با پیوند به خط اشتباه کافی است.
+- **فهرست Awesome** (`awesome/README.md`) دستی نگهداری می‌شود — مستقیم ویرایشش کنید.
 
-Open an issue first with a short outline (what the lesson teaches, which module
-it belongs to, why it's missing). Same for translations of the roadmap —
-issue first so two people don't translate the same thing.
+## ۲. افزودن به فهرست Awesome
 
-## Ground rules
+هر افزوده یک درخواست ادغام. یک مدخل خوب:
 
-- Be accurate over promotional — this list includes competitors on purpose.
-- Keep the tone of the existing content: direct, concrete, no hype.
-- By contributing you agree your contributions are licensed under the repo's
-  licenses (MIT for code, CC BY-SA 4.0 for content).
+- در یکی از دسته‌های موجود جا می‌گیرد (یا کوتاه استدلال می‌کند که دسته‌ی تازه لازم است)
+- چیزی است که واقعاً استفاده‌اش کرده‌اید — یک خط درباره‌ی این‌که *چرا جایش را به دست آورده*
+- محصول خودتان نیست… مگر این‌که واقعاً خوب باشد و این را اعلام کنید
 
-## Local preview
+## ۳. پیشنهاد درس یا ترجمه
 
-Markdown only — any editor works. If you're touching the generated files and
-want to see the pipeline: the exporter lives in the (currently private) site
-repo as `scripts/export-oss.mts`.
+اول یک ایشو با سرفصل کوتاه باز کنید (درس چه چیزی یاد می‌دهد، به کدام بخش تعلق دارد، چرا جایش خالی
+است). برای ترجمه‌های نقشه‌ی راه هم همین‌طور — اول ایشو، تا دو نفر یک چیز را ترجمه نکنند.
+
+## قواعد پایه
+
+- دقت مهم‌تر از تبلیغ است — این فهرست عمداً رقبا را هم دارد.
+- لحن محتوای موجود را حفظ کنید: مستقیم، مشخص، بدون اغراق.
+- با مشارکت، می‌پذیرید که مشارکت شما تحت مجوزهای این مخزن منتشر شود (MIT برای کد، CC BY-SA 4.0 برای
+  محتوا).
+
+## پیش‌نمایش محلی
+
+فقط مارک‌داون است — هر ویرایشگری کار می‌کند. اگر به فایل‌های تولیدشده دست می‌زنید و می‌خواهید خط
+تولید را ببینید: خروجی‌گیر در مخزن سایت (که فعلاً خصوصی است) با نام `scripts/export-oss.mts` قرار دارد.
+
+</div>

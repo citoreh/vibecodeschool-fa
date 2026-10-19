@@ -1,75 +1,83 @@
+<div dir="rtl">
+
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [awesome/README.md](https://github.com/dineshxr/vibecodeschool/blob/main/awesome/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. بیشتر منابع پیوندداده‌شده به انگلیسی‌اند.
+
 # Awesome Vibe Coding
 
-A curated list of tools, courses, tutorials, and communities for **vibe coding** —
-building software by directing AI agents. Honest by design: it includes our
-competitors, because a list that only recommends its own stuff isn't a list.
+فهرستی گزینش‌شده از ابزارها، دوره‌ها، آموزش‌ها و جامعه‌های **وایب‌کدینگ (vibe coding)** — یعنی ساختن
+نرم‌افزار با هدایت ایجنت‌های هوش مصنوعی. این فهرست عمداً صادق است: رقبای ما را هم شامل می‌شود، چون
+فهرستی که فقط چیزهای خودش را پیشنهاد کند فهرست نیست.
 
-*Maintained by [Vibe Code School](https://vibecodeschool.com). PRs welcome — see [CONTRIBUTING.md](../CONTRIBUTING.md).*
+*نگهداری‌شده توسط [Vibe Code School](https://vibecodeschool.com). درخواست ادغام خوش‌آمد است —
+[CONTRIBUTING.md](../CONTRIBUTING.md) را ببینید.*
 
-## Contents
+## فهرست مطالب
 
-- [Agents & CLIs](#agents--clis)
-- [Agent-first IDEs & editors](#agent-first-ides--editors)
-- [App builders (prompt-to-app)](#app-builders-prompt-to-app)
-- [Courses & structured learning](#courses--structured-learning)
-- [Tutorials & guides](#tutorials--guides)
-- [Reference & concepts](#reference--concepts)
-- [Communities](#communities)
+- [ایجنت‌ها و CLIها](#ایجنتها-و-cliها)
+- [IDEها و ویرایشگرهای ایجنت‌محور](#ideها-و-ویرایشگرهای-ایجنتمحور)
+- [اپ‌سازها (از پرامپت تا اپ)](#اپسازها-از-پرامپت-تا-اپ)
+- [دوره‌ها و یادگیری ساختاریافته](#دورهها-و-یادگیری-ساختاریافته)
+- [آموزش‌ها و راهنماها](#آموزشها-و-راهنماها)
+- [مرجع و مفاهیم](#مرجع-و-مفاهیم)
+- [جامعه‌ها](#جامعهها)
 
-## Agents & CLIs
+## ایجنت‌ها و CLIها
 
-- [Claude Code](https://claude.com/claude-code) — Anthropic's agentic CLI. Project memory (CLAUDE.md), plan mode, hooks, MCP, subagents. The deliberate pair-programmer.
-- [Codex](https://openai.com/codex/) — OpenAI's open-source agentic CLI with IDE and cloud modes. Session-wide approval modes; strong at scaffolding and mobile.
-- [Gemini CLI](https://github.com/google-gemini/gemini-cli) — Google's open-source terminal agent with generous free tier.
-- [Aider](https://github.com/paul-gauthier/aider) — the open-source pioneer of git-aware agentic coding. Model-agnostic, BYO key.
-- [OpenCode](https://github.com/sst/opencode) — open-source terminal coding agent, provider-agnostic.
+- [Claude Code](https://claude.com/claude-code) — ابزار خط فرمان ایجنتی Anthropic. حافظه‌ی پروژه (CLAUDE.md)، حالت برنامه‌ریزی (plan mode)، هوک‌ها، MCP، زیرایجنت‌ها. یک هم‌برنامه‌نویس سنجیده.
+- [Codex](https://openai.com/codex/) — ابزار خط فرمان ایجنتی و متن‌باز OpenAI با حالت‌های IDE و ابری. حالت‌های تأیید برای کل جلسه؛ در ساختن اسکلت اولیه و موبایل قوی است.
+- [Gemini CLI](https://github.com/google-gemini/gemini-cli) — ایجنت ترمینالی و متن‌باز گوگل با سهمیه‌ی رایگان سخاوتمندانه.
+- [Aider](https://github.com/paul-gauthier/aider) — پیشگام متن‌باز کدنویسی ایجنتی آگاه از git. مستقل از مدل؛ کلید API خودتان را می‌آورید.
+- [OpenCode](https://github.com/sst/opencode) — ایجنت کدنویسی ترمینالی و متن‌باز، مستقل از ارائه‌دهنده.
 
-## Agent-first IDEs & editors
+## IDEها و ویرایشگرهای ایجنت‌محور
 
-- [Google Antigravity](https://antigravity.google/) — agent-first IDE with an Agent Manager: parallel agents across worktrees reporting back with artifacts and browser-verified walkthroughs.
-- [Cursor](https://cursor.com) — the AI-native editor; agent panel, inline edits, background agents.
-- [Windsurf](https://windsurf.com) — agentic editor with Cascade multi-step flows.
-- [Zed](https://zed.dev) — high-performance editor with agentic editing built in.
+- [Google Antigravity](https://antigravity.google/) — IDE ایجنت‌محور با یک مدیر ایجنت (Agent Manager): ایجنت‌های موازی روی ورک‌تری‌های مختلف که با آرتیفکت‌ها و راهنماهای تأییدشده در مرورگر گزارش می‌دهند.
+- [Cursor](https://cursor.com) — ویرایشگر بومیِ هوش مصنوعی؛ پنل ایجنت، ویرایش درون‌خطی، ایجنت‌های پس‌زمینه.
+- [Windsurf](https://windsurf.com) — ویرایشگر ایجنتی با جریان‌های چندمرحله‌ای Cascade.
+- [Zed](https://zed.dev) — ویرایشگر پرسرعت با ویرایش ایجنتی داخلی.
 
-## App builders (prompt-to-app)
+## اپ‌سازها (از پرامپت تا اپ)
 
-- [v0](https://v0.dev) — Vercel's prompt-to-UI/app builder, strong on React/Next.js.
-- [Bolt](https://bolt.new) — full-stack apps from prompts in the browser.
-- [Lovable](https://lovable.dev) — prompt-to-product with auth/db integrations.
-- [Replit](https://replit.com) — browser IDE with Replit Agent; zero-setup deploys.
+- [v0](https://v0.dev) — سازنده‌ی رابط کاربری و اپ از روی پرامپتِ Vercel، قوی در React/Next.js.
+- [Bolt](https://bolt.new) — اپ‌های فول‌استک از روی پرامپت، در مرورگر.
+- [Lovable](https://lovable.dev) — از پرامپت تا محصول، با یکپارچه‌سازی احراز هویت و پایگاه‌داده.
+- [Replit](https://replit.com) — IDE مرورگری با Replit Agent؛ دیپلوی بدون نیاز به راه‌اندازی.
 
-## Courses & structured learning
+## دوره‌ها و یادگیری ساختاریافته
 
-- [Vibe Code School](https://vibecodeschool.com) — **this project.** 103 free interactive lessons across Claude Code, Codex, Antigravity, and Agentic AI Engineering (RAG, MCP, evals, AI security); sandbox replays, quizzes, XP; no signup. ([roadmap](https://vibecodeschool.com/roadmap))
-- [DeepLearning.AI short courses](https://www.deeplearning.ai/short-courses/) — free short courses incl. AI-assisted building with Replit; great zero-setup first taste.
-- [Coursera / Scrimba](https://www.coursera.org/courses?query=vibe%20coding) — video + interactive screencast specializations with certificates.
-- [Udemy](https://www.udemy.com/topic/vibe-coding/) — self-paced project-along video courses; watch for sales.
-- [DataCamp](https://www.datacamp.com) — AI-assisted coding for data/analytics folks.
-- [Frontend Masters](https://frontendmasters.com) — professional workshops on Cursor/Claude Code workflows for working developers.
-- [Class Central: vibe coding](https://www.classcentral.com/report/best-vibe-coding-courses/) — meta-directory comparing 80+ options.
+- [Vibe Code School](https://vibecodeschool.com) — **همین پروژه.** ۱۰۳ درس تعاملی رایگان درباره‌ی Claude Code، Codex، Antigravity و مهندسی هوش مصنوعی ایجنتی (RAG، MCP، ارزیابی‌ها، امنیت هوش مصنوعی)؛ بازپخش سندباکس، آزمونک، امتیاز؛ بدون ثبت‌نام. ([نقشه‌ی راه](https://vibecodeschool.com/roadmap))
+- [دوره‌های کوتاه DeepLearning.AI](https://www.deeplearning.ai/short-courses/) — دوره‌های کوتاه رایگان، از جمله ساختن با کمک هوش مصنوعی روی Replit؛ یک چشیدن اولیه‌ی عالی بدون نیاز به راه‌اندازی.
+- [Coursera / Scrimba](https://www.coursera.org/courses?query=vibe%20coding) — دوره‌های تخصصی ویدیویی و اسکرین‌کست تعاملی با گواهی.
+- [Udemy](https://www.udemy.com/topic/vibe-coding/) — دوره‌های ویدیویی پروژه‌محور با سرعت دلخواه؛ منتظر تخفیف‌ها باشید.
+- [DataCamp](https://www.datacamp.com) — کدنویسی با کمک هوش مصنوعی برای اهل داده و تحلیل.
+- [Frontend Masters](https://frontendmasters.com) — کارگاه‌های حرفه‌ای درباره‌ی گردش‌کار Cursor و Claude Code برای توسعه‌دهندگان شاغل.
+- [Class Central: vibe coding](https://www.classcentral.com/report/best-vibe-coding-courses/) — فهرست جامعی که بیش از ۸۰ گزینه را مقایسه می‌کند.
 
-## Tutorials & guides
+## آموزش‌ها و راهنماها
 
-- [How to vibe code a website (2026)](https://vibecodeschool.com/blog/how-to-vibe-code-a-website) — blank folder to live URL in an afternoon, every prompt included.
-- [Vibe coding platforms compared](https://vibecodeschool.com/blog/vibe-coding-platforms-compared) — Claude Code vs Codex vs Cursor vs Antigravity vs Aider, by daily-driving feel.
-- [Learn vibe coding from scratch](https://vibecodeschool.com/blog/learn-vibe-coding-from-scratch) — the 8-week self-paced path.
-- [Anthropic: Claude Code best practices](https://www.anthropic.com/engineering/claude-code-best-practices) — agentic coding patterns from the source.
-- [OpenAI Codex docs](https://developers.openai.com/codex/) — modes, AGENTS.md, sandboxing.
+- [چطور یک وب‌سایت را وایب‌کد کنیم (۲۰۲۶)](https://vibecodeschool.com/blog/how-to-vibe-code-a-website) — از پوشه‌ی خالی تا نشانی زنده در یک بعدازظهر، همه‌ی پرامپت‌ها هم آمده.
+- [مقایسه‌ی پلتفرم‌های وایب‌کدینگ](https://vibecodeschool.com/blog/vibe-coding-platforms-compared) — Claude Code، Codex، Cursor، Antigravity و Aider، از نظر حس کار روزمره با آن‌ها.
+- [یادگیری وایب‌کدینگ از صفر](https://vibecodeschool.com/blog/learn-vibe-coding-from-scratch) — مسیر ۸ هفته‌ای با سرعت دلخواه.
+- [Anthropic: بهترین شیوه‌های Claude Code](https://www.anthropic.com/engineering/claude-code-best-practices) — الگوهای کدنویسی ایجنتی از منبع اصلی.
+- [مستندات OpenAI Codex](https://developers.openai.com/codex/) — حالت‌ها، AGENTS.md، سندباکس.
 
-## Reference & concepts
+## مرجع و مفاهیم
 
-- [Karpathy's original "vibe coding" post](https://x.com/karpathy/status/1886192184808149383) — where the term started (Feb 2025).
-- [Vibe coding glossary](https://vibecodeschool.com/glossary) — plain-English definitions: agentic loop, plan mode, MCP, worktrees, and friends.
-- [Model Context Protocol](https://modelcontextprotocol.io) — the standard for wiring tools into agents.
-- [llms.txt spec](https://llmstxt.org) — make your sites legible to agents.
+- [پست اصلی Karpathy درباره‌ی «vibe coding»](https://x.com/karpathy/status/1886192184808149383) — جایی که این اصطلاح شروع شد (فوریه‌ی ۲۰۲۵).
+- [واژه‌نامه‌ی وایب‌کدینگ](https://vibecodeschool.com/glossary) — تعریف‌هایی به زبان ساده: چرخه‌ی ایجنتی، حالت برنامه‌ریزی، MCP، ورک‌تری‌ها و مانند این‌ها.
+- [Model Context Protocol](https://modelcontextprotocol.io) — استاندارد اتصال ابزارها به ایجنت‌ها.
+- [مشخصات llms.txt](https://llmstxt.org) — سایت‌هایتان را برای ایجنت‌ها خوانا کنید.
 
-## Communities
+## جامعه‌ها
 
-- [r/vibecoding](https://www.reddit.com/r/vibecoding/) — the dedicated subreddit.
-- [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/) — Claude Code tips and workflows.
-- [r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/) — agentic coding across tools.
+- [r/vibecoding](https://www.reddit.com/r/vibecoding/) — ساب‌ردیت اختصاصی.
+- [r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/) — نکته‌ها و گردش‌کارهای Claude Code.
+- [r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/) — کدنویسی ایجنتی در ابزارهای مختلف.
 
 ---
 
-⭐ Found something useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and
-[add what's missing](../CONTRIBUTING.md).
+⭐ چیز به‌دردبخوری پیدا کردید؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و
+[آنچه را کم است اضافه کنید](../CONTRIBUTING.md).
+
+</div>

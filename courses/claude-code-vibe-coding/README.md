@@ -1,105 +1,116 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Vibe Coding using Claude Code
+<div dir="rtl">
 
-> Ship real software at the speed of conversation.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [سرفصل این دوره](https://github.com/dineshxr/vibecodeschool/blob/main/courses/claude-code-vibe-coding/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. پیوند هر درس به نسخه‌ی تعاملی انگلیسی آن روی سایت می‌رود.
 
-From your first /init to capstone deploy. Claude Code as your daily driver: every prompt pattern, every workflow, every guardrail.
+# وایب‌کدینگ با Claude Code
+
+> نرم‌افزار واقعی را با سرعت گفت‌وگو منتشر کنید.
+
+از اولین `/init` تا دیپلوی پروژه‌ی پایانی. Claude Code به‌عنوان ابزار روزانه‌تان: همه‌ی الگوهای پرامپت،
+همه‌ی گردش‌کارها، همه‌ی محافظ‌ها.
 
 | | |
 |---|---|
-| **Level** | Beginner |
-| **Lessons** | 28 across 5 modules |
-| **Time** | ~14 hours |
-| **Cost** | Free · no signup |
-| **Take it interactively** | [https://vibecodeschool.com/courses/claude-code-vibe-coding](https://vibecodeschool.com/courses/claude-code-vibe-coding) |
+| **سطح** | مقدماتی |
+| **درس‌ها** | ۲۸ درس در ۵ بخش |
+| **زمان** | حدود ۱۴ ساعت |
+| **هزینه** | رایگان · بدون ثبت‌نام |
+| **نسخه‌ی تعاملی** | [vibecodeschool.com/courses/claude-code-vibe-coding](https://vibecodeschool.com/courses/claude-code-vibe-coding) |
 
-Every lesson below links to its interactive version — steps you run locally,
-scrubbable agent-session replays, and a quiz that gates completion.
+هر درس زیر به نسخه‌ی تعاملی‌اش پیوند دارد — گام‌هایی که روی سیستم خودتان اجرا می‌کنید، بازپخش جلسه‌های
+ایجنت که می‌توانید جلو و عقبشان ببرید، و آزمونکی که باید پیش از تمام‌کردن درس بگذرانید.
 
-## Module 1 — Setup & Foundations
+## بخش ۱ — راه‌اندازی و پایه‌ها
 
-Install the CLI, learn the loop, set up project memory. End of this module you're operational.
+ابزار خط فرمان را نصب کنید، چرخه را یاد بگیرید، حافظه‌ی پروژه را راه بیندازید. در پایان این بخش آماده‌ی
+کارید.
 
-- **[What Is Claude Code](https://vibecodeschool.com/learn/cc-01-what-is-claude-code)** · Concept · 8 min
-  An agentic CLI that reads your repo, edits files, runs tests, and commits — all with permission gates you control.
-- **[Install the CLI](https://vibecodeschool.com/learn/cc-02-install-the-cli)** · Walkthrough · 6 min
-  Get Claude Code running on your machine and verify the install.
-- **[Your First Conversation](https://vibecodeschool.com/learn/cc-03-first-conversation)** · Sandbox replay · 10 min
-  Watch the agentic loop in action: a single prompt, a tool call, a result, an answer. This is the heartbeat.
-- **[The Agentic Loop](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)** · Concept · 9 min
-  Plan → act → observe → adjust. Understanding this loop is the difference between fighting the agent and flowing with it.
-- **[CLAUDE.md and Project Memory](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)** · Walkthrough · 12 min
-  Project-level instructions the agent loads automatically. The single highest-leverage file in your repo when you work this way.
+- **[Claude Code چیست](https://vibecodeschool.com/learn/cc-01-what-is-claude-code)** · مفهومی · ۸ دقیقه
+  یک ابزار خط فرمان ایجنتی که مخزنتان را می‌خواند، فایل‌ها را ویرایش می‌کند، تست‌ها را اجرا می‌کند و کامیت می‌زند — همه با دروازه‌های مجوزی که کنترلشان دست شماست.
+- **[نصب ابزار خط فرمان](https://vibecodeschool.com/learn/cc-02-install-the-cli)** · راهنمای گام‌به‌گام · ۶ دقیقه
+  Claude Code را روی سیستمتان راه بیندازید و نصب را بررسی کنید.
+- **[اولین گفت‌وگوی شما](https://vibecodeschool.com/learn/cc-03-first-conversation)** · بازپخش سندباکس · ۱۰ دقیقه
+  چرخه‌ی ایجنتی را در عمل ببینید: یک پرامپت، یک فراخوانی ابزار، یک نتیجه، یک پاسخ. این ضربان قلب کار است.
+- **[چرخه‌ی ایجنتی](https://vibecodeschool.com/learn/cc-04-the-agentic-loop)** · مفهومی · ۹ دقیقه
+  برنامه‌ریزی ← اقدام ← مشاهده ← تنظیم. فهمیدن این چرخه فرق میان جنگیدن با ایجنت و هم‌جریان شدن با آن است.
+- **[CLAUDE.md و حافظه‌ی پروژه](https://vibecodeschool.com/learn/cc-05-claude-md-and-memory)** · راهنمای گام‌به‌گام · ۱۲ دقیقه
+  دستورالعمل‌های سطح پروژه که ایجنت خودکار بارشان می‌کند. وقتی این‌طور کار می‌کنید، اثرگذارترین فایل مخزنتان.
 
-## Module 2 — Core Workflows
+## بخش ۲ — گردش‌کارهای اصلی
 
-The day-to-day loops that make agentic coding faster than typing.
+چرخه‌های روزمره‌ای که کدنویسی ایجنتی را از تایپ کردن سریع‌تر می‌کنند.
 
-- **[Reading and Editing Files](https://vibecodeschool.com/learn/cc-06-reading-and-editing)** · Sandbox replay · 9 min
-  The agent navigates, edits, and verifies across multiple files in one turn.
-- **[Searching the Codebase](https://vibecodeschool.com/learn/cc-07-searching-the-codebase)** · Sandbox replay · 8 min
-  Glob finds files by pattern. Grep finds content inside them. Knowing which to use is half the speed.
-- **[Running Tests with Claude](https://vibecodeschool.com/learn/cc-08-running-tests)** · Sandbox replay · 10 min
-  Tight feedback loops: run, read failure, fix, run again — without you driving.
-- **[Git Operations and Commits](https://vibecodeschool.com/learn/cc-09-git-and-commits)** · Walkthrough · 10 min
-  Letting the agent stage, write a real commit message, and stop short of pushing.
-- **[Multi-File Refactors](https://vibecodeschool.com/learn/cc-10-multi-file-refactors)** · Sandbox replay · 11 min
-  Renames, signature changes, and dependency updates done as one coherent change.
-- **[Debugging with Claude](https://vibecodeschool.com/learn/cc-11-debugging)** · Sandbox replay · 12 min
-  Hypothesis → instrumentation → evidence → fix. The structured-debug pattern.
+- **[خواندن و ویرایش فایل‌ها](https://vibecodeschool.com/learn/cc-06-reading-and-editing)** · بازپخش سندباکس · ۹ دقیقه
+  ایجنت در یک نوبت میان چند فایل جابه‌جا می‌شود، ویرایش می‌کند و نتیجه را بررسی می‌کند.
+- **[جست‌وجو در کدها](https://vibecodeschool.com/learn/cc-07-searching-the-codebase)** · بازپخش سندباکس · ۸ دقیقه
+  Glob فایل‌ها را با الگو پیدا می‌کند. Grep محتوای درون آن‌ها را. دانستن این‌که کدام را به کار ببرید نصف سرعت است.
+- **[اجرای تست‌ها با Claude](https://vibecodeschool.com/learn/cc-08-running-tests)** · بازپخش سندباکس · ۱۰ دقیقه
+  چرخه‌های بازخورد فشرده: اجرا، خواندن خطا، اصلاح، اجرای دوباره — بی‌آن‌که شما پشت فرمان باشید.
+- **[عملیات Git و کامیت‌ها](https://vibecodeschool.com/learn/cc-09-git-and-commits)** · راهنمای گام‌به‌گام · ۱۰ دقیقه
+  اجازه بدهید ایجنت تغییرات را stage کند و پیام کامیت درست‌وحسابی بنویسد، اما پیش از push بایستد.
+- **[بازآرایی چندفایلی](https://vibecodeschool.com/learn/cc-10-multi-file-refactors)** · بازپخش سندباکس · ۱۱ دقیقه
+  تغییر نام‌ها، تغییر امضای توابع و به‌روزرسانی وابستگی‌ها، همه در قالب یک تغییر منسجم.
+- **[اشکال‌زدایی با Claude](https://vibecodeschool.com/learn/cc-11-debugging)** · بازپخش سندباکس · ۱۲ دقیقه
+  فرضیه ← ابزارگذاری ← شواهد ← اصلاح. الگوی اشکال‌زدایی ساختاریافته.
 
-## Module 3 — Power Features
+## بخش ۳ — قابلیت‌های پیشرفته
 
-Slash commands, skills, subagents, plan mode, hooks, and MCP — the tools that let you bend Claude Code to your workflow.
+دستورهای اسلش، مهارت‌ها، زیرایجنت‌ها، حالت برنامه‌ریزی، هوک‌ها و MCP — ابزارهایی که Claude Code را با
+گردش‌کار شما هماهنگ می‌کنند.
 
-- **[Slash Commands](https://vibecodeschool.com/learn/cc-12-slash-commands)** · Walkthrough · 8 min
-  The built-ins worth memorizing: /init, /clear, /resume, /compact, /rewind, /model.
-- **[Writing Your Own Slash Command](https://vibecodeschool.com/learn/cc-13-custom-slash-commands)** · Walkthrough · 11 min
-  A markdown file in .claude/commands/ becomes a callable workflow.
-- **[Agent Skills](https://vibecodeschool.com/learn/cc-28-agent-skills)** · Walkthrough · 11 min
-  Folders of expertise the agent loads on demand. Commands are prompts you fire; skills are capabilities Claude reaches for itself.
-- **[Subagents and the Agent Tool](https://vibecodeschool.com/learn/cc-14-subagents)** · Concept · 10 min
-  When to delegate to a subagent vs do it inline. Context budgets explained.
-- **[Plan Mode](https://vibecodeschool.com/learn/cc-15-plan-mode)** · Sandbox replay · 9 min
-  Read-only thinking before any edit. The cure for premature commitment.
-- **[Hooks: Pre and Post Tool](https://vibecodeschool.com/learn/cc-16-hooks)** · Walkthrough · 11 min
-  Run a script before or after each tool call. Lint on every edit; auto-test on commit.
-- **[MCP Servers](https://vibecodeschool.com/learn/cc-17-mcp-servers)** · Concept · 10 min
-  Pluggable tools beyond the built-ins. Connecting your database, your Slack, your Linear.
+- **[دستورهای اسلش](https://vibecodeschool.com/learn/cc-12-slash-commands)** · راهنمای گام‌به‌گام · ۸ دقیقه
+  دستورهای داخلی‌ای که ارزش حفظ کردن دارند: `/init`، `/clear`، `/resume`، `/compact`، `/rewind`، `/model`.
+- **[نوشتن دستور اسلش اختصاصی](https://vibecodeschool.com/learn/cc-13-custom-slash-commands)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  یک فایل مارک‌داون در `.claude/commands/` به گردش‌کاری قابل فراخوانی تبدیل می‌شود.
+- **[مهارت‌های ایجنت](https://vibecodeschool.com/learn/cc-28-agent-skills)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  پوشه‌هایی از تخصص که ایجنت هر وقت لازم شد بارشان می‌کند. دستورها پرامپت‌هایی‌اند که شما شلیک می‌کنید؛ مهارت‌ها توانایی‌هایی‌اند که Claude خودش سراغشان می‌رود.
+- **[زیرایجنت‌ها و ابزار Agent](https://vibecodeschool.com/learn/cc-14-subagents)** · مفهومی · ۱۰ دقیقه
+  کی کار را به یک زیرایجنت بسپارید و کی همان‌جا انجامش بدهید. بودجه‌ی زمینه به زبان ساده.
+- **[حالت برنامه‌ریزی](https://vibecodeschool.com/learn/cc-15-plan-mode)** · بازپخش سندباکس · ۹ دقیقه
+  فکر کردن فقط‌خواندنی پیش از هر ویرایش. درمان تصمیم‌گیری زودهنگام.
+- **[هوک‌ها: پیش و پس از ابزار](https://vibecodeschool.com/learn/cc-16-hooks)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  پیش یا پس از هر فراخوانی ابزار یک اسکریپت اجرا کنید. لینت پس از هر ویرایش؛ تست خودکار هنگام کامیت.
+- **[سرورهای MCP](https://vibecodeschool.com/learn/cc-17-mcp-servers)** · مفهومی · ۱۰ دقیقه
+  ابزارهای افزودنی فراتر از ابزارهای داخلی. وصل کردن پایگاه‌داده، Slack و Linear خودتان.
 
-## Module 4 — Vibe Coding Patterns
+## بخش ۴ — الگوهای وایب‌کدینگ
 
-Prompts and rhythms that compound. The difference between a senior vibe coder and a tourist.
+پرامپت‌ها و ریتم‌هایی که اثرشان روی هم انباشته می‌شود. تفاوت یک وایب‌کدر باتجربه با یک گردشگر.
 
-- **[Spec → Tests → Code](https://vibecodeschool.com/learn/cc-18-spec-tests-code)** · Walkthrough · 12 min
-  Front-load tests; let the agent fill them in. Why this beats spec → code → tests.
-- **[Iterative Refinement](https://vibecodeschool.com/learn/cc-19-iterative-refinement)** · Sandbox replay · 10 min
-  Three small turns beat one giant turn. How to size a single ask.
-- **[When to Interrupt vs Let It Run](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)** · Concept · 8 min
-  Reading the loop. Knowing when re-planning is cheaper than waiting.
-- **[Code Review with Claude](https://vibecodeschool.com/learn/cc-21-code-review)** · Sandbox replay · 10 min
-  Using the agent as a second pair of eyes on your own diff before you push.
-- **[The Pair-Programming Flow](https://vibecodeschool.com/learn/cc-22-pair-programming-flow)** · Concept · 9 min
-  How to stay in flow when the agent is your driver and you're the navigator.
+- **[مشخصات ← تست‌ها ← کد](https://vibecodeschool.com/learn/cc-18-spec-tests-code)** · راهنمای گام‌به‌گام · ۱۲ دقیقه
+  تست‌ها را اول بنویسید؛ بگذارید ایجنت پرشان کند. چرا این از ترتیب مشخصات ← کد ← تست بهتر است.
+- **[بهبود تکرارشونده](https://vibecodeschool.com/learn/cc-19-iterative-refinement)** · بازپخش سندباکس · ۱۰ دقیقه
+  سه نوبت کوچک از یک نوبت غول‌آسا بهتر است. اندازه‌ی مناسب یک درخواست را چطور تعیین کنیم.
+- **[کی وسط کار بپرید و کی بگذارید ادامه دهد](https://vibecodeschool.com/learn/cc-20-when-to-interrupt)** · مفهومی · ۸ دقیقه
+  خواندن چرخه. دانستن این‌که کی برنامه‌ریزی دوباره از صبر کردن ارزان‌تر است.
+- **[بازبینی کد با Claude](https://vibecodeschool.com/learn/cc-21-code-review)** · بازپخش سندباکس · ۱۰ دقیقه
+  استفاده از ایجنت به‌عنوان جفت چشم دوم روی دیف خودتان پیش از push.
+- **[جریان برنامه‌نویسی دونفره](https://vibecodeschool.com/learn/cc-22-pair-programming-flow)** · مفهومی · ۹ دقیقه
+  چطور در جریان بمانید وقتی ایجنت راننده است و شما مسیریاب.
 
-## Module 5 — Real Projects
+## بخش ۵ — پروژه‌های واقعی
 
-Full-loop case studies. Not toy examples — real shippable work.
+مطالعه‌های موردی با چرخه‌ی کامل. نه مثال‌های اسباب‌بازی — کار واقعی و قابل انتشار.
 
-- **[Building a Next.js Feature](https://vibecodeschool.com/learn/cc-23-nextjs-feature)** · Sandbox replay · 14 min
-  From issue to deployed PR. A complete loop on a realistic Next.js codebase.
-- **[Writing Tests-First](https://vibecodeschool.com/learn/cc-24-tests-first)** · Sandbox replay · 12 min
-  Red, green, refactor — but the agent does the typing.
-- **[Migrating Legacy Code](https://vibecodeschool.com/learn/cc-25-legacy-migration)** · Sandbox replay · 13 min
-  TypeScript adoption in a JS codebase, one module at a time, tests stay green.
-- **[Shipping to Production](https://vibecodeschool.com/learn/cc-26-shipping-to-production)** · Walkthrough · 12 min
-  Pre-deploy checks, the migration script, the rollback plan.
-- **[Capstone: Ship a Side Project](https://vibecodeschool.com/learn/cc-27-capstone)** · Walkthrough · 60 min
-  Pick a real idea, scope it, build it with Claude Code, deploy it. Course-end project.
+- **[ساختن یک قابلیت در Next.js](https://vibecodeschool.com/learn/cc-23-nextjs-feature)** · بازپخش سندباکس · ۱۴ دقیقه
+  از ایشو تا درخواست ادغامِ دیپلوی‌شده. یک چرخه‌ی کامل روی یک پروژه‌ی Next.js واقع‌گرایانه.
+- **[اول تست بنویسید](https://vibecodeschool.com/learn/cc-24-tests-first)** · بازپخش سندباکس · ۱۲ دقیقه
+  قرمز، سبز، بازآرایی — اما تایپ را ایجنت انجام می‌دهد.
+- **[مهاجرت کد قدیمی](https://vibecodeschool.com/learn/cc-25-legacy-migration)** · بازپخش سندباکس · ۱۳ دقیقه
+  آوردن TypeScript به یک پروژه‌ی JS، ماژول به ماژول، در حالی که تست‌ها سبز می‌مانند.
+- **[انتشار در محیط تولید](https://vibecodeschool.com/learn/cc-26-shipping-to-production)** · راهنمای گام‌به‌گام · ۱۲ دقیقه
+  بررسی‌های پیش از دیپلوی، اسکریپت مهاجرت، برنامه‌ی بازگشت.
+- **[پروژه‌ی پایانی: یک پروژه‌ی جانبی منتشر کنید](https://vibecodeschool.com/learn/cc-27-capstone)** · راهنمای گام‌به‌گام · ۶۰ دقیقه
+  یک ایده‌ی واقعی انتخاب کنید، دامنه‌اش را مشخص کنید، با Claude Code بسازیدش، دیپلویش کنید. پروژه‌ی پایان دوره.
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and [start the course free](https://vibecodeschool.com/courses/claude-code-vibe-coding).
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و [دوره را رایگان شروع کنید](https://vibecodeschool.com/courses/claude-code-vibe-coding).
+
+</div>

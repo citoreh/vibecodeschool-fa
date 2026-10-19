@@ -1,205 +1,247 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# The Vibe Coding Roadmap (2026)
+<div dir="rtl">
 
-170 free lessons. 7 courses. One path — from your first prompt to orchestrating
-a fleet of AI agents. The interactive version with progress tracking lives at
-**[vibecodeschool.com/roadmap](https://vibecodeschool.com/roadmap)**.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [roadmap/README.md](https://github.com/dineshxr/vibecodeschool/blob/main/roadmap/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. دوره‌های تعاملی روی سایت فعلاً به انگلیسی‌اند.
+
+# نقشه‌ی راه وایب‌کدینگ (۲۰۲۶)
+
+۱۷۰ درس رایگان. ۷ دوره. یک مسیر — از اولین پرامپت تا هماهنگ‌کردن ناوگانی از ایجنت‌های هوش مصنوعی.
+نسخه‌ی تعاملی با پیگیری پیشرفت در
+**[vibecodeschool.com/roadmap](https://vibecodeschool.com/roadmap)** است.
+
+</div>
 
 ```mermaid
 flowchart TD
-    A(["Start here — no coding required"]) --> C1
-    subgraph C1["Course 01 · Vibe Coding using Claude Code"]
+    A(["از این‌جا شروع کنید — کدنویسی لازم نیست"]) --> C1
+    subgraph C1["دوره‌ی ۰۱ · وایب‌کدینگ با Claude Code"]
         direction TB
-        C1M1["Setup & Foundations"]
-        C1M2["Core Workflows"]
-        C1M3["Power Features"]
-        C1M4["Vibe Coding Patterns"]
-        C1M5["Real Projects"]
+        C1M1["راه‌اندازی و پایه‌ها"]
+        C1M2["گردش‌کارهای اصلی"]
+        C1M3["قابلیت‌های پیشرفته"]
+        C1M4["الگوهای وایب‌کدینگ"]
+        C1M5["پروژه‌های واقعی"]
     end
     C1 --> C2
-    subgraph C2["Course 02 · Build Mobile Apps using Codex"]
+    subgraph C2["دوره‌ی ۰۲ · ساخت اپ موبایل با Codex"]
         direction TB
-        C2M1["Codex + Mobile Foundations"]
-        C2M2["Building UI"]
-        C2M3["State and Data"]
-        C2M4["Native Features"]
-        C2M5["Ship It"]
+        C2M1["پایه‌های Codex و موبایل"]
+        C2M2["ساختن رابط کاربری"]
+        C2M3["وضعیت و داده"]
+        C2M4["قابلیت‌های بومی"]
+        C2M5["منتشرش کنید"]
     end
     C2 --> C3
-    subgraph C3["Course 03 · Agent Manager with Google Antigravity"]
+    subgraph C3["دوره‌ی ۰۳ · مدیریت ایجنت‌ها با Google Antigravity"]
         direction TB
-        C3M1["Antigravity Foundations"]
-        C3M2["Agents and Artifacts"]
-        C3M3["Orchestration Patterns"]
-        C3M4["Running a Fleet, Sustainably"]
-        C3M5["Real Fleet Projects"]
+        C3M1["پایه‌های Antigravity"]
+        C3M2["ایجنت‌ها و آرتیفکت‌ها"]
+        C3M3["الگوهای هماهنگ‌سازی"]
+        C3M4["اداره‌ی پایدار یک ناوگان"]
+        C3M5["پروژه‌های واقعی با ناوگان"]
     end
     C3 --> C4
-    subgraph C4["Course 04 · Agentic AI Engineering"]
+    subgraph C4["دوره‌ی ۰۴ · مهندسی هوش مصنوعی ایجنتی"]
         direction TB
-        C4M1["GenAI Building Blocks"]
-        C4M2["Grounding: RAG & Context Engineering"]
-        C4M3["The Agentic Leap"]
-        C4M4["Finetuning & Local Models"]
-        C4M5["Evals, Observability & Monitoring"]
-        C4M6["AI Security & Safety"]
+        C4M1["اجزای پایه‌ی هوش مصنوعی مولد"]
+        C4M2["پایه‌گذاری: RAG و مهندسی زمینه"]
+        C4M3["جهش ایجنتی"]
+        C4M4["تنظیم دقیق و مدل‌های محلی"]
+        C4M5["ارزیابی، مشاهده‌پذیری و پایش"]
+        C4M6["امنیت و ایمنی هوش مصنوعی"]
     end
     C4 --> C5
-    subgraph C5["Course 05 · Prompt Engineering Mastery"]
+    subgraph C5["دوره‌ی ۰۵ · تسلط بر مهندسی پرامپت"]
         direction TB
-        C5M1["Prompting Foundations"]
-        C5M2["Reasoning Techniques"]
-        C5M3["Reliability & Truthfulness"]
-        C5M4["Structured Output & Production Prompting"]
-        C5M5["Image & Multimodal Prompting"]
-        C5M6["Prompt Hacking & Defense"]
+        C5M1["پایه‌های پرامپت‌نویسی"]
+        C5M2["فنون استدلال"]
+        C5M3["قابلیت اطمینان و راستگویی"]
+        C5M4["خروجی ساختاریافته و پرامپت‌نویسی برای تولید"]
+        C5M5["پرامپت تصویر و چندوجهی"]
+        C5M6["نفوذ پرامپتی و دفاع"]
     end
     C5 --> C6
-    subgraph C6["Course 06 · Claude Cowork: AI for Everyday Work"]
+    subgraph C6["دوره‌ی ۰۶ · Claude Cowork: هوش مصنوعی برای کارهای روزمره"]
         direction TB
-        C6M1["Meet Your AI Coworker"]
-        C6M2["Real Work, Real Files"]
-        C6M3["Connect Your World"]
-        C6M4["Work That Runs Without You"]
+        C6M1["با همکار هوش مصنوعی‌تان آشنا شوید"]
+        C6M2["کار واقعی، فایل‌های واقعی"]
+        C6M3["دنیایتان را وصل کنید"]
+        C6M4["کاری که بدون شما پیش می‌رود"]
     end
     C6 --> C7
-    subgraph C7["Course 07 · ChatGPT Work: Delegate the Busywork"]
+    subgraph C7["دوره‌ی ۰۷ · ChatGPT Work: کارهای وقت‌گیر را بسپارید"]
         direction TB
-        C7M1["Flip the Toggle"]
-        C7M2["Plugins, Blocks, and Artifacts"]
-        C7M3["Automation That Sticks"]
-        C7M4["Power Workflows"]
+        C7M1["کلید را بزنید"]
+        C7M2["افزونه‌ها، بلوک‌ها و آرتیفکت‌ها"]
+        C7M3["خودکارسازی ماندگار"]
+        C7M4["گردش‌کارهای قدرتمند"]
     end
-    C7 --> Z(["Ship software with a fleet of agents"])
+    C7 --> Z(["نرم‌افزار را با ناوگانی از ایجنت‌ها منتشر کنید"])
 ```
 
-## The tracks
+<div dir="rtl">
 
-### 01. Vibe Coding using Claude Code
+## مسیرها
 
-From your first /init to capstone deploy. Claude Code as your daily driver: every prompt pattern, every workflow, every guardrail.
+### ۰۱. وایب‌کدینگ با Claude Code
 
-*Beginner · 28 lessons · ~14 hours · [take it interactively](https://vibecodeschool.com/courses/claude-code-vibe-coding) · [outline](../courses/claude-code-vibe-coding/README.md)*
+از اولین `/init` تا دیپلوی پروژه‌ی پایانی. Claude Code به‌عنوان ابزار روزانه‌تان: همه‌ی الگوهای پرامپت،
+همه‌ی گردش‌کارها، همه‌ی محافظ‌ها.
 
-1. **Setup & Foundations** — Install the CLI, learn the loop, set up project memory. End of this module you're operational.
-2. **Core Workflows** — The day-to-day loops that make agentic coding faster than typing.
-3. **Power Features** — Slash commands, skills, subagents, plan mode, hooks, and MCP — the tools that let you bend Claude Code to your workflow.
-4. **Vibe Coding Patterns** — Prompts and rhythms that compound. The difference between a senior vibe coder and a tourist.
-5. **Real Projects** — Full-loop case studies. Not toy examples — real shippable work.
+*مقدماتی · ۲۸ درس · حدود ۱۴ ساعت · [نسخه‌ی تعاملی](https://vibecodeschool.com/courses/claude-code-vibe-coding) · [سرفصل](../courses/claude-code-vibe-coding/README.md)*
 
-### 02. Build Mobile Apps using Codex
+1. **راه‌اندازی و پایه‌ها** — ابزار خط فرمان را نصب کنید، چرخه را یاد بگیرید، حافظه‌ی پروژه را راه بیندازید. در پایان این بخش آماده‌ی کارید.
+2. **گردش‌کارهای اصلی** — چرخه‌های روزمره‌ای که کدنویسی ایجنتی را از تایپ کردن سریع‌تر می‌کنند.
+3. **قابلیت‌های پیشرفته** — دستورهای اسلش، مهارت‌ها، زیرایجنت‌ها، حالت برنامه‌ریزی، هوک‌ها و MCP — ابزارهایی که Claude Code را با گردش‌کار شما هماهنگ می‌کنند.
+4. **الگوهای وایب‌کدینگ** — پرامپت‌ها و ریتم‌هایی که اثرشان روی هم انباشته می‌شود. تفاوت یک وایب‌کدر باتجربه با یک گردشگر.
+5. **پروژه‌های واقعی** — مطالعه‌های موردی با چرخه‌ی کامل. نه مثال‌های اسباب‌بازی — کار واقعی و قابل انتشار.
 
-React Native / Expo from scratch with Codex driving. Auth, payments, push notifications, native modules — all via prompts that produce real, reviewable code.
+### ۰۲. ساخت اپ موبایل با Codex
 
-*Intermediate · 25 lessons · ~18 hours · [take it interactively](https://vibecodeschool.com/courses/codex-mobile-apps) · [outline](../courses/codex-mobile-apps/README.md)*
+React Native / Expo از صفر، با Codex پشت فرمان. احراز هویت، پرداخت، اعلان‌های پوش، ماژول‌های بومی —
+همه با پرامپت‌هایی که کد واقعی و قابل بازبینی تولید می‌کنند.
 
-1. **Codex + Mobile Foundations** — Install Codex, scaffold an Expo app, understand the constraints of mobile vs web.
-2. **Building UI** — Screens, navigation, forms, theming — the visible surface of your app.
-3. **State and Data** — Local, global, offline, and live — how data moves through a real app.
-4. **Native Features** — The capabilities that make it feel like a real app, not a wrapped website.
-5. **Ship It** — From local sim to App Store / Play Store, with humans testing in between.
+*متوسط · ۲۵ درس · حدود ۱۸ ساعت · [نسخه‌ی تعاملی](https://vibecodeschool.com/courses/codex-mobile-apps) · [سرفصل](../courses/codex-mobile-apps/README.md)*
 
-### 03. Agent Manager with Google Antigravity
+1. **پایه‌های Codex و موبایل** — Codex را نصب کنید، اسکلت یک اپ Expo را بسازید، محدودیت‌های موبایل در برابر وب را بشناسید.
+2. **ساختن رابط کاربری** — صفحه‌ها، ناوبری، فرم‌ها، پوسته‌ها — سطح دیدنی اپ شما.
+3. **وضعیت و داده** — محلی، سراسری، آفلاین و زنده — داده چطور در یک اپ واقعی جابه‌جا می‌شود.
+4. **قابلیت‌های بومی** — قابلیت‌هایی که حس یک اپ واقعی می‌دهند، نه وب‌سایتی که در پوسته‌ی اپ پیچیده شده.
+5. **منتشرش کنید** — از شبیه‌ساز محلی تا App Store / Play Store، با آزمایش انسانی در میانه‌ی راه.
 
-Google Antigravity end to end: the Editor and Agent Manager surfaces, artifacts and browser verification, parallel agents across worktrees, knowledge that compounds — and the habits that make a fleet pay off.
+### ۰۳. مدیریت ایجنت‌ها با Google Antigravity
 
-*Advanced · 25 lessons · ~20 hours · [take it interactively](https://vibecodeschool.com/courses/antigravity-agent-manager) · [outline](../courses/antigravity-agent-manager/README.md)*
+Google Antigravity از سر تا ته: دو محیط ویرایشگر (Editor) و مدیر ایجنت (Agent Manager)، آرتیفکت‌ها و
+تأیید در مرورگر، ایجنت‌های موازی روی ورک‌تری‌ها، دانشی که انباشته می‌شود — و عادت‌هایی که باعث می‌شوند
+داشتن یک ناوگان واقعاً بیرزد.
 
-1. **Antigravity Foundations** — Install the IDE, meet the two surfaces, run your first Manager task, tune autonomy.
-2. **Agents and Artifacts** — Plans, execution, verification, shipping, and the knowledge base — the working vocabulary of agent-first development.
-3. **Orchestration Patterns** — Sequencing, parallel worktrees, second opinions, steering, and the inbox. The control flow of a fleet.
-4. **Running a Fleet, Sustainably** — Models and rate limits, audit trails, failure modes, security, and the three metrics that keep leverage honest.
-5. **Real Fleet Projects** — Issue → PR, docs sync, parallel triage, worktree migration, capstone. The workflows you'll actually run.
+*پیشرفته · ۲۵ درس · حدود ۲۰ ساعت · [نسخه‌ی تعاملی](https://vibecodeschool.com/courses/antigravity-agent-manager) · [سرفصل](../courses/antigravity-agent-manager/README.md)*
 
-### 04. Agentic AI Engineering
+1. **پایه‌های Antigravity** — IDE را نصب کنید، با دو محیطش آشنا شوید، اولین کار مدیر ایجنت را اجرا کنید، میزان خودمختاری را تنظیم کنید.
+2. **ایجنت‌ها و آرتیفکت‌ها** — برنامه‌ها، اجرا، تأیید، انتشار و پایگاه دانش — واژگان کاری توسعه‌ی ایجنت‌محور.
+3. **الگوهای هماهنگ‌سازی** — ترتیب‌دهی، ورک‌تری‌های موازی، نظر دوم، هدایت و صندوق ورودی. جریان کنترل یک ناوگان.
+4. **اداره‌ی پایدار یک ناوگان** — مدل‌ها و محدودیت نرخ، ردپای ممیزی، حالت‌های شکست، امنیت، و سه معیاری که بهره‌وری را واقعی نگه می‌دارند.
+5. **پروژه‌های واقعی با ناوگان** — از ایشو تا درخواست ادغام، همگام‌سازی مستندات، اولویت‌بندی موازی، مهاجرت با ورک‌تری، پروژه‌ی پایانی. گردش‌کارهایی که واقعاً اجرا خواهید کرد.
 
-From tokens to production: LLM fundamentals, RAG and context engineering, agent architectures with MCP and A2A, LangGraph orchestration, LoRA finetuning and local models with Ollama, evals and observability, and the security layer — injection defense, guardrails, red teaming, governance.
+### ۰۴. مهندسی هوش مصنوعی ایجنتی
 
-*Intermediate · 25 lessons · ~16 hours · [take it interactively](https://vibecodeschool.com/courses/agentic-ai) · [outline](../courses/agentic-ai/README.md)*
+از توکن‌ها تا محیط تولید: مبانی مدل‌های زبانی بزرگ (LLM)، RAG و مهندسی زمینه، معماری‌های ایجنتی با MCP و
+A2A، هماهنگ‌سازی با LangGraph، تنظیم دقیق با LoRA و مدل‌های محلی با Ollama، ارزیابی‌ها و مشاهده‌پذیری،
+و لایه‌ی امنیت — دفاع در برابر تزریق، محافظ‌ها، آزمون تیم قرمز، حاکمیت.
 
-1. **GenAI Building Blocks** — Tokens, prompting, function calling, structured outputs, the modern stack — and the latency/cost/reliability budgets that shape everything.
-2. **Grounding: RAG & Context Engineering** — Curate the window, anchor answers in your own data, and know which advanced retrieval patterns earn their complexity.
-3. **The Agentic Leap** — From workflows to agents: architecture patterns, MCP for tools, A2A for peers, and LangGraph when orchestration gets real.
-4. **Finetuning & Local Models** — When training pays off, LoRA/QLoRA in practice, and running open-weight models locally with Ollama.
-5. **Evals, Observability & Monitoring** — Golden datasets, failure analysis, LLM-as-judge, tracing, and the production eval loop that catches regressions before users do.
-6. **AI Security & Safety** — The threat surface, injection and PII defense, guardrails that fail closed, red teaming, and governance — production readiness, proven.
+*متوسط · ۲۵ درس · حدود ۱۶ ساعت · [نسخه‌ی تعاملی](https://vibecodeschool.com/courses/agentic-ai) · [سرفصل](../courses/agentic-ai/README.md)*
 
-### 05. Prompt Engineering Mastery
+1. **اجزای پایه‌ی هوش مصنوعی مولد** — توکن‌ها، پرامپت‌نویسی، فراخوانی تابع، خروجی‌های ساختاریافته، پشته‌ی مدرن — و بودجه‌های تأخیر، هزینه و قابلیت اطمینان که همه چیز را شکل می‌دهند.
+2. **پایه‌گذاری: RAG و مهندسی زمینه** — پنجره‌ی زمینه را گزینش کنید، پاسخ‌ها را به داده‌های خودتان تکیه دهید، و بدانید کدام الگوهای پیشرفته‌ی بازیابی ارزش پیچیدگی‌شان را دارند.
+3. **جهش ایجنتی** — از گردش‌کار تا ایجنت: الگوهای معماری، MCP برای ابزارها، A2A برای همتایان، و LangGraph وقتی هماهنگ‌سازی جدی می‌شود.
+4. **تنظیم دقیق و مدل‌های محلی** — آموزش دادن کی به‌صرفه است، LoRA/QLoRA در عمل، و اجرای مدل‌های وزن‌باز به صورت محلی با Ollama.
+5. **ارزیابی، مشاهده‌پذیری و پایش** — مجموعه‌داده‌های طلایی، تحلیل شکست، مدل زبانی در نقش داور (LLM-as-judge)، ردیابی، و چرخه‌ی ارزیابی در محیط تولید که پسرفت‌ها را پیش از کاربران پیدا می‌کند.
+6. **امنیت و ایمنی هوش مصنوعی** — سطح تهدید، دفاع در برابر تزریق و نشت اطلاعات شخصی (PII)، محافظ‌هایی که در صورت خطا بسته می‌مانند، آزمون تیم قرمز، و حاکمیت — آمادگی برای تولید، به اثبات‌رسیده.
 
-The complete prompting curriculum: foundations, reasoning techniques, reliability, structured output, image and multimodal prompting, and the security layer — prompt hacking and how to defend against it. 35 lessons, every one hands-on, every technique tested against current frontier models.
+### ۰۵. تسلط بر مهندسی پرامپت
 
-*Beginner · 35 lessons · ~24 hours · [take it interactively](https://vibecodeschool.com/courses/prompt-engineering) · [outline](../courses/prompt-engineering/README.md)*
+برنامه‌ی درسی کامل پرامپت‌نویسی: پایه‌ها، فنون استدلال، قابلیت اطمینان، خروجی ساختاریافته، پرامپت تصویر و
+چندوجهی، و لایه‌ی امنیت — نفوذ پرامپتی و چگونگی دفاع در برابرش. ۳۵ درس، همه عملی، و هر فن روی
+پیشرفته‌ترین مدل‌های فعلی آزموده شده.
 
-1. **Prompting Foundations** — The working parts of a prompt — precise instructions, delimiters, roles, and examples — assembled into contracts that hold up under real input.
-2. **Reasoning Techniques** — Make models show and improve their work: chain-of-thought, decomposition, voting across samples, and where 2026 reasoning models change the playbook.
-3. **Reliability & Truthfulness** — Why models fabricate, and the countermeasures that ship: calibrated abstention, critique loops, ensembles, debiasing, and prompt test sets.
-4. **Structured Output & Production Prompting** — Prompts that survive production — strict output contracts, long-context and RAG patterns, agent system prompts, meta-prompting, and versioning.
-5. **Image & Multimodal Prompting** — Prompt beyond text — generating images with control, steering with negatives and weights, reading images as input, and the voice and video frontier.
-6. **Prompt Hacking & Defense** — The security layer every builder needs — how prompt injection, jailbreaks, and prompt leaking work, and how to defend your own app in depth.
+*مقدماتی · ۳۵ درس · حدود ۲۴ ساعت · [نسخه‌ی تعاملی](https://vibecodeschool.com/courses/prompt-engineering) · [سرفصل](../courses/prompt-engineering/README.md)*
 
-### 06. Claude Cowork: AI for Everyday Work
+1. **پایه‌های پرامپت‌نویسی** — اجزای کاری یک پرامپت — دستورهای دقیق، جداکننده‌ها، نقش‌ها و مثال‌ها — که در قالب قراردادهایی کنار هم می‌نشینند که زیر ورودی واقعی دوام می‌آورند.
+2. **فنون استدلال** — کاری کنید مدل‌ها روند کارشان را نشان دهند و بهترش کنند: زنجیره‌ی تفکر، تجزیه‌ی مسئله، رأی‌گیری میان نمونه‌ها، و جاهایی که مدل‌های استدلالی ۲۰۲۶ قواعد بازی را عوض می‌کنند.
+3. **قابلیت اطمینان و راستگویی** — چرا مدل‌ها چیز می‌سازند، و راهکارهایی که در عمل جواب می‌دهند: خودداری سنجیده از پاسخ، چرخه‌های نقد، ترکیب چند مدل، کاهش سوگیری، و مجموعه‌های آزمون پرامپت.
+4. **خروجی ساختاریافته و پرامپت‌نویسی برای تولید** — پرامپت‌هایی که در محیط تولید زنده می‌مانند — قراردادهای سخت‌گیرانه‌ی خروجی، الگوهای زمینه‌ی طولانی و RAG، پرامپت سیستمی ایجنت‌ها، فراپرامپت‌نویسی، و نسخه‌بندی.
+5. **پرامپت تصویر و چندوجهی** — پرامپت فراتر از متن — تولید تصویر با کنترل، هدایت با پرامپت منفی و وزن‌ها، خواندن تصویر به‌عنوان ورودی، و مرزهای صدا و ویدیو.
+6. **نفوذ پرامپتی و دفاع** — لایه‌ی امنیتی که هر سازنده‌ای لازم دارد — تزریق پرامپت، جیلبریک و نشت پرامپت چطور کار می‌کنند، و چطور از اپ خودتان دفاعی چندلایه کنید.
 
-Claude Code changed programming; Cowork brings the same agentic loop to everyone else. Learn to delegate real knowledge work to Claude: set up workspaces, master the approval loop, build self-checking spreadsheets, connect your tools, teach skills, schedule work that runs while you sleep, and assemble it all into standing systems. No terminal, no code — built for beginners.
+### ۰۶. Claude Cowork: هوش مصنوعی برای کارهای روزمره
 
-*Beginner · 16 lessons · ~9 hours · [take it interactively](https://vibecodeschool.com/courses/claude-cowork) · [outline](../courses/claude-cowork/README.md)*
+Claude Code برنامه‌نویسی را عوض کرد؛ Cowork همان چرخه‌ی ایجنتی را برای بقیه‌ی آدم‌ها می‌آورد. یاد بگیرید
+کارهای دانشی واقعی را به Claude بسپارید: فضای کاری بسازید، بر چرخه‌ی تأیید مسلط شوید، صفحه‌گسترده‌هایی
+بسازید که خودشان را بررسی می‌کنند، ابزارهایتان را وصل کنید، مهارت یاد بدهید، کارهایی زمان‌بندی کنید که
+وقتی خوابید اجرا می‌شوند، و همه را در قالب سیستم‌های دائمی کنار هم بگذارید. بدون ترمینال، بدون کد —
+ساخته‌شده برای تازه‌کارها.
 
-1. **Meet Your AI Coworker** — What Cowork is, setting it up, your first real task, and the approval loop that keeps you in charge.
-2. **Real Work, Real Files** — Folder craft, office documents, self-checking spreadsheets, and research with checkable sources.
-3. **Connect Your World** — Connectors and plugins, Projects and memory, reusable skills, and the browser/computer-use previews.
-4. **Work That Runs Without You** — Cloud sessions, phone steering, scheduled tasks, and composing everything into standing AI systems.
+*مقدماتی · ۱۶ درس · حدود ۹ ساعت · [نسخه‌ی تعاملی](https://vibecodeschool.com/courses/claude-cowork) · [سرفصل](../courses/claude-cowork/README.md)*
 
-### 07. ChatGPT Work: Delegate the Busywork
+1. **با همکار هوش مصنوعی‌تان آشنا شوید** — Cowork چیست، راه‌اندازی‌اش، اولین کار واقعی‌تان، و چرخه‌ی تأییدی که کنترل را دست شما نگه می‌دارد.
+2. **کار واقعی، فایل‌های واقعی** — مهارت در کار با پوشه‌ها، اسناد اداری، صفحه‌گسترده‌هایی که خودشان را بررسی می‌کنند، و پژوهش با منابع قابل بررسی.
+3. **دنیایتان را وصل کنید** — کانکتورها و افزونه‌ها، پروژه‌ها و حافظه، مهارت‌های قابل استفاده‌ی دوباره، و پیش‌نمایش‌های کار با مرورگر و رایانه.
+4. **کاری که بدون شما پیش می‌رود** — جلسه‌های ابری، هدایت از گوشی، کارهای زمان‌بندی‌شده، و ترکیب همه در قالب سیستم‌های دائمی هوش مصنوعی.
 
-ChatGPT Work turns ChatGPT from an app that answers into an agent that ships finished work. Learn the four-stage run, the editing loop, plugins and @-mentions, blocks and diagrams, scheduled automations, the agent browser, voice and remote control, and the cloud-vs-local rules that make automations reliable — ending with a measured pilot of one real workflow. Beginner-friendly, no code.
+### ۰۷. ChatGPT Work: کارهای وقت‌گیر را بسپارید
 
-*Beginner · 16 lessons · ~9 hours · [take it interactively](https://vibecodeschool.com/courses/chatgpt-work) · [outline](../courses/chatgpt-work/README.md)*
+ChatGPT Work، ChatGPT را از اپی که جواب می‌دهد به ایجنتی تبدیل می‌کند که کار تمام‌شده تحویل می‌دهد. با اجرای
+چهارمرحله‌ای، چرخه‌ی ویرایش، افزونه‌ها و @-اشاره‌ها، بلوک‌ها و نمودارها، خودکارسازی‌های زمان‌بندی‌شده،
+مرورگر ایجنت، صدا و کنترل از راه دور، و قواعد ابری در برابر محلی که خودکارسازی‌ها را قابل اعتماد می‌کنند
+آشنا شوید — و در پایان، آزمایشی سنجیده روی یک گردش‌کار واقعی اجرا کنید. مناسب تازه‌کارها، بدون کد.
 
-1. **Flip the Toggle** — What Work is, the four-stage run, your first research deck, and the editing loop.
-2. **Plugins, Blocks, and Artifacts** — Connect your apps, draft in blocks and diagrams, build trustworthy spreadsheets, and edit images like a reviewer.
-3. **Automation That Sticks** — Scheduled tasks, inbox autopilot, the agent browser and computer use, and Sites.
-4. **Power Workflows** — Cloud vs local, voice and remote, multi-agent workspaces, and a measured capstone pilot.
+*مقدماتی · ۱۶ درس · حدود ۹ ساعت · [نسخه‌ی تعاملی](https://vibecodeschool.com/courses/chatgpt-work) · [سرفصل](../courses/chatgpt-work/README.md)*
 
-## FAQ
+1. **کلید را بزنید** — Work چیست، اجرای چهارمرحله‌ای، اولین ارائه‌ی پژوهشی‌تان، و چرخه‌ی ویرایش.
+2. **افزونه‌ها، بلوک‌ها و آرتیفکت‌ها** — اپ‌هایتان را وصل کنید، در قالب بلوک و نمودار پیش‌نویس کنید، صفحه‌گسترده‌های قابل اعتماد بسازید، و تصویرها را مثل یک بازبین ویرایش کنید.
+3. **خودکارسازی ماندگار** — کارهای زمان‌بندی‌شده، خلبان خودکار صندوق ایمیل، مرورگر ایجنت و کار با رایانه، و Sites.
+4. **گردش‌کارهای قدرتمند** — ابری در برابر محلی، صدا و کنترل از راه دور، فضاهای کاری چندایجنتی، و یک آزمایش پایانی سنجیده.
+
+## پرسش‌های متداول
 
 <details>
-<summary><strong>How do I start learning vibe coding in 2026?</strong></summary>
+<summary><strong>در ۲۰۲۶ یادگیری وایب‌کدینگ را از کجا شروع کنم؟</strong></summary>
 
-Start with one agent and one real project. Our roadmap begins with Claude Code in your terminal: you learn the loop (describe an outcome, review the diff, correct, repeat), then prompt patterns, plan mode, hooks, and MCP. From there the path moves to shipping a mobile app with OpenAI Codex, and finally to orchestrating a fleet of agents with Google Antigravity.
+با یک ایجنت و یک پروژه‌ی واقعی شروع کنید. نقشه‌ی راه ما با Claude Code در ترمینال شروع می‌شود: چرخه را
+یاد می‌گیرید (نتیجه را توصیف کن، دیف را بازبینی کن، اصلاح کن، تکرار کن)، بعد الگوهای پرامپت، حالت
+برنامه‌ریزی، هوک‌ها و MCP. از آن‌جا مسیر به انتشار یک اپ موبایل با OpenAI Codex می‌رسد، و در نهایت به
+هماهنگ‌کردن ناوگانی از ایجنت‌ها با Google Antigravity.
 </details>
 
 <details>
-<summary><strong>How long does it take to learn vibe coding?</strong></summary>
+<summary><strong>یادگیری وایب‌کدینگ چقدر طول می‌کشد؟</strong></summary>
 
-The full roadmap is roughly 92 hours of guided work — about 6 to 10 weeks part-time. Course 01 (Claude Code, ~14h) makes you productive in the first week; Course 02 (Codex mobile, ~18h) and Course 03 (Antigravity, ~20h) build toward shipping production software and running agents in parallel; Course 04 (Agentic AI Engineering, ~16h) teaches the systems layer — RAG, evals, and AI security; Course 05 (Prompt Engineering Mastery, ~24h) can be taken alongside any of them.
+کل نقشه‌ی راه حدود ۹۲ ساعت کار هدایت‌شده است — یعنی ۶ تا ۱۰ هفته به صورت پاره‌وقت. دوره‌ی ۰۱ (Claude Code،
+حدود ۱۴ ساعت) شما را در همان هفته‌ی اول بهره‌ور می‌کند؛ دوره‌ی ۰۲ (موبایل با Codex، حدود ۱۸ ساعت) و
+دوره‌ی ۰۳ (Antigravity، حدود ۲۰ ساعت) شما را به سمت انتشار نرم‌افزار برای محیط تولید و اجرای موازی
+ایجنت‌ها می‌برند؛ دوره‌ی ۰۴ (مهندسی هوش مصنوعی ایجنتی، حدود ۱۶ ساعت) لایه‌ی سیستمی را یاد می‌دهد — RAG،
+ارزیابی‌ها و امنیت هوش مصنوعی؛ دوره‌ی ۰۵ (تسلط بر مهندسی پرامپت، حدود ۲۴ ساعت) را می‌توانید هم‌زمان با هر
+کدام بگذرانید.
 </details>
 
 <details>
-<summary><strong>Do I need to know how to code before starting?</strong></summary>
+<summary><strong>پیش از شروع باید کدنویسی بلد باشم؟</strong></summary>
 
-No. Course 01 assumes zero coding background — the agent writes the code, and the course teaches you to specify, review, and steer. Basic web or mobile knowledge helps in the later courses, but every lesson explains the concepts it touches as they come up.
+نه. دوره‌ی ۰۱ هیچ پیش‌زمینه‌ی کدنویسی فرض نمی‌کند — ایجنت کد را می‌نویسد و دوره به شما یاد می‌دهد مشخص
+کنید، بازبینی کنید و هدایت کنید. آشنایی پایه با وب یا موبایل در دوره‌های بعدی کمک می‌کند، اما هر درس
+مفاهیمی را که به آن‌ها می‌پردازد در همان‌جا توضیح می‌دهد.
 </details>
 
 <details>
-<summary><strong>Is this vibe coding roadmap free?</strong></summary>
+<summary><strong>این نقشه‌ی راه وایب‌کدینگ رایگان است؟</strong></summary>
 
-Yes. All 170 lessons across the seven courses are free, with no signup and no paywall. Progress, XP, streaks, and badges are saved in your browser.
+بله. هر ۱۷۰ درس در هفت دوره رایگان‌اند، بدون ثبت‌نام و بدون دیوار پرداخت. پیشرفت، امتیاز، روزهای پیاپی و
+نشان‌ها در مرورگر خودتان ذخیره می‌شوند.
 </details>
 
 <details>
-<summary><strong>Which AI career can this roadmap lead to?</strong></summary>
+<summary><strong>این نقشه‌ی راه به کدام شغل‌های هوش مصنوعی می‌رسد؟</strong></summary>
 
-The skills here map directly onto the new AI-era roles: Vibe Coder, Forward Deployed Engineer, Agent Engineer, AI Transformation Engineer, and more. See our AI career roadmaps at vibecodeschool.com/careers for ten role-by-role paths with salaries, skills, and proof-of-work checkpoints.
+مهارت‌های این‌جا مستقیماً به نقش‌های تازه‌ی عصر هوش مصنوعی می‌خورند: وایب‌کدر، Forward Deployed Engineer،
+مهندس ایجنت، مهندس تحول هوش مصنوعی و بیشتر. نقشه‌های راه شغلی ما را در vibecodeschool.com/careers ببینید:
+ده مسیر نقش‌به‌نقش با حقوق‌ها، مهارت‌ها و نقاط بررسی برای اثبات توانایی.
 </details>
 
 <details>
-<summary><strong>Which AI coding tool should I learn first: Claude Code, Codex, or Cursor?</strong></summary>
+<summary><strong>اول کدام ابزار کدنویسی هوش مصنوعی را یاد بگیرم: Claude Code، Codex یا Cursor؟</strong></summary>
 
-We recommend a terminal-first agent like Claude Code before an IDE like Cursor: it forces you to work at the level of intent instead of autocomplete, which is the core vibe coding skill. Codex and Antigravity then generalize that skill — the loop is the same, so switching tools later is cheap.
+پیشنهاد ما یک ایجنت ترمینال‌محور مثل Claude Code پیش از یک IDE مثل Cursor است: مجبورتان می‌کند در سطح
+نیت کار کنید نه تکمیل خودکار، و این مهارت اصلی وایب‌کدینگ است. Codex و Antigravity بعد همین مهارت را
+تعمیم می‌دهند — چرخه یکی است، پس عوض کردن ابزار در آینده ارزان تمام می‌شود.
 </details>
 
 ---
 
-⭐ If this roadmap helps you, [star the repo](https://github.com/dineshxr/vibecodeschool) — it's how other learners find it.
+⭐ اگر این نقشه‌ی راه به کارتان آمد، به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) — یادگیرنده‌های دیگر این‌طور پیدایش می‌کنند.
+
+</div>

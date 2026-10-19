@@ -1,99 +1,110 @@
 <!-- GENERATED FILE — do not edit by hand.
      Source: lib/courses.ts in the Vibe Code School site (scripts/export-oss.mts).
-     Content PRs are welcome: edits get applied to the site source and re-exported. -->
+     Content PRs are welcome: edits get applied to the site source and re-exported.
+     Persian translation of the upstream file (CC BY-SA 4.0) — see TRANSLATION.md. -->
 
-# Agent Manager with Google Antigravity
+<div dir="rtl">
 
-> Run a fleet of agents from mission control — Google's agent-first IDE.
+> **یادداشت ترجمه:** ترجمه‌ی فارسیِ [سرفصل این دوره](https://github.com/dineshxr/vibecodeschool/blob/main/courses/antigravity-agent-manager/README.md)
+> از مخزن اصلی، تحت CC BY-SA 4.0. پیوند هر درس به نسخه‌ی تعاملی انگلیسی آن روی سایت می‌رود.
 
-Google Antigravity end to end: the Editor and Agent Manager surfaces, artifacts and browser verification, parallel agents across worktrees, knowledge that compounds — and the habits that make a fleet pay off.
+# مدیریت ایجنت‌ها با Google Antigravity
+
+> ناوگانی از ایجنت‌ها را از اتاق فرمان اداره کنید — با IDE ایجنت‌محور گوگل.
+
+Google Antigravity از سر تا ته: دو محیط ویرایشگر (Editor) و مدیر ایجنت (Agent Manager)، آرتیفکت‌ها و
+تأیید در مرورگر، ایجنت‌های موازی روی ورک‌تری‌ها، دانشی که انباشته می‌شود — و عادت‌هایی که باعث می‌شوند
+داشتن یک ناوگان واقعاً بیرزد.
 
 | | |
 |---|---|
-| **Level** | Advanced |
-| **Lessons** | 25 across 5 modules |
-| **Time** | ~20 hours |
-| **Cost** | Free · no signup |
-| **Take it interactively** | [https://vibecodeschool.com/courses/antigravity-agent-manager](https://vibecodeschool.com/courses/antigravity-agent-manager) |
+| **سطح** | پیشرفته |
+| **درس‌ها** | ۲۵ درس در ۵ بخش |
+| **زمان** | حدود ۲۰ ساعت |
+| **هزینه** | رایگان · بدون ثبت‌نام |
+| **نسخه‌ی تعاملی** | [vibecodeschool.com/courses/antigravity-agent-manager](https://vibecodeschool.com/courses/antigravity-agent-manager) |
 
-Every lesson below links to its interactive version — steps you run locally,
-scrubbable agent-session replays, and a quiz that gates completion.
+هر درس زیر به نسخه‌ی تعاملی‌اش پیوند دارد — گام‌هایی که روی سیستم خودتان اجرا می‌کنید، بازپخش جلسه‌های
+ایجنت که می‌توانید جلو و عقبشان ببرید، و آزمونکی که باید پیش از تمام‌کردن درس بگذرانید.
 
-## Module 1 — Antigravity Foundations
+## بخش ۱ — پایه‌های Antigravity
 
-Install the IDE, meet the two surfaces, run your first Manager task, tune autonomy.
+IDE را نصب کنید، با دو محیطش آشنا شوید، اولین کار مدیر ایجنت را اجرا کنید، میزان خودمختاری را تنظیم کنید.
 
-- **[What Is Antigravity](https://vibecodeschool.com/learn/ag-01-what-is-antigravity)** · Concept · 9 min
-  Google's agent-first IDE: an editor where agents do the work, and a mission control for running several at once.
-- **[Install and Setup](https://vibecodeschool.com/learn/ag-02-install-and-setup)** · Walkthrough · 10 min
-  Download the IDE, sign in with Google, pick a model, connect Chrome.
-- **[Editor View vs Agent Manager](https://vibecodeschool.com/learn/ag-03-roster-pattern)** · Concept · 10 min
-  Two surfaces, one rule: stay close to the diff in the Editor; delegate at scale from the Manager.
-- **[Your First Manager Task](https://vibecodeschool.com/learn/ag-04-first-multi-agent-run)** · Sandbox replay · 12 min
-  Brief an agent, approve its plan, watch the artifacts land, audit the walkthrough.
-- **[Autonomy and Review Policies](https://vibecodeschool.com/learn/ag-05-approval-gates)** · Concept · 9 min
-  How much should the agent check in? Tune it deliberately — and earn each loosening.
+- **[Antigravity چیست](https://vibecodeschool.com/learn/ag-01-what-is-antigravity)** · مفهومی · ۹ دقیقه
+  IDE ایجنت‌محور گوگل: ویرایشگری که در آن ایجنت‌ها کار را انجام می‌دهند، و اتاق فرمانی برای اجرای هم‌زمان چند ایجنت.
+- **[نصب و راه‌اندازی](https://vibecodeschool.com/learn/ag-02-install-and-setup)** · راهنمای گام‌به‌گام · ۱۰ دقیقه
+  IDE را دانلود کنید، با حساب گوگل وارد شوید، مدل انتخاب کنید، کروم را وصل کنید.
+- **[نمای ویرایشگر در برابر مدیر ایجنت](https://vibecodeschool.com/learn/ag-03-roster-pattern)** · مفهومی · ۱۰ دقیقه
+  دو محیط، یک قاعده: در ویرایشگر نزدیک دیف بمانید؛ در مقیاس بزرگ از مدیر ایجنت کار بسپارید.
+- **[اولین کار شما در مدیر ایجنت](https://vibecodeschool.com/learn/ag-04-first-multi-agent-run)** · بازپخش سندباکس · ۱۲ دقیقه
+  به یک ایجنت شرح کار بدهید، برنامه‌اش را تأیید کنید، رسیدن آرتیفکت‌ها را ببینید، گزارش گام‌به‌گامش را ممیزی کنید.
+- **[خودمختاری و سیاست‌های بازبینی](https://vibecodeschool.com/learn/ag-05-approval-gates)** · مفهومی · ۹ دقیقه
+  ایجنت چقدر باید با شما هماهنگ کند؟ آگاهانه تنظیمش کنید — و هر بار شل کردن را با اعتماد به دست آمده توجیه کنید.
 
-## Module 2 — Agents and Artifacts
+## بخش ۲ — ایجنت‌ها و آرتیفکت‌ها
 
-Plans, execution, verification, shipping, and the knowledge base — the working vocabulary of agent-first development.
+برنامه‌ها، اجرا، تأیید، انتشار و پایگاه دانش — واژگان کاری توسعه‌ی ایجنت‌محور.
 
-- **[Plans and Task Lists](https://vibecodeschool.com/learn/ag-06-planner-agents)** · Concept · 10 min
-  The artifacts that come before code — and how to steer them with comments.
-- **[Execution and Scope](https://vibecodeschool.com/learn/ag-07-builder-agents)** · Sandbox replay · 11 min
-  Watching an agent work its task list — and keeping the diff inside the brief.
-- **[Verification: Tests, Browser, Recordings](https://vibecodeschool.com/learn/ag-08-reviewer-agents)** · Sandbox replay · 10 min
-  Agents that prove their work — test runs, live-app screenshots, click-through recordings.
-- **[Ship It: Branches, PRs, and the Human Merge](https://vibecodeschool.com/learn/ag-09-deployer-agents)** · Walkthrough · 11 min
-  Agents branch, commit, push, and open the PR. The merge stays human.
-- **[Knowledge: Teaching Antigravity Your Codebase](https://vibecodeschool.com/learn/ag-10-when-to-add-specialist)** · Concept · 9 min
-  The knowledge base turns corrections into durable rules — agents that brief like teammates, not strangers.
+- **[برنامه‌ها و فهرست کارها](https://vibecodeschool.com/learn/ag-06-planner-agents)** · مفهومی · ۱۰ دقیقه
+  آرتیفکت‌هایی که پیش از کد می‌آیند — و این‌که چطور با کامنت هدایتشان کنید.
+- **[اجرا و دامنه‌ی کار](https://vibecodeschool.com/learn/ag-07-builder-agents)** · بازپخش سندباکس · ۱۱ دقیقه
+  تماشای ایجنتی که فهرست کارهایش را پیش می‌برد — و نگه داشتن دیف در محدوده‌ی شرح کار.
+- **[تأیید: تست‌ها، مرورگر، ضبط‌ها](https://vibecodeschool.com/learn/ag-08-reviewer-agents)** · بازپخش سندباکس · ۱۰ دقیقه
+  ایجنت‌هایی که کارشان را اثبات می‌کنند — اجرای تست‌ها، اسکرین‌شات از اپ زنده، ضبط کلیک‌به‌کلیک.
+- **[انتشار: شاخه‌ها، درخواست‌های ادغام، و ادغام انسانی](https://vibecodeschool.com/learn/ag-09-deployer-agents)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  ایجنت‌ها شاخه می‌سازند، کامیت می‌کنند، push می‌کنند و درخواست ادغام باز می‌کنند. ادغام کار انسان می‌ماند.
+- **[دانش: یاد دادن کدهایتان به Antigravity](https://vibecodeschool.com/learn/ag-10-when-to-add-specialist)** · مفهومی · ۹ دقیقه
+  پایگاه دانش اصلاح‌ها را به قاعده‌هایی ماندگار تبدیل می‌کند — ایجنت‌هایی که مثل هم‌تیمی شروع می‌کنند، نه غریبه.
 
-## Module 3 — Orchestration Patterns
+## بخش ۳ — الگوهای هماهنگ‌سازی
 
-Sequencing, parallel worktrees, second opinions, steering, and the inbox. The control flow of a fleet.
+ترتیب‌دهی، ورک‌تری‌های موازی، نظر دوم، هدایت و صندوق ورودی. جریان کنترل یک ناوگان.
 
-- **[One Agent, Sequenced Work](https://vibecodeschool.com/learn/ag-11-sequential-pipelines)** · Sandbox replay · 10 min
-  Queue dependent follow-ups into one conversation so context carries; save parallel for independence.
-- **[Parallel Agents Across Workspaces](https://vibecodeschool.com/learn/ag-12-fan-out-fan-in)** · Sandbox replay · 11 min
-  The Manager's superpower — several agents at once, kept safe by disjoint working sets.
-- **[Second Opinions](https://vibecodeschool.com/learn/ag-13-voting-and-consensus)** · Concept · 9 min
-  Spawn independent agents on the same ambiguous call; agreement builds confidence, divergence maps the real decision.
-- **[Stopping, Steering, and Retrying](https://vibecodeschool.com/learn/ag-14-cancellation-retries)** · Walkthrough · 10 min
-  Three levers for a run going wrong: comment to steer, stop outright, or retry with a sharper brief.
-- **[The Inbox: Running Agents Without Watching Them](https://vibecodeschool.com/learn/ag-15-human-in-the-loop)** · Sandbox replay · 10 min
-  Agents surface only the moments that need you. Respond fast to blocks; batch the reviews.
+- **[یک ایجنت، کار مرحله‌به‌مرحله](https://vibecodeschool.com/learn/ag-11-sequential-pipelines)** · بازپخش سندباکس · ۱۰ دقیقه
+  کارهای وابسته را در یک گفت‌وگو صف کنید تا زمینه منتقل شود؛ اجرای موازی را برای کارهای مستقل نگه دارید.
+- **[ایجنت‌های موازی در فضاهای کاری مختلف](https://vibecodeschool.com/learn/ag-12-fan-out-fan-in)** · بازپخش سندباکس · ۱۱ دقیقه
+  ابرقدرت مدیر ایجنت — چند ایجنت هم‌زمان، که با مجموعه‌فایل‌های جدا از هم امن می‌مانند.
+- **[نظر دوم](https://vibecodeschool.com/learn/ag-13-voting-and-consensus)** · مفهومی · ۹ دقیقه
+  روی یک تصمیم مبهم چند ایجنت مستقل راه بیندازید؛ توافقشان اطمینان می‌سازد و اختلافشان تصمیم واقعی را نشان می‌دهد.
+- **[متوقف کردن، هدایت و تلاش دوباره](https://vibecodeschool.com/learn/ag-14-cancellation-retries)** · راهنمای گام‌به‌گام · ۱۰ دقیقه
+  سه اهرم برای اجرایی که دارد خراب می‌شود: با کامنت هدایتش کنید، کاملاً متوقفش کنید، یا با شرح کار دقیق‌تری دوباره امتحان کنید.
+- **[صندوق ورودی: اجرای ایجنت‌ها بی‌آن‌که تماشایشان کنید](https://vibecodeschool.com/learn/ag-15-human-in-the-loop)** · بازپخش سندباکس · ۱۰ دقیقه
+  ایجنت‌ها فقط لحظه‌هایی را که به شما نیاز دارند پیش می‌کشند. به گیرها سریع پاسخ دهید؛ بازبینی‌ها را دسته‌ای انجام دهید.
 
-## Module 4 — Running a Fleet, Sustainably
+## بخش ۴ — اداره‌ی پایدار یک ناوگان
 
-Models and rate limits, audit trails, failure modes, security, and the three metrics that keep leverage honest.
+مدل‌ها و محدودیت نرخ، ردپای ممیزی، حالت‌های شکست، امنیت، و سه معیاری که بهره‌وری را واقعی نگه می‌دارند.
 
-- **[Models, Rate Limits, and Spend](https://vibecodeschool.com/learn/ag-16-cost-budgeting)** · Walkthrough · 10 min
-  The scarce resource is frontier-model calls in a rate-limit window. Spend them where reasoning density is highest.
-- **[Reading the Audit Trail](https://vibecodeschool.com/learn/ag-17-observability)** · Walkthrough · 11 min
-  When a run goes sideways, the artifacts are your trace. Debug it like an incident: evidence first.
-- **[Failure Modes and Recovery](https://vibecodeschool.com/learn/ag-18-failure-modes)** · Concept · 10 min
-  What goes wrong with multi-agent systems and what to do about it.
-- **[Security and Sandboxing](https://vibecodeschool.com/learn/ag-19-security)** · Concept · 10 min
-  Editor + terminal + browser is real power. Treat everything the agent reads as untrusted input.
-- **[Measuring Your Agent Leverage](https://vibecodeschool.com/learn/ag-20-slas)** · Concept · 9 min
-  Three numbers a week: tasks landed, rework rate, review time. What you don't measure quietly regresses.
+- **[مدل‌ها، محدودیت نرخ و هزینه](https://vibecodeschool.com/learn/ag-16-cost-budgeting)** · راهنمای گام‌به‌گام · ۱۰ دقیقه
+  منبع کمیاب، فراخوانی مدل‌های پیشرفته در یک بازه‌ی محدودیت نرخ است. آن‌ها را جایی خرج کنید که بیشترین استدلال لازم است.
+- **[خواندن ردپای ممیزی](https://vibecodeschool.com/learn/ag-17-observability)** · راهنمای گام‌به‌گام · ۱۱ دقیقه
+  وقتی یک اجرا از مسیر خارج می‌شود، آرتیفکت‌ها ردپای شما هستند. مثل یک حادثه اشکال‌زدایی‌اش کنید: اول شواهد.
+- **[حالت‌های شکست و بازیابی](https://vibecodeschool.com/learn/ag-18-failure-modes)** · مفهومی · ۱۰ دقیقه
+  در سیستم‌های چندایجنتی چه چیزهایی خراب می‌شود و چه باید کرد.
+- **[امنیت و سندباکس](https://vibecodeschool.com/learn/ag-19-security)** · مفهومی · ۱۰ دقیقه
+  ویرایشگر + ترمینال + مرورگر یعنی قدرت واقعی. هر چیزی را که ایجنت می‌خواند ورودی غیرقابل اعتماد بدانید.
+- **[سنجش بهره‌وری ایجنت‌هایتان](https://vibecodeschool.com/learn/ag-20-slas)** · مفهومی · ۹ دقیقه
+  سه عدد در هفته: کارهای به‌نتیجه‌رسیده، نرخ دوباره‌کاری، زمان بازبینی. آنچه را نسنجید بی‌سروصدا پسرفت می‌کند.
 
-## Module 5 — Real Fleet Projects
+## بخش ۵ — پروژه‌های واقعی با ناوگان
 
-Issue → PR, docs sync, parallel triage, worktree migration, capstone. The workflows you'll actually run.
+از ایشو تا درخواست ادغام، همگام‌سازی مستندات، اولویت‌بندی موازی، مهاجرت با ورک‌تری، پروژه‌ی پایانی.
+گردش‌کارهایی که واقعاً اجرا خواهید کرد.
 
-- **[Auto-PR Pipeline](https://vibecodeschool.com/learn/ag-21-auto-pr-pipeline)** · Sandbox replay · 13 min
-  Paste the issue, approve the plan, review the PR. The everyday hands-off flow.
-- **[Docs That Track the Code](https://vibecodeschool.com/learn/ag-22-doc-team)** · Sandbox replay · 11 min
-  A recurring agent chore that keeps docs from drifting when code moves.
-- **[Triage Swarm](https://vibecodeschool.com/learn/ag-23-triage-swarm)** · Sandbox replay · 12 min
-  Split the unlabeled backlog across parallel agents; approve their drafts over coffee.
-- **[Migration Squad](https://vibecodeschool.com/learn/ag-24-migration-squad)** · Sandbox replay · 13 min
-  N agents, N worktrees, leaf-first batches. The repo stays green the whole way.
-- **[Capstone: Design and Ship a Roster](https://vibecodeschool.com/learn/ag-25-capstone)** · Walkthrough · 60 min
-  Pick a real recurring chore. Run it through the Manager for a week. Measure. Keep, tune, or kill.
+- **[خط تولید خودکار درخواست ادغام](https://vibecodeschool.com/learn/ag-21-auto-pr-pipeline)** · بازپخش سندباکس · ۱۳ دقیقه
+  ایشو را بچسبانید، برنامه را تأیید کنید، درخواست ادغام را بازبینی کنید. جریان روزمره‌ای که دستتان را آزاد می‌گذارد.
+- **[مستنداتی که پابه‌پای کد می‌آیند](https://vibecodeschool.com/learn/ag-22-doc-team)** · بازپخش سندباکس · ۱۱ دقیقه
+  یک کار تکراری ایجنت که نمی‌گذارد مستندات با تغییر کد عقب بمانند.
+- **[گروه اولویت‌بندی](https://vibecodeschool.com/learn/ag-23-triage-swarm)** · بازپخش سندباکس · ۱۲ دقیقه
+  ایشوهای برچسب‌نخورده را میان ایجنت‌های موازی تقسیم کنید؛ پیش‌نویس‌هایشان را سر قهوه تأیید کنید.
+- **[تیم مهاجرت](https://vibecodeschool.com/learn/ag-24-migration-squad)** · بازپخش سندباکس · ۱۳ دقیقه
+  N ایجنت، N ورک‌تری، دسته‌هایی که از برگ‌ها شروع می‌شوند. مخزن در تمام مسیر سبز می‌ماند.
+- **[پروژه‌ی پایانی: یک تیم ایجنت طراحی و منتشر کنید](https://vibecodeschool.com/learn/ag-25-capstone)** · راهنمای گام‌به‌گام · ۶۰ دقیقه
+  یک کار تکراری واقعی انتخاب کنید. یک هفته از طریق مدیر ایجنت اجرایش کنید. بسنجید. نگهش دارید، تنظیمش کنید یا کنارش بگذارید.
 
 ---
 
-⭐ Useful? [Star the repo](https://github.com/dineshxr/vibecodeschool) and [start the course free](https://vibecodeschool.com/courses/antigravity-agent-manager).
+⭐ به کارتان آمد؟ به [مخزن اصلی ستاره بدهید](https://github.com/dineshxr/vibecodeschool) و [دوره را رایگان شروع کنید](https://vibecodeschool.com/courses/antigravity-agent-manager).
+
+</div>
